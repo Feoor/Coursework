@@ -1,7 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@charset "UTF-8";
+/* Fonts  Inter */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  src: url("../fonts/Inter/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+}
+/* Fonts Manrope */
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 100 900;
+  src: url("../fonts/Manrope/Manrope-VariableFont_wght.ttf") format("truetype");
+}
 :root {
-  --font-family: "Poppins", sans-serif;
-  --second-family: "Inter", sans-serif;
+  --font-family: "Manrope";
+  --second-family: "Inter";
 }
 
 * {
@@ -16,7 +30,12 @@ a {
 }
 
 html {
-  font-family: var(--second-family) sans-serif;
+  font-family: var(--second-family), sans-serif;
+}
+
+/* Базовые стили */
+.text-purple {
+  color: #6c5fbc;
 }
 
 .nav {
@@ -31,24 +50,34 @@ html {
   gap: 72px;
 }
 .nav .nav__left-side .nav__logo {
-  font-family: var(--font-family) sans-serif;
-  font-weight: 600;
+  position: relative;
+  padding-left: 55px;
+  font-family: var(--font-family), sans-serif;
+  font-weight: 900;
   font-size: 24px;
   line-height: 130%;
   color: #6c5fbc;
+  cursor: pointer;
 }
 .nav .nav__left-side .nav__logo::before {
   content: "";
+  display: inline-block;
   width: 46px;
-  background: url("../img/logo.svg");
+  height: 46px; /* Добавлено свойство height */
+  background: url("../../icon.svg") no-repeat;
+  position: absolute;
+  top: 50%;
+  right: 75px;
+  transform: translateY(-45%);
 }
 .nav .nav__left-side .nav__menu {
   display: flex;
   list-style-type: none;
+  margin: 0;
   gap: 38px;
 }
 .nav .nav__left-side .nav__menu .menu__item {
-  font-family: var(--second-family) sans-serif;
+  font-family: var(--second-family), sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 150%;
@@ -64,14 +93,14 @@ html {
   gap: 12px;
 }
 .nav .nav__right-side .nav__login {
-  font-family: var(--second-family) sans-serif;
+  font-family: var(--second-family), sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 150%;
   color: #606060;
   background-color: inherit;
   border: none;
-  border-radius: 18px;
+  border-radius: 17px;
   padding: 17px 26px;
   cursor: pointer;
   transition: background-color 0.2s;
@@ -80,20 +109,29 @@ html {
   background-color: rgba(0, 0, 0, 0.05);
 }
 .nav .nav__right-side .nav__sign-up {
-  font-family: var(--second-family) sans-serif;
+  font-family: var(--second-family), sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 150%;
   color: #f9f9f9;
-  background-color: #6c5fbc;
+  background: #6c5fbc;
   border: none;
-  border-radius: 18px;
+  border-radius: 17px;
   padding: 17px 26px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background 0.2s;
 }
 .nav .nav__right-side .nav__sign-up:hover {
-  background-color: #5a4aa3;
+  background: #5a4aa3;
+}
+
+.header__content .header__left-side .header__title {
+  font-family: var(--font-family), sans-serif;
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 120%;
+  text-transform: capitalize;
+  color: #201f1f;
 }
 
 /*# sourceMappingURL=style.css.map */
