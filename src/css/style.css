@@ -13,9 +13,25 @@
   font-weight: 100 900;
   src: url("../fonts/Manrope/Manrope-VariableFont_wght.ttf") format("truetype");
 }
+/* Fonts Plus Jakarta Sans */
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 100 800;
+  src: url("../fonts/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf") format("truetype");
+}
+/* Fonts Public Sans */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 100 900;
+  src: url("../fonts/Public_Sans/PublicSans-VariableFont_wght.ttf") format("truetype");
+}
 :root {
   --font-family: "Manrope";
   --second-family: "Inter";
+  --font4: "Public Sans", sans-serif;
+  --font6: "Plus Jakarta Sans", sans-serif;
 }
 
 * {
@@ -128,6 +144,7 @@ html {
 .header__content {
   display: flex;
   padding-top: 120px;
+  padding-bottom: 130px;
 }
 .header__content .header__left-side .header__hero-text {
   padding-left: 76px;
@@ -231,7 +248,7 @@ html {
   width: 96px;
 }
 .header__content .header__left-side .header__reviews .header__review .header__review-counts {
-  font-family: var(--second-family), sans-serif;
+  font-family: var(--font4), sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
@@ -243,12 +260,78 @@ html {
   justify-content: center;
   align-content: center;
   position: relative;
-  overflow: hidden;
 }
 .header__content .header__right-side .header__hero-food {
-  width: 448px;
-  height: 455px;
-  object-fit: cover;
+  max-width: 449px;
+  max-height: 456px;
+  object-fit: contain;
+  overflow: hidden;
+}
+.header__content .header__right-side .header__spiral-arrow {
+  position: absolute;
+  z-index: -1;
+  top: 23%;
+  right: 6%;
+  transform: translateY(-50%);
+}
+.header__content .header__right-side .header__order-preview {
+  max-width: 329px;
+  max-height: 90px;
+  position: absolute;
+  top: -2%;
+  right: 3px;
+  transform: translateY(-50%);
+  border-radius: 16px;
+  box-shadow: -10px 12px 21px 0 rgba(0, 0, 0, 0.15);
+  object-fit: contain;
+}
+.header__content .header__right-side .header__hero-graph {
+  max-width: 207px;
+  max-height: 206px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 17px;
+  box-shadow: 13px -17px 28px 0 rgba(0, 0, 0, 0.15);
+  object-fit: contain;
+}
+.header__content .header__right-side .header__illustration-01 {
+  position: absolute;
+  z-index: -1;
+  top: -15%;
+  right: -8%;
+  transform: translateY(-50%);
+}
+.header__content .header__right-side .header__illustration-02 {
+  position: absolute;
+  z-index: -1;
+  bottom: -13%;
+  left: -6%;
+  transform: translateY(-50%);
+}
+
+.features {
+  background: url("../img/features_bg.svg") no-repeat;
+  background-size: cover;
+  padding: 48px 0;
+}
+.features .container-sm .features__list div .features__feature-title {
+  font-family: var(--font4), sans-serif;
+  font-weight: 700;
+  font-size: 43px;
+  line-height: 125%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+}
+.features .container-sm .features__list div .features__feature-text {
+  font-family: var(--second-family), sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  text-align: center;
+  text-transform: capitalize;
+  color: #c5bfed;
 }
 
 /*# sourceMappingURL=style.css.map */
