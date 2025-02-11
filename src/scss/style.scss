@@ -122,7 +122,34 @@ html {
 }
 
 .header__content {
+  display: flex;
+  padding-top: 120px;
+
   .header__left-side {
+    .header__hero-text {
+      padding-left: 76px;
+      font-family: var(--font-family), sans-serif;
+      font-weight: 900;
+      font-size: 15px;
+      line-height: 120%;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: rgba(32, 31, 31, 0.2);
+      position: relative;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 54px;
+        height: 0;
+        border: 1px solid rgba(32, 31, 31, 0.2);
+        margin-right: 20px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+    }
     .header__title {
       font-family: var(--font-family), sans-serif;
       font-weight: 900;
@@ -130,6 +157,103 @@ html {
       line-height: 120%;
       text-transform: capitalize;
       color: #201f1f;
+    }
+    .header__subtitle {
+      font-family: var(--second-family), sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 156%;
+      color: #676767;
+      opacity: 0.7;
+
+      margin-bottom: 54px;
+    }
+    .header__buttons {
+      display: flex;
+      gap: 18px;
+
+      .header__btn--primary {
+        border-radius: 12px;
+        height: 59px;
+        padding: 0 28px;
+        background: #6c5fbc;
+        border: none;
+        font-family: var(--font-family), sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+        letter-spacing: 0.01em;
+        text-transform: capitalize;
+        color: #fff;
+        transition: background .3s;
+
+        &:hover {
+          background: #5a4aa3;
+        }
+      }
+      .header__btn--secondary {
+        border-radius: 12px;
+        height: 59px;
+        padding: 0 28px;
+        background: inherit;
+        border: 1.50px solid #6c5fbc;
+        font-family: var(--font-family), sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+        letter-spacing: 0.01em;
+        text-transform: capitalize;
+        color: #6c5fbc;
+        transition: background .3s;
+
+        &:hover {
+          background: #6c5fbc;
+          color: #fff;
+        }
+      }
+    }
+    .header__reviews {
+      display: flex;
+      gap: 12px;
+      margin-top: 54px;
+      width: 350px;
+      overflow: hidden;
+
+      .header__review {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .header__review-logo {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .header__review-stars {
+          display: flex;
+          gap: 4px;
+          width: 96px;
+        }
+        .header__review-counts {
+          font-family: var(--second-family), sans-serif;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 150%;
+          color: #334155;
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+  .header__right-side {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    overflow: hidden;
+
+    .header__hero-food {
+      width: 448px;
+      height: 455px;
+      object-fit: cover;
     }
   }
 }
