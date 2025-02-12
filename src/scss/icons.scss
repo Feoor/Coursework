@@ -1,0 +1,15 @@
+.icons {
+  .icons-purple-star {
+    width: 100px;
+    margin-left: 50px;
+
+    &::after {
+      display: inline-block;
+      content: "13431";
+      vertical-align: -.125em;
+      background-image: url("../icons/purple_star.svg");
+      background-repeat: no-repeat;
+      background-size: 1rem 0.5rem;
+    }
+  }
+}

@@ -21,7 +21,7 @@ html {
 }
 
 /* Базовые стили */
-.text-purple {
+.highlight--purple {
   color: #6c5fbc;
 }
 
@@ -308,7 +308,11 @@ html {
   background-size: cover;
   padding: 48px 0;
 
-  .container-sm .features__list div {
+  .container-sm .features__wrapper div {
+    &:not(:last-child) {
+      border-right: 1px solid rgba(197, 197, 197, 0.15);
+    }
+
     .features__feature-title {
       font-family: var(--font4), sans-serif;
       font-weight: 700;
@@ -329,3 +333,96 @@ html {
     }
   }
 }
+
+/* Скачать приложение */
+.app-download {
+  .container-sm .app-download__wrapper {
+    padding: 120px 0;
+    border-bottom: 1px solid #cbcbcb;
+
+    .app-download__mockup {
+      .app-download__mobile-screen {
+        position: relative;
+        max-width: 304px;
+        max-height: 609px;
+        object-fit: contain;
+
+        &::after {
+          content: "";
+          display: inline-block;
+          width: 52px;
+          height: 62px;
+          background: url("../img/illustration_02.svg") no-repeat;
+          position: absolute;
+          top: -35px;
+          right: -60px;
+          transform: rotate(215deg) scale(1.2);
+        }
+      }
+    }
+    .app-download__content {
+      .app-download__title {
+        font-family: var(--font-family), sans-serif;
+        font-weight: 900;
+        font-size: 50px;
+        line-height: 114%;
+        text-transform: capitalize;
+        color: #18181b;
+        margin-bottom: 62px;
+      }
+      .app-download__features {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        margin-bottom: 60px;
+
+        .app-download__feature {
+          font-family: var(--second-family), sans-serif;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 150%;
+          color: #676767;
+        }
+      }
+      .app-download__btn {
+        position: relative;
+        border-radius: 15px;
+        height: 63px;
+        padding-left: 26px;
+        padding-right: 68px;
+        background: #6c5fbc;
+        border: none;
+        font-family: var(--font-family), sans-serif;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 125%;
+        text-transform: capitalize;
+        text-align: center;
+        color: #fff;
+
+        &::after {
+          content: "";
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          background: url("../img/right_arrow.svg") no-repeat;
+          position: absolute;
+          top: 50%;
+          right: 20px;
+          transform: translateY(-45%);
+        }
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 169px;
+          height: 61px;
+          background: url("../img/long_spiral.svg") no-repeat;
+          position: absolute;
+          bottom: -80%;
+          right: -85%;
+        }
+      }
+    }
+  }
+}
+
