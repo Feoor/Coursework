@@ -24,6 +24,22 @@ html {
 .highlight--purple {
   color: #6c5fbc;
 }
+.badge.badge-healthy {
+    font-family: var(--font-family), sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: #daa31a;
+    background: #f7edd0;
+    padding: 6px 8px;
+}
+.badge.badge-trending {
+  font-family: var(--font-family), sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  color: #fb471d;
+  background: #f7c5ba;
+  padding: 6px 8px;
+}
 
 
 .nav {
@@ -303,6 +319,7 @@ html {
   }
 }
 
+/* Наши преимущества */
 .features {
   background: url("../img/features_bg.svg") no-repeat;
   background-size: cover;
@@ -426,3 +443,68 @@ html {
   }
 }
 
+/* Наши лучшие рестораны */
+.our-restaurants {
+  .container-sm .our-restaurants__wrapper {
+    padding-top: 100px;
+    padding-bottom: 120px;
+
+    .our-restaurants__title {
+      font-family: var(--font-family), sans-serif;
+      font-weight: 700;
+      font-size: 45px;
+      line-height: 57%;
+      color: #323142;
+      margin-bottom: 62px;
+    }
+    .our-restaurants__restaurant {
+      .card {
+        max-width: 396px;
+        border: none;
+        box-shadow: 6px 71px 36px 0 rgba(229, 229, 229, 0.7);
+        position: relative;
+
+        .card-body {
+          padding: 32px;
+
+          h5 {
+            font-family: var(--font-family), sans-serif;
+            font-weight: 800;
+            font-size: 25px;
+            line-height: 162%;
+            color: #323142;
+            margin-bottom: 0;
+          }
+          .our-restaurants__restaurant-info {
+            font-family: var(--font-family), sans-serif;
+            font-weight: 400;
+            font-size: 19px;
+            line-height: 133%;
+            color: #8e97a6;
+          }
+          .our-restaurants__restaurant-bookmark {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            border: none;
+            border-radius: 100%;
+            background-color: #dbd9ee;
+
+            &::after {
+              display: inline-block;
+              content: "";
+              max-width: 16px;
+              max-height: 21px;
+              background: url("../icons/bookmark.svg") no-repeat;
+              position: absolute;
+              margin: auto;
+              top: 0; left: 0; bottom: 0; right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
