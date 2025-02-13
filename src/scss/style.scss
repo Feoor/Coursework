@@ -325,7 +325,7 @@ html {
   background-size: cover;
   padding: 48px 0;
 
-  .container-sm .features__wrapper div {
+  .features__wrapper div {
     &:not(:last-child) {
       border-right: 1px solid rgba(197, 197, 197, 0.15);
     }
@@ -422,11 +422,15 @@ html {
           display: inline-block;
           width: 30px;
           height: 30px;
-          background: url("../img/right_arrow.svg") no-repeat;
+          background: url("../icons/right_arrow.svg") no-repeat;
           position: absolute;
           top: 50%;
           right: 20px;
           transform: translateY(-45%);
+          transition: transform .2s;
+        }
+        &:hover::after {
+          transform: translateX(8px) translateY(-45%);
         }
         &::before {
           content: "";
@@ -435,6 +439,7 @@ html {
           height: 61px;
           background: url("../img/long_spiral.svg") no-repeat;
           position: absolute;
+          z-index: -1;
           bottom: -80%;
           right: -85%;
         }
@@ -445,15 +450,17 @@ html {
 
 /* Наши лучшие рестораны */
 .our-restaurants {
-  .container-sm .our-restaurants__wrapper {
+  .our-restaurants__wrapper {
     padding-top: 100px;
     padding-bottom: 120px;
+    border-bottom: 1px solid #cbcbcb;
 
     .our-restaurants__title {
       font-family: var(--font-family), sans-serif;
       font-weight: 700;
       font-size: 45px;
       line-height: 57%;
+      text-transform: capitalize;
       color: #323142;
       margin-bottom: 62px;
     }
@@ -461,11 +468,17 @@ html {
       .card {
         max-width: 396px;
         border: none;
+        border-radius: 30px;
         box-shadow: 6px 71px 36px 0 rgba(229, 229, 229, 0.7);
         position: relative;
+        cursor: pointer;
+
+        .card-img-top {
+          border-radius: 30px 30px 0 0;
+        }
 
         .card-body {
-          padding: 32px;
+          padding: 11px 32px 18px;
 
           h5 {
             font-family: var(--font-family), sans-serif;
@@ -486,8 +499,8 @@ html {
             width: 40px;
             height: 40px;
             position: absolute;
-            bottom: 0;
-            right: 0;
+            bottom: 16px;
+            right: 24px;
             border: none;
             border-radius: 100%;
             background-color: #dbd9ee;
@@ -503,6 +516,38 @@ html {
               top: 0; left: 0; bottom: 0; right: 0;
             }
           }
+        }
+      }
+    }
+    .our-restaurants__view-all {
+      position: relative;
+      z-index: 1; /* Чтобы тень не перекрывала текст */
+      margin-top: 65px;
+      padding-right: 40px;
+      font-family: var(--font-family), sans-serif;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 226%;
+      letter-spacing: -0.01em;
+      color: #acadb9;
+
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background: url("../icons/gray_right_arrow.svg") no-repeat;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-35%);
+        transition: transform .2s;
+      }
+      &:hover {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        &::after {
+          transform: translateX(8px) translateY(-35%);
         }
       }
     }

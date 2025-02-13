@@ -334,10 +334,10 @@ html {
   background-size: cover;
   padding: 48px 0;
 }
-.features .container-sm .features__wrapper div:not(:last-child) {
+.features .features__wrapper div:not(:last-child) {
   border-right: 1px solid rgba(197, 197, 197, 0.15);
 }
-.features .container-sm .features__wrapper div .features__feature-title {
+.features .features__wrapper div .features__feature-title {
   font-family: var(--font4), sans-serif;
   font-weight: 700;
   font-size: 43px;
@@ -346,7 +346,7 @@ html {
   text-transform: uppercase;
   color: #fff;
 }
-.features .container-sm .features__wrapper div .features__feature-text {
+.features .features__wrapper div .features__feature-text {
   font-family: var(--second-family), sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -421,11 +421,15 @@ html {
   display: inline-block;
   width: 30px;
   height: 30px;
-  background: url("../img/right_arrow.svg") no-repeat;
+  background: url("../icons/right_arrow.svg") no-repeat;
   position: absolute;
   top: 50%;
   right: 20px;
   transform: translateY(-45%);
+  transition: transform 0.2s;
+}
+.app-download .container-sm .app-download__wrapper .app-download__content .app-download__btn:hover::after {
+  transform: translateX(8px) translateY(-45%);
 }
 .app-download .container-sm .app-download__wrapper .app-download__content .app-download__btn::before {
   content: "";
@@ -434,33 +438,41 @@ html {
   height: 61px;
   background: url("../img/long_spiral.svg") no-repeat;
   position: absolute;
+  z-index: -1;
   bottom: -80%;
   right: -85%;
 }
 
 /* Наши лучшие рестораны */
-.our-restaurants .container-sm .our-restaurants__wrapper {
+.our-restaurants .our-restaurants__wrapper {
   padding-top: 100px;
   padding-bottom: 120px;
+  border-bottom: 1px solid #cbcbcb;
 }
-.our-restaurants .container-sm .our-restaurants__wrapper .our-restaurants__title {
+.our-restaurants .our-restaurants__wrapper .our-restaurants__title {
   font-family: var(--font-family), sans-serif;
   font-weight: 700;
   font-size: 45px;
   line-height: 57%;
+  text-transform: capitalize;
   color: #323142;
   margin-bottom: 62px;
 }
-.our-restaurants .container-sm .our-restaurants__wrapper .our-restaurants__restaurant .card {
+.our-restaurants .our-restaurants__wrapper .our-restaurants__restaurant .card {
   max-width: 396px;
   border: none;
+  border-radius: 30px;
   box-shadow: 6px 71px 36px 0 rgba(229, 229, 229, 0.7);
   position: relative;
+  cursor: pointer;
 }
-.our-restaurants .container-sm .our-restaurants__wrapper .our-restaurants__restaurant .card .card-body {
-  padding: 32px;
+.our-restaurants .our-restaurants__wrapper .our-restaurants__restaurant .card .card-img-top {
+  border-radius: 30px 30px 0 0;
 }
-.our-restaurants .container-sm .our-restaurants__wrapper .our-restaurants__restaurant .card .card-body h5 {
+.our-restaurants .our-restaurants__wrapper .our-restaurants__restaurant .card .card-body {
+  padding: 11px 32px 18px;
+}
+.our-restaurants .our-restaurants__wrapper .our-restaurants__restaurant .card .card-body h5 {
   font-family: var(--font-family), sans-serif;
   font-weight: 800;
   font-size: 25px;
@@ -468,24 +480,24 @@ html {
   color: #323142;
   margin-bottom: 0;
 }
-.our-restaurants .container-sm .our-restaurants__wrapper .our-restaurants__restaurant .card .card-body .our-restaurants__restaurant-info {
+.our-restaurants .our-restaurants__wrapper .our-restaurants__restaurant .card .card-body .our-restaurants__restaurant-info {
   font-family: var(--font-family), sans-serif;
   font-weight: 400;
   font-size: 19px;
   line-height: 133%;
   color: #8e97a6;
 }
-.our-restaurants .container-sm .our-restaurants__wrapper .our-restaurants__restaurant .card .card-body .our-restaurants__restaurant-bookmark {
+.our-restaurants .our-restaurants__wrapper .our-restaurants__restaurant .card .card-body .our-restaurants__restaurant-bookmark {
   width: 40px;
   height: 40px;
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 16px;
+  right: 24px;
   border: none;
   border-radius: 100%;
   background-color: #dbd9ee;
 }
-.our-restaurants .container-sm .our-restaurants__wrapper .our-restaurants__restaurant .card .card-body .our-restaurants__restaurant-bookmark::after {
+.our-restaurants .our-restaurants__wrapper .our-restaurants__restaurant .card .card-body .our-restaurants__restaurant-bookmark::after {
   display: inline-block;
   content: "";
   max-width: 16px;
@@ -497,6 +509,37 @@ html {
   left: 0;
   bottom: 0;
   right: 0;
+}
+.our-restaurants .our-restaurants__wrapper .our-restaurants__view-all {
+  position: relative;
+  z-index: 1; /* Чтобы тень не перекрывала текст */
+  margin-top: 65px;
+  padding-right: 40px;
+  font-family: var(--font-family), sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 226%;
+  letter-spacing: -0.01em;
+  color: #acadb9;
+}
+.our-restaurants .our-restaurants__wrapper .our-restaurants__view-all::after {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: url("../icons/gray_right_arrow.svg") no-repeat;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-35%);
+  transition: transform 0.2s;
+}
+.our-restaurants .our-restaurants__wrapper .our-restaurants__view-all:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.our-restaurants .our-restaurants__wrapper .our-restaurants__view-all:hover::after {
+  transform: translateX(8px) translateY(-35%);
 }
 
 /*# sourceMappingURL=style.css.map */

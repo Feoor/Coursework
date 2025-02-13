@@ -61,11 +61,11 @@
             <img class="header__review-logo" src="img/trustpilot_logo.svg" alt="Trustpilot logo">
 
             <div class="header__review-stars" aria-label="Рейтинг">
-              <img src="img/full_star.svg" alt="star">
-              <img src="img/full_star.svg" alt="star">
-              <img src="img/full_star.svg" alt="star">
-              <img src="img/full_star.svg" alt="star">
-              <img src="img/full_star.svg" alt="star">
+              <img src="icons/full_star.svg" alt="star">
+              <img src="icons/full_star.svg" alt="star">
+              <img src="icons/full_star.svg" alt="star">
+              <img src="icons/full_star.svg" alt="star">
+              <img src="icons/full_star.svg" alt="star">
             </div>
 
             <div class="header__review-counts">
@@ -76,7 +76,7 @@
       </div>
       <div class="header__right-side col-6">
         <img src="img/hero_food.png" alt="Hero Food" class="header__hero-food">
-        <img src="img/spiral_arrow.svg" alt="Spiral Arrow" class="header__spiral-arrow">
+        <img src="icons/spiral_arrow.svg" alt="Spiral Arrow" class="header__spiral-arrow">
         <img src="img/order_preview.png" alt="Order Preview" class="header__order-preview">
         <img src="img/hero_graph.png" alt="Hero Graph" class="header__hero-graph">
         <img src="img/illustration_01.svg" alt="Illustration 01" class="header__illustration-01">
@@ -147,65 +147,200 @@
   <section class="our-restaurants">
     <div class="container-sm">
 
+      <!-- Обертка сетки -->
       <div class="our-restaurants__wrapper row g-4">
+        <!-- Титул -->
         <h2 class="our-restaurants__title text-center">Наши лучшие <span class="highlight--purple">рестораны</span></h2>
 
+        <!-- Карточки ресторанов -->
         <div class="our-restaurants__restaurant col-4">
           <div class="card h-100">
-            <img src="img/the_chicken_king.png" alt="The Chicken King Restaurant" class="card-img-top">
+            <a href="">
+              <img src="img/the_chicken_king.png" alt="The Chicken King Restaurant" class="card-img-top">
 
-            <div class="card-body">
-              <span class="badge badge-healthy mb-1">Полезно</span>
-              <h5 class="card-title mt-0">The Chicken King</h5>
+              <div class="card-body">
+                <span class="badge badge-healthy mb-1">Полезно</span>
+                <h5 class="card-title mt-0">The Chicken King</h5>
 
-              <div class="our-restaurants__restaurant-info d-flex align-items-center">
-                <span class="me-2">24мин •</span>
-                <img src="icons/purple_star.svg" alt="Purple star">
-                <span class="ms-1">4.8</span>
+                <div class="our-restaurants__restaurant-info d-flex align-items-center">
+                  <span class="me-2">24мин •</span>
+                  <img src="icons/purple_star.svg" alt="Purple star">
+                  <span class="ms-1">4.8</span>
+                </div>
+
+                <button class="our-restaurants__restaurant-bookmark"></button>
               </div>
-
-              <button class="our-restaurants__restaurant-bookmark"></button>
-            </div>
+            </a>
           </div>
         </div>
 
         <div class="our-restaurants__restaurant col-4">
           <div class="card h-100">
-            <img src="img/the_burger_king.png" alt="The Chicken King Restaurant" class="card-img-top">
+            <a href="">
+              <img src="img/the_burger_king.png" alt="The Chicken King Restaurant" class="card-img-top">
 
-            <div class="card-body">
-              <span class="badge badge-trending mb-1">Популярно</span>
-              <h5 class="card-title mt-0">The Burger King</h5>
+              <div class="card-body">
+                <span class="badge badge-trending mb-1">Популярно</span>
+                <h5 class="card-title mt-0">The Burger King</h5>
 
-              <div class="our-restaurants__restaurant-info d-flex align-items-center">
-                <span class="me-2">24мин •</span>
-                <img src="icons/purple_star.svg" alt="Purple star">
-                <span class="ms-1">4.8</span>
+                <div class="our-restaurants__restaurant-info d-flex align-items-center">
+                  <span class="me-2">24мин •</span>
+                  <img src="icons/purple_star.svg" alt="Purple star">
+                  <span class="ms-1">4.8</span>
+                </div>
+
+                <button class="our-restaurants__restaurant-bookmark"></button>
               </div>
-
-              <button class="our-restaurants__restaurant-bookmark"></button>
-            </div>
+            </a>
           </div>
         </div>
 
         <div class="our-restaurants__restaurant col-4">
           <div class="card h-100">
-            <img src="img/the_chicken_king.png" alt="The Chicken King Restaurant" class="card-img-top">
+            <a href="">
+              <img src="img/the_chicken_king.png" alt="The Chicken King Restaurant" class="card-img-top">
 
-            <div class="card-body">
-              <span class="badge badge-healthy mb-1">Полезно</span>
-              <h5 class="card-title mt-0">The Chicken King</h5>
+              <div class="card-body">
+                <span class="badge badge-healthy mb-1">Полезно</span>
+                <h5 class="card-title mt-0">The Chicken King</h5>
 
-              <div class="our-restaurants__restaurant-info d-flex align-items-center">
-                <span class="me-2">24мин •</span>
-                <img src="icons/purple_star.svg" alt="Purple star">
-                <span class="ms-1">4.8</span>
+                <div class="our-restaurants__restaurant-info d-flex align-items-center">
+                  <span class="me-2">24мин •</span>
+                  <img src="icons/purple_star.svg" alt="Purple star">
+                  <span class="ms-1">4.8</span>
+                </div>
+
+                <button class="our-restaurants__restaurant-bookmark"></button>
               </div>
-
-              <button class="our-restaurants__restaurant-bookmark"></button>
-            </div>
+            </a>
           </div>
         </div>
+
+        <!-- Переход на страницу меню -->
+        <a href="#" class="our-restaurants__view-all col-12 text-end">Посмотреть все</a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Наши лучшие блюда -->
+  <section class="our-dishes">
+    <div class="container-sm">
+
+      <!-- Обертка сетки -->
+      <div class="our-dishes__wrapper row g-4">
+        <!-- Титул -->
+        <h2 class="out-dishes__title text-center">Наши лучшие <span class="highlight--purple">блюда</span></h2>
+
+        <!-- Карточки блюд -->
+        <div class="out-dishes__restaurant col-4">
+          <div class="card h-100">
+            <a href="">
+              <img src="img/the_chicken_king.png" alt="The Chicken King Restaurant" class="card-img-top">
+
+              <div class="card-body">
+                <span class="badge badge-healthy mb-1">Полезно</span>
+                <h5 class="card-title mt-0">The Chicken King</h5>
+
+                <div class="out-dishes__restaurant-info d-flex align-items-center">
+                  <span class="me-2">24мин •</span>
+                  <img src="icons/purple_star.svg" alt="Purple star">
+                  <span class="ms-1">4.8</span>
+                </div>
+
+                <button class="out-dishes__restaurant-bookmark"></button>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="out-dishes__restaurant col-4">
+          <div class="card h-100">
+            <a href="">
+              <img src="img/the_burger_king.png" alt="The Chicken King Restaurant" class="card-img-top">
+
+              <div class="card-body">
+                <span class="badge badge-trending mb-1">Популярно</span>
+                <h5 class="card-title mt-0">The Burger King</h5>
+
+                <div class="out-dishes__restaurant-info d-flex align-items-center">
+                  <span class="me-2">24мин •</span>
+                  <img src="icons/purple_star.svg" alt="Purple star">
+                  <span class="ms-1">4.8</span>
+                </div>
+
+                <button class="out-dishes__restaurant-bookmark"></button>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="out-dishes__restaurant col-4">
+          <div class="card h-100">
+            <a href="">
+              <img src="img/the_chicken_king.png" alt="The Chicken King Restaurant" class="card-img-top">
+
+              <div class="card-body">
+                <span class="badge badge-healthy mb-1">Полезно</span>
+                <h5 class="card-title mt-0">The Chicken King</h5>
+
+                <div class="out-dishes__restaurant-info d-flex align-items-center">
+                  <span class="me-2">24мин •</span>
+                  <img src="icons/purple_star.svg" alt="Purple star">
+                  <span class="ms-1">4.8</span>
+                </div>
+
+                <button class="out-dishes__restaurant-bookmark"></button>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="out-dishes__restaurant col-4">
+          <div class="card h-100">
+            <a href="">
+              <img src="img/the_chicken_king.png" alt="The Chicken King Restaurant" class="card-img-top">
+
+              <div class="card-body">
+                <span class="badge badge-healthy mb-1">Полезно</span>
+                <h5 class="card-title mt-0">The Chicken King</h5>
+
+                <div class="out-dishes__restaurant-info d-flex align-items-center">
+                  <span class="me-2">24мин •</span>
+                  <img src="icons/purple_star.svg" alt="Purple star">
+                  <span class="ms-1">4.8</span>
+                </div>
+
+                <button class="out-dishes__restaurant-bookmark"></button>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="out-dishes__restaurant col-4">
+          <div class="card h-100">
+            <a href="">
+              <img src="img/the_chicken_king.png" alt="The Chicken King Restaurant" class="card-img-top">
+
+              <div class="card-body">
+                <span class="badge badge-healthy mb-1">Полезно</span>
+                <h5 class="card-title mt-0">The Chicken King</h5>
+
+                <div class="out-dishes__restaurant-info d-flex align-items-center">
+                  <span class="me-2">24мин •</span>
+                  <img src="icons/purple_star.svg" alt="Purple star">
+                  <span class="ms-1">4.8</span>
+                </div>
+
+                <button class="out-dishes__restaurant-bookmark"></button>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Переход на страницу меню -->
+        <a href="#" class="out-dishes__view-all col-12 text-end">Посмотреть все</a>
 
       </div>
 
