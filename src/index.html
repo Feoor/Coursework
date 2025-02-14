@@ -21,26 +21,31 @@
 
     <!--  Навигация  -->
     <nav class="nav">
-      <div class="nav__left-side">
-        <a href="index.html" class="nav__logo">eatly</a>
+      <div class="nav__wrapper">
 
-        <ul class="nav__menu">
-          <li class="menu__item"><a href="">Меню</a></li>
-          <li class="menu__item"><a href="">Блог</a></li>
-          <li class="menu__item"><a href="">Тарифы</a></li>
-          <li class="menu__item"><a href="">Контакты</a></li>
-        </ul>
-      </div>
+        <div class="nav__left-side">
+          <a href="index.html" class="nav__logo">eatly</a>
 
-      <div class="nav__right-side">
-        <button class="nav__login"><a>Войти</a></button>
-        <button class="nav__sign-up"><a>Зарегистрироваться</a></button>
+          <ul class="nav__menu">
+            <li class="menu__item"><a href="">Меню</a></li>
+            <li class="menu__item"><a href="">Блог</a></li>
+            <li class="menu__item"><a href="">Тарифы</a></li>
+            <li class="menu__item"><a href="">Контакты</a></li>
+          </ul>
+        </div>
+
+        <div class="nav__right-side">
+          <button class="nav__login"><a>Войти</a></button>
+          <button class="nav__sign-up"><a>Зарегистрироваться</a></button>
+        </div>
+
       </div>
     </nav>
 
     <!--  Встречающий контент  -->
-    <div class="header__content">
-      <div class="header__left-side col-6">
+    <div class="header__wrapper">
+
+      <div class="header__left-column col-6">
         <p class="header__hero-text">БОЛЕЕ 1000 ПОЛЬЗОВАТЕЛЕЙ</p>
 
         <h1 class="header__title mb-3">
@@ -74,7 +79,7 @@
           </div>
         </div>
       </div>
-      <div class="header__right-side col-6">
+      <div class="header__right-column col-6">
         <img src="img/hero_food.png" alt="Hero Food" class="header__hero-food">
         <img src="icons/spiral_arrow.svg" alt="Spiral Arrow" class="header__spiral-arrow">
         <img src="img/order_preview.png" alt="Order Preview" class="header__order-preview">
@@ -163,12 +168,12 @@
                 <h5 class="card-title mt-0">The Chicken King</h5>
 
                 <div class="our-restaurants__restaurant-info d-flex align-items-center">
-                  <span class="me-2">24мин •</span>
+                  <span class="me-2">24min •</span>
                   <img src="icons/purple_star.svg" alt="Purple star">
                   <span class="ms-1">4.8</span>
                 </div>
 
-                <button class="our-restaurants__restaurant-bookmark"></button>
+                <button class="restaurant-bookmark"></button>
               </div>
             </a>
           </div>
@@ -184,12 +189,12 @@
                 <h5 class="card-title mt-0">The Burger King</h5>
 
                 <div class="our-restaurants__restaurant-info d-flex align-items-center">
-                  <span class="me-2">24мин •</span>
+                  <span class="me-2">24min •</span>
                   <img src="icons/purple_star.svg" alt="Purple star">
                   <span class="ms-1">4.8</span>
                 </div>
 
-                <button class="our-restaurants__restaurant-bookmark"></button>
+                <button class="restaurant-bookmark"></button>
               </div>
             </a>
           </div>
@@ -205,19 +210,21 @@
                 <h5 class="card-title mt-0">The Chicken King</h5>
 
                 <div class="our-restaurants__restaurant-info d-flex align-items-center">
-                  <span class="me-2">24мин •</span>
+                  <span class="me-2">24min •</span>
                   <img src="icons/purple_star.svg" alt="Purple star">
                   <span class="ms-1">4.8</span>
                 </div>
 
-                <button class="our-restaurants__restaurant-bookmark"></button>
+                <button class="restaurant-bookmark"></button>
               </div>
             </a>
           </div>
         </div>
 
         <!-- Переход на страницу меню -->
-        <a href="#" class="our-restaurants__view-all col-12 text-end">Посмотреть все</a>
+        <div class="col-12 text-end">
+          <a href="#" class="view-all">Посмотреть все</a>
+        </div>
 
       </div>
 
@@ -229,119 +236,170 @@
     <div class="container-sm">
 
       <!-- Обертка сетки -->
-      <div class="our-dishes__wrapper row g-4">
+      <div class="our-dishes__wrapper row justify-content-center g-4">
         <!-- Титул -->
-        <h2 class="out-dishes__title text-center">Наши лучшие <span class="highlight--purple">блюда</span></h2>
+        <h2 class="our-dishes__title col-12 text-center">Наши лучшие <span class="highlight--purple">блюда</span></h2>
 
         <!-- Карточки блюд -->
-        <div class="out-dishes__restaurant col-4">
+        <div class="our-dishes__dish col justify-content-center">
           <div class="card h-100">
             <a href="">
-              <img src="img/the_chicken_king.png" alt="The Chicken King Restaurant" class="card-img-top">
+              <!-- Кнопка "Добавить в любимое" -->
+              <button class="dish-favorite"></button>
+
+              <img src="img/chicken_hell_dish.png" alt="Chicken Hell Dish" class="card-img-top rounded-circle">
 
               <div class="card-body">
-                <span class="badge badge-healthy mb-1">Полезно</span>
-                <h5 class="card-title mt-0">The Chicken King</h5>
+                <span class="badge badge-healthy">Полезно</span>
+                <h5 class="card-title mt-0">Chicken Hell</h5>
 
-                <div class="out-dishes__restaurant-info d-flex align-items-center">
-                  <span class="me-2">24мин •</span>
+                <div class="our-dishes__dish-info d-flex align-items-center mb-2">
+                  <span class="me-2">24min •</span>
                   <img src="icons/purple_star.svg" alt="Purple star">
                   <span class="ms-1">4.8</span>
                 </div>
+                <h5 class="our-dishes__dish-price">$12<span class="price--cents">.99</span></h5>
 
-                <button class="out-dishes__restaurant-bookmark"></button>
+                <!-- Кнопка "Добавить в корзину" -->
+                <button class="add-to-cart"></button>
               </div>
             </a>
           </div>
         </div>
 
-        <div class="out-dishes__restaurant col-4">
+        <div class="our-dishes__dish col justify-content-center">
           <div class="card h-100">
             <a href="">
-              <img src="img/the_burger_king.png" alt="The Chicken King Restaurant" class="card-img-top">
+              <!-- Кнопка "Добавить в любимое" -->
+              <button class="dish-favorite"></button>
+
+              <img src="img/swe_dish.png" alt="Chicken Hell Dish" class="card-img-top rounded-circle">
 
               <div class="card-body">
-                <span class="badge badge-trending mb-1">Популярно</span>
-                <h5 class="card-title mt-0">The Burger King</h5>
+                <span class="badge badge-trending">Популярно</span>
+                <h5 class="card-title mt-0">Swe Dish</h5>
 
-                <div class="out-dishes__restaurant-info d-flex align-items-center">
-                  <span class="me-2">24мин •</span>
+                <div class="our-dishes__dish-info d-flex align-items-center mb-2">
+                  <span class="me-2">34min •</span>
                   <img src="icons/purple_star.svg" alt="Purple star">
-                  <span class="ms-1">4.8</span>
+                  <span class="ms-1">4.9</span>
                 </div>
+                <h5 class="our-dishes__dish-price">$19<span class="price--cents">.99</span></h5>
 
-                <button class="out-dishes__restaurant-bookmark"></button>
+                <!-- Кнопка "Добавить в корзину" -->
+                <button class="add-to-cart"></button>
               </div>
             </a>
           </div>
         </div>
 
-        <div class="out-dishes__restaurant col-4">
+        <div class="our-dishes__dish col justify-content-center">
           <div class="card h-100">
             <a href="">
-              <img src="img/the_chicken_king.png" alt="The Chicken King Restaurant" class="card-img-top">
+              <!-- Кнопка "Добавить в любимое" -->
+              <button class="dish-favorite"></button>
+
+              <img src="img/fish_hell_dish.png" alt="Chicken Hell Dish" class="card-img-top rounded-circle">
 
               <div class="card-body">
-                <span class="badge badge-healthy mb-1">Полезно</span>
-                <h5 class="card-title mt-0">The Chicken King</h5>
+                <span class="badge badge-supreme">Эксклюзив</span>
+                <h5 class="card-title mt-0">Fish Hell</h5>
 
-                <div class="out-dishes__restaurant-info d-flex align-items-center">
-                  <span class="me-2">24мин •</span>
+                <div class="our-dishes__dish-info d-flex align-items-center mb-2">
+                  <span class="me-2">24min •</span>
                   <img src="icons/purple_star.svg" alt="Purple star">
-                  <span class="ms-1">4.8</span>
+                  <span class="ms-1">4.9</span>
                 </div>
+                <h5 class="our-dishes__dish-price">$19<span class="price--cents">.99</span></h5>
 
-                <button class="out-dishes__restaurant-bookmark"></button>
+                <!-- Кнопка "Добавить в корзину" -->
+                <button class="add-to-cart"></button>
               </div>
             </a>
           </div>
         </div>
 
-        <div class="out-dishes__restaurant col-4">
+        <div class="our-dishes__dish col justify-content-center">
           <div class="card h-100">
             <a href="">
-              <img src="img/the_chicken_king.png" alt="The Chicken King Restaurant" class="card-img-top">
+              <!-- Кнопка "Добавить в любимое" -->
+              <button class="dish-favorite"></button>
+
+              <img src="img/chicken_hell_dish.png" alt="Chicken Hell Dish" class="card-img-top rounded-circle">
 
               <div class="card-body">
-                <span class="badge badge-healthy mb-1">Полезно</span>
-                <h5 class="card-title mt-0">The Chicken King</h5>
+                <span class="badge badge-healthy">Полезно</span>
+                <h5 class="card-title mt-0">Chicken Hell</h5>
 
-                <div class="out-dishes__restaurant-info d-flex align-items-center">
-                  <span class="me-2">24мин •</span>
+                <div class="our-dishes__dish-info d-flex align-items-center mb-2">
+                  <span class="me-2">24min •</span>
                   <img src="icons/purple_star.svg" alt="Purple star">
                   <span class="ms-1">4.8</span>
                 </div>
+                <h5 class="our-dishes__dish-price">$12<span class="price--cents">.99</span></h5>
 
-                <button class="out-dishes__restaurant-bookmark"></button>
+                <!-- Кнопка "Добавить в корзину" -->
+                <button class="add-to-cart"></button>
               </div>
             </a>
           </div>
         </div>
 
-        <div class="out-dishes__restaurant col-4">
+        <div class="our-dishes__dish col justify-content-center">
           <div class="card h-100">
             <a href="">
-              <img src="img/the_chicken_king.png" alt="The Chicken King Restaurant" class="card-img-top">
+              <!-- Кнопка "Добавить в любимое" -->
+              <button class="dish-favorite"></button>
+
+              <img src="img/swe_dish.png" alt="Chicken Hell Dish" class="card-img-top rounded-circle">
 
               <div class="card-body">
-                <span class="badge badge-healthy mb-1">Полезно</span>
-                <h5 class="card-title mt-0">The Chicken King</h5>
+                <span class="badge badge-trending">Популярно</span>
+                <h5 class="card-title mt-0">Swe Dish</h5>
 
-                <div class="out-dishes__restaurant-info d-flex align-items-center">
-                  <span class="me-2">24мин •</span>
+                <div class="our-dishes__dish-info d-flex align-items-center mb-2">
+                  <span class="me-2">34min •</span>
                   <img src="icons/purple_star.svg" alt="Purple star">
-                  <span class="ms-1">4.8</span>
+                  <span class="ms-1">4.9</span>
                 </div>
+                <h5 class="our-dishes__dish-price">$19<span class="price--cents">.99</span></h5>
 
-                <button class="out-dishes__restaurant-bookmark"></button>
+                <!-- Кнопка "Добавить в корзину" -->
+                <button class="add-to-cart"></button>
               </div>
             </a>
           </div>
         </div>
 
         <!-- Переход на страницу меню -->
-        <a href="#" class="out-dishes__view-all col-12 text-end">Посмотреть все</a>
+        <div class="col-12 text-end">
+          <a href="#" class="view-all">Посмотреть все</a>
+        </div>
 
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Секция об контроле покупок -->
+  <section class="purchases-control">
+    <div class="container-sm">
+
+      <div class="purchases-control__wrapper row align-items-center">
+
+        <div class="purchases-control__left-column col-6 d-flex flex-column justify-content-start">
+          <h2 class="purchases-control__title mb-5">
+            Контролируйте
+            <span class="highlight--purple">покупки</span>
+            через панель управления
+          </h2>
+
+          <img src="img/order_history.png" alt="Order History" class="purchases-control__first-image">
+        </div>
+
+        <div class="purchase-control__right-column col-6 d-flex justify-content-end">
+          <img src="img/purchases_control.png" alt="Purchases Control" class="purchases-control__second-image">
+        </div>
       </div>
 
     </div>
