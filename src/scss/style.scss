@@ -171,16 +171,20 @@ html {
   }
 }
 
-.nav {
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  z-index: 100;
+}
+.nav__wrapper {
   padding: 1.5rem 0;
-  border-bottom: 1px solid #cbcbcb;
-
-  .nav__wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  border-bottom: 2px solid #cbcbcb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   .nav__left-side {
     display: flex;
@@ -209,7 +213,7 @@ html {
       }
     }
 
-    .nav__menu {
+    .header__list {
       display: flex;
       list-style-type: none;
       margin: 0;
@@ -272,13 +276,12 @@ html {
   }
 }
 
-.header__wrapper {
-  display: flex;
-  padding-top: 120px;
+.hero__wrapper {
+  padding-top: 254px;
   padding-bottom: 130px;
 
-  .header__left-column {
-    .header__hero-text {
+  .hero__left-column {
+    .hero__text {
       padding-left: 76px;
       font-family: var(--font-family), sans-serif;
       font-weight: 900;
@@ -302,7 +305,7 @@ html {
         transform: translateY(-50%);
       }
     }
-    .header__title {
+    .hero__title {
       font-family: var(--font-family), sans-serif;
       font-weight: 900;
       font-size: 60px;
@@ -310,7 +313,7 @@ html {
       text-transform: capitalize;
       color: #201f1f;
     }
-    .header__subtitle {
+    .hero__subtitle {
       font-family: var(--second-family), sans-serif;
       font-weight: 400;
       font-size: 18px;
@@ -320,11 +323,11 @@ html {
 
       margin-bottom: 54px;
     }
-    .header__buttons {
+    .hero__buttons {
       display: flex;
       gap: 18px;
 
-      .header__btn--primary {
+      .hero__btn--primary {
         border-radius: 12px;
         height: 59px;
         padding: 0 28px;
@@ -342,7 +345,7 @@ html {
           background: #5a4aa3;
         }
       }
-      .header__btn--secondary {
+      .hero__btn--secondary {
         border-radius: 12px;
         height: 59px;
         padding: 0 28px;
@@ -362,29 +365,29 @@ html {
         }
       }
     }
-    .header__reviews {
+    .hero__reviews {
       display: flex;
       gap: 12px;
       margin-top: 54px;
       width: 350px;
       overflow: hidden;
 
-      .header__review {
+      .hero__review {
         display: flex;
         align-items: center;
         gap: 20px;
 
-        .header__review-logo {
+        .hero__review-logo {
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
-        .header__review-stars {
+        .hero__review-stars {
           display: flex;
           gap: 4px;
           width: 96px;
         }
-        .header__review-counts {
+        .hero__review-counts {
           font-family: var(--font4), sans-serif;
           font-weight: 400;
           font-size: 16px;
@@ -395,26 +398,26 @@ html {
       }
     }
   }
-  .header__right-column {
+  .hero__right-column {
     display: flex;
     justify-content: center;
     align-content: center;
     position: relative;
 
-    .header__hero-food {
+    .hero__food-img {
       max-width: 449px;
       max-height: 456px;
       object-fit: contain;
       overflow: hidden;
     }
-    .header__spiral-arrow {
+    .hero__spiral-arrow {
       position: absolute;
       z-index: -1;
       top: 23%;
       right: 6%;
       transform: translateY(-50%);
     }
-    .header__order-preview {
+    .hero__order-preview {
       max-width: 329px;
       max-height: 90px;
       position: absolute;
@@ -425,7 +428,7 @@ html {
       box-shadow: -10px 12px 21px 0 rgba(0, 0, 0, 0.15);
       object-fit: contain;
     }
-    .header__hero-graph {
+    .hero__graph {
       max-width: 207px;
       max-height: 206px;
       position: absolute;
@@ -435,14 +438,14 @@ html {
       box-shadow: 13px -17px 28px 0 rgba(0, 0, 0, 0.15);
       object-fit: contain;
     }
-    .header__illustration-01 {
+    .hero_illustration-01 {
       position: absolute;
       z-index: -1;
       top: -15%;
       right: -8%;
       transform: translateY(-50%);
     }
-    .header__illustration-02 {
+    .hero__illustration-02 {
       position: absolute;
       z-index: -1;
       bottom: -13%;
@@ -488,7 +491,7 @@ html {
 /* Скачать приложение */
 .app-download__wrapper {
   padding: 120px 0;
-  border-bottom: 1px solid #cbcbcb;
+  border-bottom: 2px solid #cbcbcb;
 
   .app-download__mockup {
     .app-download__mobile-screen {
@@ -584,7 +587,7 @@ html {
 .our-restaurants__wrapper {
   padding-top: 100px;
   padding-bottom: 120px;
-  border-bottom: 1px solid #cbcbcb;
+  border-bottom: 2px solid #cbcbcb;
 
   .our-restaurants__title {
     font-family: var(--font-family), sans-serif;
@@ -600,9 +603,14 @@ html {
       max-width: 396px;
       border: none;
       border-radius: 30px;
-      box-shadow: 6px 71px 36px 0 rgba(229, 229, 229, 0.7);
+      box-shadow: 6px 71px 36px rgba(229, 229, 229, 0.7);
+      transition: transform .3s ease;
       position: relative;
       cursor: pointer;
+
+      &:hover {
+        transform: translateY(-10px);
+      }
 
       .card-img-top {
         border-radius: 30px 30px 0 0;
@@ -635,7 +643,7 @@ html {
 .our-dishes__wrapper {
   padding-top: 100px;
   padding-bottom: 120px;
-  border-bottom: 1px solid #cbcbcb;
+  border-bottom: 2px solid #cbcbcb;
 
   .our-dishes__title {
     font-family: var(--font-family), sans-serif;
@@ -657,6 +665,11 @@ html {
       box-shadow: 7px 82px 41px 0 rgba(229, 229, 229, 0.7);
       position: relative;
       cursor: pointer;
+      transition: transform .3s ease;
+
+      &:hover {
+        transform: translateY(-10px);
+      }
 
       .card-img-top {
         border-radius: 30px 30px 0 0;
@@ -685,10 +698,11 @@ html {
   }
 }
 
+/* Управление покупками */
 .purchases-control__wrapper {
   padding-top: 100px;
-  padding-bottom: 130px;
-  border-bottom: 1px solid #cbcbcb;
+  padding-bottom: 120px;
+  border-bottom: 2px solid #cbcbcb;
 
   .purchases-control__title {
     font-family: var(--font-family), sans-serif;
@@ -707,5 +721,56 @@ html {
     max-height: 466px;
     border-radius: 28px;
     box-shadow: 0 100px 100px -32px rgba(50, 49, 66, 0.2);
+  }
+}
+
+/* Отзывы клиентов */
+.reviews__wrapper {
+  padding-top: 100px;
+  padding-bottom: 120px;
+
+  /* Титул */
+  .reviews__title {
+    font-family: var(--font-family), sans-serif;
+    font-weight: 800;
+    font-size: 45px;
+    line-height: 57%;
+    color: #323142;;
+    margin-bottom: 62px;
+  }
+  /* Карточки карусели */
+  .reviews__item {
+    max-width: 375px;
+    padding: 28px 30px;
+    border: 2px solid #f4f4f6;
+    border-radius: 14px;
+
+    .reviews__header {
+      margin-bottom: 20px;
+
+      img {
+        width: 71px;
+        height: 71px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .reviews__author {
+        font-family: var(--font-family), sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 150%;
+        color: #030314;
+      }
+    }
+
+    .reviews__text {
+      font-family: var(--font-family), sans-serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 145%;
+      text-align: justify;
+      color: #636363;
+    }
   }
 }

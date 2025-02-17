@@ -211,21 +211,27 @@ html {
   transform: translateX(8px) translateY(-35%);
 }
 
-.nav {
-  padding: 1.5rem 0;
-  border-bottom: 1px solid #cbcbcb;
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  z-index: 100;
 }
-.nav .nav__wrapper {
-  width: 100%;
+
+.nav__wrapper {
+  padding: 1.5rem 0;
+  border-bottom: 2px solid #cbcbcb;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.nav .nav__left-side {
+.nav__wrapper .nav__left-side {
   display: flex;
   gap: 72px;
 }
-.nav .nav__left-side .nav__logo {
+.nav__wrapper .nav__left-side .nav__logo {
   position: relative;
   padding-left: 55px;
   font-family: var(--font-family), sans-serif;
@@ -235,7 +241,7 @@ html {
   color: #6c5fbc;
   cursor: pointer;
 }
-.nav .nav__left-side .nav__logo::before {
+.nav__wrapper .nav__left-side .nav__logo::before {
   content: "";
   display: inline-block;
   width: 46px;
@@ -246,13 +252,13 @@ html {
   right: 75px;
   transform: translateY(-45%);
 }
-.nav .nav__left-side .nav__menu {
+.nav__wrapper .nav__left-side .header__list {
   display: flex;
   list-style-type: none;
   margin: 0;
   gap: 38px;
 }
-.nav .nav__left-side .nav__menu .menu__item {
+.nav__wrapper .nav__left-side .header__list .menu__item {
   font-family: var(--second-family), sans-serif;
   font-weight: 500;
   font-size: 18px;
@@ -260,15 +266,15 @@ html {
   color: #606060;
   cursor: pointer;
 }
-.nav .nav__left-side .nav__menu .menu__item:hover {
+.nav__wrapper .nav__left-side .header__list .menu__item:hover {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-.nav .nav__right-side {
+.nav__wrapper .nav__right-side {
   display: flex;
   gap: 12px;
 }
-.nav .nav__right-side .nav__login {
+.nav__wrapper .nav__right-side .nav__login {
   font-family: var(--second-family), sans-serif;
   font-weight: 700;
   font-size: 18px;
@@ -281,10 +287,10 @@ html {
   cursor: pointer;
   transition: background-color 0.2s;
 }
-.nav .nav__right-side .nav__login:hover {
+.nav__wrapper .nav__right-side .nav__login:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
-.nav .nav__right-side .nav__sign-up {
+.nav__wrapper .nav__right-side .nav__sign-up {
   font-family: var(--second-family), sans-serif;
   font-weight: 700;
   font-size: 18px;
@@ -297,16 +303,15 @@ html {
   cursor: pointer;
   transition: background 0.2s;
 }
-.nav .nav__right-side .nav__sign-up:hover {
+.nav__wrapper .nav__right-side .nav__sign-up:hover {
   background: #5a4aa3;
 }
 
-.header__wrapper {
-  display: flex;
-  padding-top: 120px;
+.hero__wrapper {
+  padding-top: 254px;
   padding-bottom: 130px;
 }
-.header__wrapper .header__left-column .header__hero-text {
+.hero__wrapper .hero__left-column .hero__text {
   padding-left: 76px;
   font-family: var(--font-family), sans-serif;
   font-weight: 900;
@@ -317,7 +322,7 @@ html {
   color: rgba(32, 31, 31, 0.2);
   position: relative;
 }
-.header__wrapper .header__left-column .header__hero-text::before {
+.hero__wrapper .hero__left-column .hero__text::before {
   content: "";
   display: inline-block;
   width: 54px;
@@ -329,7 +334,7 @@ html {
   left: 0;
   transform: translateY(-50%);
 }
-.header__wrapper .header__left-column .header__title {
+.hero__wrapper .hero__left-column .hero__title {
   font-family: var(--font-family), sans-serif;
   font-weight: 900;
   font-size: 60px;
@@ -337,7 +342,7 @@ html {
   text-transform: capitalize;
   color: #201f1f;
 }
-.header__wrapper .header__left-column .header__subtitle {
+.hero__wrapper .hero__left-column .hero__subtitle {
   font-family: var(--second-family), sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -346,11 +351,11 @@ html {
   opacity: 0.7;
   margin-bottom: 54px;
 }
-.header__wrapper .header__left-column .header__buttons {
+.hero__wrapper .hero__left-column .hero__buttons {
   display: flex;
   gap: 18px;
 }
-.header__wrapper .header__left-column .header__buttons .header__btn--primary {
+.hero__wrapper .hero__left-column .hero__buttons .hero__btn--primary {
   border-radius: 12px;
   height: 59px;
   padding: 0 28px;
@@ -364,10 +369,10 @@ html {
   color: #fff;
   transition: background 0.3s;
 }
-.header__wrapper .header__left-column .header__buttons .header__btn--primary:hover {
+.hero__wrapper .hero__left-column .hero__buttons .hero__btn--primary:hover {
   background: #5a4aa3;
 }
-.header__wrapper .header__left-column .header__buttons .header__btn--secondary {
+.hero__wrapper .hero__left-column .hero__buttons .hero__btn--secondary {
   border-radius: 12px;
   height: 59px;
   padding: 0 28px;
@@ -381,33 +386,33 @@ html {
   color: #6c5fbc;
   transition: background 0.3s;
 }
-.header__wrapper .header__left-column .header__buttons .header__btn--secondary:hover {
+.hero__wrapper .hero__left-column .hero__buttons .hero__btn--secondary:hover {
   background: #6c5fbc;
   color: #fff;
 }
-.header__wrapper .header__left-column .header__reviews {
+.hero__wrapper .hero__left-column .hero__reviews {
   display: flex;
   gap: 12px;
   margin-top: 54px;
   width: 350px;
   overflow: hidden;
 }
-.header__wrapper .header__left-column .header__reviews .header__review {
+.hero__wrapper .hero__left-column .hero__reviews .hero__review {
   display: flex;
   align-items: center;
   gap: 20px;
 }
-.header__wrapper .header__left-column .header__reviews .header__review .header__review-logo {
+.hero__wrapper .hero__left-column .hero__reviews .hero__review .hero__review-logo {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.header__wrapper .header__left-column .header__reviews .header__review .header__review-stars {
+.hero__wrapper .hero__left-column .hero__reviews .hero__review .hero__review-stars {
   display: flex;
   gap: 4px;
   width: 96px;
 }
-.header__wrapper .header__left-column .header__reviews .header__review .header__review-counts {
+.hero__wrapper .hero__left-column .hero__reviews .hero__review .hero__review-counts {
   font-family: var(--font4), sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -415,26 +420,26 @@ html {
   color: #334155;
   opacity: 0.7;
 }
-.header__wrapper .header__right-column {
+.hero__wrapper .hero__right-column {
   display: flex;
   justify-content: center;
   align-content: center;
   position: relative;
 }
-.header__wrapper .header__right-column .header__hero-food {
+.hero__wrapper .hero__right-column .hero__food-img {
   max-width: 449px;
   max-height: 456px;
   object-fit: contain;
   overflow: hidden;
 }
-.header__wrapper .header__right-column .header__spiral-arrow {
+.hero__wrapper .hero__right-column .hero__spiral-arrow {
   position: absolute;
   z-index: -1;
   top: 23%;
   right: 6%;
   transform: translateY(-50%);
 }
-.header__wrapper .header__right-column .header__order-preview {
+.hero__wrapper .hero__right-column .hero__order-preview {
   max-width: 329px;
   max-height: 90px;
   position: absolute;
@@ -445,7 +450,7 @@ html {
   box-shadow: -10px 12px 21px 0 rgba(0, 0, 0, 0.15);
   object-fit: contain;
 }
-.header__wrapper .header__right-column .header__hero-graph {
+.hero__wrapper .hero__right-column .hero__graph {
   max-width: 207px;
   max-height: 206px;
   position: absolute;
@@ -455,14 +460,14 @@ html {
   box-shadow: 13px -17px 28px 0 rgba(0, 0, 0, 0.15);
   object-fit: contain;
 }
-.header__wrapper .header__right-column .header__illustration-01 {
+.hero__wrapper .hero__right-column .hero_illustration-01 {
   position: absolute;
   z-index: -1;
   top: -15%;
   right: -8%;
   transform: translateY(-50%);
 }
-.header__wrapper .header__right-column .header__illustration-02 {
+.hero__wrapper .hero__right-column .hero__illustration-02 {
   position: absolute;
   z-index: -1;
   bottom: -13%;
@@ -502,7 +507,7 @@ html {
 /* Скачать приложение */
 .app-download__wrapper {
   padding: 120px 0;
-  border-bottom: 1px solid #cbcbcb;
+  border-bottom: 2px solid #cbcbcb;
 }
 .app-download__wrapper .app-download__mockup .app-download__mobile-screen {
   position: relative;
@@ -590,7 +595,7 @@ html {
 .our-restaurants__wrapper {
   padding-top: 100px;
   padding-bottom: 120px;
-  border-bottom: 1px solid #cbcbcb;
+  border-bottom: 2px solid #cbcbcb;
 }
 .our-restaurants__wrapper .our-restaurants__title {
   font-family: var(--font-family), sans-serif;
@@ -605,9 +610,13 @@ html {
   max-width: 396px;
   border: none;
   border-radius: 30px;
-  box-shadow: 6px 71px 36px 0 rgba(229, 229, 229, 0.7);
+  box-shadow: 6px 71px 36px rgba(229, 229, 229, 0.7);
+  transition: transform 0.3s ease;
   position: relative;
   cursor: pointer;
+}
+.our-restaurants__wrapper .our-restaurants__restaurant .card:hover {
+  transform: translateY(-10px);
 }
 .our-restaurants__wrapper .our-restaurants__restaurant .card .card-img-top {
   border-radius: 30px 30px 0 0;
@@ -635,7 +644,7 @@ html {
 .our-dishes__wrapper {
   padding-top: 100px;
   padding-bottom: 120px;
-  border-bottom: 1px solid #cbcbcb;
+  border-bottom: 2px solid #cbcbcb;
 }
 .our-dishes__wrapper .our-dishes__title {
   font-family: var(--font-family), sans-serif;
@@ -657,6 +666,10 @@ html {
   box-shadow: 7px 82px 41px 0 rgba(229, 229, 229, 0.7);
   position: relative;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.our-dishes__wrapper .our-dishes__dish .card:hover {
+  transform: translateY(-10px);
 }
 .our-dishes__wrapper .our-dishes__dish .card .card-img-top {
   border-radius: 30px 30px 0 0;
@@ -680,10 +693,11 @@ html {
   color: #8e97a6;
 }
 
+/* Управление покупками */
 .purchases-control__wrapper {
   padding-top: 100px;
-  padding-bottom: 130px;
-  border-bottom: 1px solid #cbcbcb;
+  padding-bottom: 120px;
+  border-bottom: 2px solid #cbcbcb;
 }
 .purchases-control__wrapper .purchases-control__title {
   font-family: var(--font-family), sans-serif;
@@ -702,6 +716,53 @@ html {
   max-height: 466px;
   border-radius: 28px;
   box-shadow: 0 100px 100px -32px rgba(50, 49, 66, 0.2);
+}
+
+/* Отзывы клиентов */
+.reviews__wrapper {
+  padding-top: 100px;
+  padding-bottom: 120px;
+  /* Титул */
+  /* Карточки карусели */
+}
+.reviews__wrapper .reviews__title {
+  font-family: var(--font-family), sans-serif;
+  font-weight: 800;
+  font-size: 45px;
+  line-height: 57%;
+  color: #323142;
+  margin-bottom: 62px;
+}
+.reviews__wrapper .reviews__item {
+  max-width: 375px;
+  padding: 28px 30px;
+  border: 2px solid #f4f4f6;
+  border-radius: 14px;
+}
+.reviews__wrapper .reviews__item .reviews__header {
+  margin-bottom: 20px;
+}
+.reviews__wrapper .reviews__item .reviews__header img {
+  width: 71px;
+  height: 71px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.reviews__wrapper .reviews__item .reviews__header .reviews__author {
+  font-family: var(--font-family), sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  color: #030314;
+}
+.reviews__wrapper .reviews__item .reviews__text {
+  font-family: var(--font-family), sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 145%;
+  text-align: justify;
+  color: #636363;
 }
 
 /*# sourceMappingURL=style.css.map */

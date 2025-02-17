@@ -20,78 +20,86 @@
   <div class="container-sm">
 
     <!--  Навигация  -->
-    <nav class="nav">
-      <div class="nav__wrapper">
+    <div class="nav__wrapper">
 
-        <div class="nav__left-side">
-          <a href="index.html" class="nav__logo">eatly</a>
+      <div class="nav__left-side">
+        <a href="index.html" class="nav__logo">eatly</a>
 
-          <ul class="nav__menu">
+        <nav class="header__nav">
+          <ul class="header__list menu list-reset">
             <li class="menu__item"><a href="">Меню</a></li>
             <li class="menu__item"><a href="">Блог</a></li>
             <li class="menu__item"><a href="">Тарифы</a></li>
             <li class="menu__item"><a href="">Контакты</a></li>
           </ul>
-        </div>
-
-        <div class="nav__right-side">
-          <button class="nav__login"><a>Войти</a></button>
-          <button class="nav__sign-up"><a>Зарегистрироваться</a></button>
-        </div>
+        </nav>
 
       </div>
-    </nav>
 
-    <!--  Встречающий контент  -->
-    <div class="header__wrapper">
-
-      <div class="header__left-column col-6">
-        <p class="header__hero-text">БОЛЕЕ 1000 ПОЛЬЗОВАТЕЛЕЙ</p>
-
-        <h1 class="header__title mb-3">
-          Наслаждайтесь едой со всего
-          <span class="highlight--purple">Мира</span>
-        </h1>
-
-        <p class="header__subtitle">С EatLy вы можете ставить цели по сбережениям, получать кэшбэк, получить зарплату на 2 дня раньше (см.условия) и получите бонус <span class="highlight--purple">$20</span>.</p>
-
-        <div class="header__buttons">
-          <button class="header__btn--primary"><a href="">Приступить</a></button>
-          <button class="header__btn--secondary"><a href="">Выбрать Тариф</a></button>
-        </div>
-
-        <!-- Можно в будущем добавить несколько отзывов, которые будут затухать и меняться -->
-        <div class="header__reviews" aria-label="Отзывы">
-          <div class="header__review">
-            <img class="header__review-logo" src="img/trustpilot_logo.svg" alt="Trustpilot logo">
-
-            <div class="header__review-stars" aria-label="Рейтинг">
-              <img src="icons/full_star.svg" alt="star">
-              <img src="icons/full_star.svg" alt="star">
-              <img src="icons/full_star.svg" alt="star">
-              <img src="icons/full_star.svg" alt="star">
-              <img src="icons/full_star.svg" alt="star">
-            </div>
-
-            <div class="header__review-counts">
-              <span>4900+</span>
-            </div>
-          </div>
-        </div>
+      <div class="nav__right-side">
+        <button class="nav__login"><a>Войти</a></button>
+        <button class="nav__sign-up"><a>Зарегистрироваться</a></button>
       </div>
-      <div class="header__right-column col-6">
-        <img src="img/hero_food.png" alt="Hero Food" class="header__hero-food">
-        <img src="icons/spiral_arrow.svg" alt="Spiral Arrow" class="header__spiral-arrow">
-        <img src="img/order_preview.png" alt="Order Preview" class="header__order-preview">
-        <img src="img/hero_graph.png" alt="Hero Graph" class="header__hero-graph">
-        <img src="img/illustration_01.svg" alt="Illustration 01" class="header__illustration-01">
-        <img src="img/illustration_02.svg" alt="Illustration 02" class="header__illustration-02">
-      </div>
+
     </div>
 
   </div>
 </header>
+
 <main class="main">
+  <!--  Встречающий контент  -->
+  <section class="hero">
+    <div class="container-sm">
+      <div class="hero__wrapper row">
+
+        <div class="hero__left-column col-6">
+          <p class="hero__text">БОЛЕЕ 1000 ПОЛЬЗОВАТЕЛЕЙ</p>
+
+          <h1 class="hero__title mb-3">
+            Наслаждайтесь едой со всего
+            <span class="highlight--purple">Мира</span>
+          </h1>
+
+          <p class="hero__subtitle">С EatLy вы можете ставить цели по сбережениям, получать кэшбэк, получить зарплату на 2 дня раньше (см.условия) и получите бонус <span class="highlight--purple">$20</span>.</p>
+
+          <div class="hero__buttons">
+            <button class="hero__btn--primary"><a href="">Приступить</a></button>
+            <button class="hero__btn--secondary"><a href="">Выбрать Тариф</a></button>
+          </div>
+
+          <!-- Можно в будущем добавить несколько отзывов, которые будут затухать и меняться -->
+          <div class="hero__reviews" aria-label="Отзывы">
+            <div class="hero__review">
+              <img class="hero__review-logo" src="img/trustpilot_logo.svg" alt="Trustpilot logo">
+
+              <div class="hero__review-stars" aria-label="Рейтинг">
+                <img src="icons/full_star.svg" alt="star">
+                <img src="icons/full_star.svg" alt="star">
+                <img src="icons/full_star.svg" alt="star">
+                <img src="icons/full_star.svg" alt="star">
+                <img src="icons/full_star.svg" alt="star">
+              </div>
+
+              <div class="hero__review-counts">
+                <span>4900+</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__right-column col-6">
+          <img src="img/hero_food.png" alt="Hero Food" class="hero__food-img">
+          <img src="icons/spiral_arrow.svg" alt="Spiral Arrow" class="hero__spiral-arrow">
+          <img src="img/order_preview.png" alt="Order Preview" class="hero__order-preview">
+          <img src="img/hero_graph.png" alt="Hero Graph" class="hero__graph">
+          <img src="img/illustration_01.svg" alt="Illustration 01" class="hero_illustration-01">
+          <img src="img/illustration_02.svg" alt="Illustration 02" class="hero__illustration-02">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- Преимущества -->
   <section class="features">
     <div class="container-sm">
@@ -384,7 +392,6 @@
   <!-- Секция об контроле покупок -->
   <section class="purchases-control">
     <div class="container-sm">
-
       <div class="purchases-control__wrapper row align-items-center">
 
         <div class="purchases-control__left-column col-6 d-flex flex-column justify-content-start">
@@ -400,8 +407,105 @@
         <div class="purchase-control__right-column col-6 d-flex justify-content-end">
           <img src="img/purchases_control.png" alt="Purchases Control" class="purchases-control__second-image">
         </div>
-      </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- Секция с отзывами -->
+  <section class="reviews">
+    <div class="container-sm">
+      <div class="reviews__wrapper text-center">
+
+        <h2 class="reviews__title">
+          <span class="highlight--purple">Отзывы</span>
+          клиентов
+        </h2>
+
+        <div class="reviews__inner">
+          <div class="reviews__item">
+            <div class="reviews__header d-flex">
+              <img src="img/review_author.png" alt="Review 01" class="reviews__author-img">
+
+              <div class="reviews__info">
+                <h5 class="reviews__author">Иван Иванов</h5>
+                <p class="review__slogan">1 Year With Us</p>
+              </div>
+
+            </div>
+
+            <div class="reviews__body">
+              <p class="reviews__text">
+                "Оплата счетов онлайн помогает компаниям экономить время, ускоряет процесс и снижает затраты усилий для
+                клиентов. Оплата счетов онлайн позволяет максимально сократить затраты времени."
+              </p>
+
+              <div class="reviews__stars">
+                <img src="icons/full_star.svg" alt="Full star">
+                <img src="icons/full_star.svg" alt="Full star">
+                <img src="icons/full_star.svg" alt="Full star">
+                <img src="icons/full_star.svg" alt="Full star">
+                <img src="icons/full_star.svg" alt="Full star">
+              </div>
+            </div>
+          </div>
+
+          <div class="reviews__item">
+            <div class="reviews__header d-flex">
+              <img src="img/review_author.png" alt="Review 01" class="reviews__author-img">
+
+              <div class="reviews__info">
+                <h5 class="reviews__author">Иван Иванов</h5>
+                <p class="review__slogan">1 Year With Us</p>
+              </div>
+
+            </div>
+
+            <div class="reviews__body">
+              <p class="reviews__text">
+                "Оплата счетов онлайн помогает компаниям экономить время, ускоряет процесс и снижает затраты усилий для
+                клиентов. Оплата счетов онлайн позволяет максимально сократить затраты времени."
+              </p>
+
+              <div class="reviews__stars">
+                <img src="icons/full_star.svg" alt="Full star">
+                <img src="icons/full_star.svg" alt="Full star">
+                <img src="icons/full_star.svg" alt="Full star">
+                <img src="icons/full_star.svg" alt="Full star">
+                <img src="icons/full_star.svg" alt="Full star">
+              </div>
+            </div>
+          </div>
+
+          <div class="reviews__item">
+            <div class="reviews__header d-flex">
+              <img src="img/review_author.png" alt="Review 01" class="reviews__author-img">
+
+              <div class="reviews__info">
+                <h5 class="reviews__author">Иван Иванов</h5>
+                <p class="review__slogan">1 Year With Us</p>
+              </div>
+
+            </div>
+
+            <div class="reviews__body">
+              <p class="reviews__text">
+                "Оплата счетов онлайн помогает компаниям экономить время, ускоряет процесс и снижает затраты усилий для
+                клиентов. Оплата счетов онлайн позволяет максимально сократить затраты времени."
+              </p>
+
+              <div class="reviews__stars">
+                <img src="icons/full_star.svg" alt="Full star">
+                <img src="icons/full_star.svg" alt="Full star">
+                <img src="icons/full_star.svg" alt="Full star">
+                <img src="icons/full_star.svg" alt="Full star">
+                <img src="icons/full_star.svg" alt="Full star">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 </main>
