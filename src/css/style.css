@@ -226,6 +226,7 @@ html {
   --sb-size: 11px;
 }
 .purple-scrollbar::-webkit-scrollbar {
+  width: var(--sb-size);
   height: var(--sb-size);
 }
 .purple-scrollbar::-webkit-scrollbar-track {
