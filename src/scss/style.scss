@@ -4,6 +4,7 @@
   --font-family: "Manrope";
   --second-family: "Inter";
   --font4: "Public Sans", sans-serif;
+  --font5: "Quicksand", sans-serif;
   --font6: "Plus Jakarta Sans", sans-serif;
 }
 
@@ -168,6 +169,31 @@ html {
     &::after {
       transform: translateX(8px) translateY(-35%);
     }
+  }
+}
+
+/* Фиолетовый скроллбар */
+.purple-scrollbar {
+  --sb-track-color: rgba(108, 95, 188, 0.2);
+  --sb-thumb-color: #6c5fbc;
+  --sb-size: 11px;
+
+  &::-webkit-scrollbar {
+    height: var(--sb-size)
+  }
+  &::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 50px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 50px;
+  }
+}
+@supports not selector(::-webkit-scrollbar) {
+  .purple-scrollbar {
+    scrollbar-color: var(--sb-thumb-color)
+    var(--sb-track-color);
   }
 }
 
@@ -729,6 +755,15 @@ html {
   padding-top: 100px;
   padding-bottom: 120px;
 
+  /* Карусель со слайдером */
+  .reviews__inner {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 30px;
+  }
+
   /* Титул */
   .reviews__title {
     font-family: var(--font-family), sans-serif;
@@ -736,14 +771,15 @@ html {
     font-size: 45px;
     line-height: 57%;
     color: #323142;;
-    margin-bottom: 62px;
+    margin-bottom: 80px;
   }
   /* Карточки карусели */
   .reviews__item {
-    max-width: 375px;
-    padding: 28px 30px;
-    border: 2px solid #f4f4f6;
+    min-width: 530px;
+    padding: 38px 43px;
+    border: 2px solid rgba(108, 95, 188, 0.2);
     border-radius: 14px;
+    scroll-snap-align: start;
 
     .reviews__header {
       margin-bottom: 20px;
@@ -754,22 +790,32 @@ html {
         border-radius: 50%;
         object-fit: cover;
       }
+      .reviews__info {
+        margin-left: 20px;
+      }
       .reviews__author {
         font-family: var(--font-family), sans-serif;
         font-weight: 500;
-        font-size: 14px;
+        font-size: 20px;
         line-height: 150%;
         color: #030314;
+      }
+      .review__slogan {
+        font-family: var(--font5), sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 156%;
+        text-transform: capitalize;
+        color: #5e5d5d;
       }
     }
 
     .reviews__text {
       font-family: var(--font-family), sans-serif;
-      font-style: italic;
+      font-style: normal;
       font-weight: 400;
-      font-size: 12px;
-      line-height: 145%;
-      text-align: justify;
+      font-size: 18px;
+      line-height: 1.4;
       color: #636363;
     }
   }

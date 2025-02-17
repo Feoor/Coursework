@@ -27,10 +27,18 @@
   font-weight: 100 900;
   src: url("../fonts/Public_Sans/PublicSans-VariableFont_wght.ttf") format("truetype");
 }
+/* Fonts Quicksand */
+@font-face {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 100 700;
+  src: url("../fonts/Quicksand/Quicksand-VariableFont_wght.ttf") format("truetype");
+}
 :root {
   --font-family: "Manrope";
   --second-family: "Inter";
   --font4: "Public Sans", sans-serif;
+  --font5: "Quicksand", sans-serif;
   --font6: "Plus Jakarta Sans", sans-serif;
 }
 
@@ -211,6 +219,29 @@ html {
   transform: translateX(8px) translateY(-35%);
 }
 
+/* Фиолетовый скроллбар */
+.purple-scrollbar {
+  --sb-track-color: rgba(108, 95, 188, 0.2);
+  --sb-thumb-color: #6c5fbc;
+  --sb-size: 11px;
+}
+.purple-scrollbar::-webkit-scrollbar {
+  height: var(--sb-size);
+}
+.purple-scrollbar::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 50px;
+}
+.purple-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 50px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .purple-scrollbar {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
 .header {
   position: fixed;
   top: 0;
@@ -722,8 +753,16 @@ html {
 .reviews__wrapper {
   padding-top: 100px;
   padding-bottom: 120px;
+  /* Карусель со слайдером */
   /* Титул */
   /* Карточки карусели */
+}
+.reviews__wrapper .reviews__inner {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 30px;
 }
 .reviews__wrapper .reviews__title {
   font-family: var(--font-family), sans-serif;
@@ -731,13 +770,14 @@ html {
   font-size: 45px;
   line-height: 57%;
   color: #323142;
-  margin-bottom: 62px;
+  margin-bottom: 80px;
 }
 .reviews__wrapper .reviews__item {
-  max-width: 375px;
-  padding: 28px 30px;
-  border: 2px solid #f4f4f6;
+  min-width: 530px;
+  padding: 38px 43px;
+  border: 2px solid rgba(108, 95, 188, 0.2);
   border-radius: 14px;
+  scroll-snap-align: start;
 }
 .reviews__wrapper .reviews__item .reviews__header {
   margin-bottom: 20px;
@@ -748,20 +788,30 @@ html {
   border-radius: 50%;
   object-fit: cover;
 }
+.reviews__wrapper .reviews__item .reviews__header .reviews__info {
+  margin-left: 20px;
+}
 .reviews__wrapper .reviews__item .reviews__header .reviews__author {
   font-family: var(--font-family), sans-serif;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 20px;
   line-height: 150%;
   color: #030314;
 }
+.reviews__wrapper .reviews__item .reviews__header .review__slogan {
+  font-family: var(--font5), sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 156%;
+  text-transform: capitalize;
+  color: #5e5d5d;
+}
 .reviews__wrapper .reviews__item .reviews__text {
   font-family: var(--font-family), sans-serif;
-  font-style: italic;
+  font-style: normal;
   font-weight: 400;
-  font-size: 12px;
-  line-height: 145%;
-  text-align: justify;
+  font-size: 18px;
+  line-height: 1.4;
   color: #636363;
 }
 
