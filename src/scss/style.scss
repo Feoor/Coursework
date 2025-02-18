@@ -8,6 +8,7 @@
   --font6: "Plus Jakarta Sans", sans-serif;
 }
 
+/* Базовые стили */
 * {
   margin: 0;
   padding: 0;
@@ -21,7 +22,7 @@ html {
   font-family: var(--second-family), sans-serif;
 }
 
-/* Базовые стили */
+/* Базовые классы */
 .highlight--purple {
   color: #6c5fbc;
 }
@@ -152,8 +153,8 @@ html {
   color: #acadb9;
 
   &::after {
-    content: "";
     display: inline-block;
+    content: "";
     width: 30px;
     height: 30px;
     background: url("../icons/gray_right_arrow.svg") no-repeat;
@@ -228,8 +229,8 @@ html {
       cursor: pointer;
 
       &::before {
-        content: "";
         display: inline-block;
+        content: "";
         width: 46px;
         height: 46px; /* Добавлено свойство height */
         background: url("../../icon.svg") no-repeat;
@@ -320,8 +321,8 @@ html {
       position: relative;
 
       &::before {
-        content: "";
         display: inline-block;
+        content: "";
         width: 54px;
         height: 0;
         border: 1px solid rgba(32, 31, 31, 0.2);
@@ -528,8 +529,8 @@ html {
       object-fit: contain;
 
       &::after {
-        content: "";
         display: inline-block;
+        content: "";
         width: 52px;
         height: 62px;
         background: url("../img/illustration_02.svg") no-repeat;
@@ -579,10 +580,11 @@ html {
       text-transform: capitalize;
       text-align: center;
       color: #fff;
+      transition: background .3s;
 
       &::after {
-        content: "";
         display: inline-block;
+        content: "";
         width: 30px;
         height: 30px;
         background: url("../icons/right_arrow.svg") no-repeat;
@@ -592,12 +594,9 @@ html {
         transform: translateY(-45%);
         transition: transform .2s;
       }
-      &:hover::after {
-        transform: translateX(8px) translateY(-45%);
-      }
       &::before {
-        content: "";
         display: inline-block;
+        content: "";
         width: 169px;
         height: 61px;
         background: url("../img/long_spiral.svg") no-repeat;
@@ -605,6 +604,12 @@ html {
         z-index: -1;
         bottom: -80%;
         right: -85%;
+      }
+      &:hover {
+        background: #5a4aa3;
+      }
+      &:hover::after {
+        transform: translateX(8px) translateY(-45%);
       }
     }
   }
@@ -759,7 +764,7 @@ html {
   /* Карусель со слайдером */
   .reviews__inner {
     display: flex;
-    gap: 30px;
+    gap: 48px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     padding-bottom: 30px;
@@ -820,4 +825,88 @@ html {
       color: #636363;
     }
   }
+}
+
+/* Секция с купоном */
+.sale {
+  padding-top: 100px;
+  padding-bottom: 120px;
+}
+.sale__wrapper {
+  width: 100%;
+  height: 280px;
+  padding: 40px 65px;
+  border-radius: 30px;
+  background: #6c5fbc url("../img/sale_bg.jpg");
+  background-size: cover;
+  position: relative;
+
+  &::after {
+    display: inline-block;
+    content: "";
+    width: 274px;
+    height: 276px;
+    background: url("../img/swe_dish.png") no-repeat;
+    background-size: contain;
+    position: absolute;
+    bottom: -25%;
+    right: 5%;
+  }
+  .sale__title {
+    font-family: var(--font-family), sans-serif;
+    font-weight: 900;
+    font-size: 60px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 38px;
+  }
+  /* Стили текста для формы */
+  .sale__form {
+    font-family: var(--font-family), sans-serif;
+    font-weight: 600;
+    color: #878787;
+    opacity: 0.8;
+
+    .form-floating {
+      position: relative;
+    }
+    .sale__email-input {
+      border-radius: 14px;
+      height: 68px;
+      padding-right: 180px;
+      font-family: var(--font-family), sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #323142;
+      background-color: #fff;
+    }
+    .subscribe__btn {
+      position: absolute;
+      top: 0; right: 8px; bottom: 0;
+      margin: auto;
+      border-radius: 11px;
+      height: 53px;
+      padding: 0 24px;
+      background: #6c5fbc;
+      border: none;
+      font-family: var(--font-family), sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 125%;
+      text-transform: capitalize;
+      text-align: center;
+      color: #fff;
+      transition: background .3s;
+
+      &:hover {
+        background: #5a4aa3;
+      }
+    }
+  }
+}
+
+/* Подвал */
+.footer {
+  padding-top: 68px;
+  padding-bottom: 56px;
+  background: #eaeaea;
 }
