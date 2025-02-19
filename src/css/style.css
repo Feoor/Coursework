@@ -59,6 +59,35 @@ html {
 }
 
 /* Базовые классы */
+.eatly-logo {
+  position: relative;
+  padding-left: 55px;
+  /* Логотип */
+}
+.eatly-logo::before {
+  display: inline-block;
+  content: "";
+  width: 46px;
+  height: 46px;
+  background: url("../../icon.svg") no-repeat;
+  position: absolute;
+  top: 50%;
+  right: 68px;
+  transform: translateY(-45%);
+}
+
+.menu .menu__item {
+  font-family: var(--second-family), sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  cursor: pointer;
+}
+.menu .menu__item:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .highlight--purple {
   color: #6c5fbc;
 }
@@ -253,20 +282,18 @@ html {
   z-index: 100;
 }
 
-.nav__wrapper {
+.header__wrapper {
   padding: 1.5rem 0;
   border-bottom: 2px solid #cbcbcb;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.nav__wrapper .nav__left-side {
+.header__wrapper .header__left-side {
   display: flex;
   gap: 72px;
 }
-.nav__wrapper .nav__left-side .nav__logo {
-  position: relative;
-  padding-left: 55px;
+.header__wrapper .header__left-side .header__logo {
   font-family: var(--font-family), sans-serif;
   font-weight: 900;
   font-size: 24px;
@@ -274,40 +301,18 @@ html {
   color: #6c5fbc;
   cursor: pointer;
 }
-.nav__wrapper .nav__left-side .nav__logo::before {
-  display: inline-block;
-  content: "";
-  width: 46px;
-  height: 46px; /* Добавлено свойство height */
-  background: url("../../icon.svg") no-repeat;
-  position: absolute;
-  top: 50%;
-  right: 75px;
-  transform: translateY(-45%);
-}
-.nav__wrapper .nav__left-side .header__list {
+.header__wrapper .header__left-side .header__list {
   display: flex;
   list-style-type: none;
   margin: 0;
   gap: 38px;
-}
-.nav__wrapper .nav__left-side .header__list .menu__item {
-  font-family: var(--second-family), sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 150%;
   color: #606060;
-  cursor: pointer;
 }
-.nav__wrapper .nav__left-side .header__list .menu__item:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-.nav__wrapper .nav__right-side {
+.header__wrapper .header__right-side {
   display: flex;
   gap: 12px;
 }
-.nav__wrapper .nav__right-side .nav__login {
+.header__wrapper .header__right-side .header__login {
   font-family: var(--second-family), sans-serif;
   font-weight: 700;
   font-size: 18px;
@@ -320,10 +325,10 @@ html {
   cursor: pointer;
   transition: background-color 0.2s;
 }
-.nav__wrapper .nav__right-side .nav__login:hover {
+.header__wrapper .header__right-side .header__login:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
-.nav__wrapper .nav__right-side .nav__sign-up {
+.header__wrapper .header__right-side .header__sign-up {
   font-family: var(--second-family), sans-serif;
   font-weight: 700;
   font-size: 18px;
@@ -336,7 +341,7 @@ html {
   cursor: pointer;
   transition: background 0.2s;
 }
-.nav__wrapper .nav__right-side .nav__sign-up:hover {
+.header__wrapper .header__right-side .header__sign-up:hover {
   background: #5a4aa3;
 }
 
@@ -901,8 +906,58 @@ html {
 /* Подвал */
 .footer {
   padding-top: 68px;
-  padding-bottom: 56px;
+  padding-bottom: 40px;
   background: #eaeaea;
+}
+.footer .footer__top {
+  padding-bottom: 36px;
+  border-bottom: 2px solid #cbcbcb;
+}
+.footer .footer__top .footer__logo {
+  font-family: var(--font-family), sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 130%;
+  color: #6c5fbc;
+  cursor: pointer;
+}
+.footer .footer__top .footer__list {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  gap: 38px;
+  color: #999;
+}
+.footer .footer__bottom {
+  padding-top: 56px;
+}
+.footer .footer__bottom .footer__copyright p {
+  font-family: var(--second-family), sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 147%;
+  color: #999;
+  margin-bottom: 0;
+}
+.footer .footer__bottom .footer__socials {
+  display: flex;
+  gap: 20px;
+}
+.footer .footer__bottom .footer__socials .footer__social-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s;
+  color: #081420;
+}
+.footer .footer__bottom .footer__socials .footer__social-link:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #6c5fbc;
 }
 
 /*# sourceMappingURL=style.css.map */

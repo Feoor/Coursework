@@ -23,6 +23,37 @@ html {
 }
 
 /* Базовые классы */
+.eatly-logo {
+  position: relative;
+  padding-left: 55px;
+
+  /* Логотип */
+  &::before {
+    display: inline-block;
+    content: "";
+    width: 46px;
+    height: 46px;
+    background: url("../../icon.svg") no-repeat;
+    position: absolute;
+    top: 50%;
+    right: 68px;
+    transform: translateY(-45%);
+  }
+}
+.menu {
+  .menu__item {
+    font-family: var(--second-family), sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  }
+}
 .highlight--purple {
   color: #6c5fbc;
 }
@@ -207,38 +238,24 @@ html {
   background: #fff;
   z-index: 100;
 }
-.nav__wrapper {
+.header__wrapper {
   padding: 1.5rem 0;
   border-bottom: 2px solid #cbcbcb;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  .nav__left-side {
+  .header__left-side {
     display: flex;
     gap: 72px;
 
-    .nav__logo {
-      position: relative;
-      padding-left: 55px;
+    .header__logo {
       font-family: var(--font-family), sans-serif;
       font-weight: 900;
       font-size: 24px;
       line-height: 130%;
       color: #6c5fbc;
       cursor: pointer;
-
-      &::before {
-        display: inline-block;
-        content: "";
-        width: 46px;
-        height: 46px; /* Добавлено свойство height */
-        background: url("../../icon.svg") no-repeat;
-        position: absolute;
-        top: 50%;
-        right: 75px;
-        transform: translateY(-45%);
-      }
     }
 
     .header__list {
@@ -246,28 +263,15 @@ html {
       list-style-type: none;
       margin: 0;
       gap: 38px;
-
-      .menu__item {
-        font-family: var(--second-family), sans-serif;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 150%;
-        color: #606060;
-        cursor: pointer;
-
-        &:hover {
-          text-decoration: underline;
-          text-underline-offset: 3px;
-        }
-      }
+      color: #606060;
     }
   }
 
-  .nav__right-side {
+  .header__right-side {
     display: flex;
     gap: 12px;
 
-    .nav__login {
+    .header__login {
       font-family: var(--second-family), sans-serif;
       font-weight: 700;
       font-size: 18px;
@@ -284,7 +288,7 @@ html {
         background-color: rgba(0, 0, 0, 0.05);
       }
     }
-    .nav__sign-up {
+    .header__sign-up {
         font-family: var(--second-family), sans-serif;
         font-weight: 700;
         font-size: 18px;
@@ -907,6 +911,62 @@ html {
 /* Подвал */
 .footer {
   padding-top: 68px;
-  padding-bottom: 56px;
+  padding-bottom: 40px;
   background: #eaeaea;
+
+  .footer__top {
+    padding-bottom: 36px;
+    border-bottom: 2px solid #cbcbcb;
+
+    .footer__logo {
+      font-family: var(--font-family), sans-serif;
+      font-weight: 900;
+      font-size: 24px;
+      line-height: 130%;
+      color: #6c5fbc;
+      cursor: pointer;
+    }
+    .footer__list {
+      display: flex;
+      list-style-type: none;
+      margin: 0;
+      gap: 38px;
+      color: #999;
+    }
+  }
+
+  .footer__bottom {
+    padding-top: 56px;
+
+    .footer__copyright p {
+      font-family: var(--second-family), sans-serif;
+      font-weight: 500;
+      font-size: 17px;
+      line-height: 147%;
+      color: #999;
+      margin-bottom: 0;
+    }
+    .footer__socials {
+      display: flex;
+      gap: 20px;
+
+      .footer__social-link {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: background .3s;
+        color: #081420;
+
+        &:hover {
+          background: rgba(0, 0, 0, 0.05);
+          color: #6c5fbc;
+        }
+      }
+    }
+  }
 }
