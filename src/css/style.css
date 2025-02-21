@@ -34,6 +34,10 @@
   font-weight: 100 700;
   src: url("../fonts/Quicksand/Quicksand-VariableFont_wght.ttf") format("truetype");
 }
+.food-filter__wrapper {
+  padding-top: 250px;
+}
+
 :root {
   --font-family: "Manrope";
   --second-family: "Inter";
