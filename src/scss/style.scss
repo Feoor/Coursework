@@ -58,6 +58,9 @@ html {
 .highlight--purple {
   color: #6c5fbc;
 }
+.text-muted {
+  color: #7c6fcd !important;
+}
 .price--cents {
   font-family: var(--font-family), sans-serif;
   font-weight: 700;
@@ -538,7 +541,7 @@ html {
         content: "";
         width: 52px;
         height: 62px;
-        background: url("../img/illustration_02.svg") no-repeat;
+        background: url("../icons/illustration_02.svg") no-repeat;
         position: absolute;
         top: -35px;
         right: -60px;

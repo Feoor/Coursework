@@ -50,24 +50,73 @@
     <div class="container-sm">
         <section class="food-filter">
             <div class="container">
-                <div class="food-filter__wrapper row">
+                <div class="food-filter__wrapper row justify-content-between g-1">
 
                     <!-- Левая колонка -->
-                    <div class="food-filter__left-column col-12 col-md-8">
+                    <div class="food-filter__left-column col-12 col-md-7 d-flex flex-column">
                         <!-- Баннер -->
                         <div class="food-filter__promo-banner">
-                            Баннер (50% OFF)
+                            <h2 class="promo-banner__title">
+                                СКИДКА 50%
+                                <br><span class="text-muted">НА ВЫХОДНЫХ</span>
+                            </h2>
                         </div>
+
                         <!-- Поиск -->
                         <div class="food-filter__search">
-                            Поиск (Search)
+                            <div class="form-floating">
+                                <input type="text" class="food-filter__search-input form-control" placeholder="Поиск" id="foodFilterSearchInput">
+                                <label for="foodFilterSearchInput">Поиск</label>
+                            </div>
+
+                            <div class="food-filter__buttons row g-0">
+                                <button class="food-filter__btn food-filter__btn--active col-4" data-filter="all">Все</button>
+                                <button class="food-filter__btn col-4" data-filter="restaurants">Рестораны</button>
+                                <button class="food-filter__btn col-4" data-filter="dishes">Блюда</button>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Правая колонка (фильтры) -->
                     <div class="food-filter__right-column col-12 col-md-4">
                         <div class="food-filter__filter-panel">
-                            Фильтр (панель справа)
+
+                            <!-- Фильтр по категориям -->
+                            <div class="filter-panel__category">
+                                <div class="filter-panel__category-title">Категории</div>
+                                <div class="filter-panel__category-list row g-3">
+                                    <div class="col-3">
+                                        <button class="filter-panel__category-item">Pizza</button>
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="filter-panel__category-item filter-panel__category-item--active">Asian</button>
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="filter-panel__category-item">Donat</button>
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="filter-panel__category-item">Ice</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Фильтр по сортировке -->
+                            <div class="filter-panel__sort">
+                                <div class="filter-panel__sort-title">Сортировать По</div>
+                                <div class="filter-panel__sort-list">
+                                    <div class="filter-panel__sort-item"></div>
+                                    <div class="filter-panel__sort-item"></div>
+                                    <div class="filter-panel__sort-item"></div>
+                                </div>
+                            </div>
+
+                            <!-- Фильтр по цене -->
+                            <div class="filter-panel__price">
+                                <div class="filter-panel__price-title">Цена</div>
+                                <div class="filter-panel__price-slider"></div>
+                            </div>
+
+                            <button class="filter-panel__btn w-100">Применить</button>
                         </div>
                     </div>
 
@@ -88,9 +137,9 @@
 
                 <div class="footer__nav">
                     <ul class="footer__list menu list-reset">
-                        <li class="menu__item"><a href="#">Блог</a></li>
+                        <li class="menu__item"><a href="">Блог</a></li>
                         <li class="menu__item"><a href="">Цены</a></li>
-                        <li class="menu__item"><a href="">О нас</a></li>
+                        <li class="menu__item"><a href="../index.html">О нас</a></li>
                         <li class="menu__item"><a href="">Контакты</a></li>
                     </ul>
                 </div>
@@ -103,6 +152,7 @@
 
                 <div class="footer__socials">
 
+                    <!-- Инстаграмм -->
                     <a href="" class="footer__social-link" aria-label="Instagram">
                         <svg width="22" height="22" viewBox="0 0 22 22" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M10.7721 0C12.1916 0.0506994 13.6618 0.0506994 15.0812 0.101392C16.3486 0.152085 17.5146 0.354867 18.6299 1.0139C20.0494 1.87572 20.9112 3.14309 21.2154 4.76533C21.3674 5.72853 21.4181 6.74243 21.4688 7.70564C21.5195 9.83483 21.4688 11.964 21.4688 14.0932C21.4688 15.2085 21.4181 16.3238 21.0633 17.3884C20.3535 19.4669 18.8834 20.7342 16.7542 21.1398C15.791 21.3426 14.7771 21.3426 13.8139 21.3933C11.6846 21.444 9.60615 21.3933 7.47694 21.3933C6.36165 21.3933 5.24635 21.3426 4.18176 20.9877C2.10325 20.278 0.835867 18.8078 0.430303 16.6786C0.227525 15.7154 0.227525 14.7015 0.176829 13.7383C0.126131 11.6091 0.176829 9.47996 0.176829 7.35077C0.176829 6.23549 0.227525 5.1202 0.582391 4.05559C1.29213 1.9771 2.76229 0.709734 4.89148 0.304173C5.8547 0.101399 6.8686 0.101399 7.83181 0.0506994C8.79502 0 9.75823 0 10.7721 0ZM19.5426 10.4939C19.4919 10.4939 19.5426 10.4939 19.5426 10.4939C19.4919 9.6321 19.4919 8.82097 19.4919 7.95916C19.4919 7.14805 19.4412 6.33692 19.3398 5.52581C19.137 3.70078 18.0724 2.4841 16.2981 2.12924C15.3855 1.92646 14.3716 1.92646 13.4591 1.92646C11.6341 1.87577 9.85976 1.87577 8.03473 1.92646C7.12222 1.92646 6.2097 1.97715 5.34788 2.12924C3.82702 2.38271 2.76243 3.24453 2.30617 4.76538C2.15408 5.27233 2.10339 5.77928 2.05269 6.28623C2.002 8.21264 2.002 10.139 2.002 12.0655C2.002 13.2821 2.05269 14.5495 2.15408 15.7662C2.30617 17.5912 3.42146 18.8586 5.2465 19.1627C6.159 19.3148 7.12222 19.3655 8.08543 19.3655C9.85976 19.4162 11.6341 19.3655 13.4591 19.3655C14.2703 19.3655 15.0814 19.3148 15.8925 19.2134C16.6529 19.1627 17.3627 18.9093 17.971 18.4023C18.9849 17.5912 19.3398 16.5266 19.3905 15.3099C19.4919 13.7891 19.4919 12.1668 19.5426 10.4939Z" fill="currentColor"/>
@@ -111,18 +161,21 @@
                         </svg>
                     </a>
 
+                    <!-- LinkedIn -->
                     <a href="" class="footer__social-link" aria-label="LinkedIn">
                         <svg width="22" height="21" viewBox="0 0 22 21" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M21.6325 12.4811V20.3602H17.0315V12.9987C17.0315 11.1583 16.3989 9.89304 14.731 9.89304C13.4658 9.89304 12.7181 10.7557 12.373 11.5609C12.258 11.8484 12.2005 12.251 12.2005 12.6536V20.3602H7.59952C7.59952 20.3602 7.65703 7.88013 7.59952 6.61487H12.2005V8.57027C12.2005 8.57027 12.2005 8.62777 12.143 8.62777H12.2005V8.57027C12.8331 7.65008 13.8684 6.26979 16.3414 6.26979C19.332 6.26979 21.6325 8.28271 21.6325 12.4811ZM2.88298 0.000976562C1.33014 0.000976562 0.294922 1.03619 0.294922 2.35897C0.294922 3.68174 1.27263 4.71697 2.82546 4.71697H2.88298C4.49333 4.71697 5.47103 3.68175 5.47103 2.35897C5.41352 1.03619 4.43581 0.000976562 2.88298 0.000976562ZM0.525568 20.3602H5.06905V6.61489H0.525568V20.3602Z" fill="currentColor"/>
                         </svg>
                     </a>
 
+                    <!-- Facebook -->
                     <a href="" class="footer__social-link" aria-label="Facebook">
                         <svg width="11" height="22" viewBox="0 0 11 22" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M9.95256 10.6695H6.97166V21.338H2.52644V12.415V10.6695H0.43457V6.90414H2.52644V4.4462C2.52644 2.72041 3.36319 0.000976562 6.97166 0.000976562H10.2663V3.66174H7.913C7.54692 3.66174 6.97166 3.87094 6.97166 4.70768V6.90414H10.3186L9.95256 10.6695Z" fill="currentColor"/>
                         </svg>
                     </a>
 
+                    <!-- Twitter -->
                     <a href="" class="footer__social-link" aria-label="Twitter">
                         <svg width="22" height="19" viewBox="0 0 22 19" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M21.6154 2.82596C20.8121 3.1774 20.0088 3.42842 19.1052 3.52883C20.0088 2.97658 20.7117 2.1231 21.0129 1.11901C20.1595 1.62106 19.2056 1.97249 18.2517 2.1733C17.4484 1.31982 16.2937 0.767578 15.0386 0.767578C12.6287 0.767578 10.6707 2.72555 10.6707 5.13537C10.6707 5.48681 10.7209 5.83823 10.7711 6.13947C7.10619 5.93865 3.89307 4.23169 1.73426 1.57085C1.33262 2.22351 1.1318 2.97658 1.1318 3.77985C1.1318 5.28599 1.88488 6.64151 3.08979 7.44478C2.38692 7.44478 1.68406 7.24397 1.0816 6.89253V6.94273C1.0816 9.05133 2.58774 10.8587 4.59594 11.2603C4.2445 11.3607 3.84287 11.4109 3.44122 11.4109C3.14 11.4109 2.88897 11.3607 2.63795 11.3105C3.1902 13.0677 4.79676 14.3228 6.75475 14.373C5.2486 15.5277 3.39102 16.2306 1.33262 16.2306C0.981189 16.2306 0.629757 16.2306 0.27832 16.1804C2.23631 17.4355 4.49553 18.1383 7.00577 18.1383C15.0888 18.1383 19.4566 11.4611 19.4566 5.68762C19.4566 5.48681 19.4566 5.28599 19.4566 5.13537C20.3101 4.48272 21.0631 3.67944 21.6154 2.82596Z" fill="currentColor"/>
