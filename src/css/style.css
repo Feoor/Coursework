@@ -133,9 +133,18 @@
   font-size: 18px;
   text-align: center;
   color: #6c5fbc;
+  transition: 0.2s background-color, 0.2s color;
+}
+.food-filter__wrapper .food-filter__search .food-filter__buttons .food-filter__btn:hover {
+  background: #6c5fbc;
+  color: #f7f8fa;
 }
 .food-filter__wrapper .food-filter__search .food-filter__buttons .food-filter__btn--active {
   background: #6c5fbc;
+  color: #f7f8fa;
+}
+.food-filter__wrapper .food-filter__search .food-filter__buttons .food-filter__btn--active:hover {
+  background: #5a4aa3;
   color: #f7f8fa;
 }
 .food-filter__wrapper .food-filter__search .food-filter__buttons button:last-child {
@@ -178,7 +187,7 @@
   font-size: 14px;
   text-align: center;
   color: #d69900;
-  transition: 0.3s all;
+  transition: 0.2s all;
 }
 .food-filter__wrapper .food-filter__filter-panel .filter-panel__category-list .filter-panel__category-item::after {
   display: inline-block;
@@ -195,8 +204,45 @@
 }
 .food-filter__wrapper .food-filter__filter-panel .filter-panel__category-list .filter-panel__category-item--active {
   position: relative;
-  border: 6px solid rgba(251, 71, 29, 0.5);
+  border: 5px solid rgba(214, 153, 0, 0.5);
   transform: scale(1.1) translateY(-5px);
+}
+.food-filter__wrapper .food-filter__filter-panel .filter-panel__sort-list {
+  /* Каждый 2 элемент находится справа */
+}
+.food-filter__wrapper .food-filter__filter-panel .filter-panel__sort-list .filter-panel__sort-item:nth-child(2) {
+  display: flex;
+  justify-content: right;
+}
+.food-filter__wrapper .food-filter__filter-panel .filter-panel__sort-list .filter-panel__sort-btn {
+  background: inherit;
+  border: none;
+  font-family: var(--font-family), sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  text-align: center;
+  line-height: 187%;
+  color: #acadb9;
+}
+.food-filter__wrapper .food-filter__filter-panel .filter-panel__sort-list .filter-panel__sort-btn:hover {
+  color: #6c5fbc;
+}
+.food-filter__wrapper .food-filter__filter-panel .filter-panel__sort-list .filter-panel__sort-btn--active {
+  color: #6c5fbc;
+}
+.food-filter__wrapper .food-filter__filter-panel .filter-panel__apply-btn {
+  border: none;
+  padding: 18px 0;
+  border-radius: 14px;
+  background: #6c5fbc;
+  font-family: var(--font-family), sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  color: #fff3eb;
+}
+.food-filter__wrapper .food-filter__filter-panel .filter-panel__apply-btn:hover {
+  background: #5a4aa3;
+  color: #f7f8fa;
 }
 
 :root {

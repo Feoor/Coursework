@@ -103,10 +103,16 @@
                             <!-- Фильтр по сортировке -->
                             <div class="filter-panel__sort">
                                 <div class="filter-panel__sort-title">Сортировать По</div>
-                                <div class="filter-panel__sort-list">
-                                    <div class="filter-panel__sort-item"></div>
-                                    <div class="filter-panel__sort-item"></div>
-                                    <div class="filter-panel__sort-item"></div>
+                                <div class="filter-panel__sort-list row row-cols-2 gx-5 gy-1">
+                                    <div class="filter-panel__sort-item col">
+                                        <button class="filter-panel__sort-btn">Рекомендуемое</button>
+                                    </div>
+                                    <div class="filter-panel__sort-item col">
+                                        <button class="filter-panel__sort-btn filter-panel__sort-btn--active">Быстрая доставка</button>
+                                    </div>
+                                    <div class="filter-panel__sort-item col">
+                                        <button class="filter-panel__sort-btn">Популярное</button>
+                                    </div>
                                 </div>
                             </div>
 
@@ -116,7 +122,7 @@
                                 <div class="filter-panel__price-slider"></div>
                             </div>
 
-                            <button class="filter-panel__btn w-100">Применить</button>
+                            <button class="filter-panel__apply-btn w-100">Применить</button>
                         </div>
                     </div>
 
