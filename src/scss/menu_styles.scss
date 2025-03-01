@@ -1,9 +1,6 @@
 .food-filter__wrapper {
   padding-top: 250px;
-
-  .food-filter__left-column {
-    gap: 80px;
-  }
+  padding-bottom: 30px;
 
   /* Левая колонка, баннер, поиск */
   .food-filter__promo-banner {
@@ -102,10 +99,21 @@
         font-size: 18px;
         text-align: center;
         color: #6c5fbc;
+        transition: .2s all;
+
+        &:hover {
+          background: #6c5fbc;
+          color: #f7f8fa;
+        }
       }
       .food-filter__btn--active {
         background: #6c5fbc;
         color: #f7f8fa;
+        transition: .2s all;
+
+        &:hover {
+          background: #5a4aa3;
+        }
       }
       & button:last-child {
         border-radius: 0 15px 15px 0;
@@ -116,6 +124,7 @@
 
   /* Правая колонка, фильтры */
   .food-filter__filter-panel {
+    border-radius: 24px;
     padding: 32px;
 
     // Текстовые стили
@@ -129,7 +138,7 @@
     .filter-panel__category-title,
     .filter-panel__sort-title,
     .filter-panel__price-title {
-      margin-bottom: 16px;
+      margin-bottom: 12px;
       font-family: var(--font-family), sans-serif;
       font-weight: 600;
       font-size: 21px;
@@ -140,7 +149,7 @@
     .filter-panel__category,
     .filter-panel__sort,
     .filter-panel__price {
-      margin-bottom: 30px;
+      margin-bottom: 24px;
     }
 
     // Стили кнопок категорий
@@ -158,7 +167,7 @@
         font-size: 14px;
         text-align: center;
         color: #d69900;
-        transition: .3s all;
+        transition: .2s transform;
 
         &::after {
           display: inline-block;
@@ -176,8 +185,88 @@
       }
       .filter-panel__category-item--active {
         position: relative;
-        border: 6px solid rgba(251, 71, 29, 0.5);
-        transform: scale(1.1) translateY(-5px);
+        transform: scale(1.1);
+      }
+    }
+    .filter-panel__sort-list {
+      /* Каждый 2 элемент находится справа */
+      .filter-panel__sort-item:nth-child(2) {
+        display: flex;
+        justify-content: right;
+      }
+      .filter-panel__sort-btn {
+        background: inherit;
+        border: none;
+        font-family: var(--font-family), sans-serif;
+        font-weight: 500;
+        font-size: 15px;
+        text-align: center;
+        line-height: 187%;
+        color: #acadb9;
+
+        &:hover {
+          color: #6c5fbc;
+        }
+      }
+      .filter-panel__sort-btn--active {
+        color: #6c5fbc;
+      }
+    }
+    .filter-panel__price {
+      .filter-panel__price-slider {
+        /* Сброс стандартных стилей */
+        appearance: none;
+
+        /* Стили ползунка */
+        width: 100%;
+        height: 8px;
+        background: #6c5fbc;
+        border-radius: 9px;
+        outline: none;
+
+        &::-webkit-slider-thumb {
+          /* Сброс стандартных стилей */
+          appearance: none;
+
+          /* Стили ползунка */
+          width: 20px;
+          height: 21px;
+          background: #6c5fbc;
+          border-radius: 50%;
+          box-shadow: 0 0 0 .25rem rgba(108, 95, 188, 0.25);
+          cursor: pointer;
+          transition: .2s all;
+        }
+        // Firefox
+        &::-moz-range-thumb {
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          background: #6f42c1;
+          cursor: pointer;
+          border: 2px solid #ffffff;
+        }
+      }
+      .filter-panel__price-range {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.875rem;
+        color: #6c757d;
+      }
+    }
+    .filter-panel__apply-btn {
+      border: none;
+      padding: 18px 0;
+      border-radius: 14px;
+      background: #6c5fbc;
+      font-family: var(--font-family), sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      color: #fff3eb;
+
+      &:hover {
+        background: #5a4aa3;
+        color: #f7f8fa;
       }
     }
   }
