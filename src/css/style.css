@@ -35,7 +35,7 @@
   src: url("../fonts/Quicksand/Quicksand-VariableFont_wght.ttf") format("truetype");
 }
 .food-filter__wrapper {
-  padding-top: 250px;
+  padding-top: 180px;
   padding-bottom: 30px;
   /* Левая колонка, баннер, поиск */
   /* Правая колонка, фильтры */
@@ -69,7 +69,6 @@
   right: 3%;
 }
 .food-filter__wrapper .food-filter__promo-banner .promo-banner__title {
-  font-family: var(--font-family), sans-serif;
   font-weight: 900;
   font-size: 60px;
   color: #f7f8fa;
@@ -203,6 +202,8 @@
 }
 .food-filter__wrapper .food-filter__filter-panel .filter-panel__category-list .filter-panel__category-item--active {
   position: relative;
+  border: 1px solid #6c5fbc;
+  box-shadow: var(--bs-box-shadow-sm);
   transform: scale(1.1);
 }
 .food-filter__wrapper .food-filter__filter-panel .filter-panel__sort-list {
@@ -265,6 +266,7 @@
   color: #6c757d;
 }
 .food-filter__wrapper .food-filter__filter-panel .filter-panel__apply-btn {
+  width: 100%;
   border: none;
   padding: 18px 0;
   border-radius: 14px;
@@ -277,6 +279,119 @@
 .food-filter__wrapper .food-filter__filter-panel .filter-panel__apply-btn:hover {
   background: #5a4aa3;
   color: #f7f8fa;
+}
+
+.faq__wrapper {
+  padding-top: 200px;
+  padding-bottom: 170px;
+}
+.faq__wrapper .faq__title {
+  font-weight: 800;
+  margin-bottom: 62px;
+  position: relative;
+}
+.faq__wrapper .faq__title::after {
+  display: inline-block;
+  content: "";
+  width: 39px;
+  height: 37px;
+  background: url("../icons/illustration_02.svg") no-repeat;
+  position: absolute;
+  top: -20%;
+  right: 30%;
+  transform: rotate(190deg) scale(1.2);
+}
+.faq__wrapper .faq__question {
+  margin-top: 28px;
+  border-bottom: 2px solid #cbcbcb;
+}
+.faq__wrapper .faq__question .faq__question-header .faq__header-btn {
+  width: 100%;
+  padding: 1rem 0.5rem;
+  background: inherit;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  font-family: var(--font-family), sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  text-align: left;
+  color: #323142;
+}
+.faq__wrapper .faq__question .faq__question-header .faq__header-btn::after {
+  display: inline-block;
+  content: "";
+  width: 36px;
+  height: 36px;
+  background: #6c5fbc url("../icons/plus.svg") no-repeat center;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%) rotate(0deg);
+  transition: 0.3s transform;
+}
+.faq__wrapper .faq__question .faq__question-body {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+  font-family: var(--font-family), sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  color: #686868;
+  opacity: 0;
+  transition: 0.3s max-height ease-in-out, 0.4s opacity ease-in-out, 0.4s padding ease;
+}
+.faq__wrapper .faq__question--active .faq__question-header .faq__header-btn::after {
+  transform: translateY(-50%) rotate(45deg);
+  background-color: #5a4aa3;
+}
+.faq__wrapper .faq__question--active .faq__question-body {
+  max-height: 200px;
+  padding: 0.25rem 0.5rem 2.5rem;
+  opacity: 1;
+}
+
+.restaurant-hero__wrapper {
+  padding-top: 180px;
+  padding-bottom: 48px;
+}
+.restaurant-hero__wrapper .card {
+  box-shadow: 8px 91px 45px 0 rgba(229, 229, 229, 0.7);
+  position: relative;
+}
+.restaurant-hero__wrapper .card .card-img-top {
+  max-height: 378px;
+  object-fit: cover;
+}
+.restaurant-hero__wrapper .card .card-body {
+  padding: 1.75rem 2.5rem;
+}
+.restaurant-hero__wrapper .card .card-body h1 {
+  font-family: var(--font-family), sans-serif;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 133%;
+  color: #323142;
+}
+.restaurant-hero__wrapper .card .card-body .our-restaurants__restaurant-info {
+  font-family: var(--font-family), sans-serif;
+  font-weight: 400;
+  font-size: 26px;
+  color: #8e97a6;
+}
+.restaurant-hero__wrapper .card .card-body .restaurant-bookmark {
+  width: 62px;
+  height: 62px;
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.restaurant-hero__wrapper .card .card-body .restaurant-bookmark::after {
+  max-width: 24px;
+  max-height: 32px;
 }
 
 :root {
@@ -301,6 +416,34 @@ a {
 
 html {
   font-family: var(--second-family), sans-serif;
+}
+
+h2 {
+  font-family: var(--font-family), sans-serif;
+  font-weight: 700;
+  font-size: 45px;
+  text-transform: capitalize;
+  color: #323142;
+}
+
+.card {
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.card .card-img-top {
+  border-radius: 30px 30px 0 0;
+}
+.card .card-body {
+  padding: 0.75rem 2rem 1rem;
+}
+.card .card-body h5 {
+  font-family: var(--font-family), sans-serif;
+  font-weight: 800;
+  font-size: 25px;
+  line-height: 162%;
+  color: #323142;
+  margin-bottom: 0;
 }
 
 /* Базовые классы */
@@ -331,6 +474,9 @@ html {
 .menu .menu__item:hover {
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+.menu .menu__item--active {
+  color: #6c5fbc;
 }
 
 .highlight--purple {
@@ -394,6 +540,7 @@ html {
   max-width: 16px;
   max-height: 21px;
   background: url("../icons/bookmark.svg") no-repeat;
+  background-size: cover;
   position: absolute;
   margin: auto;
   top: 0;
@@ -406,6 +553,7 @@ html {
 }
 .restaurant-bookmark:hover::after {
   background: url("../icons/bookmark_white.svg") no-repeat;
+  background-size: cover;
 }
 
 /* Добавить блюдо в любимое */
@@ -595,7 +743,7 @@ html {
 }
 
 .hero__wrapper {
-  padding-top: 254px;
+  padding-top: 250px;
   padding-bottom: 130px;
 }
 .hero__wrapper .hero__left-column .hero__text {
@@ -625,8 +773,6 @@ html {
   font-family: var(--font-family), sans-serif;
   font-weight: 900;
   font-size: 60px;
-  line-height: 120%;
-  text-transform: capitalize;
   color: #201f1f;
 }
 .hero__wrapper .hero__left-column .hero__subtitle {
@@ -644,8 +790,7 @@ html {
 }
 .hero__wrapper .hero__left-column .hero__buttons .hero__btn--primary {
   border-radius: 12px;
-  height: 59px;
-  padding: 0 28px;
+  padding: 1rem 28px;
   background: #6c5fbc;
   border: none;
   font-family: var(--font-family), sans-serif;
@@ -661,8 +806,7 @@ html {
 }
 .hero__wrapper .hero__left-column .hero__buttons .hero__btn--secondary {
   border-radius: 12px;
-  height: 59px;
-  padding: 0 28px;
+  padding: 1rem 28px;
   background: inherit;
   border: 1.5px solid #6c5fbc;
   font-family: var(--font-family), sans-serif;
@@ -817,8 +961,6 @@ html {
   font-family: var(--font-family), sans-serif;
   font-weight: 900;
   font-size: 50px;
-  line-height: 114%;
-  text-transform: capitalize;
   color: #18181b;
   margin-bottom: 62px;
 }
@@ -889,39 +1031,17 @@ html {
   border-bottom: 2px solid #cbcbcb;
 }
 .our-restaurants__wrapper .our-restaurants__title {
-  font-family: var(--font-family), sans-serif;
-  font-weight: 700;
-  font-size: 45px;
-  line-height: 57%;
-  text-transform: capitalize;
   color: #323142;
   margin-bottom: 62px;
 }
 .our-restaurants__wrapper .our-restaurants__restaurant .card {
   max-width: 396px;
-  border: none;
-  border-radius: 30px;
   box-shadow: 6px 71px 36px rgba(229, 229, 229, 0.7);
   transition: transform 0.3s ease;
   position: relative;
-  cursor: pointer;
 }
 .our-restaurants__wrapper .our-restaurants__restaurant .card:hover {
   transform: translateY(-10px);
-}
-.our-restaurants__wrapper .our-restaurants__restaurant .card .card-img-top {
-  border-radius: 30px 30px 0 0;
-}
-.our-restaurants__wrapper .our-restaurants__restaurant .card .card-body {
-  padding: 11px 32px 18px;
-}
-.our-restaurants__wrapper .our-restaurants__restaurant .card .card-body h5 {
-  font-family: var(--font-family), sans-serif;
-  font-weight: 800;
-  font-size: 25px;
-  line-height: 162%;
-  color: #323142;
-  margin-bottom: 0;
 }
 .our-restaurants__wrapper .our-restaurants__restaurant .card .card-body .our-restaurants__restaurant-info {
   font-family: var(--font-family), sans-serif;
@@ -938,10 +1058,6 @@ html {
   border-bottom: 2px solid #cbcbcb;
 }
 .our-dishes__wrapper .our-dishes__title {
-  font-family: var(--font-family), sans-serif;
-  font-weight: 700;
-  font-size: 45px;
-  line-height: 57%;
   color: #323142;
   margin-bottom: 62px;
 }
@@ -991,11 +1107,8 @@ html {
   border-bottom: 2px solid #cbcbcb;
 }
 .purchases-control__wrapper .purchases-control__title {
-  font-family: var(--font-family), sans-serif;
   font-weight: 900;
   font-size: 50px;
-  line-height: 114%;
-  text-transform: capitalize;
   color: #18181b;
 }
 .purchases-control__wrapper .purchases-control__first-image {
@@ -1025,11 +1138,7 @@ html {
   padding-bottom: 30px;
 }
 .reviews__wrapper .reviews__title {
-  font-family: var(--font-family), sans-serif;
   font-weight: 800;
-  font-size: 45px;
-  line-height: 57%;
-  color: #323142;
   margin-bottom: 80px;
 }
 .reviews__wrapper .reviews__item {
@@ -1103,7 +1212,6 @@ html {
   right: 5%;
 }
 .sale__wrapper .sale__title {
-  font-family: var(--font-family), sans-serif;
   font-weight: 900;
   font-size: 60px;
   color: rgba(255, 255, 255, 0.8);

@@ -20,15 +20,15 @@
         <!--  Навигация  -->
         <div class="header__wrapper">
 
+            <!--  Левая часть  -->
             <div class="header__left-side">
                 <div class="header__logo">
                     <a href="../index.html" class="eatly-logo">eatly</a>
-
                 </div>
 
                 <nav class="header__nav">
                     <ul class="header__list menu list-reset">
-                        <li class="menu__item"><a href="#">Меню</a></li>
+                        <li class="menu__item menu__item--active"><a href="#">Меню</a></li>
                         <li class="menu__item"><a href="">Блог</a></li>
                         <li class="menu__item"><a href="">Тарифы</a></li>
                         <li class="menu__item"><a href="">Контакты</a></li>
@@ -37,349 +37,446 @@
 
             </div>
 
+            <!--  Правая часть  -->
             <div class="header__right-side">
-                <button class="header__login"><a>Войти</a></button>
-                <button class="header__sign-up"><a>Зарегистрироваться</a></button>
+                <a class="header__login">Войти</a>
+                <a class="header__sign-up">Зарегистрироваться</a>
             </div>
 
         </div>
     </div>
 </header>
 
+
 <main class="main">
-    <div class="container-sm">
-        <section class="food-filter">
-            <div class="container">
-                <div class="food-filter__wrapper row justify-content-between g-1">
+    <!-- Фильтры, поиск и баннер -->
+    <section class="food-filter">
+        <div class="container-sm">
 
-                    <!-- Левая колонка -->
-                    <div class="food-filter__left-column col-12 col-md-7 d-flex flex-column justify-content-between">
-                        <!-- Баннер -->
-                        <div class="food-filter__promo-banner">
-                            <h2 class="promo-banner__title">
-                                СКИДКА 50%
-                                <br><span class="text-muted">НА ВЫХОДНЫХ</span>
-                            </h2>
-                        </div>
+            <!-- Обертка сетки -->
+            <div class="food-filter__wrapper row justify-content-between g-1">
 
-                        <!-- Поиск -->
-                        <div class="food-filter__search">
-                            <div class="form-floating">
-                                <input type="text" class="food-filter__search-input form-control" placeholder="Поиск" id="foodFilterSearchInput">
-                                <label for="foodFilterSearchInput">Поиск</label>
-                            </div>
-
-                            <div class="food-filter__buttons row g-0">
-                                <button class="food-filter__btn food-filter__btn--active col-4" data-filter="all">Все</button>
-                                <button class="food-filter__btn col-4" data-filter="restaurants">Рестораны</button>
-                                <button class="food-filter__btn col-4" data-filter="dishes">Блюда</button>
-                            </div>
-                        </div>
+                <!-- Левая колонка -->
+                <div class="food-filter__left-column col-12 col-md-7 d-flex flex-column justify-content-between">
+                    <!-- Баннер -->
+                    <div class="food-filter__promo-banner">
+                        <h2 class="promo-banner__title">
+                            СКИДКА 50%
+                            <br><span class="text-muted">НА ВЫХОДНЫХ</span>
+                        </h2>
                     </div>
 
-                    <!-- Правая колонка (фильтры) -->
-                    <div class="food-filter__right-column col-12 col-md-4">
-                        <div class="food-filter__filter-panel shadow">
+                    <!-- Поиск -->
+                    <div class="food-filter__search">
+                        <div class="form-floating">
+                            <input type="text" class="food-filter__search-input form-control" placeholder="Поиск" id="foodFilterSearchInput">
+                            <label for="foodFilterSearchInput">Поиск</label>
+                        </div>
 
-                            <!-- Фильтр по категориям -->
-                            <div class="filter-panel__category">
-                                <h3 class="filter-panel__category-title">Категории</h3>
-                                <div class="filter-panel__category-list row g-3">
-                                    <div class="col-3">
-                                        <button class="filter-panel__category-item">Pizza</button>
-                                    </div>
-                                    <div class="col-3">
-                                        <button class="filter-panel__category-item filter-panel__category-item--active">Asian</button>
-                                    </div>
-                                    <div class="col-3">
-                                        <button class="filter-panel__category-item">Donat</button>
-                                    </div>
-                                    <div class="col-3">
-                                        <button class="filter-panel__category-item">Ice</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Фильтр по сортировке -->
-                            <div class="filter-panel__sort">
-                                <h3 class="filter-panel__sort-title">Сортировать По</h3>
-                                <div class="filter-panel__sort-list row row-cols-2 gx-5 gy-1">
-                                    <div class="filter-panel__sort-item col">
-                                        <button class="filter-panel__sort-btn">Рекомендуемое</button>
-                                    </div>
-                                    <div class="filter-panel__sort-item col">
-                                        <button class="filter-panel__sort-btn filter-panel__sort-btn--active">Быстрая доставка</button>
-                                    </div>
-                                    <div class="filter-panel__sort-item col">
-                                        <button class="filter-panel__sort-btn">Популярное</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Фильтр по цене -->
-                            <div class="filter-panel__price">
-                                <h3 class="filter-panel__price-title">Цена</h3>
-                                <input
-                                    type="range"
-                                    class="filter-panel__price-slider"
-                                    id="priceSlider"
-                                    min="0"
-                                    max="30"
-                                    step="5"
-                                    value="5"
-                                />
-                                <div class="filter-panel__price-range">
-                                    <span>$0</span>
-                                    <span>$5</span>
-                                    <span>$10</span>
-                                    <span>$15</span>
-                                    <span>$20</span>
-                                    <span>$25</span>
-                                    <span>$30</span>
-                                </div>
-                            </div>
-
-                            <button class="filter-panel__apply-btn w-100">Применить</button>
+                        <div class="food-filter__buttons row g-0">
+                            <button class="food-filter__btn food-filter__btn--active col-4" data-filter="all">Все</button>
+                            <button class="food-filter__btn col-4" data-filter="restaurants">Рестораны</button>
+                            <button class="food-filter__btn col-4" data-filter="dishes">Блюда</button>
                         </div>
                     </div>
-
                 </div>
-            </div>
-        </section>
 
-        <!-- Наши лучшие рестораны -->
-        <section class="our-restaurants">
-            <div class="container-sm">
+                <!-- Правая колонка (фильтры) -->
+                <div class="food-filter__right-column col-12 col-md-4">
+                    <div class="food-filter__filter-panel shadow">
 
-                <!-- Обертка сетки -->
-                <div class="our-restaurants__wrapper row g-4">
-                    <!-- Титул -->
-                    <h2 class="our-restaurants__title">Наши лучшие <span class="highlight--purple">рестораны</span></h2>
-
-                    <!-- Карточки ресторанов -->
-                    <div class="our-restaurants__restaurant col-4">
-                        <div class="card h-100">
-                            <a href="">
-                                <img src="../img/the_chicken_king.png" alt="The Chicken King Restaurant" class="card-img-top">
-
-                                <div class="card-body">
-                                    <span class="badge badge-healthy mb-1">Полезно</span>
-                                    <h5 class="card-title mt-0">The Chicken King</h5>
-
-                                    <div class="our-restaurants__restaurant-info d-flex align-items-center">
-                                        <span class="me-2">24min •</span>
-                                        <img src="../icons/purple_star.svg" alt="Purple star">
-                                        <span class="ms-1">4.8</span>
-                                    </div>
-
-                                    <button class="restaurant-bookmark"></button>
+                        <!-- Фильтр по категориям -->
+                        <div class="filter-panel__category">
+                            <h3 class="filter-panel__category-title">Категории</h3>
+                            <div class="filter-panel__category-list row g-3">
+                                <div class="col-3">
+                                    <button class="filter-panel__category-item">Pizza</button>
                                 </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="our-restaurants__restaurant col-4">
-                        <div class="card h-100">
-                            <a href="">
-                                <img src="../img/the_burger_king.png" alt="The Chicken King Restaurant" class="card-img-top">
-
-                                <div class="card-body">
-                                    <span class="badge badge-trending mb-1">Популярно</span>
-                                    <h5 class="card-title mt-0">The Burger King</h5>
-
-                                    <div class="our-restaurants__restaurant-info d-flex align-items-center">
-                                        <span class="me-2">24min •</span>
-                                        <img src="../icons/purple_star.svg" alt="Purple star">
-                                        <span class="ms-1">4.8</span>
-                                    </div>
-
-                                    <button class="restaurant-bookmark"></button>
+                                <div class="col-3">
+                                    <button class="filter-panel__category-item filter-panel__category-item--active">Asian</button>
                                 </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="our-restaurants__restaurant col-4">
-                        <div class="card h-100">
-                            <a href="">
-                                <img src="../img/the_chicken_king.png" alt="The Chicken King Restaurant" class="card-img-top">
-
-                                <div class="card-body">
-                                    <span class="badge badge-healthy mb-1">Полезно</span>
-                                    <h5 class="card-title mt-0">The Chicken King</h5>
-
-                                    <div class="our-restaurants__restaurant-info d-flex align-items-center">
-                                        <span class="me-2">24min •</span>
-                                        <img src="../icons/purple_star.svg" alt="Purple star">
-                                        <span class="ms-1">4.8</span>
-                                    </div>
-
-                                    <button class="restaurant-bookmark"></button>
+                                <div class="col-3">
+                                    <button class="filter-panel__category-item">Donat</button>
                                 </div>
-                            </a>
+                                <div class="col-3">
+                                    <button class="filter-panel__category-item">Ice</button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Переход на страницу меню -->
-                    <div class="col-12 text-end">
-                        <a href="#" class="view-all">Посмотреть все</a>
-                    </div>
+                        <!-- Фильтр по сортировке -->
+                        <div class="filter-panel__sort">
+                            <h3 class="filter-panel__sort-title">Сортировать По</h3>
+                            <div class="filter-panel__sort-list row row-cols-2 gx-5 gy-1">
+                                <div class="filter-panel__sort-item col">
+                                    <button class="filter-panel__sort-btn">Рекомендуемое</button>
+                                </div>
+                                <div class="filter-panel__sort-item col">
+                                    <button class="filter-panel__sort-btn filter-panel__sort-btn--active">Быстрая доставка</button>
+                                </div>
+                                <div class="filter-panel__sort-item col">
+                                    <button class="filter-panel__sort-btn">Популярное</button>
+                                </div>
+                            </div>
+                        </div>
 
+                        <!-- Фильтр по цене -->
+                        <div class="filter-panel__price">
+                            <h3 class="filter-panel__price-title">Цена</h3>
+                            <label for="priceSlider" class="visually-hidden">Цена до</label>
+                            <input
+                                type="range"
+                                class="filter-panel__price-slider"
+                                id="priceSlider"
+                                min="0"
+                                max="30"
+                                step="5"
+                                value="20"
+                            />
+                            <div class="filter-panel__price-range">
+                                <span>$0</span>
+                                <span>$5</span>
+                                <span>$10</span>
+                                <span>$15</span>
+                                <span>$20</span>
+                                <span>$25</span>
+                                <span>$30</span>
+                            </div>
+                        </div>
+
+                        <button class="filter-panel__apply-btn">Применить</button>
+                    </div>
                 </div>
 
             </div>
-        </section>
 
-        <!-- Наши лучшие блюда -->
-        <section class="our-dishes">
-            <div class="container-sm">
+        </div>
+    </section>
 
-                <!-- Обертка сетки -->
-                <div class="our-dishes__wrapper row justify-content-center g-4">
-                    <!-- Титул -->
-                    <h2 class="our-dishes__title col-12">Наши лучшие <span class="highlight--purple">блюда</span></h2>
+    <!-- Наши лучшие рестораны -->
+    <section class="our-restaurants">
+        <div class="container-sm">
 
-                    <!-- Карточки блюд -->
-                    <div class="our-dishes__dish col justify-content-center">
-                        <div class="card h-100">
-                            <a href="">
-                                <!-- Кнопка "Добавить в любимое" -->
-                                <button class="dish-favorite"></button>
+            <!-- Обертка сетки -->
+            <div class="our-restaurants__wrapper row g-4">
+                <!-- Титул -->
+                <h2 class="our-restaurants__title">Наши лучшие <span class="highlight--purple">рестораны</span></h2>
 
-                                <img src="../img/chicken_hell_dish.png" alt="Chicken Hell Dish" class="card-img-top rounded-circle">
+                <!-- Карточки ресторанов -->
+                <div class="our-restaurants__restaurant col-4">
+                    <div class="card h-100">
+                        <a href="the_chicken_king_restaurant.html">
+                            <img src="../img/the_chicken_king.png" alt="The Chicken King Restaurant" class="card-img-top">
 
-                                <div class="card-body">
-                                    <span class="badge badge-healthy">Полезно</span>
-                                    <h5 class="card-title mt-0">Chicken Hell</h5>
+                            <div class="card-body">
+                                <span class="badge badge-healthy mb-1">Полезно</span>
+                                <h5 class="card-title mt-0">The Chicken King</h5>
 
-                                    <div class="our-dishes__dish-info d-flex align-items-center mb-2">
-                                        <span class="me-2">24min •</span>
-                                        <img src="../icons/purple_star.svg" alt="Purple star">
-                                        <span class="ms-1">4.8</span>
-                                    </div>
-                                    <h5 class="our-dishes__dish-price">$12<span class="price--cents">.99</span></h5>
-
-                                    <!-- Кнопка "Добавить в корзину" -->
-                                    <button class="add-to-cart"></button>
+                                <div class="our-restaurants__restaurant-info d-flex align-items-center">
+                                    <span class="me-2">24min •</span>
+                                    <img src="../icons/purple_star.svg" alt="Purple star">
+                                    <span class="ms-1">4.8</span>
                                 </div>
-                            </a>
-                        </div>
+
+                                <button class="restaurant-bookmark"></button>
+                            </div>
+                        </a>
                     </div>
+                </div>
 
-                    <div class="our-dishes__dish col justify-content-center">
-                        <div class="card h-100">
-                            <a href="">
-                                <!-- Кнопка "Добавить в любимое" -->
-                                <button class="dish-favorite"></button>
+                <div class="our-restaurants__restaurant col-4">
+                    <div class="card h-100">
+                        <a href="the_burger_king_restaurant.html">
+                            <img src="../img/the_burger_king.png" alt="The Chicken King Restaurant" class="card-img-top">
 
-                                <img src="../img/swe_dish.png" alt="Chicken Hell Dish" class="card-img-top rounded-circle">
+                            <div class="card-body">
+                                <span class="badge badge-trending mb-1">Популярно</span>
+                                <h5 class="card-title mt-0">The Burger King</h5>
 
-                                <div class="card-body">
-                                    <span class="badge badge-trending">Популярно</span>
-                                    <h5 class="card-title mt-0">Swe Dish</h5>
-
-                                    <div class="our-dishes__dish-info d-flex align-items-center mb-2">
-                                        <span class="me-2">34min •</span>
-                                        <img src="../icons/purple_star.svg" alt="Purple star">
-                                        <span class="ms-1">4.9</span>
-                                    </div>
-                                    <h5 class="our-dishes__dish-price">$19<span class="price--cents">.99</span></h5>
-
-                                    <!-- Кнопка "Добавить в корзину" -->
-                                    <button class="add-to-cart"></button>
+                                <div class="our-restaurants__restaurant-info d-flex align-items-center">
+                                    <span class="me-2">24min •</span>
+                                    <img src="../icons/purple_star.svg" alt="Purple star">
+                                    <span class="ms-1">4.8</span>
                                 </div>
-                            </a>
-                        </div>
+
+                                <button class="restaurant-bookmark"></button>
+                            </div>
+                        </a>
                     </div>
+                </div>
 
-                    <div class="our-dishes__dish col justify-content-center">
-                        <div class="card h-100">
-                            <a href="">
-                                <!-- Кнопка "Добавить в любимое" -->
-                                <button class="dish-favorite"></button>
+                <div class="our-restaurants__restaurant col-4">
+                    <div class="card h-100">
+                        <a href="the_chicken_king_restaurant.html">
+                            <img src="../img/the_chicken_king.png" alt="The Chicken King Restaurant" class="card-img-top">
 
-                                <img src="../img/fish_hell_dish.png" alt="Chicken Hell Dish" class="card-img-top rounded-circle">
+                            <div class="card-body">
+                                <span class="badge badge-healthy mb-1">Полезно</span>
+                                <h5 class="card-title mt-0">The Chicken King</h5>
 
-                                <div class="card-body">
-                                    <span class="badge badge-supreme">Эксклюзив</span>
-                                    <h5 class="card-title mt-0">Fish Hell</h5>
-
-                                    <div class="our-dishes__dish-info d-flex align-items-center mb-2">
-                                        <span class="me-2">24min •</span>
-                                        <img src="../icons/purple_star.svg" alt="Purple star">
-                                        <span class="ms-1">4.9</span>
-                                    </div>
-                                    <h5 class="our-dishes__dish-price">$19<span class="price--cents">.99</span></h5>
-
-                                    <!-- Кнопка "Добавить в корзину" -->
-                                    <button class="add-to-cart"></button>
+                                <div class="our-restaurants__restaurant-info d-flex align-items-center">
+                                    <span class="me-2">24min •</span>
+                                    <img src="../icons/purple_star.svg" alt="Purple star">
+                                    <span class="ms-1">4.8</span>
                                 </div>
-                            </a>
-                        </div>
+
+                                <button class="restaurant-bookmark"></button>
+                            </div>
+                        </a>
                     </div>
+                </div>
 
-                    <div class="our-dishes__dish col justify-content-center">
-                        <div class="card h-100">
-                            <a href="">
-                                <!-- Кнопка "Добавить в любимое" -->
-                                <button class="dish-favorite"></button>
-
-                                <img src="../img/chicken_hell_dish.png" alt="Chicken Hell Dish" class="card-img-top rounded-circle">
-
-                                <div class="card-body">
-                                    <span class="badge badge-healthy">Полезно</span>
-                                    <h5 class="card-title mt-0">Chicken Hell</h5>
-
-                                    <div class="our-dishes__dish-info d-flex align-items-center mb-2">
-                                        <span class="me-2">24min •</span>
-                                        <img src="../icons/purple_star.svg" alt="Purple star">
-                                        <span class="ms-1">4.8</span>
-                                    </div>
-                                    <h5 class="our-dishes__dish-price">$12<span class="price--cents">.99</span></h5>
-
-                                    <!-- Кнопка "Добавить в корзину" -->
-                                    <button class="add-to-cart"></button>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="our-dishes__dish col justify-content-center">
-                        <div class="card h-100">
-                            <a href="">
-                                <!-- Кнопка "Добавить в любимое" -->
-                                <button class="dish-favorite"></button>
-
-                                <img src="../img/swe_dish.png" alt="Chicken Hell Dish" class="card-img-top rounded-circle">
-
-                                <div class="card-body">
-                                    <span class="badge badge-trending">Популярно</span>
-                                    <h5 class="card-title mt-0">Swe Dish</h5>
-
-                                    <div class="our-dishes__dish-info d-flex align-items-center mb-2">
-                                        <span class="me-2">34min •</span>
-                                        <img src="../icons/purple_star.svg" alt="Purple star">
-                                        <span class="ms-1">4.9</span>
-                                    </div>
-                                    <h5 class="our-dishes__dish-price">$19<span class="price--cents">.99</span></h5>
-
-                                    <!-- Кнопка "Добавить в корзину" -->
-                                    <button class="add-to-cart"></button>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Переход на страницу меню -->
-                    <div class="col-12 text-end">
-                        <a href="#" class="view-all">Посмотреть все</a>
-                    </div>
-
+                <!-- Переход на страницу меню -->
+                <div class="col-12 text-end">
+                    <a href="#" class="view-all">Посмотреть все</a>
                 </div>
 
             </div>
-        </section>
-    </div>
+
+        </div>
+    </section>
+
+    <!-- Наши лучшие блюда -->
+    <section class="our-dishes">
+        <div class="container-sm">
+
+            <!-- Обертка сетки -->
+            <div class="our-dishes__wrapper row justify-content-center g-4">
+                <!-- Титул -->
+                <h2 class="our-dishes__title col-12">Наши лучшие <span class="highlight--purple">блюда</span></h2>
+
+                <!-- Карточки блюд -->
+                <div class="our-dishes__dish col justify-content-center">
+                    <div class="card h-100">
+                        <a href="">
+                            <!-- Кнопка "Добавить в любимое" -->
+                            <button class="dish-favorite"></button>
+
+                            <img src="../img/chicken_hell_dish.png" alt="Chicken Hell Dish" class="card-img-top rounded-circle">
+
+                            <div class="card-body">
+                                <span class="badge badge-healthy">Полезно</span>
+                                <h5 class="card-title mt-0">Chicken Hell</h5>
+
+                                <div class="our-dishes__dish-info d-flex align-items-center mb-2">
+                                    <span class="me-2">24min •</span>
+                                    <img src="../icons/purple_star.svg" alt="Purple star">
+                                    <span class="ms-1">4.8</span>
+                                </div>
+                                <h5 class="our-dishes__dish-price">$12<span class="price--cents">.99</span></h5>
+
+                                <!-- Кнопка "Добавить в корзину" -->
+                                <button class="add-to-cart"></button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="our-dishes__dish col justify-content-center">
+                    <div class="card h-100">
+                        <a href="">
+                            <!-- Кнопка "Добавить в любимое" -->
+                            <button class="dish-favorite"></button>
+
+                            <img src="../img/swe_dish.png" alt="Chicken Hell Dish" class="card-img-top rounded-circle">
+
+                            <div class="card-body">
+                                <span class="badge badge-trending">Популярно</span>
+                                <h5 class="card-title mt-0">Swe Dish</h5>
+
+                                <div class="our-dishes__dish-info d-flex align-items-center mb-2">
+                                    <span class="me-2">34min •</span>
+                                    <img src="../icons/purple_star.svg" alt="Purple star">
+                                    <span class="ms-1">4.9</span>
+                                </div>
+                                <h5 class="our-dishes__dish-price">$19<span class="price--cents">.99</span></h5>
+
+                                <!-- Кнопка "Добавить в корзину" -->
+                                <button class="add-to-cart"></button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="our-dishes__dish col justify-content-center">
+                    <div class="card h-100">
+                        <a href="">
+                            <!-- Кнопка "Добавить в любимое" -->
+                            <button class="dish-favorite"></button>
+
+                            <img src="../img/fish_hell_dish.png" alt="Chicken Hell Dish" class="card-img-top rounded-circle">
+
+                            <div class="card-body">
+                                <span class="badge badge-supreme">Эксклюзив</span>
+                                <h5 class="card-title mt-0">Fish Hell</h5>
+
+                                <div class="our-dishes__dish-info d-flex align-items-center mb-2">
+                                    <span class="me-2">24min •</span>
+                                    <img src="../icons/purple_star.svg" alt="Purple star">
+                                    <span class="ms-1">4.9</span>
+                                </div>
+                                <h5 class="our-dishes__dish-price">$19<span class="price--cents">.99</span></h5>
+
+                                <!-- Кнопка "Добавить в корзину" -->
+                                <button class="add-to-cart"></button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="our-dishes__dish col justify-content-center">
+                    <div class="card h-100">
+                        <a href="">
+                            <!-- Кнопка "Добавить в любимое" -->
+                            <button class="dish-favorite"></button>
+
+                            <img src="../img/chicken_hell_dish.png" alt="Chicken Hell Dish" class="card-img-top rounded-circle">
+
+                            <div class="card-body">
+                                <span class="badge badge-healthy">Полезно</span>
+                                <h5 class="card-title mt-0">Chicken Hell</h5>
+
+                                <div class="our-dishes__dish-info d-flex align-items-center mb-2">
+                                    <span class="me-2">24min •</span>
+                                    <img src="../icons/purple_star.svg" alt="Purple star">
+                                    <span class="ms-1">4.8</span>
+                                </div>
+                                <h5 class="our-dishes__dish-price">$12<span class="price--cents">.99</span></h5>
+
+                                <!-- Кнопка "Добавить в корзину" -->
+                                <button class="add-to-cart"></button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="our-dishes__dish col justify-content-center">
+                    <div class="card h-100">
+                        <a href="">
+                            <!-- Кнопка "Добавить в любимое" -->
+                            <button class="dish-favorite"></button>
+
+                            <img src="../img/swe_dish.png" alt="Chicken Hell Dish" class="card-img-top rounded-circle">
+
+                            <div class="card-body">
+                                <span class="badge badge-trending">Популярно</span>
+                                <h5 class="card-title mt-0">Swe Dish</h5>
+
+                                <div class="our-dishes__dish-info d-flex align-items-center mb-2">
+                                    <span class="me-2">34min •</span>
+                                    <img src="../icons/purple_star.svg" alt="Purple star">
+                                    <span class="ms-1">4.9</span>
+                                </div>
+                                <h5 class="our-dishes__dish-price">$19<span class="price--cents">.99</span></h5>
+
+                                <!-- Кнопка "Добавить в корзину" -->
+                                <button class="add-to-cart"></button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Переход на страницу меню -->
+                <div class="col-12 text-end">
+                    <a href="#" class="view-all">Посмотреть все</a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Часто задаваемые вопросы -->
+    <section class="faq">
+        <div class="container sm">
+
+            <!-- Обертка сетки -->
+            <div class="faq__wrapper row g-3">
+                <!-- Титул -->
+                <h2 class="faq__title col-12 text-center">
+                    Часто задаваемые
+                    <br><span class="highlight--purple">вопросы</span>
+                </h2>
+
+                <!-- Вопросы и ответы -->
+                <div class="faq__question col-12 faq__question--active">
+                    <!-- Вопрос, заголовок всегда виден -->
+                    <div class="faq__question-header">
+                        <button class="faq__header-btn">
+                            Сколько времени занимает доставка?
+                        </button>
+                    </div>
+                    <!-- Ответ, скрытый по умолчанию -->
+                    <div class="faq__question-body" id="AnswerOne">
+                        Вы можете получить информацию, связавшись с нашей службой поддержки,
+                        которая работает 24/7.
+                    </div>
+                </div>
+
+                <!-- Вопросы и ответы -->
+                <div class="faq__question col-12">
+                    <!-- Вопрос, заголовок всегда виден -->
+                    <div class="faq__question-header">
+                        <button class="faq__header-btn">
+                            Сколько времени занимает доставка?
+                        </button>
+                    </div>
+                    <!-- Ответ, скрытый по умолчанию -->
+                    <div class="faq__question-body" id="AnswerTwo">
+                        Вы можете получить информацию, связавшись с нашей службой поддержки,
+                        которая работает 24/7.
+                    </div>
+                </div>
+
+                <!-- Вопросы и ответы -->
+                <div class="faq__question col-12">
+                    <!-- Вопрос, заголовок всегда виден -->
+                    <div class="faq__question-header">
+                        <button class="faq__header-btn">
+                            Сколько времени занимает доставка?
+                        </button>
+                    </div>
+                    <!-- Ответ, скрытый по умолчанию -->
+                    <div class="faq__question-body" id="AnswerThree">
+                        Вы можете получить информацию, связавшись с нашей службой поддержки,
+                        которая работает 24/7.
+                    </div>
+                </div>
+
+                <!-- Вопросы и ответы -->
+                <div class="faq__question col-12">
+                    <!-- Вопрос, заголовок всегда виден -->
+                    <div class="faq__question-header">
+                        <button class="faq__header-btn">
+                            Сколько времени занимает доставка?
+                        </button>
+                    </div>
+                    <!-- Ответ, скрытый по умолчанию -->
+                    <div class="faq__question-body" id="AnswerFour">
+                        Вы можете получить информацию, связавшись с нашей службой поддержки,
+                        которая работает 24/7.
+                    </div>
+                </div>
+
+                <!-- Вопросы и ответы -->
+                <div class="faq__question col-12">
+                    <!-- Вопрос, заголовок всегда виден -->
+                    <div class="faq__question-header">
+                        <button class="faq__header-btn">
+                            Сколько времени занимает доставка?
+                        </button>
+                    </div>
+                    <!-- Ответ, скрытый по умолчанию -->
+                    <div class="faq__question-body" id="AnswerFive">
+                        Вы можете получить информацию, связавшись с нашей службой поддержки,
+                        которая работает 24/7.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
 </main>
 
 <footer class="footer">

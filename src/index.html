@@ -38,8 +38,8 @@
       </div>
 
       <div class="header__right-side">
-        <button class="header__login"><a>Войти</a></button>
-        <button class="header__sign-up"><a>Зарегистрироваться</a></button>
+        <a class="header__login">Войти</a>
+        <a class="header__sign-up">Зарегистрироваться</a>
       </div>
 
     </div>
@@ -63,16 +63,16 @@
           <p class="hero__subtitle">С EatLy вы можете ставить цели по сбережениям, получать кэшбэк, получить зарплату на 2 дня раньше (см.условия) и получите бонус <span class="highlight--purple">$20</span>.</p>
 
           <div class="hero__buttons">
-            <button class="hero__btn--primary"><a href="">Приступить</a></button>
-            <button class="hero__btn--secondary"><a href="">Выбрать Тариф</a></button>
+            <a href="" class="hero__btn--primary">Приступить</a>
+            <a href="" class="hero__btn--secondary">Выбрать Тариф</a>
           </div>
 
           <!-- Можно в будущем добавить несколько отзывов, которые будут затухать и меняться -->
-          <div class="hero__reviews" aria-label="Отзывы">
+          <div class="hero__reviews">
             <div class="hero__review">
               <img class="hero__review-logo" src="img/trustpilot_logo.svg" alt="Trustpilot logo">
 
-              <div class="hero__review-stars" aria-label="Рейтинг">
+              <div class="hero__review-stars">
                 <img src="icons/full_star.svg" alt="star">
                 <img src="icons/full_star.svg" alt="star">
                 <img src="icons/full_star.svg" alt="star">
@@ -168,7 +168,7 @@
         <!-- Карточки ресторанов -->
         <div class="our-restaurants__restaurant col-4">
           <div class="card h-100">
-            <a href="">
+            <a href="pages/the_chicken_king_restaurant.html">
               <img src="img/the_chicken_king.png" alt="The Chicken King Restaurant" class="card-img-top">
 
               <div class="card-body">
@@ -189,7 +189,7 @@
 
         <div class="our-restaurants__restaurant col-4">
           <div class="card h-100">
-            <a href="">
+            <a href="pages/the_burger_king_restaurant.html">
               <img src="img/the_burger_king.png" alt="The Chicken King Restaurant" class="card-img-top">
 
               <div class="card-body">
@@ -210,7 +210,7 @@
 
         <div class="our-restaurants__restaurant col-4">
           <div class="card h-100">
-            <a href="">
+            <a href="pages/the_chicken_king_restaurant.html">
               <img src="img/the_chicken_king.png" alt="The Chicken King Restaurant" class="card-img-top">
 
               <div class="card-body">
@@ -515,7 +515,7 @@
 
           <form action="#" class="sale__form">
             <div class="form-floating col-12 col-md-5">
-              <input type="email" class="sale__email-input form-control" id="SubscribeEmail" placeholder="name@example.com" aria-describedby="emailHelp">
+              <input type="email" class="sale__email-input form-control" id="SubscribeEmail" placeholder="name@example.com">
               <label for="SubscribeEmail">Введите Ваш Email Адрес</label>
 
               <button type="submit" class="subscribe__btn">Подписаться</button>

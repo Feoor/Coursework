@@ -1,0 +1,42 @@
+.restaurant-hero__wrapper {
+  padding-top: 180px;
+  padding-bottom: 48px;
+
+  .card {
+    box-shadow: 8px 91px 45px 0 rgba(229, 229, 229, 0.7);
+    position: relative;
+
+    .card-img-top {
+      max-height: 378px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 1.75rem 2.5rem;
+
+      h1 {
+        font-family: var(--font-family), sans-serif;
+        font-weight: 800;
+        font-size: 40px;
+        line-height: 133%;
+        color: #323142;
+      }
+      .our-restaurants__restaurant-info {
+        font-family: var(--font-family), sans-serif;
+        font-weight: 400;
+        font-size: 26px;
+        color: #8e97a6;
+      }
+      .restaurant-bookmark {
+        width: 62px;
+        height: 62px;
+        position: relative;
+        top: 0; right: 0; bottom: 0; left: 0;
+        &::after {
+          max-width: 24px;
+          max-height: 32px;
+        }
+      }
+    }
+  }
+}
