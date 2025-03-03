@@ -1,0 +1,103 @@
+.contact__wrapper {
+  padding-top: 180px;
+
+  /* Стилия иллюстраций(слева) */
+  .contact__illustrations {
+    .illustrations__purple-block {
+      width: calc(27.5% - 48px); /* Ширина блока на 50%(27.5% от всей ширины экрана) - отступ gx-5(48px) */
+      height: calc(100% - 228px); /* Блок высотой наравне с высотой формы */
+      padding-top: 60px;
+      background: var(--purple);
+      position: absolute;
+      /* Внутренний отступ контейнера(180px) + отступ gy-5(48px) = 228px */
+      top: 228px;
+      left: 0;
+
+      .illustrations__title {
+        position: relative;
+        font-family: var(--font-family), sans-serif;
+        font-weight: 600;
+        font-size: 34px;
+        line-height: 105%;
+        color: #f9f9f9;
+
+        &::after {
+          display: inline-block;
+          content: '';
+          width: 186px;
+          height: 40px;
+          background-image: url('../icons/white_straight_spiral_arrow.svg');
+          background-size: contain;
+          background-repeat: no-repeat;
+          transition: .2s background-color ease-in-out;
+          position: absolute;
+          bottom: -150%;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+      /* Иллюстрация приложения на телефоне */
+      &::after {
+        display: inline-block;
+        content: '';
+        width: 60%;
+        height: 85%;
+        background-image: url('../img/mobile_screen.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        bottom: -20%;
+        right: -25%;
+      }
+    }
+  }
+
+  /* Стили для формы(справа) */
+  .contact__support {
+    .contact__title {
+      margin-bottom: 60px;
+      font-family: var(--font-family), sans-serif;
+      font-weight: 800;
+      font-size: 40px;
+      color: #252525;
+    }
+
+    .contact__form-input input,
+    .contact__form-input textarea {
+      border: 2px solid var(--purple);
+      border-radius: 16px;
+    }
+    .contact__form-input--textarea textarea {
+      margin-bottom: 42px;
+    }
+    .contact__form-btn {
+      position: relative;
+      padding: 1.5rem 0;
+      border-radius: 16px;
+      background-color: var(--purple);
+      font-family: var(--font-family), sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: #f9f9f9;
+      transition: .2s background-color ease-in-out;
+
+      &:hover {
+        background-color: var(--purple-hover);
+      }
+      /* Иллюстрация */
+      &::before {
+        display: inline-block;
+        content: '';
+        width: 122px;
+        height: 122px;
+        background-image: url('../icons/spiral_arrow.svg');
+        background-repeat: no-repeat;
+        transition: .2s background-color ease-in-out;
+        position: absolute;
+        top: 35%;
+        left: -20%;
+        transform: rotate(85deg);
+      }
+    }
+  }
+}

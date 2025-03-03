@@ -7,7 +7,7 @@
     position: relative;
     padding: 40px 52px;
     border-radius: 19px;
-    background: #6c5fbc url("../img/sale_bg.jpg");
+    background: var(--purple) url("../img/sale_bg.jpg");
 
     &::before {
       display: inline-block;
@@ -71,7 +71,7 @@
         transition: .2s all;
 
         &:focus {
-          border-color: #6c5fbc;
+          border-color: var(--purple);
           box-shadow: 0 0 0 .25rem rgba(108, 95, 188, 0.25);
         }
       }
@@ -89,7 +89,7 @@
         border-right: 1px;
       }
       .food-filter__btn {
-        border: 2px solid #6c5fbc;
+        border: 2px solid var(--purple);
         margin: 0;
         padding: 20px 0;
         background: inherit;
@@ -97,21 +97,21 @@
         font-weight: 600;
         font-size: 18px;
         text-align: center;
-        color: #6c5fbc;
+        color: var(--purple);
         transition: .2s all;
 
         &:hover {
-          background: #6c5fbc;
+          background: var(--purple);
           color: #f7f8fa;
         }
       }
       .food-filter__btn--active {
-        background: #6c5fbc;
+        background: var(--purple);
         color: #f7f8fa;
         transition: .2s all;
 
         &:hover {
-          background: #5a4aa3;
+          background: var(--purple-hover);
         }
       }
       & button:last-child {
@@ -184,7 +184,7 @@
       }
       .filter-panel__category-item--active {
         position: relative;
-        border: 1px solid #6c5fbc;
+        border: 1px solid var(--purple);
         box-shadow: var(--bs-box-shadow-sm);
         transform: scale(1.1);
       }
@@ -206,11 +206,11 @@
         color: #acadb9;
 
         &:hover {
-          color: #6c5fbc;
+          color: var(--purple);
         }
       }
       .filter-panel__sort-btn--active {
-        color: #6c5fbc;
+        color: var(--purple);
       }
     }
     .filter-panel__price {
@@ -221,7 +221,7 @@
         /* Стили ползунка */
         width: 100%;
         height: 8px;
-        background: #6c5fbc;
+        background: var(--purple);
         border-radius: 9px;
         outline: none;
 
@@ -232,7 +232,7 @@
           /* Стили ползунка */
           width: 20px;
           height: 21px;
-          background: #6c5fbc;
+          background: var(--purple);
           border-radius: 50%;
           box-shadow: 0 0 0 .25rem rgba(108, 95, 188, 0.25);
           cursor: pointer;
@@ -260,14 +260,14 @@
       border: none;
       padding: 18px 0;
       border-radius: 14px;
-      background: #6c5fbc;
+      background: var(--purple);
       font-family: var(--font-family), sans-serif;
       font-weight: 800;
       font-size: 18px;
       color: #fff3eb;
 
       &:hover {
-        background: #5a4aa3;
+        background: var(--purple-hover);
         color: #f7f8fa;
       }
     }
@@ -320,7 +320,7 @@
           content: "";
           width: 36px;
           height: 36px;
-          background: #6c5fbc url("../icons/plus.svg") no-repeat center;
+          background: var(--purple) url("../icons/plus.svg") no-repeat center;
           border-radius: 50%;
           position: absolute;
           top: 50%;
@@ -350,7 +350,7 @@
       .faq__header-btn {
         &::after {
           transform: translateY(-50%) rotate(45deg);
-          background-color: #5a4aa3;
+          background-color: var(--purple-hover);
         }
       }
     }

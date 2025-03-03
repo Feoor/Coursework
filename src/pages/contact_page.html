@@ -54,29 +54,31 @@
 
                 <!--  Иллюстрации(слева)  -->
                 <div class="contact__illustrations col-6">
-                    <div class="illustrations__purple-block h-100">
-                        <h2 class="illustrations__title">Just Contact</h2>
+                    <div class="illustrations__purple-block">
+                        <h2 class="illustrations__title text-center">Just Contact</h2>
                     </div>
                 </div>
 
                 <!--  Форма обратной связи(справа)  -->
                 <div class="contact__support col-6">
-                    <h2 class="contact__title">Customer Support</h2>
+                    <h2 class="contact__title">
+                        Поддержка
+                        <span class="highlight--purple">клиентов</span>
+                    </h2>
                     <form class="contact__form needs-validation" novalidate>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Адрес электронной почты</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                            <div id="emailHelp" class="form-text">Мы никогда никому не передадим вашу электронную почту.</div>
+                        <div class="contact__form-input contact__form-input--text form-floating mb-4">
+                            <input type="text" class="form-control" id="ContactSupportFullNameInput" placeholder="Имя Фамилия">
+                            <label for="ContactSupportFullNameInput">Имя Фамилия</label>
                         </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Пароль</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        <div class="contact__form-input contact__form-input--email form-floating mb-5">
+                            <input type="email" class="form-control" id="ContactSupportEmailInput" placeholder="Адрес электронной почты">
+                            <label for="ContactSupportEmailInput">Адрес электронной почты</label>
                         </div>
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Проверить меня</label>
+                        <div class="contact__form-input contact__form-input--textarea form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="ContactSupportComment" style="height: 100px"></textarea>
+                            <label for="ContactSupportComment">Введите проблему или запрос</label>
                         </div>
-                        <button type="submit" class="btn btn-primary">Отправить</button>
+                        <button type="submit" class="contact__form-btn btn btn-primary w-100">Отправить</button>
                     </form>
                 </div>
 

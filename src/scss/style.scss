@@ -1,6 +1,7 @@
 @import 'fonts';
 @import "menu_styles";
 @import "restaurant_pages_style";
+@import "contact_us_style";
 
 :root {
   --font-family: "Manrope";
@@ -8,6 +9,8 @@
   --font4: "Public Sans", sans-serif;
   --font5: "Quicksand", sans-serif;
   --font6: "Plus Jakarta Sans", sans-serif;
+  --purple: #6c5fbc;
+  --purple-hover: #5a4aa3;
 }
 
 /* Базовые стили */
@@ -97,11 +100,11 @@ h2 {
     }
   }
   .menu__item--active {
-    color: #6c5fbc;
+    color: var(--purple);
   }
 }
 .highlight--purple {
-  color: #6c5fbc;
+  color: var(--purple);
 }
 .text-muted {
   color: #7c6fcd !important;
@@ -161,7 +164,7 @@ h2 {
   top: 0; left: 0; bottom: 0; right: 0;
   }
   &:hover {
-    background-color: #6c5fbc;
+    background-color: var(--purple);
     &::after {
       background: url("../icons/bookmark_white.svg") no-repeat;
       background-size: cover;
@@ -218,7 +221,7 @@ h2 {
     top: 0; left: 0; bottom: 0; right: 0;
   }
   &:hover {
-    background-color: #6c5fbc;
+    background-color: var(--purple);
   }
 }
 
@@ -258,7 +261,7 @@ h2 {
 /* Фиолетовый скроллбар */
 .purple-scrollbar {
   --sb-track-color: rgba(108, 95, 188, 0.2);
-  --sb-thumb-color: #6c5fbc;
+  --sb-thumb-color: var(--purple);
   --sb-size: 11px;
 
   &::-webkit-scrollbar {
@@ -305,7 +308,7 @@ h2 {
       font-weight: 900;
       font-size: 24px;
       line-height: 130%;
-      color: #6c5fbc;
+      color: var(--purple);
       cursor: pointer;
     }
 
@@ -345,7 +348,7 @@ h2 {
         font-size: 18px;
         line-height: 150%;
         color: #f9f9f9;
-        background: #6c5fbc;;
+        background: var(--purple);;
         border: none;
         border-radius: 17px;
         padding: 17px 26px;
@@ -353,7 +356,7 @@ h2 {
         transition: background .2s;
 
         &:hover {
-            background: #5a4aa3;
+            background: var(--purple-hover);
         }
     }
   }
@@ -411,7 +414,7 @@ h2 {
       .hero__btn--primary {
         border-radius: 12px;
         padding: 1rem 28px;
-        background: #6c5fbc;
+        background: var(--purple);
         border: none;
         font-family: var(--font-family), sans-serif;
         font-weight: 600;
@@ -422,24 +425,24 @@ h2 {
         transition: background .3s;
 
         &:hover {
-          background: #5a4aa3;
+          background: var(--purple-hover);
         }
       }
       .hero__btn--secondary {
         border-radius: 12px;
         padding: 1rem 28px;
         background: inherit;
-        border: 1.50px solid #6c5fbc;
+        border: 1.50px solid var(--purple);
         font-family: var(--font-family), sans-serif;
         font-weight: 600;
         font-size: 16px;
         letter-spacing: 0.01em;
         text-transform: capitalize;
-        color: #6c5fbc;
+        color: var(--purple);
         transition: background .3s;
 
         &:hover {
-          background: #6c5fbc;
+          background: var(--purple);
           color: #fff;
         }
       }
@@ -620,7 +623,7 @@ h2 {
       height: 63px;
       padding-left: 26px;
       padding-right: 68px;
-      background: #6c5fbc;
+      background: var(--purple);
       border: none;
       font-family: var(--font-family), sans-serif;
       font-weight: 600;
@@ -655,7 +658,7 @@ h2 {
         right: -85%;
       }
       &:hover {
-        background: #5a4aa3;
+        background: var(--purple-hover);
       }
       &:hover::after {
         transform: translateX(8px) translateY(-45%);
@@ -852,7 +855,7 @@ h2 {
   height: 280px;
   padding: 40px 65px;
   border-radius: 30px;
-  background: #6c5fbc url("../img/sale_bg.jpg");
+  background: var(--purple) url("../img/sale_bg.jpg");
   background-size: cover;
   position: relative;
 
@@ -900,7 +903,7 @@ h2 {
       border-radius: 11px;
       height: 53px;
       padding: 0 24px;
-      background: #6c5fbc;
+      background: var(--purple);
       border: none;
       font-family: var(--font-family), sans-serif;
       font-weight: 600;
@@ -912,7 +915,7 @@ h2 {
       transition: background .3s;
 
       &:hover {
-        background: #5a4aa3;
+        background: var(--purple-hover);
       }
     }
   }
@@ -935,7 +938,7 @@ h2 {
       font-weight: 900;
       font-size: 24px;
       line-height: 130%;
-      color: #6c5fbc;
+      color: var(--purple);
       cursor: pointer;
     }
     .footer__list {
@@ -976,7 +979,7 @@ h2 {
 
         &:hover {
           background: rgba(0, 0, 0, 0.05);
-          color: #6c5fbc;
+          color: var(--purple);
         }
       }
     }
