@@ -283,7 +283,6 @@
 
 .faq__wrapper {
   padding-top: 200px;
-  padding-bottom: 170px;
 }
 .faq__wrapper .faq__title {
   font-weight: 800;
@@ -394,6 +393,55 @@
   max-height: 32px;
 }
 
+/* Наши лучшие блюда */
+.menu-section__wrapper {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.menu-section__wrapper .menu-section__title {
+  color: #323142;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+.menu-section__wrapper .menu-section__dish {
+  display: flex;
+  gap: 30px;
+}
+.menu-section__wrapper .menu-section__dish .card {
+  max-width: 225px;
+  padding: 37px 20px 26px;
+  border: 2px solid #f4f4f4;
+  border-radius: 30px;
+  box-shadow: 7px 82px 41px 0 rgba(229, 229, 229, 0.7);
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.menu-section__wrapper .menu-section__dish .card:hover {
+  transform: translateY(-10px);
+}
+.menu-section__wrapper .menu-section__dish .card .card-img-top {
+  border-radius: 30px 30px 0 0;
+}
+.menu-section__wrapper .menu-section__dish .card .card-body {
+  padding: 0;
+}
+.menu-section__wrapper .menu-section__dish .card .card-body h5 {
+  font-family: var(--font-family), sans-serif;
+  font-weight: 800;
+  font-size: 25px;
+  line-height: 162%;
+  color: #323142;
+  margin-bottom: 0;
+}
+.menu-section__wrapper .menu-section__dish .card .card-body .menu-section__dish-info {
+  font-family: var(--font-family), sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 133%;
+  color: #8e97a6;
+}
+
 :root {
   --font-family: "Manrope";
   --second-family: "Inter";
@@ -403,6 +451,22 @@
 }
 
 /* Базовые стили */
+html {
+  font-family: var(--second-family), sans-serif;
+}
+
+/* Прикрепляем футер снизу */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Главное занимает всю доступную высоту */
+main {
+  flex: 1 0 auto;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -412,10 +476,6 @@
 a {
   text-decoration: none;
   color: inherit;
-}
-
-html {
-  font-family: var(--second-family), sans-serif;
 }
 
 h2 {
@@ -1187,7 +1247,6 @@ h2 {
 /* Секция с купоном */
 .sale {
   padding-top: 100px;
-  padding-bottom: 120px;
 }
 
 .sale__wrapper {
@@ -1262,6 +1321,8 @@ h2 {
 
 /* Подвал */
 .footer {
+  width: 100%;
+  margin-top: 150px;
   padding-top: 68px;
   padding-bottom: 40px;
   background: #eaeaea;
