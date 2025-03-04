@@ -1,0 +1,12 @@
+.auth-page {
+  background-image: url("../img/auth_bg.png");
+  background-size: cover;
+
+  .header {
+    background: transparent;
+
+    .header__wrapper {
+      border-bottom: none;
+    }
+  }
+}

@@ -1,11 +1,12 @@
 .contact__wrapper {
   padding-top: 180px;
+  padding-bottom: 50px;
 
   /* Стилия иллюстраций(слева) */
   .contact__illustrations {
     .illustrations__purple-block {
       width: calc(27.5% - 48px); /* Ширина блока на 50%(27.5% от всей ширины экрана) - отступ gx-5(48px) */
-      height: calc(100% - 228px); /* Блок высотой наравне с высотой формы */
+      height: calc(100% - 278px); /* Блок высотой наравне с высотой формы */
       padding-top: 60px;
       background: var(--purple);
       position: absolute;
@@ -40,7 +41,7 @@
       &::after {
         display: inline-block;
         content: '';
-        width: 60%;
+        width: 51%;
         height: 85%;
         background-image: url('../img/mobile_screen.png');
         background-size: contain;
@@ -73,6 +74,7 @@
     .contact__form-btn {
       position: relative;
       padding: 1.5rem 0;
+      border: none;
       border-radius: 16px;
       background-color: var(--purple);
       font-family: var(--font-family), sans-serif;
@@ -94,7 +96,7 @@
         background-repeat: no-repeat;
         transition: .2s background-color ease-in-out;
         position: absolute;
-        top: 35%;
+        top: 25%;
         left: -20%;
         transform: rotate(85deg);
       }

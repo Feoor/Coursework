@@ -69,11 +69,6 @@
         line-height: 117%;
         color: #18181b;
         transition: .2s all;
-
-        &:focus {
-          border-color: var(--purple);
-          box-shadow: 0 0 0 .25rem rgba(108, 95, 188, 0.25);
-        }
       }
       .food-filter__search-input ~ label {
         padding-left: 70px;
