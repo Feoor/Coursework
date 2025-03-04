@@ -1,12 +1,56 @@
 .auth-page {
   background-image: url("../img/auth_bg.png");
   background-size: cover;
+  background-repeat: no-repeat;
 
   .header {
+    position: relative;
     background: transparent;
 
     .header__wrapper {
       border-bottom: none;
+    }
+  }
+}
+
+.auth__wrapper {
+  padding-top: 40px;
+
+  .sign-up__auth {
+    .auth__title {
+      font-family: var(--font-family), sans-serif;
+      font-weight: 700;
+      font-size: 35px;
+      color: #323142;
+    }
+    .auth__social-btn {
+      padding: 20px 0;
+      border: none;
+      border-radius: 13px;
+    }
+    .auth__subtitle {
+      font-family: var(--font-family), sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      text-transform: uppercase;
+      color: rgba(0, 90, 100, 0.35);
+    }
+    .sign-up__form-btn {
+      border-radius: 16px;
+      padding: 24px 0;
+      font-weight: 700;
+    }
+
+    .auth__footer {
+      font-family: var(--font-family), sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      letter-spacing: 0.01em;
+      color: #3e3e3e;
+
+      a {
+        font-weight: 900;
+      }
     }
   }
 }

@@ -37,35 +37,74 @@
         <div class="container-sm">
 
             <!--  Обёртка авторизации  -->
-            <div class="auth__wrapper row">
+            <div class="auth__wrapper row justify-content-between">
 
                 <!--  Форма регистрации  -->
-                <div class="sign-up__form col-6">
+                <div class="sign-up__auth col-4 offset-md-1">
                     <!--  Титул + быстрый вход  -->
-                    <h2 class="auth__title">Регистрация в eatly</h2>
-                    <div class="auth__social-login row g-4">
-                        <button class="auth__social-btn auth__social-btn--google col-6"></button>
-                        <button class="auth__social-btn auth__social-btn--apple col-6"></button>
+                    <h2 class="auth__title text-center mb-5">Регистрация в eatly</h2>
+                    <div class="auth__social-login row gx-4 mb-4 justify-content-between">
+                        <button class="auth__social-btn auth__social-btn--google col-6">G</button>
+                        <button class="auth__social-btn auth__social-btn--apple col-6">A</button>
                     </div>
 
-                    <h3 class="auth__subtitle">ИЛИ</h3>
+                    <h3 class="auth__subtitle text-center mb-4">ИЛИ</h3>
 
                     <!--  Форма  -->
-                    <form class="contact__form needs-validation" novalidate>
-                        <div class="contact__form-input contact__form-input--text form-floating mb-4">
-                            <input type="text" class="form-control" id="ContactSupportFullNameInput" placeholder="Имя Фамилия" required>
-                            <label for="ContactSupportFullNameInput">Имя Фамилия</label>
+                    <form class="sign-up__form">
+                        <div class="sign-up__form-input sign-up__form-input--name form-floating mb-4">
+                            <input type="text" class="form-control" id="signUpUsernameInput" placeholder="Имя Фамилия" required>
+                            <label for="signUpUsernameInput">Имя Фамилия</label>
                         </div>
-                        <div class="contact__form-input contact__form-input--email form-floating mb-5">
-                            <input type="email" class="form-control" id="ContactSupportEmailInput" placeholder="Адрес электронной почты" required>
-                            <label for="ContactSupportEmailInput">Адрес электронной почты</label>
+                        <div class="sign-up__form-input sign-up__form-input--email form-floating mb-4">
+                            <input type="email" class="form-control" id="signUpEmailInput" placeholder="Адрес электронной почты" required>
+                            <label for="signUpEmailInput">Адрес электронной почты</label>
                         </div>
-                        <div class="contact__form-input contact__form-input--textarea form-floating">
-                            <textarea class="form-control" placeholder="Leave a comment here" id="ContactSupportComment" style="height: 100px" required></textarea>
-                            <label for="ContactSupportComment">Введите проблему или запрос</label>
+                        <div class="sign-up__form-input sign-up__form-input--password form-floating mb-4">
+                            <input type="password" class="form-control" id="signUpPasswordInput" placeholder="Пароль" required>
+                            <label for="signUpPasswordInput">Пароль</label>
                         </div>
-                        <button type="submit" class="contact__form-btn btn btn-primary w-100">Отправить</button>
+                        <button type="submit" class="sign-up__form-btn btn btn-primary w-100">Зарегистрироваться</button>
                     </form>
+
+                    <!--  Если есть аккаунт  -->
+                    <div class="auth__footer text-center mt-4">
+                        <p>Уже есть аккаунт? <a href="sign_in.html" class="highlight--purple">Войти</a></p>
+                    </div>
+                </div>
+
+                <!--  Форма регистрации  -->
+                <div class="sign-up__auth col-5">
+                    <!--  Титул + быстрый вход  -->
+                    <h2 class="auth__title text-center mb-5">Регистрация в eatly</h2>
+                    <div class="auth__social-login row gx-4 mb-4 justify-content-between">
+                        <button class="auth__social-btn auth__social-btn--google col-6">G</button>
+                        <button class="auth__social-btn auth__social-btn--apple col-6">A</button>
+                    </div>
+
+                    <h3 class="auth__subtitle text-center mb-4">ИЛИ</h3>
+
+                    <!--  Форма  -->
+                    <form class="sign-up__form">
+                        <div class="sign-up__form-input sign-up__form-input--name form-floating mb-4">
+                            <input type="text" class="form-control" id="signUpUsernameInput" placeholder="Имя Фамилия" required>
+                            <label for="signUpUsernameInput">Имя Фамилия</label>
+                        </div>
+                        <div class="sign-up__form-input sign-up__form-input--email form-floating mb-4">
+                            <input type="email" class="form-control" id="signUpEmailInput" placeholder="Адрес электронной почты" required>
+                            <label for="signUpEmailInput">Адрес электронной почты</label>
+                        </div>
+                        <div class="sign-up__form-input sign-up__form-input--password form-floating mb-4">
+                            <input type="password" class="form-control" id="signUpPasswordInput" placeholder="Пароль" required>
+                            <label for="signUpPasswordInput">Пароль</label>
+                        </div>
+                        <button type="submit" class="sign-up__form-btn btn btn-primary w-100">Зарегистрироваться</button>
+                    </form>
+
+                    <!--  Если есть аккаунт  -->
+                    <div class="auth__footer text-center mt-4">
+                        <p>Уже есть аккаунт? <a href="sign_in.html" class="highlight--purple">Войти</a></p>
+                    </div>
                 </div>
 
                 <!--  Иллюстрация  -->
@@ -76,5 +115,6 @@
         </div>
     </section>
 </main>
+
 </body>
 </html>

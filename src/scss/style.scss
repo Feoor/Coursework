@@ -150,6 +150,36 @@ h2 {
   background-color: rgba(51, 172, 100, 0.2);
   padding: 6px 8px;
 }
+
+/* Разновидности классов кнопок */
+.btn {
+  border-radius: 12px;
+  border: none;
+  font-family: var(--font-family), sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: capitalize;
+  transition: .3s all;
+}
+.btn-primary {
+  color: #fff;
+  background: var(--purple);
+
+  &:hover {
+    background: var(--purple-hover);
+  }
+}
+.btn-secondary {
+  color: #6c5fbc;
+  background: inherit;
+  border: 1.50px solid var(--purple);
+
+  &:hover {
+    background: var(--purple);
+    color: #fff;
+  }
+}
+
 /* Добавить ресторан в избранное */
 .restaurant-bookmark {
   width: 40px;
@@ -421,40 +451,8 @@ h2 {
       display: flex;
       gap: 18px;
 
-      .hero__btn--primary {
-        border-radius: 12px;
+      .hero__btn {
         padding: 1rem 28px;
-        background: var(--purple);
-        border: none;
-        font-family: var(--font-family), sans-serif;
-        font-weight: 600;
-        font-size: 16px;
-        letter-spacing: 0.01em;
-        text-transform: capitalize;
-        color: #fff;
-        transition: background .3s;
-
-        &:hover {
-          background: var(--purple-hover);
-        }
-      }
-      .hero__btn--secondary {
-        border-radius: 12px;
-        padding: 1rem 28px;
-        background: inherit;
-        border: 1.50px solid var(--purple);
-        font-family: var(--font-family), sans-serif;
-        font-weight: 600;
-        font-size: 16px;
-        letter-spacing: 0.01em;
-        text-transform: capitalize;
-        color: var(--purple);
-        transition: background .3s;
-
-        &:hover {
-          background: var(--purple);
-          color: #fff;
-        }
       }
     }
     .hero__reviews {
