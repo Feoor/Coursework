@@ -23,19 +23,120 @@
       font-size: 35px;
       color: #323142;
     }
+
+    // Стили для кнопок соц. сетей
     .auth__social-btn {
-      padding: 20px 0;
+      position: relative;
+      width: 47.5%;
+      padding: 2rem 0;
       border: none;
       border-radius: 13px;
+      transition: .3s all;
+
+      &:hover {
+        background-color: var(--purple);
+      }
+      &--google::after {
+        display: inline-block;
+        content: "";
+        width: 23px;
+        height: 23px;
+        background: url("../icons/google_icon.svg") no-repeat;
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        margin: auto;
+      }
+      &--apple::after {
+        display: inline-block;
+        content: "";
+        width: 27px;
+        height: 31px;
+        background: url("../icons/apple_icon.svg") no-repeat;
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        margin: auto;
+      }
     }
+
     .auth__subtitle {
       font-family: var(--font-family), sans-serif;
       font-weight: 600;
+      font-size: 22px;
+      color: #cfcfd3;
+    }
+    .auth__text-divider {
+      font-family: var(--font-family), sans-serif;
+      font-weight: 600;
       font-size: 20px;
-      text-transform: uppercase;
       color: rgba(0, 90, 100, 0.35);
     }
-    .sign-up__form-btn {
+
+    // Стили для input'ов
+    .auth__form-input {
+      position: relative;
+
+      input {
+        padding-left: 4rem;
+        border: none;
+        border-radius: 14px;
+        background: #f5f5f5;
+
+        &:focus ~ label {
+          transform: scale(.85) translateY(-.5rem) translateX(0.55rem);
+
+          &::after {
+            background-color: transparent;
+          }
+        }
+      }
+      label {
+        padding-left: 4rem;
+      }
+
+      // Иконки для input'ов
+      &--name::before {
+        display: inline-block;
+        content: "";
+        width: 22px;
+        height: 23px;
+        background: url("../icons/user_icon.svg") no-repeat;
+        position: absolute;
+        top: 50%;
+        left: 1.5rem;
+        transform: translateY(-50%);
+      }
+      &--email::before {
+        display: inline-block;
+        content: "";
+        width: 23px;
+        height: 18px;
+        background: url("../icons/email_icon.svg") no-repeat;
+        position: absolute;
+        top: 50%;
+        left: 1.5rem;
+        transform: translateY(-50%);
+      }
+      &--password {
+        &::before {
+          display: inline-block;
+          content: "";
+          width: 19px;
+          height: 24px;
+          background: url("../icons/password_icon.svg") no-repeat;
+          position: absolute;
+          top: 50%;
+          left: 1.5rem;
+          transform: translateY(-50%);
+        }
+        &.auth__form-input--with-hint {
+          &::before {
+            transform: translateY(-100%);
+          }
+        }
+      }
+    }
+
+    .auth__form-btn {
       border-radius: 16px;
       padding: 24px 0;
       font-weight: 700;

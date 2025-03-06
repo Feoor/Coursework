@@ -73,12 +73,19 @@ h2 {
   transition: .2s all;
 
   &:focus {
-    border-color: var(--purple) !important;
+    border: 1px solid var(--purple-hover) !important;
     box-shadow: 0 0 0 .25rem rgba(108, 95, 188, 0.25) !important;
   }
 }
 
 /* Базовые классы */
+.mt-6, m-6 {
+  margin-top: 5rem;
+}
+.mb-6, m-6 {
+  margin-bottom: 5rem;
+}
+
 .eatly-logo {
   position: relative;
   padding-left: 55px;
@@ -178,6 +185,13 @@ h2 {
     background: var(--purple);
     color: #fff;
   }
+}
+
+.input-hint {
+  font-family: var(--font-family), sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #6c5fbc;
 }
 
 /* Добавить ресторан в избранное */
