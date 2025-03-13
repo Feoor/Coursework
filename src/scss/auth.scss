@@ -16,6 +16,30 @@
 .auth__wrapper {
   padding-top: 40px;
 
+  .auth__carousel {
+    .carousel-caption {
+      z-index: 10;
+      bottom: -45%;
+
+      h5 {
+        font-family: var(--third-family), sans-serif;
+        font-weight: 800;
+        font-size: 32px;
+        line-height: 110%;
+        text-align: center;
+        color: #fff
+      }
+      p {
+        font-family: var(--third-family), sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 150%;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+  }
+
   .sign-up__auth {
     .auth__title {
       font-family: var(--font-family), sans-serif;

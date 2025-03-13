@@ -1,0 +1,66 @@
+/* Подвал */
+.footer {
+  width: 100%;
+  margin-top: 150px;
+  padding-top: 68px;
+  padding-bottom: 40px;
+  background: #eaeaea;
+
+  .footer__top {
+    padding-bottom: 36px;
+    border-bottom: 2px solid #cbcbcb;
+
+    .footer__logo {
+      font-family: var(--font-family), sans-serif;
+      font-weight: 900;
+      font-size: 24px;
+      line-height: 130%;
+      color: var(--purple);
+      cursor: pointer;
+    }
+    .footer__list {
+      display: flex;
+      list-style-type: none;
+      margin: 0;
+      gap: 38px;
+      color: #999;
+    }
+  }
+
+  .footer__bottom {
+    padding-top: 56px;
+
+    .footer__copyright p {
+      font-family: var(--second-family), sans-serif;
+      font-weight: 500;
+      font-size: 17px;
+      line-height: 147%;
+      color: #999;
+      margin-bottom: 0;
+    }
+    .footer__socials {
+      display: flex;
+      gap: 20px;
+
+      .footer__social-link {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: background .3s;
+        color: #081420;
+
+        &:hover {
+          background: rgba(0, 0, 0, 0.05);
+          color: var(--purple);
+        }
+      }
+    }
+  }
+}
+
+/* Адаптивность футера */

@@ -1,0 +1,135 @@
+.eatly-logo {
+  position: relative;
+  padding-left: 55px;
+
+  /* Логотип */
+  &::before {
+    display: inline-block;
+    content: "";
+    width: 46px;
+    height: 46px;
+    background: url("../../icon.svg") no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 50%;
+    right: 68px;
+    transform: translateY(-45%);
+  }
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  z-index: 100;
+}
+.header__wrapper {
+  padding: 1.5rem 0;
+  border-bottom: 2px solid #cbcbcb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .header__left-side {
+    display: flex;
+    gap: 72px;
+
+    .header__logo {
+      font-family: var(--font-family), sans-serif;
+      font-weight: 900;
+      font-size: 24px;
+      line-height: 130%;
+      color: var(--purple);
+      cursor: pointer;
+    }
+
+    .header__list {
+      display: flex;
+      list-style-type: none;
+      margin: 0;
+      gap: 38px;
+      color: #606060;
+    }
+  }
+
+  .header__right-side {
+    display: flex;
+    gap: 12px;
+
+    .header__login {
+      font-family: var(--second-family), sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 150%;
+      color: #606060;
+      background-color: inherit;
+      border: none;
+      border-radius: 17px;
+      padding: 17px 26px;
+      cursor: pointer;
+      transition: background-color .2s;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+    }
+    .header__sign-up {
+      font-family: var(--second-family), sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 150%;
+      color: #f9f9f9;
+      background: var(--purple);;
+      border: none;
+      border-radius: 17px;
+      padding: 17px 26px;
+      cursor: pointer;
+      transition: background .2s;
+
+      &:hover {
+        background: var(--purple-hover);
+      }
+    }
+  }
+}
+
+/* Адаптивность навбара */
+@media screen and (max-width: 1024px) {
+  // Планшеты
+  .header__wrapper {
+    .header__left-side {
+      gap: 48px;
+
+      .header__logo {
+        font-size: 18px;
+
+        .eatly-logo {
+          padding-left: 38px;
+
+          &::before {
+            width: 46px;
+            height: 46px;
+            right: 52px;
+          }
+        }
+      }
+      .header__list {
+        gap: 32px;
+      }
+    }
+    .header__right-side {
+      gap: 8px;
+
+      .header__login {
+          font-size: 16px;
+          padding: 14px 22px;
+      }
+      .header__sign-up {
+          font-size: 16px;
+          padding: 14px 22px;
+      }
+    }
+  }
+}
