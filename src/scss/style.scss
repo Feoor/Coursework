@@ -119,29 +119,24 @@ h2 {
   line-height: 156%;
   color: #8e97a6;
 }
-.badge.badge-healthy {
+
+.badge {
   font-family: var(--font-family), sans-serif;
   font-weight: 600;
   font-size: 12px;
+  padding: 6px 8px;
+}
+.badge.badge-healthy {
   color: #daa31a;
   background: #f7edd0;
-  padding: 6px 8px;
 }
 .badge.badge-trending {
-  font-family: var(--font-family), sans-serif;
-  font-weight: 600;
-  font-size: 12px;
   color: #fb471d;
   background: #f7c5ba;
-  padding: 6px 8px;
 }
 .badge.badge-supreme {
-  font-family: var(--font-family), sans-serif;
-  font-weight: 600;
-  font-size: 12px;
   color: #309d5b;
   background-color: rgba(51, 172, 100, 0.2);
-  padding: 6px 8px;
 }
 
 /* Разновидности классов кнопок */
@@ -229,6 +224,7 @@ h2 {
     max-width: 22px;
     max-height: 19px;
     background: url("../icons/heart.svg") no-repeat;
+    background-size: contain;
     position: absolute;
     margin: auto;
     top: 0; left: 0; bottom: 0; right: 0;
@@ -256,6 +252,7 @@ h2 {
     max-width: 16px;
     max-height: 16px;
     background: url("../icons/plus.svg") no-repeat;
+    background-size: contain;
     position: absolute;
     margin: auto;
     top: 0; left: 0; bottom: 0; right: 0;
@@ -280,20 +277,21 @@ h2 {
   &::after {
     display: inline-block;
     content: "";
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     background: url("../icons/gray_right_arrow.svg") no-repeat;
+    background-size: contain;
     position: absolute;
     top: 50%;
     right: 0;
-    transform: translateY(-35%);
+    transform: translateY(-50%);
     transition: transform .2s;
   }
   &:hover {
     text-decoration: underline;
     text-underline-offset: 3px;
     &::after {
-      transform: translateX(8px) translateY(-35%);
+      transform: translateX(8px) translateY(-50%);
     }
   }
 }
@@ -503,7 +501,7 @@ h2 {
   background-size: cover;
   padding: 48px 0;
 
-  .features__wrapper div {
+  .features__feature {
     &:not(:last-child) {
       border-right: 1px solid rgba(197, 197, 197, 0.15);
     }
@@ -579,9 +577,7 @@ h2 {
     .app-download__btn {
       position: relative;
       border-radius: 15px;
-      height: 63px;
-      padding-left: 26px;
-      padding-right: 68px;
+      padding: 1.25rem 68px 1.25rem 26px;
       background: var(--purple);
       border: none;
       font-family: var(--font-family), sans-serif;
@@ -599,6 +595,7 @@ h2 {
         width: 30px;
         height: 30px;
         background: url("../icons/right_arrow.svg") no-repeat;
+        background-size: contain;
         position: absolute;
         top: 50%;
         right: 20px;
@@ -611,6 +608,7 @@ h2 {
         width: 169px;
         height: 61px;
         background: url("../img/long_spiral.svg") no-repeat;
+        background-size: contain;
         position: absolute;
         z-index: -1;
         bottom: -80%;
@@ -647,14 +645,12 @@ h2 {
         transform: translateY(-10px);
       }
 
-      .card-body {
-        .our-restaurants__restaurant-info {
-          font-family: var(--font-family), sans-serif;
-          font-weight: 400;
-          font-size: 19px;
-          line-height: 133%;
-          color: #8e97a6;
-        }
+      .our-restaurants__restaurant-info {
+        font-family: var(--font-family), sans-serif;
+        font-weight: 400;
+        font-size: 19px;
+        line-height: 133%;
+        color: #8e97a6;
       }
     }
   }
@@ -671,8 +667,6 @@ h2 {
     margin-bottom: 62px;
   }
   .our-dishes__dish {
-    display: flex;
-    gap: 30px;
 
     .card {
       max-width: 225px;
@@ -695,14 +689,6 @@ h2 {
       .card-body {
         padding: 0;
 
-        h5 {
-          font-family: var(--font-family), sans-serif;
-          font-weight: 800;
-          font-size: 25px;
-          line-height: 162%;
-          color: #323142;
-          margin-bottom: 0;
-        }
         .our-dishes__dish-info {
           font-family: var(--font-family), sans-serif;
           font-weight: 400;
@@ -883,9 +869,71 @@ h2 {
 /* Адаптивность главной страницы */
 @media screen and (max-width: 1024px) {
   // Планшеты
+  h2 {
+    font-size: 32px;
+  }
+  .card {
+    .card-body {
+      padding: 0.5rem 1.5rem 0.75rem;
+
+      h5 {
+        font-size: 18px;
+      }
+    }
+  }
+  .badge {
+    padding: 4px 6px;
+    font-size: 10px;
+  }
+  .restaurant-bookmark {
+    width: 29px;
+    height: 29px;
+    right: 18px;
+    bottom: 12px;
+
+    &::after {
+      width: 11px;
+      height: 14px;
+    }
+  }
+  .view-all {
+    font-size: 14px;
+    padding-right: 24px;
+
+    &::after {
+      width: 14px;
+      height: 14px;
+      transform: translateY(-50%);
+    }
+  }
+  .price--cents {
+    font-size: 12px;
+  }
+  .dish-favorite {
+    top: 12px;
+    width: 24px;
+    height: 24px;
+
+    &::after {
+      width: 16px;
+      height: 13px;
+    }
+  }
+  .add-to-cart {
+    width: 32px;
+    height: 28px;
+    bottom: 20px;
+    right: 16px;
+
+    &::after {
+      width: 11px;
+      height: 11px;
+    }
+  }
+
   .hero__wrapper {
     padding-top: 200px;
-    padding-bottom: 100px;
+    padding-bottom: 100pxx;
 
     .hero__left-column {
       .hero__text {
@@ -978,6 +1026,197 @@ h2 {
           height: 23px;
           bottom: -17%;
           left: -12%;
+        }
+      }
+    }
+  }
+  .features {
+    background-size: contain;
+    padding: 34px 0;
+
+    .features__feature {
+      .features__feature-title {
+        font-size: 30px;
+      }
+      .features__feature-text {
+        font-size: 14px;
+      }
+    }
+  }
+  .app-download__wrapper {
+    padding-top: 80px;
+    padding-bottom: 86px;
+
+    .app-download__mockup {
+      .app-download__mobile-screen {
+        max-width: 216px;
+        max-height: 433px;
+
+        &::after {
+          width: 40px;
+          height: 45px;
+          top: -30px;
+          right: -50px;
+        }
+      }
+    }
+
+    .app-download__content {
+      .app-download__title {
+        font-size: 36px;
+        margin-bottom: 48px;
+      }
+      .app-download__features {
+        gap: 8px;
+
+        .app-download__feature {
+          font-size: 14px;
+        }
+      }
+      .app-download__btn {
+        padding: 1rem 3rem 1rem 1rem;
+        font-size: 14px;
+
+        &::after {
+          width: 24px;
+          height: 24px;
+          right: 14px;
+        }
+        &::before {
+          width: 110px;
+          height: 44px;
+          bottom: -60%;
+          right: -80%;
+          transform: rotate(-5deg);
+        }
+      }
+    }
+  }
+  .our-restaurants__wrapper {
+    padding-top: 80px;
+    padding-bottom: 86px;
+
+    .our-restaurants__title {
+      margin-top: 0;
+      margin-bottom: 60px;
+    }
+    .our-restaurants__restaurant {
+      .card {
+        .our-restaurants__restaurant-info {
+          font-size: 12px;
+
+          img {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+  .our-dishes__wrapper {
+    padding-top: 80px;
+    padding-bottom: 86px;
+
+    .our-dishes__title {
+      margin-top: 0;
+      margin-bottom: 60px;
+    }
+    .our-dishes__dish {
+      .card {
+        max-width: 160px;
+        padding: 1rem 1rem 1.25rem;
+
+        h5 {
+          font-size: 16px;
+        }
+        .card-body {
+          .our-dishes__dish-info {
+            font-size: 14px;
+
+            img {
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .purchases-control__wrapper {
+    padding-top: 80px;
+    padding-bottom: 86px;
+
+    .purchases-control__title {
+      font-size: 32px;
+    }
+    .purchases-control__first-image {
+      max-width: 246px;
+      max-height: 210px;
+    }
+
+    .purchases-control__second-image {
+      max-width: 380px;
+      max-height: 332px;
+    }
+  }
+  .reviews__wrapper {
+    padding-top: 80px;
+    padding-bottom: 86px;
+
+    .reviews__title {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+    .reviews__item {
+      min-width: 300px;
+      padding: 20px 24px;
+
+      .reviews__header {
+        margin-bottom: 16px;
+
+        img {
+          width: 50px;
+          height: 50px;
+        }
+        .reviews__info {
+          margin-left: 12px;
+        }
+        .reviews__author {
+          font-size: 16px;
+        }
+        .review__slogan {
+          font-size: 14px;
+          margin-bottom: 0;
+        }
+      }
+
+      .reviews__text {
+        font-size: 14px;
+      }
+    }
+  }
+  .sale {
+    padding-top: 80px;
+
+    .sale__wrapper {
+      padding: 2rem 3rem;
+      height: 200px;
+
+      &::after {
+        width: 195px;
+        height: 196px;
+      }
+      .sale__title {
+        font-size: 48px;
+        margin-bottom: 24px;
+      }
+      .sale__email-input {
+        height: 48px;
+      }
+      .sale__form {
+        .subscribe__btn {
+          height: 38px;
+          font-size: 10px;
         }
       }
     }
