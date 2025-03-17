@@ -36,7 +36,7 @@
 }
 .eatly-logo {
   position: relative;
-  padding-left: 55px;
+  padding-left: 54px;
   /* Логотип */
 }
 .eatly-logo::before {
@@ -125,23 +125,23 @@
 }
 
 /* Адаптивность навбара */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1200px) {
+  .eatly-logo::before {
+    width: 46px;
+    height: 46px;
+    right: 54px;
+  }
   .header__wrapper .header__left-side {
     gap: 48px;
   }
   .header__wrapper .header__left-side .header__logo {
     font-size: 18px;
   }
-  .header__wrapper .header__left-side .header__logo .eatly-logo {
-    padding-left: 54px;
-  }
-  .header__wrapper .header__left-side .header__logo .eatly-logo::before {
-    width: 46px;
-    height: 46px;
-    right: 54px;
-  }
   .header__wrapper .header__left-side .header__list {
     gap: 32px;
+  }
+  .header__wrapper .header__left-side .header__list .menu__item {
+    font-size: 16px;
   }
   .header__wrapper .header__right-side {
     gap: 8px;
@@ -153,6 +153,42 @@
   .header__wrapper .header__right-side .header__sign-up {
     font-size: 16px;
     padding: 14px 22px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .eatly-logo {
+    padding-left: 42px;
+  }
+  .eatly-logo::before {
+    width: 33px;
+    height: 31px;
+    right: 48px;
+  }
+  .header__wrapper {
+    padding: 1rem 0;
+  }
+  .header__wrapper .header__left-side {
+    gap: 48px;
+  }
+  .header__wrapper .header__left-side .header__logo {
+    font-size: 16px;
+  }
+  .header__wrapper .header__left-side .header__list {
+    gap: 32px;
+  }
+  .header__wrapper .header__left-side .header__list .menu__item {
+    font-size: 14px;
+  }
+  .header__wrapper .header__right-side {
+    gap: 8px;
+  }
+  .header__wrapper .header__right-side .header__login {
+    font-size: 14px;
+    padding: 12px 18px;
+  }
+  .header__wrapper .header__right-side .header__sign-up {
+    font-size: 14px;
+    padding: 12px 18px;
   }
 }
 /* Подвал */
@@ -215,6 +251,31 @@
 }
 
 /* Адаптивность футера */
+@media screen and (max-width: 1024px) {
+  .footer {
+    margin-top: 150px;
+    padding-top: 68px;
+    padding-bottom: 56px;
+  }
+  .footer .footer__top {
+    padding-bottom: 40px;
+  }
+  .footer .footer__top .footer__logo {
+    font-size: 18px;
+  }
+  .footer .footer__top .footer__list {
+    gap: 48px;
+  }
+  .footer .footer__top .footer__list .menu__item {
+    font-size: 16px;
+  }
+  .footer .footer__bottom {
+    padding-top: 40px;
+  }
+  .footer .footer__bottom .footer__copyright p {
+    font-size: 14px;
+  }
+}
 .food-filter__wrapper {
   padding-top: 180px;
   padding-bottom: 30px;
@@ -1327,7 +1388,7 @@ h2 {
   background-size: contain;
   position: absolute;
   top: -15%;
-  right: -20%;
+  right: -14%;
   transform: translateY(-50%);
 }
 .hero__wrapper .hero__right-column .hero__graph {
@@ -1698,7 +1759,7 @@ h2 {
 }
 
 /* Адаптивность главной страницы */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1200px) {
   h2 {
     font-size: 32px;
   }
@@ -1755,7 +1816,7 @@ h2 {
   }
   .hero__wrapper {
     padding-top: 200px;
-    padding-bottom: 100pxx;
+    padding-bottom: 100px;
   }
   .hero__wrapper .hero__left-column .hero__text {
     padding-left: 48px;
@@ -1834,7 +1895,276 @@ h2 {
     left: -12%;
   }
   .features {
-    background-size: contain;
+    padding: 34px 0;
+  }
+  .features .features__feature .features__feature-title {
+    font-size: 30px;
+  }
+  .features .features__feature .features__feature-text {
+    font-size: 14px;
+  }
+  .app-download__wrapper {
+    padding-top: 80px;
+    padding-bottom: 86px;
+  }
+  .app-download__wrapper .app-download__mockup .app-download__mobile-screen {
+    max-width: 216px;
+    max-height: 433px;
+  }
+  .app-download__wrapper .app-download__mockup .app-download__mobile-screen::after {
+    width: 40px;
+    height: 45px;
+    top: -30px;
+    right: -50px;
+  }
+  .app-download__wrapper .app-download__content .app-download__title {
+    font-size: 36px;
+    margin-bottom: 48px;
+  }
+  .app-download__wrapper .app-download__content .app-download__features {
+    gap: 8px;
+  }
+  .app-download__wrapper .app-download__content .app-download__features .app-download__feature {
+    font-size: 14px;
+  }
+  .app-download__wrapper .app-download__content .app-download__btn {
+    padding: 1rem 3rem 1rem 1rem;
+    font-size: 14px;
+  }
+  .app-download__wrapper .app-download__content .app-download__btn::after {
+    width: 24px;
+    height: 24px;
+    right: 14px;
+  }
+  .app-download__wrapper .app-download__content .app-download__btn::before {
+    width: 110px;
+    height: 44px;
+    bottom: -60%;
+    right: -80%;
+    transform: rotate(-5deg);
+  }
+  .our-restaurants__wrapper {
+    padding-top: 80px;
+    padding-bottom: 86px;
+  }
+  .our-restaurants__wrapper .our-restaurants__title {
+    margin-top: 0;
+    margin-bottom: 60px;
+  }
+  .our-restaurants__wrapper .our-restaurants__restaurant .card .our-restaurants__restaurant-info {
+    font-size: 12px;
+  }
+  .our-restaurants__wrapper .our-restaurants__restaurant .card .our-restaurants__restaurant-info img {
+    width: 20px;
+    height: 20px;
+  }
+  .our-dishes__wrapper {
+    padding-top: 80px;
+    padding-bottom: 86px;
+  }
+  .our-dishes__wrapper .our-dishes__title {
+    margin-top: 0;
+    margin-bottom: 60px;
+  }
+  .our-dishes__wrapper .our-dishes__dish .card {
+    max-width: 160px;
+    padding: 1rem 1rem 1.25rem;
+  }
+  .our-dishes__wrapper .our-dishes__dish .card h5 {
+    font-size: 16px;
+  }
+  .our-dishes__wrapper .our-dishes__dish .card .card-body .our-dishes__dish-info {
+    font-size: 14px;
+  }
+  .our-dishes__wrapper .our-dishes__dish .card .card-body .our-dishes__dish-info img {
+    width: 20px;
+    height: 20px;
+  }
+  .purchases-control__wrapper {
+    padding-top: 80px;
+    padding-bottom: 86px;
+  }
+  .purchases-control__wrapper .purchases-control__title {
+    font-size: 32px;
+  }
+  .purchases-control__wrapper .purchases-control__first-image {
+    max-width: 246px;
+    max-height: 210px;
+  }
+  .purchases-control__wrapper .purchases-control__second-image {
+    max-width: 380px;
+    max-height: 332px;
+  }
+  .reviews__wrapper {
+    padding-top: 80px;
+    padding-bottom: 86px;
+  }
+  .reviews__wrapper .reviews__title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  .reviews__wrapper .reviews__item {
+    min-width: 300px;
+    padding: 20px 24px;
+  }
+  .reviews__wrapper .reviews__item .reviews__header {
+    margin-bottom: 16px;
+  }
+  .reviews__wrapper .reviews__item .reviews__header img {
+    width: 50px;
+    height: 50px;
+  }
+  .reviews__wrapper .reviews__item .reviews__header .reviews__info {
+    margin-left: 12px;
+  }
+  .reviews__wrapper .reviews__item .reviews__header .reviews__author {
+    font-size: 16px;
+  }
+  .reviews__wrapper .reviews__item .reviews__header .review__slogan {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+  .reviews__wrapper .reviews__item .reviews__text {
+    font-size: 14px;
+  }
+  .sale {
+    padding-top: 80px;
+  }
+  .sale .sale__wrapper {
+    padding: 2rem 3rem;
+    height: 200px;
+  }
+  .sale .sale__wrapper::after {
+    width: 195px;
+    height: 196px;
+  }
+  .sale .sale__wrapper .sale__title {
+    font-size: 48px;
+    margin-bottom: 24px;
+  }
+  .sale .sale__wrapper .sale__email-input {
+    height: 48px;
+  }
+  .sale .sale__wrapper .sale__form .subscribe__btn {
+    height: 38px;
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 991px) {
+  h2 {
+    font-size: 32px;
+  }
+  .card .card-body {
+    padding: 0.5rem 1.5rem 0.75rem;
+  }
+  .card .card-body h5 {
+    font-size: 18px;
+  }
+  .badge {
+    padding: 4px 6px;
+    font-size: 10px;
+  }
+  .restaurant-bookmark {
+    width: 29px;
+    height: 29px;
+    right: 18px;
+    bottom: 12px;
+  }
+  .restaurant-bookmark::after {
+    width: 11px;
+    height: 14px;
+  }
+  .view-all {
+    font-size: 14px;
+    padding-right: 24px;
+  }
+  .view-all::after {
+    width: 14px;
+    height: 14px;
+    transform: translateY(-50%);
+  }
+  .price--cents {
+    font-size: 12px;
+  }
+  .dish-favorite {
+    top: 12px;
+    width: 24px;
+    height: 24px;
+  }
+  .dish-favorite::after {
+    width: 16px;
+    height: 13px;
+  }
+  .add-to-cart {
+    width: 32px;
+    height: 28px;
+    bottom: 20px;
+    right: 16px;
+  }
+  .add-to-cart::after {
+    width: 11px;
+    height: 11px;
+  }
+  .hero__wrapper {
+    padding-top: 180px;
+    padding-bottom: 90px;
+  }
+  .hero__wrapper .hero__left-column .hero__text {
+    font-size: 10px;
+  }
+  .hero__wrapper .hero__left-column .hero__text::before {
+    width: 36px;
+  }
+  .hero__wrapper .hero__left-column .hero__title {
+    font-size: 42px;
+  }
+  .hero__wrapper .hero__left-column .hero__subtitle {
+    font-size: 12px;
+  }
+  .hero__wrapper .hero__left-column .hero__buttons .hero__btn {
+    font-size: 12px;
+    padding: 0.75rem 1.25rem;
+  }
+  .hero__wrapper .hero__left-column .hero__reviews .hero__review .hero__review-logo {
+    width: 82px;
+    height: 20px;
+  }
+  .hero__wrapper .hero__left-column .hero__reviews .hero__review .hero__review-counts {
+    font-size: 12px;
+  }
+  .hero__wrapper .hero__right-column .hero__food-img img {
+    max-width: 220px;
+    max-height: 221px;
+  }
+  .hero__wrapper .hero__right-column .hero__food-img::after {
+    width: 72px;
+    height: 69px;
+    top: 15%;
+    right: -14%;
+  }
+  .hero__wrapper .hero__right-column .hero__order-preview {
+    top: -8%;
+    right: 53%;
+  }
+  .hero__wrapper .hero__right-column .hero__order-preview img {
+    width: 163px;
+    height: 45px;
+  }
+  .hero__wrapper .hero__right-column .hero__graph {
+    bottom: 35%;
+    left: 8%;
+  }
+  .hero__wrapper .hero__right-column .hero__graph img {
+    width: 104px;
+    height: 103px;
+  }
+  .hero__wrapper .hero__right-column .hero__graph::before {
+    width: 19px;
+    height: 15px;
+    bottom: -17%;
+    left: -12%;
+  }
+  .features {
     padding: 34px 0;
   }
   .features .features__feature .features__feature-title {
