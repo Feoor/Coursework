@@ -1572,8 +1572,19 @@ h2 {
   color: #323142;
   margin-bottom: 62px;
 }
-.our-dishes__wrapper .our-dishes__dish .card {
-  max-width: 225px;
+.our-dishes__wrapper .our-dishes__dishes-wrapper {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+.our-dishes__wrapper .our-dishes__dishes-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.our-dishes__wrapper .our-dishes__dish {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: 225px;
   padding: 37px 20px 26px;
   border: 2px solid #f4f4f4;
   border-radius: 30px;
@@ -1582,16 +1593,16 @@ h2 {
   cursor: pointer;
   transition: transform 0.3s ease;
 }
-.our-dishes__wrapper .our-dishes__dish .card:hover {
+.our-dishes__wrapper .our-dishes__dish:hover {
   transform: translateY(-10px);
 }
-.our-dishes__wrapper .our-dishes__dish .card .card-img-top {
+.our-dishes__wrapper .our-dishes__dish .card-img-top {
   border-radius: 30px 30px 0 0;
 }
-.our-dishes__wrapper .our-dishes__dish .card .card-body {
+.our-dishes__wrapper .our-dishes__dish .card-body {
   padding: 0;
 }
-.our-dishes__wrapper .our-dishes__dish .card .card-body .our-dishes__dish-info {
+.our-dishes__wrapper .our-dishes__dish .card-body .our-dishes__dish-info {
   font-family: var(--font-family), sans-serif;
   font-weight: 400;
   font-size: 19px;
@@ -1949,7 +1960,7 @@ h2 {
   }
   .our-restaurants__wrapper .our-restaurants__title {
     margin-top: 0;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
   .our-restaurants__wrapper .our-restaurants__restaurant .card .our-restaurants__restaurant-info {
     font-size: 12px;
@@ -1964,19 +1975,22 @@ h2 {
   }
   .our-dishes__wrapper .our-dishes__title {
     margin-top: 0;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
-  .our-dishes__wrapper .our-dishes__dish .card {
-    max-width: 160px;
+  .our-dishes__wrapper .our-dishes__dishes-wrapper {
+    gap: 22px;
+  }
+  .our-dishes__wrapper .our-dishes__dish {
+    width: 160px;
     padding: 1rem 1rem 1.25rem;
   }
-  .our-dishes__wrapper .our-dishes__dish .card h5 {
+  .our-dishes__wrapper .our-dishes__dish h5 {
     font-size: 16px;
   }
-  .our-dishes__wrapper .our-dishes__dish .card .card-body .our-dishes__dish-info {
+  .our-dishes__wrapper .our-dishes__dish .card-body .our-dishes__dish-info {
     font-size: 14px;
   }
-  .our-dishes__wrapper .our-dishes__dish .card .card-body .our-dishes__dish-info img {
+  .our-dishes__wrapper .our-dishes__dish .card-body .our-dishes__dish-info img {
     width: 20px;
     height: 20px;
   }
@@ -2052,7 +2066,7 @@ h2 {
 }
 @media screen and (max-width: 991px) {
   h2 {
-    font-size: 32px;
+    font-size: 28px;
   }
   .card .card-body {
     padding: 0.5rem 1.5rem 0.75rem;
@@ -2168,14 +2182,14 @@ h2 {
     padding: 34px 0;
   }
   .features .features__feature .features__feature-title {
-    font-size: 30px;
+    font-size: 26px;
   }
   .features .features__feature .features__feature-text {
-    font-size: 14px;
+    font-size: 10px;
   }
   .app-download__wrapper {
-    padding-top: 80px;
-    padding-bottom: 86px;
+    padding-top: 70px;
+    padding-bottom: 76px;
   }
   .app-download__wrapper .app-download__mockup .app-download__mobile-screen {
     max-width: 216px;
@@ -2214,12 +2228,12 @@ h2 {
     transform: rotate(-5deg);
   }
   .our-restaurants__wrapper {
-    padding-top: 80px;
-    padding-bottom: 86px;
+    padding-top: 70px;
+    padding-bottom: 76px;
   }
   .our-restaurants__wrapper .our-restaurants__title {
     margin-top: 0;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
   .our-restaurants__wrapper .our-restaurants__restaurant .card .our-restaurants__restaurant-info {
     font-size: 12px;
@@ -2229,76 +2243,44 @@ h2 {
     height: 20px;
   }
   .our-dishes__wrapper {
-    padding-top: 80px;
-    padding-bottom: 86px;
+    padding-top: 70px;
+    padding-bottom: 76px;
   }
   .our-dishes__wrapper .our-dishes__title {
     margin-top: 0;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
-  .our-dishes__wrapper .our-dishes__dish .card {
-    max-width: 160px;
+  .our-dishes__wrapper .our-dishes__dish {
+    width: 160px;
     padding: 1rem 1rem 1.25rem;
   }
-  .our-dishes__wrapper .our-dishes__dish .card h5 {
+  .our-dishes__wrapper .our-dishes__dish h5 {
     font-size: 16px;
   }
-  .our-dishes__wrapper .our-dishes__dish .card .card-body .our-dishes__dish-info {
+  .our-dishes__wrapper .our-dishes__dish .card-body .our-dishes__dish-info {
     font-size: 14px;
   }
-  .our-dishes__wrapper .our-dishes__dish .card .card-body .our-dishes__dish-info img {
+  .our-dishes__wrapper .our-dishes__dish .card-body .our-dishes__dish-info img {
     width: 20px;
     height: 20px;
   }
   .purchases-control__wrapper {
-    padding-top: 80px;
-    padding-bottom: 86px;
+    padding-top: 70px;
+    padding-bottom: 76px;
   }
   .purchases-control__wrapper .purchases-control__title {
-    font-size: 32px;
+    font-size: 28px;
   }
   .purchases-control__wrapper .purchases-control__first-image {
-    max-width: 246px;
-    max-height: 210px;
+    max-width: 172px;
+    max-height: 147px;
   }
   .purchases-control__wrapper .purchases-control__second-image {
-    max-width: 380px;
-    max-height: 332px;
-  }
-  .reviews__wrapper {
-    padding-top: 80px;
-    padding-bottom: 86px;
-  }
-  .reviews__wrapper .reviews__title {
-    font-size: 32px;
-    margin-bottom: 40px;
-  }
-  .reviews__wrapper .reviews__item {
-    min-width: 300px;
-    padding: 20px 24px;
-  }
-  .reviews__wrapper .reviews__item .reviews__header {
-    margin-bottom: 16px;
-  }
-  .reviews__wrapper .reviews__item .reviews__header img {
-    width: 50px;
-    height: 50px;
-  }
-  .reviews__wrapper .reviews__item .reviews__header .reviews__info {
-    margin-left: 12px;
-  }
-  .reviews__wrapper .reviews__item .reviews__header .reviews__author {
-    font-size: 16px;
-  }
-  .reviews__wrapper .reviews__item .reviews__header .review__slogan {
-    font-size: 14px;
-    margin-bottom: 0;
-  }
-  .reviews__wrapper .reviews__item .reviews__text {
-    font-size: 14px;
+    max-width: 266px;
+    max-height: 225px;
   }
   .sale {
-    padding-top: 80px;
+    padding-top: 70px;
   }
   .sale .sale__wrapper {
     padding: 2rem 3rem;
