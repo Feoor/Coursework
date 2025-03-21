@@ -398,7 +398,7 @@ h2 {
           width: 96px;
         }
         .hero__review-counts {
-          font-family: var(--font4), sans-serif;
+          font-family: var(--font6), sans-serif;
           font-weight: 400;
           font-size: 16px;
           line-height: 150%;
@@ -572,6 +572,10 @@ h2 {
         font-size: 20px;
         line-height: 150%;
         color: #676767;
+
+        p {
+          margin-bottom: 0;
+        }
       }
     }
     .app-download__btn {
@@ -878,47 +882,47 @@ h2 {
 }
 
 /* Адаптивность главной страницы */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1199.98px) {
   // Планшеты в горизонтальной ориентации, Ipad Pro
   h2 {
-    font-size: 32px;
+    font-size: 45px;
   }
   .card {
     .card-body {
-      padding: 0.5rem 1.5rem 0.75rem;
+      padding: 0.5rem 1.5rem 1rem;
 
       h5 {
-        font-size: 18px;
+        font-size: 24px;
       }
     }
   }
   .badge {
     padding: 4px 6px;
-    font-size: 10px;
+    font-size: 12px;
   }
   .restaurant-bookmark {
-    width: 29px;
-    height: 29px;
+    width: 36px;
+    height: 36px;
     right: 18px;
-    bottom: 12px;
+    bottom: 14px;
 
     &::after {
-      width: 11px;
-      height: 14px;
+      width: 15px;
+      height: 19px;
     }
   }
   .view-all {
-    font-size: 14px;
-    padding-right: 24px;
+    font-size: 20px;
+    padding-right: 32px;
 
     &::after {
-      width: 14px;
-      height: 14px;
+      width: 20px;
+      height: 20px;
       transform: translateY(-50%);
     }
   }
   .price--cents {
-    font-size: 12px;
+    font-size: 18px;
   }
   .dish-favorite {
     top: 12px;
@@ -931,14 +935,14 @@ h2 {
     }
   }
   .add-to-cart {
-    width: 32px;
-    height: 28px;
+    width: 36px;
+    height: 32px;
     bottom: 20px;
     right: 16px;
 
     &::after {
-      width: 11px;
-      height: 11px;
+      width: 14px;
+      height: 14px;
     }
   }
 
@@ -948,28 +952,28 @@ h2 {
 
     .hero__left-column {
       .hero__text {
-        padding-left: 48px;
+        padding-left: 52px;
         margin-bottom: 12px;
 
-        font-size: 12px;
+        font-size: 15px;
 
         &::before {
-          width: 38px;
+          width: 42px;
         }
       }
       .hero__title {
-        font-size: 52px;
+        font-size: 60px;
       }
       .hero__subtitle {
-        font-size: 14px;
+        font-size: 18px;
         margin-bottom: 48px;
       }
       .hero__buttons {
-        gap: 12px;
+        gap: 20px;
 
         .hero__btn {
-          font-size: 12px;
-            padding: 0.75rem 1.5rem;
+          font-size: 18px;
+          padding: 0.75rem 1.5rem;
         }
       }
 
@@ -978,19 +982,14 @@ h2 {
           gap: 16px;
 
           .hero__review-logo {
-            width: 88px;
-            height: 22px;
+            width: 123px;
+            height: 31px;
           }
           .hero__review-stars {
-            width: max-content;
-
             img {
-              width: 13px;
-              height: 12px;
+              width: 17px;
+              height: 16px;
             }
-          }
-          .hero__review-counts {
-            font-size: 14px;
           }
         }
       }
@@ -1041,18 +1040,20 @@ h2 {
       }
     }
   }
+
   .features {
-    padding: 34px 0;
+    padding: 55px 0;
 
     .features__feature {
       .features__feature-title {
-        font-size: 30px;
+        font-size: 43px;
       }
       .features__feature-text {
         font-size: 14px;
       }
     }
   }
+
   .app-download__wrapper {
     padding-top: 80px;
     padding-bottom: 86px;
@@ -1073,19 +1074,19 @@ h2 {
 
     .app-download__content {
       .app-download__title {
-        font-size: 36px;
+        font-size: 38px;
         margin-bottom: 48px;
       }
       .app-download__features {
-        gap: 8px;
+        gap: 24px;
 
         .app-download__feature {
-          font-size: 14px;
+          font-size: 18px;
         }
       }
       .app-download__btn {
-        padding: 1rem 3rem 1rem 1rem;
-        font-size: 14px;
+        padding: 1rem 3rem 1rem 1.5rem;
+        font-size: 18px;
 
         &::after {
           width: 24px;
@@ -1096,12 +1097,13 @@ h2 {
           width: 110px;
           height: 44px;
           bottom: -60%;
-          right: -80%;
+          right: -60%;
           transform: rotate(-5deg);
         }
       }
     }
   }
+
   .our-restaurants__wrapper {
     padding-top: 80px;
     padding-bottom: 86px;
@@ -1113,16 +1115,17 @@ h2 {
     .our-restaurants__restaurant {
       .card {
         .our-restaurants__restaurant-info {
-          font-size: 12px;
+          font-size: 18px;
 
           img {
-            width: 20px;
-            height: 20px;
+            width: 24px;
+            height: 24px;
           }
         }
       }
     }
   }
+
   .our-dishes__wrapper {
     padding-top: 80px;
     padding-bottom: 86px;
@@ -1135,30 +1138,31 @@ h2 {
       gap: 22px;
     }
     .our-dishes__dish {
-      width: 160px;
-      padding: 1rem 1rem 1.25rem;
+      width: 175px;
+      padding: 1rem;
 
       h5 {
-        font-size: 16px;
+        font-size: 22px;
       }
       .card-body {
         .our-dishes__dish-info {
-          font-size: 14px;
+          font-size: 16px;
 
           img {
-            width: 20px;
-            height: 20px;
+            width: 23px;
+            height: 23px;
           }
         }
       }
     }
   }
+
   .purchases-control__wrapper {
     padding-top: 80px;
     padding-bottom: 86px;
 
     .purchases-control__title {
-      font-size: 32px;
+      font-size: 44px;
     }
     .purchases-control__first-image {
       max-width: 246px;
@@ -1170,39 +1174,40 @@ h2 {
       max-height: 332px;
     }
   }
+
   .reviews__wrapper {
     padding-top: 80px;
     padding-bottom: 86px;
 
     .reviews__title {
-      font-size: 32px;
-      margin-bottom: 40px;
+      font-size: 44px;
+      margin-bottom: 54px;
     }
     .reviews__item {
-      min-width: 300px;
+      min-width: 400px;
       padding: 20px 24px;
 
       .reviews__header {
         margin-bottom: 16px;
 
         img {
-          width: 50px;
-          height: 50px;
+          width: 60px;
+          height: 60px;
         }
         .reviews__info {
           margin-left: 12px;
         }
         .reviews__author {
-          font-size: 16px;
+          font-size: 18px;
         }
         .review__slogan {
-          font-size: 14px;
+          font-size: 15px;
           margin-bottom: 0;
         }
       }
 
       .reviews__text {
-        font-size: 14px;
+        font-size: 18px;
       }
     }
   }
@@ -1234,10 +1239,10 @@ h2 {
   }
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 991.98px) {
   // Планшеты в вертикальной ориентации
   h2 {
-    font-size: 28px;
+    font-size: 40px;
   }
   .card {
     .card-body {
@@ -1248,53 +1253,14 @@ h2 {
       }
     }
   }
-  .badge {
-    padding: 4px 6px;
-    font-size: 10px;
-  }
-  .restaurant-bookmark {
-    width: 29px;
-    height: 29px;
-    right: 18px;
-    bottom: 12px;
-
-    &::after {
-      width: 11px;
-      height: 14px;
-    }
-  }
-  .view-all {
-    font-size: 14px;
-    padding-right: 24px;
-
-    &::after {
-      width: 14px;
-      height: 14px;
-      transform: translateY(-50%);
-    }
-  }
-  .price--cents {
-    font-size: 12px;
-  }
   .dish-favorite {
     top: 12px;
-    width: 24px;
-    height: 24px;
+    width: 35px;
+    height: 35px;
 
     &::after {
-      width: 16px;
-      height: 13px;
-    }
-  }
-  .add-to-cart {
-    width: 32px;
-    height: 28px;
-    bottom: 20px;
-    right: 16px;
-
-    &::after {
-      width: 11px;
-      height: 11px;
+      width: 23px;
+      height: 19px;
     }
   }
 
@@ -1304,7 +1270,7 @@ h2 {
 
     .hero__left-column {
       .hero__text {
-        font-size: 10px;
+        font-size: 14px;
 
         &::before {
           width: 36px;
@@ -1314,25 +1280,17 @@ h2 {
         font-size: 42px;
       }
       .hero__subtitle {
-        font-size: 12px;
+        font-size: 18px;
       }
       .hero__buttons {
         .hero__btn {
-          font-size: 12px;
+          font-size: 16px;
           padding: 0.75rem 1.25rem;
         }
       }
 
       .hero__reviews {
-        .hero__review {
-          .hero__review-logo {
-            width: 82px;
-            height: 20px;
-          }
-          .hero__review-counts {
-            font-size: 12px;
-          }
-        }
+        margin-top: 36px;
       }
     }
 
@@ -1359,7 +1317,7 @@ h2 {
         }
       }
       .hero__graph {
-        bottom: 35%;
+        bottom: 45%;
         left: 8%;
 
         img {
@@ -1376,26 +1334,29 @@ h2 {
       }
     }
   }
+
   .features {
-    padding: 34px 0;
+    // TODO: Сделать так чтобы блок был на всю доступную высоту обертки
 
     .features__feature {
       .features__feature-title {
-        font-size: 26px;
+        font-size: 40px;
       }
       .features__feature-text {
-        font-size: 10px;
+        font-size: 14px;
+        margin-bottom: 0;
       }
     }
   }
+
   .app-download__wrapper {
     padding-top: 70px;
     padding-bottom: 76px;
 
     .app-download__mockup {
       .app-download__mobile-screen {
-        max-width: 216px;
-        max-height: 433px;
+        max-width: 304px;
+        max-height: 609px;
 
         &::after {
           width: 40px;
@@ -1408,35 +1369,41 @@ h2 {
 
     .app-download__content {
       .app-download__title {
-        font-size: 36px;
+        font-size: 45px;
         margin-bottom: 48px;
+        text-align: center;
       }
       .app-download__features {
         gap: 8px;
+        margin-bottom: 24px;
 
         .app-download__feature {
-          font-size: 14px;
+          font-size: 20px;
         }
       }
       .app-download__btn {
-        padding: 1rem 3rem 1rem 1rem;
-        font-size: 14px;
+        align-self: center;
+        margin-bottom: 4rem;
+        padding: 1.25rem 3.5rem 1.25rem 1.75rem;
+        font-size: 18px;
 
         &::after {
-          width: 24px;
-          height: 24px;
+          width: 28px;
+          height: 28px;
           right: 14px;
         }
         &::before {
-          width: 110px;
-          height: 44px;
-          bottom: -60%;
-          right: -80%;
-          transform: rotate(-5deg);
+          width: 140px;
+          height: 52px;
+          bottom: -15%;
+          right: -85%;
+          transform: rotate(340deg);
         }
       }
     }
   }
+
+  // TODO: Добавить скролл как с едой
   .our-restaurants__wrapper {
     padding-top: 70px;
     padding-bottom: 76px;
@@ -1458,48 +1425,54 @@ h2 {
       }
     }
   }
+
   .our-dishes__wrapper {
     padding-top: 70px;
     padding-bottom: 76px;
 
-    .our-dishes__title {
-      margin-top: 0;
-      margin-bottom: 40px;
-    }
     .our-dishes__dish {
-      width: 160px;
-      padding: 1rem 1rem 1.25rem;
+      width: 200px;
+      padding: 1rem;
 
       h5 {
-        font-size: 16px;
+        font-size: 24px;
       }
       .card-body {
         .our-dishes__dish-info {
-          font-size: 14px;
+          font-size: 18px;
 
           img {
-            width: 20px;
-            height: 20px;
+            width: 23px;
+            height: 23px;
           }
         }
       }
     }
   }
+
   .purchases-control__wrapper {
     padding-top: 70px;
     padding-bottom: 76px;
 
     .purchases-control__title {
-      font-size: 28px;
+      font-size: 45px;
     }
     .purchases-control__first-image {
       max-width: 172px;
       max-height: 147px;
+      margin: 0 auto;
     }
 
     .purchases-control__second-image {
       max-width: 266px;
       max-height: 225px;
+      margin: 0 auto;
+    }
+  }
+
+  .reviews__wrapper {
+    .reviews__title {
+      font-size: 40px;
     }
   }
 
@@ -1507,7 +1480,7 @@ h2 {
     padding-top: 70px;
 
     .sale__wrapper {
-      padding: 2rem 3rem;
+      padding: 1.5rem 2.75rem;
       height: 200px;
 
       &::after {

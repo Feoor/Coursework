@@ -96,13 +96,13 @@
 }
 
 /* Адаптивность навбара */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1199.98px) {
   // Планшеты в горизонтальной ориентации, Ipad Pro
   .eatly-logo {
     &::before {
       width: 46px;
       height: 46px;
-      right: 54px;
+      right: 60px;
     }
   }
 
@@ -111,13 +111,13 @@
       gap: 48px;
 
       .header__logo {
-        font-size: 18px;
+        font-size: 21px;
       }
       .header__list {
-        gap: 32px;
+        gap: 30px;
 
         .menu__item {
-          font-size: 16px;
+          font-size: 18px;
         }
       }
     }
@@ -125,26 +125,50 @@
       gap: 8px;
 
       .header__login {
-          font-size: 16px;
+          font-size: 18px;
           padding: 14px 22px;
       }
       .header__sign-up {
-          font-size: 16px;
+          font-size: 18px;
           padding: 14px 22px;
       }
     }
   }
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 991.98px) {
   // Планшеты в вертикальной ориентации
+  .header__wrapper {
+    padding: 1rem 0;
+
+    .header__left-side {
+      gap: 16px;
+    }
+
+    .header__right-side {
+      gap: 8px;
+
+      .header__login {
+        font-size: 16px;
+        padding: 12px 20px;
+      }
+      .header__sign-up {
+        font-size: 16px;
+        padding: 12px 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  // Телефоны в горизонтальной ориентации
   .eatly-logo {
-    padding-left: 42px;
+    padding-left: 52px;
 
     &::before {
-      width: 33px;
-      height: 31px;
-      right: 48px;
+      width: 46px;
+      height: 42px;
+      right: 56px;
     }
   }
 
@@ -152,17 +176,11 @@
     padding: 1rem 0;
 
     .header__left-side {
-      gap: 48px;
-
       .header__logo {
-        font-size: 16px;
+        font-size: 21px;
       }
       .header__list {
-        gap: 32px;
-
-        .menu__item {
-          font-size: 14px;
-        }
+        display: none;
       }
     }
     .header__right-side {

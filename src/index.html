@@ -104,7 +104,7 @@
   <section class="features">
     <div class="container-sm">
 
-      <div class="features__wrapper row justify-content-evenly align-items-center">
+      <div class="features__wrapper row justify-content-evenly">
         <div class="features__feature col-3 h-100">
           <h3 class="features__feature-title">10K+</h3>
           <p class="features__feature-text">Довольных клиентов <br>По всему миру</p>
@@ -129,13 +129,13 @@
     <div class="container-sm">
 
       <div class="app-download__wrapper row justify-content-between align-items-center">
-        <div class="app-download__mockup col-6">
+        <div class="app-download__mockup col-12 col-lg-6 order-1 order-lg-0">
           <div class="app-download__mobile-screen mx-auto">
             <img src="img/mobile_screen.png" alt="Mobile Screen" class="app-download__mobile-screen">
           </div>
         </div>
 
-        <div class="app-download__content col-6">
+        <div class="app-download__content col-12 col-lg-6 d-flex flex-column">
           <h2 class="app-download__title">
             Премиальное
             <span class="highlight--purple">качество</span>
@@ -174,7 +174,7 @@
 
               <div class="card-body">
                 <span class="badge badge-healthy mb-1">Полезно</span>
-                <h5 class="card-title mt-0">The Chicken King</h5>
+                <h5 class="card-title mb-2">The Chicken King</h5>
 
                 <div class="our-restaurants__restaurant-info d-flex align-items-center">
                   <span class="me-1 me-xl-2">24min •</span>
@@ -195,7 +195,7 @@
 
               <div class="card-body">
                 <span class="badge badge-trending mb-1">Популярно</span>
-                <h5 class="card-title mt-0">The Burger King</h5>
+                <h5 class="card-title mb-2">The Burger King</h5>
 
                 <div class="our-restaurants__restaurant-info d-flex align-items-center">
                   <span class="me-1 me-xl-2">24min •</span>
@@ -216,7 +216,7 @@
 
               <div class="card-body">
                 <span class="badge badge-healthy mb-1">Полезно</span>
-                <h5 class="card-title mt-0">The Chicken King</h5>
+                <h5 class="card-title mb-2">The Chicken King</h5>
 
                 <div class="our-restaurants__restaurant-info d-flex align-items-center">
                   <span class="me-1 me-xl-2">24min •</span>
@@ -250,7 +250,7 @@
         <h2 class="our-dishes__title col-12 text-center">Наши лучшие <span class="highlight--purple">блюда</span></h2>
 
         <!-- Карточки блюд -->
-        <div class="our-dishes__dishes-wrapper col-12">
+        <div class="our-dishes__dishes-wrapper col-12 mb-2">
           <div class="our-dishes__dish card h-100">
             <a href="">
               <!-- Кнопка "Добавить в любимое" -->
@@ -260,7 +260,7 @@
 
               <div class="card-body">
                 <span class="badge badge-healthy">Полезно</span>
-                <h5 class="card-title mt-0">Chicken Hell</h5>
+                <h5 class="card-title mb-1">Chicken Hell</h5>
 
                 <div class="our-dishes__dish-info d-flex align-items-center mb-2">
                   <span class="me-1 me-xl-2">24min •</span>
@@ -269,6 +269,7 @@
                 </div>
                 <h5 class="our-dishes__dish-price">$12<span class="price--cents">.99</span></h5>
 
+                <!-- TODO: Следует убрать кнопку добавления в корзину на главной странице -->
                 <!-- Кнопка "Добавить в корзину" -->
                 <button class="add-to-cart"></button>
               </div>
@@ -284,7 +285,7 @@
 
               <div class="card-body">
                 <span class="badge badge-trending">Популярно</span>
-                <h5 class="card-title mt-0">Swe Dish</h5>
+                <h5 class="card-title mb-1">Swe Dish</h5>
 
                 <div class="our-dishes__dish-info d-flex align-items-center mb-2">
                   <span class="me-1 me-xl-2">34min •</span>
@@ -308,7 +309,7 @@
 
               <div class="card-body">
                 <span class="badge badge-supreme">Эксклюзив</span>
-                <h5 class="card-title mt-0">Fish Hell</h5>
+                <h5 class="card-title mb-1">Fish Hell</h5>
 
                 <div class="our-dishes__dish-info d-flex align-items-center mb-2">
                   <span class="me-1 me-xl-2">24min •</span>
@@ -332,7 +333,7 @@
 
               <div class="card-body">
                 <span class="badge badge-healthy">Полезно</span>
-                <h5 class="card-title mt-0">Chicken Hell</h5>
+                <h5 class="card-title mb-1">Chicken Hell</h5>
 
                 <div class="our-dishes__dish-info d-flex align-items-center mb-2">
                   <span class="me-1 me-xl-2">24min •</span>
@@ -356,7 +357,7 @@
 
               <div class="card-body">
                 <span class="badge badge-trending">Популярно</span>
-                <h5 class="card-title mt-0">Swe Dish</h5>
+                <h5 class="card-title mb-1">Swe Dish</h5>
 
                 <div class="our-dishes__dish-info d-flex align-items-center mb-2">
                   <span class="me-1 me-xl-2">34min •</span>
@@ -386,7 +387,7 @@
     <div class="container-sm">
       <div class="purchases-control__wrapper row align-items-center">
 
-        <div class="purchases-control__left-column col-6 d-flex flex-column justify-content-start">
+        <div class="purchases-control__left-column col-12 col-lg-6 d-flex flex-column justify-content-start mb-5 mb-lg-0">
           <h2 class="purchases-control__title mb-5">
             Контролируйте
             <span class="highlight--purple">покупки</span>
@@ -396,7 +397,7 @@
           <img src="img/order_history.png" alt="Order History" class="purchases-control__first-image">
         </div>
 
-        <div class="purchase-control__right-column col-6 d-flex justify-content-end">
+        <div class="purchase-control__right-column col-12 col-lg-6 d-flex justify-content-end">
           <img src="img/purchases_control.png" alt="Purchases Control" class="purchases-control__second-image">
         </div>
 
