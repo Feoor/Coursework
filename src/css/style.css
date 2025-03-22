@@ -70,6 +70,7 @@
 }
 .header__wrapper .header__left-side {
   display: flex;
+  align-items: center;
   gap: 72px;
 }
 .header__wrapper .header__left-side .header__logo {
@@ -89,6 +90,7 @@
 }
 .header__wrapper .header__right-side {
   display: flex;
+  align-items: center;
   gap: 12px;
 }
 .header__wrapper .header__right-side .header__login {
@@ -123,6 +125,15 @@
 .header__wrapper .header__right-side .header__sign-up:hover {
   background: var(--purple-hover);
 }
+.header__wrapper .header__right-side .header__menu {
+  display: none;
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border: none;
+  background-size: contain;
+  background: url("../icons/menu.svg") no-repeat center;
+}
 
 /* Адаптивность навбара */
 @media screen and (max-width: 1199.98px) {
@@ -156,9 +167,6 @@
   }
 }
 @media screen and (max-width: 991.98px) {
-  .header__wrapper {
-    padding: 1rem 0;
-  }
   .header__wrapper .header__left-side {
     gap: 16px;
   }
@@ -167,11 +175,11 @@
   }
   .header__wrapper .header__right-side .header__login {
     font-size: 16px;
-    padding: 12px 20px;
+    padding: 16px 20px;
   }
   .header__wrapper .header__right-side .header__sign-up {
     font-size: 16px;
-    padding: 12px 20px;
+    padding: 16px 20px;
   }
 }
 @media screen and (max-width: 767.98px) {
@@ -181,27 +189,19 @@
   .eatly-logo::before {
     width: 46px;
     height: 42px;
-    right: 56px;
+    right: 58px;
   }
   .header__wrapper {
-    padding: 1rem 0;
-  }
-  .header__wrapper .header__left-side .header__logo {
-    font-size: 21px;
+    padding: 0.75rem 0;
   }
   .header__wrapper .header__left-side .header__list {
     display: none;
   }
   .header__wrapper .header__right-side {
-    gap: 8px;
+    gap: 16px;
   }
-  .header__wrapper .header__right-side .header__login {
-    font-size: 14px;
-    padding: 12px 18px;
-  }
-  .header__wrapper .header__right-side .header__sign-up {
-    font-size: 14px;
-    padding: 12px 18px;
+  .header__wrapper .header__right-side .header__menu {
+    display: block;
   }
 }
 /* Подвал */
@@ -303,6 +303,25 @@
   }
   .footer .footer__bottom {
     padding-top: 28px;
+  }
+}
+@media screen and (max-width: 767.98px) {
+  .footer {
+    margin-top: 130px;
+    padding-top: 68px;
+    padding-bottom: 48px;
+  }
+  .footer .footer__top {
+    padding-bottom: 40px;
+  }
+  .footer .footer__top .footer__list {
+    gap: 30px;
+  }
+  .footer .footer__bottom {
+    padding-top: 40px;
+  }
+  .footer .footer__bottom .footer__copyright p {
+    font-size: 15px;
   }
 }
 .food-filter__wrapper {
@@ -1293,7 +1312,7 @@ h2 {
   padding-top: 250px;
   padding-bottom: 130px;
 }
-.hero__wrapper .hero__left-column .hero__text {
+.hero__wrapper .hero__left-column .hero__subtitle {
   padding-left: 76px;
   font-family: var(--font-family), sans-serif;
   font-weight: 900;
@@ -1304,7 +1323,7 @@ h2 {
   color: rgba(32, 31, 31, 0.2);
   position: relative;
 }
-.hero__wrapper .hero__left-column .hero__text::before {
+.hero__wrapper .hero__left-column .hero__subtitle::before {
   display: inline-block;
   content: "";
   width: 54px;
@@ -1322,7 +1341,7 @@ h2 {
   font-size: 60px;
   color: #201f1f;
 }
-.hero__wrapper .hero__left-column .hero__subtitle {
+.hero__wrapper .hero__left-column .hero__text {
   font-family: var(--second-family), sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -1335,7 +1354,7 @@ h2 {
   display: flex;
   gap: 18px;
 }
-.hero__wrapper .hero__left-column .hero__buttons .hero__btn {
+.hero__wrapper .hero__left-column .hero__btn {
   padding: 1rem 28px;
 }
 .hero__wrapper .hero__left-column .hero__reviews {
@@ -1522,8 +1541,9 @@ h2 {
 }
 .app-download__wrapper .app-download__content .app-download__btn {
   position: relative;
-  border-radius: 15px;
+  width: max-content;
   padding: 1.25rem 68px 1.25rem 26px;
+  border-radius: 15px;
   background: var(--purple);
   border: none;
   font-family: var(--font-family), sans-serif;
@@ -1577,16 +1597,27 @@ h2 {
   color: #323142;
   margin-bottom: 62px;
 }
-.our-restaurants__wrapper .our-restaurants__restaurant .card {
-  max-width: 396px;
+.our-restaurants__wrapper .our-restaurants__restaurants-wrapper {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+.our-restaurants__wrapper .our-restaurants__restaurants-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.our-restaurants__wrapper .our-restaurants__restaurant {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: 396px;
   box-shadow: 6px 71px 36px rgba(229, 229, 229, 0.7);
   transition: transform 0.3s ease;
   position: relative;
 }
-.our-restaurants__wrapper .our-restaurants__restaurant .card:hover {
+.our-restaurants__wrapper .our-restaurants__restaurant:hover {
   transform: translateY(-10px);
 }
-.our-restaurants__wrapper .our-restaurants__restaurant .card .our-restaurants__restaurant-info {
+.our-restaurants__wrapper .our-restaurants__restaurant .our-restaurants__restaurant-info {
   font-family: var(--font-family), sans-serif;
   font-weight: 400;
   font-size: 19px;
@@ -1861,25 +1892,25 @@ h2 {
     padding-top: 200px;
     padding-bottom: 100px;
   }
-  .hero__wrapper .hero__left-column .hero__text {
+  .hero__wrapper .hero__left-column .hero__subtitle {
     padding-left: 52px;
     margin-bottom: 12px;
     font-size: 15px;
   }
-  .hero__wrapper .hero__left-column .hero__text::before {
+  .hero__wrapper .hero__left-column .hero__subtitle::before {
     width: 42px;
   }
   .hero__wrapper .hero__left-column .hero__title {
     font-size: 60px;
   }
-  .hero__wrapper .hero__left-column .hero__subtitle {
+  .hero__wrapper .hero__left-column .hero__text {
     font-size: 18px;
     margin-bottom: 48px;
   }
   .hero__wrapper .hero__left-column .hero__buttons {
     gap: 20px;
   }
-  .hero__wrapper .hero__left-column .hero__buttons .hero__btn {
+  .hero__wrapper .hero__left-column .hero__btn {
     font-size: 18px;
     padding: 0.75rem 1.5rem;
   }
@@ -1988,10 +2019,10 @@ h2 {
     margin-top: 0;
     margin-bottom: 40px;
   }
-  .our-restaurants__wrapper .our-restaurants__restaurant .card .our-restaurants__restaurant-info {
+  .our-restaurants__wrapper .our-restaurants__restaurant .our-restaurants__restaurant-info {
     font-size: 18px;
   }
-  .our-restaurants__wrapper .our-restaurants__restaurant .card .our-restaurants__restaurant-info img {
+  .our-restaurants__wrapper .our-restaurants__restaurant .our-restaurants__restaurant-info img {
     width: 24px;
     height: 24px;
   }
@@ -2094,12 +2125,6 @@ h2 {
   h2 {
     font-size: 40px;
   }
-  .card .card-body {
-    padding: 0.5rem 1.5rem 0.75rem;
-  }
-  .card .card-body h5 {
-    font-size: 18px;
-  }
   .dish-favorite {
     top: 12px;
     width: 35px;
@@ -2113,19 +2138,19 @@ h2 {
     padding-top: 180px;
     padding-bottom: 90px;
   }
-  .hero__wrapper .hero__left-column .hero__text {
+  .hero__wrapper .hero__left-column .hero__subtitle {
     font-size: 14px;
   }
-  .hero__wrapper .hero__left-column .hero__text::before {
+  .hero__wrapper .hero__left-column .hero__subtitle::before {
     width: 36px;
   }
   .hero__wrapper .hero__left-column .hero__title {
     font-size: 42px;
   }
-  .hero__wrapper .hero__left-column .hero__subtitle {
+  .hero__wrapper .hero__left-column .hero__text {
     font-size: 18px;
   }
-  .hero__wrapper .hero__left-column .hero__buttons .hero__btn {
+  .hero__wrapper .hero__left-column .hero__btn {
     font-size: 16px;
     padding: 0.75rem 1.25rem;
   }
@@ -2185,6 +2210,9 @@ h2 {
     top: -30px;
     right: -50px;
   }
+  .app-download__wrapper .app-download__content {
+    padding-bottom: 64px;
+  }
   .app-download__wrapper .app-download__content .app-download__title {
     font-size: 45px;
     margin-bottom: 48px;
@@ -2199,7 +2227,6 @@ h2 {
   }
   .app-download__wrapper .app-download__content .app-download__btn {
     align-self: center;
-    margin-bottom: 4rem;
     padding: 1.25rem 3.5rem 1.25rem 1.75rem;
     font-size: 18px;
   }
@@ -2223,12 +2250,8 @@ h2 {
     margin-top: 0;
     margin-bottom: 40px;
   }
-  .our-restaurants__wrapper .our-restaurants__restaurant .card .our-restaurants__restaurant-info {
-    font-size: 12px;
-  }
-  .our-restaurants__wrapper .our-restaurants__restaurant .card .our-restaurants__restaurant-info img {
-    width: 20px;
-    height: 20px;
+  .our-restaurants__wrapper .our-restaurants__restaurant {
+    width: 350px;
   }
   .our-dishes__wrapper {
     padding-top: 70px;
@@ -2245,8 +2268,8 @@ h2 {
     font-size: 18px;
   }
   .our-dishes__wrapper .our-dishes__dish .card-body .our-dishes__dish-info img {
-    width: 23px;
-    height: 23px;
+    width: 24px;
+    height: 24px;
   }
   .purchases-control__wrapper {
     padding-top: 70px;
@@ -2289,6 +2312,168 @@ h2 {
   .sale .sale__wrapper .sale__form .subscribe__btn {
     height: 38px;
     font-size: 10px;
+  }
+}
+@media screen and (max-width: 767.98px) {
+  h2 {
+    font-size: 35px;
+  }
+  .hero__wrapper {
+    padding-top: 140px;
+    padding-bottom: 120px;
+  }
+  .hero__wrapper .hero__left-column {
+    padding-bottom: 70px;
+    align-items: center;
+    text-align: center;
+  }
+  .hero__wrapper .hero__left-column .hero__subtitle {
+    padding-left: 68px;
+    margin-bottom: 20px;
+    font-size: 15px;
+  }
+  .hero__wrapper .hero__left-column .hero__subtitle::before {
+    width: 54px;
+  }
+  .hero__wrapper .hero__left-column .hero__title {
+    font-size: 52px;
+  }
+  .hero__wrapper .hero__left-column .hero__btn {
+    font-size: 18px;
+    padding: 1rem 1.75rem;
+  }
+  .hero__wrapper .hero__left-column .hero__reviews {
+    margin-top: 40px;
+  }
+  .hero__wrapper .hero__left-column .hero__reviews .hero__review {
+    gap: 24px;
+  }
+  .hero__wrapper .hero__right-column .hero__food-img img {
+    max-width: 314px;
+    max-height: 320px;
+  }
+  .hero__wrapper .hero__right-column .hero__food-img::after {
+    top: 27%;
+    right: -12%;
+  }
+  .hero__wrapper .hero__right-column .hero__order-preview {
+    top: -8%;
+    right: 53%;
+  }
+  .hero__wrapper .hero__right-column .hero__order-preview img {
+    width: 230px;
+    height: 64px;
+  }
+  .hero__wrapper .hero__right-column .hero__graph {
+    bottom: -20%;
+    left: 8%;
+  }
+  .hero__wrapper .hero__right-column .hero__graph img {
+    width: 169px;
+    height: 168px;
+  }
+  .hero__wrapper .hero__right-column .hero__graph::before {
+    width: 38px;
+    height: 33px;
+    bottom: -27%;
+    left: -17%;
+  }
+  .features {
+    background: url("../img/features_bg-sm.svg") no-repeat;
+    background-size: cover;
+  }
+  .features .features__feature {
+    padding: 1.5rem 0;
+  }
+  .features .features__feature:not(:last-child) {
+    border-right: none;
+    border-bottom: 1px solid rgba(197, 197, 197, 0.15);
+  }
+  .features .features__feature .features__feature-title {
+    font-size: 45px;
+  }
+  .app-download__wrapper {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+  .app-download__wrapper .app-download__content .app-download__title {
+    font-size: 35px;
+  }
+  .app-download__wrapper .app-download__content .app-download__features {
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .app-download__wrapper .app-download__content .app-download__features .app-download__feature {
+    font-size: 20px;
+  }
+  .app-download__wrapper .app-download__content .app-download__btn::before {
+    right: -95%;
+  }
+  .our-restaurants__wrapper {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+  .our-restaurants__wrapper .our-restaurants__restaurant {
+    width: 300px;
+  }
+  .our-dishes__wrapper {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+  .our-dishes__wrapper .our-dishes__dish {
+    width: 175px;
+    padding: 1rem;
+  }
+  .our-dishes__wrapper .our-dishes__dish h5 {
+    font-size: 20px;
+  }
+  .our-dishes__wrapper .our-dishes__dish .card-body .our-dishes__dish-info {
+    font-size: 16px;
+  }
+  .our-dishes__wrapper .our-dishes__dish .card-body .our-dishes__dish-info img {
+    width: 22px;
+    height: 22px;
+  }
+  .purchases-control__wrapper {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+  .purchases-control__wrapper .purchases-control__title {
+    font-size: 35px;
+  }
+  .reviews__wrapper {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+  .reviews__wrapper .reviews__title {
+    font-size: 35px;
+    margin-bottom: 40px;
+  }
+  .reviews__wrapper .reviews__item {
+    min-width: 100%;
+  }
+  .reviews__wrapper .reviews__item .reviews__header img {
+    width: 68px;
+    height: 68px;
+  }
+  .reviews__wrapper .reviews__item .reviews__header .reviews__author {
+    font-size: 20px;
+  }
+  .reviews__wrapper .reviews__item .reviews__header .review__slogan {
+    font-size: 18px;
+    margin-bottom: 0;
+  }
+  .sale {
+    padding-top: 60px;
+  }
+  .sale .sale__wrapper {
+    padding: 2.5rem 2rem;
+    height: 300px;
+  }
+  .sale .sale__wrapper::after {
+    right: 50%;
+    bottom: -32%;
+    transform: translateX(50%);
   }
 }
 

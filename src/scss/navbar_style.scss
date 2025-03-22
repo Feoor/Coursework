@@ -34,6 +34,7 @@
 
   .header__left-side {
     display: flex;
+    align-items: center;
     gap: 72px;
 
     .header__logo {
@@ -56,6 +57,7 @@
 
   .header__right-side {
     display: flex;
+    align-items: center;
     gap: 12px;
 
     .header__login {
@@ -91,6 +93,15 @@
       &:hover {
         background: var(--purple-hover);
       }
+    }
+    .header__menu {
+      display: none;
+      position: relative;
+      width: 34px;
+      height: 34px;
+      border: none;
+      background-size: contain;
+      background: url("../icons/menu.svg") no-repeat center;
     }
   }
 }
@@ -139,8 +150,6 @@
 @media screen and (max-width: 991.98px) {
   // Планшеты в вертикальной ориентации
   .header__wrapper {
-    padding: 1rem 0;
-
     .header__left-side {
       gap: 16px;
     }
@@ -150,11 +159,11 @@
 
       .header__login {
         font-size: 16px;
-        padding: 12px 20px;
+        padding: 16px 20px;
       }
       .header__sign-up {
         font-size: 16px;
-        padding: 12px 20px;
+        padding: 16px 20px;
       }
     }
   }
@@ -168,31 +177,23 @@
     &::before {
       width: 46px;
       height: 42px;
-      right: 56px;
+      right: 58px;
     }
   }
 
   .header__wrapper {
-    padding: 1rem 0;
+    padding: 0.75rem 0;
 
     .header__left-side {
-      .header__logo {
-        font-size: 21px;
-      }
       .header__list {
         display: none;
       }
     }
     .header__right-side {
-      gap: 8px;
+      gap: 16px;
 
-      .header__login {
-        font-size: 14px;
-        padding: 12px 18px;
-      }
-      .header__sign-up {
-        font-size: 14px;
-        padding: 12px 18px;
+      .header__menu {
+        display: block;
       }
     }
   }

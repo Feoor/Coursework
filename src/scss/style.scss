@@ -15,7 +15,6 @@
   --purple: #6c5fbc;
   --purple-hover: #5a4aa3;
 }
-
 /* Базовые стили */
 html {
   font-family: var(--second-family), sans-serif;
@@ -36,6 +35,7 @@ main {
   padding: 0;
   box-sizing: border-box;
 }
+
 a {
   text-decoration: none;
   color: inherit;
@@ -327,7 +327,7 @@ h2 {
   padding-bottom: 130px;
 
   .hero__left-column {
-    .hero__text {
+    .hero__subtitle {
       padding-left: 76px;
       font-family: var(--font-family), sans-serif;
       font-weight: 900;
@@ -357,7 +357,7 @@ h2 {
       font-size: 60px;
       color: #201f1f;
     }
-    .hero__subtitle {
+    .hero__text {
       font-family: var(--second-family), sans-serif;
       font-weight: 400;
       font-size: 18px;
@@ -370,10 +370,9 @@ h2 {
     .hero__buttons {
       display: flex;
       gap: 18px;
-
-      .hero__btn {
-        padding: 1rem 28px;
-      }
+    }
+    .hero__btn {
+      padding: 1rem 28px;
     }
     .hero__reviews {
       display: flex;
@@ -580,8 +579,9 @@ h2 {
     }
     .app-download__btn {
       position: relative;
-      border-radius: 15px;
+      width: max-content;
       padding: 1.25rem 68px 1.25rem 26px;
+      border-radius: 15px;
       background: var(--purple);
       border: none;
       font-family: var(--font-family), sans-serif;
@@ -638,24 +638,34 @@ h2 {
     color: #323142;
     margin-bottom: 62px;
   }
+  .our-restaurants__restaurants-wrapper {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
   .our-restaurants__restaurant {
-    .card {
-      max-width: 396px;
-      box-shadow: 6px 71px 36px rgba(229, 229, 229, 0.7);
-      transition: transform .3s ease;
-      position: relative;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: 396px;
+    box-shadow: 6px 71px 36px rgba(229, 229, 229, 0.7);
+    transition: transform .3s ease;
+    position: relative;
 
-      &:hover {
-        transform: translateY(-10px);
-      }
+    &:hover {
+      transform: translateY(-10px);
+    }
 
-      .our-restaurants__restaurant-info {
-        font-family: var(--font-family), sans-serif;
-        font-weight: 400;
-        font-size: 19px;
-        line-height: 133%;
-        color: #8e97a6;
-      }
+    .our-restaurants__restaurant-info {
+      font-family: var(--font-family), sans-serif;
+      font-weight: 400;
+      font-size: 19px;
+      line-height: 133%;
+      color: #8e97a6;
     }
   }
 }
@@ -883,7 +893,7 @@ h2 {
 
 /* Адаптивность главной страницы */
 @media screen and (max-width: 1199.98px) {
-  // Планшеты в горизонтальной ориентации, Ipad Pro
+  // Планшеты в горизонтальной ориентации, Ipad Pro (>= 1024px)
   h2 {
     font-size: 45px;
   }
@@ -951,7 +961,7 @@ h2 {
     padding-bottom: 100px;
 
     .hero__left-column {
-      .hero__text {
+      .hero__subtitle {
         padding-left: 52px;
         margin-bottom: 12px;
 
@@ -964,17 +974,16 @@ h2 {
       .hero__title {
         font-size: 60px;
       }
-      .hero__subtitle {
+      .hero__text {
         font-size: 18px;
         margin-bottom: 48px;
       }
       .hero__buttons {
         gap: 20px;
-
-        .hero__btn {
-          font-size: 18px;
-          padding: 0.75rem 1.5rem;
-        }
+      }
+      .hero__btn {
+        font-size: 18px;
+        padding: 0.75rem 1.5rem;
       }
 
       .hero__reviews {
@@ -1112,15 +1121,14 @@ h2 {
       margin-top: 0;
       margin-bottom: 40px;
     }
-    .our-restaurants__restaurant {
-      .card {
-        .our-restaurants__restaurant-info {
-          font-size: 18px;
 
-          img {
-            width: 24px;
-            height: 24px;
-          }
+    .our-restaurants__restaurant {
+      .our-restaurants__restaurant-info {
+        font-size: 18px;
+
+        img {
+          width: 24px;
+          height: 24px;
         }
       }
     }
@@ -1240,18 +1248,9 @@ h2 {
 }
 
 @media screen and (max-width: 991.98px) {
-  // Планшеты в вертикальной ориентации
+  // Планшеты в вертикальной ориентации (>= 768px)
   h2 {
     font-size: 40px;
-  }
-  .card {
-    .card-body {
-      padding: 0.5rem 1.5rem 0.75rem;
-
-      h5 {
-        font-size: 18px;
-      }
-    }
   }
   .dish-favorite {
     top: 12px;
@@ -1269,7 +1268,7 @@ h2 {
     padding-bottom: 90px;
 
     .hero__left-column {
-      .hero__text {
+      .hero__subtitle {
         font-size: 14px;
 
         &::before {
@@ -1279,14 +1278,12 @@ h2 {
       .hero__title {
         font-size: 42px;
       }
-      .hero__subtitle {
+      .hero__text {
         font-size: 18px;
       }
-      .hero__buttons {
-        .hero__btn {
-          font-size: 16px;
-          padding: 0.75rem 1.25rem;
-        }
+      .hero__btn {
+        font-size: 16px;
+        padding: 0.75rem 1.25rem;
       }
 
       .hero__reviews {
@@ -1368,6 +1365,8 @@ h2 {
     }
 
     .app-download__content {
+      padding-bottom: 64px;
+
       .app-download__title {
         font-size: 45px;
         margin-bottom: 48px;
@@ -1383,7 +1382,6 @@ h2 {
       }
       .app-download__btn {
         align-self: center;
-        margin-bottom: 4rem;
         padding: 1.25rem 3.5rem 1.25rem 1.75rem;
         font-size: 18px;
 
@@ -1403,7 +1401,6 @@ h2 {
     }
   }
 
-  // TODO: Добавить скролл как с едой
   .our-restaurants__wrapper {
     padding-top: 70px;
     padding-bottom: 76px;
@@ -1413,16 +1410,7 @@ h2 {
       margin-bottom: 40px;
     }
     .our-restaurants__restaurant {
-      .card {
-        .our-restaurants__restaurant-info {
-          font-size: 12px;
-
-          img {
-            width: 20px;
-            height: 20px;
-          }
-        }
-      }
+      width: 350px;
     }
   }
 
@@ -1442,8 +1430,8 @@ h2 {
           font-size: 18px;
 
           img {
-            width: 23px;
-            height: 23px;
+            width: 24px;
+            height: 24px;
           }
         }
       }
@@ -1499,6 +1487,211 @@ h2 {
           height: 38px;
           font-size: 10px;
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  // Телефоны в горизонтальной ориентации (>= 576px)
+  h2 {
+    font-size: 35px;
+  }
+
+  .hero__wrapper {
+    padding-top: 140px;
+    padding-bottom: 120px;
+
+    .hero__left-column {
+      padding-bottom: 70px;
+      align-items: center;
+      text-align: center;
+
+      .hero__subtitle {
+        padding-left: 68px;
+        margin-bottom: 20px;
+        font-size: 15px;
+
+        &::before {
+          width: 54px;
+        }
+      }
+      .hero__title {
+        font-size: 52px;
+      }
+
+      .hero__btn {
+        font-size: 18px;
+        padding: 1rem 1.75rem;
+      }
+
+      .hero__reviews {
+        margin-top: 40px;
+
+        .hero__review {
+          gap: 24px;
+        }
+      }
+    }
+    .hero__right-column {
+      .hero__food-img {
+        img {
+          max-width: 314px;
+          max-height: 320px;
+        }
+        &::after {
+          top: 27%;
+          right: -12%;
+        }
+      }
+      .hero__order-preview {
+        top: -8%;
+        right: 53%;
+
+        img {
+          width: 230px;
+          height: 64px;
+        }
+      }
+      .hero__graph {
+        bottom: -20%;
+        left: 8%;
+
+        img {
+          width: 169px;
+          height: 168px;
+        }
+
+        &::before {
+          width: 38px;
+          height: 33px;
+          bottom: -27%;
+          left: -17%;
+        }
+      }
+    }
+  }
+
+  .features {
+    background: url("../img/features_bg-sm.svg") no-repeat;
+    background-size: cover;
+
+    .features__feature {
+      padding: 1.5rem 0;
+
+      &:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid rgba(197, 197, 197, 0.15);
+      }
+      .features__feature-title {
+        font-size: 45px;
+      }
+    }
+  }
+
+  .app-download__wrapper {
+    padding-top: 50px;
+    padding-bottom: 60px;
+
+    .app-download__content {
+      .app-download__title {
+        font-size: 35px;
+      }
+      .app-download__features {
+        gap: 16px;
+        margin-bottom: 32px;
+
+        .app-download__feature {
+          font-size: 20px;
+        }
+      }
+      .app-download__btn {
+        &::before {
+          right: -95%;
+        }
+      }
+    }
+  }
+
+  .our-restaurants__wrapper {
+    padding-top: 50px;
+    padding-bottom: 60px;
+
+    .our-restaurants__restaurant {
+      width: 300px;
+    }
+  }
+  .our-dishes__wrapper {
+    padding-top: 50px;
+    padding-bottom: 60px;
+
+    .our-dishes__dish {
+      width: 175px;
+      padding: 1rem;
+
+      h5 {
+        font-size: 20px;
+      }
+      .card-body {
+        .our-dishes__dish-info {
+          font-size: 16px;
+
+          img {
+            width: 22px;
+            height: 22px;
+          }
+        }
+      }
+    }
+  }
+
+  .purchases-control__wrapper {
+    padding-top: 50px;
+    padding-bottom: 60px;
+
+    .purchases-control__title {
+      font-size: 35px;
+    }
+  }
+
+  .reviews__wrapper {
+    padding-top: 50px;
+    padding-bottom: 60px;
+
+    .reviews__title {
+      font-size: 35px;
+      margin-bottom: 40px;
+    }
+    .reviews__item {
+      min-width: 100%;
+
+      .reviews__header {
+        img {
+          width: 68px;
+          height: 68px;
+        }
+        .reviews__author {
+          font-size: 20px;
+        }
+        .review__slogan {
+          font-size: 18px;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .sale {
+    padding-top: 60px;
+
+    .sale__wrapper {
+      padding: 2.5rem 2rem;
+      height: 300px;
+
+      &::after {
+        right: 50%;
+        bottom: -32%;
+        transform: translateX(50%);
       }
     }
   }
