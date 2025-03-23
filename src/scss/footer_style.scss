@@ -22,6 +22,7 @@
       display: flex;
       list-style-type: none;
       margin: 0;
+      padding-left: 0;
       gap: 38px;
       color: #999;
     }
@@ -137,6 +138,36 @@
 
       .footer__copyright p {
         font-size: 15px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 566.98px) {
+  // Телефоны в вертикальной ориентации (< 567px)
+  .footer {
+    margin-top: 160px;
+    padding-top: 48px;
+
+    .footer__top {
+      flex-direction: column;
+      padding-bottom: 28px;
+      gap: 28px;
+
+      .footer__list {
+        flex-direction: column;
+        gap: 20px;
+        color: #606060;
+      }
+    }
+
+    .footer__bottom {
+      flex-direction: column;
+      padding-top: 40px;
+      gap: 24px;
+
+      .footer__copyright p {
+        font-size: 18px;
       }
     }
   }

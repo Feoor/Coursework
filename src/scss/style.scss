@@ -7,13 +7,17 @@
 @import "auth";
 
 :root {
+  // Шрифты
   --font-family: "Manrope";
   --second-family: "Inter";
   --font4: "Public Sans", sans-serif;
   --font5: "Quicksand", sans-serif;
   --font6: "Plus Jakarta Sans", sans-serif;
+
+  // Цвета
   --purple: #6c5fbc;
   --purple-hover: #5a4aa3;
+  --translucent-white: rgba(197, 197, 197, 0.15);
 }
 /* Базовые стили */
 html {
@@ -60,6 +64,11 @@ h2 {
   .card-body {
     padding: 0.75rem 2rem 1rem;
 
+    .card-title {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
     h5 {
       font-family: var(--font-family), sans-serif;
       font-weight: 800;
@@ -378,7 +387,7 @@ h2 {
       display: flex;
       gap: 12px;
       margin-top: 54px;
-      width: 350px;
+      //width: 350px;
       overflow: hidden;
 
       .hero__review {
@@ -502,7 +511,7 @@ h2 {
 
   .features__feature {
     &:not(:last-child) {
-      border-right: 1px solid rgba(197, 197, 197, 0.15);
+      border-right: 1px solid var(--translucent-white);
     }
 
     .features__feature-title {
@@ -641,6 +650,7 @@ h2 {
   .our-restaurants__restaurants-wrapper {
     display: flex;
     gap: 30px;
+    margin-top: 0;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
 
@@ -659,7 +669,6 @@ h2 {
     &:hover {
       transform: translateY(-10px);
     }
-
     .our-restaurants__restaurant-info {
       font-family: var(--font-family), sans-serif;
       font-weight: 400;
@@ -699,7 +708,6 @@ h2 {
     padding: 37px 20px 26px;
     border: 2px solid #f4f4f4;
     border-radius: 30px;
-    box-shadow: 7px 82px 41px 0 rgba(229, 229, 229, 0.7);
     position: relative;
     cursor: pointer;
     transition: transform .3s ease;
@@ -1235,6 +1243,7 @@ h2 {
         margin-bottom: 24px;
       }
       .sale__email-input {
+        padding-right: 130px;
         height: 48px;
       }
       .sale__form {
@@ -1526,6 +1535,8 @@ h2 {
       }
 
       .hero__reviews {
+        flex-direction: column;
+        align-items: center;
         margin-top: 40px;
 
         .hero__review {
@@ -1581,7 +1592,7 @@ h2 {
 
       &:not(:last-child) {
         border-right: none;
-        border-bottom: 1px solid rgba(197, 197, 197, 0.15);
+        border-bottom: 1px solid var(--translucent-white);
       }
       .features__feature-title {
         font-size: 45px;
@@ -1696,3 +1707,238 @@ h2 {
     }
   }
 }
+
+@media screen and (max-width: 566.98px) {
+  // Телефоны в вертикальной ориентации (< 567px)
+  .card {
+    .card-body {
+      padding: 0.5rem 1rem 1rem;
+
+      h5 {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .hero__wrapper {
+    .hero__left-column {
+      padding-bottom: 50px;
+
+      .hero__subtitle {
+        padding-left: 44px;
+        font-size: 13px;
+
+        &::before {
+          width: 33px;
+        }
+      }
+      .hero__title {
+        font-size: 40px;
+      }
+      .hero__text {
+        font-size: 16px;
+        margin-bottom: 40px;
+      }
+
+      .hero__btn {
+        font-size: 14px;
+        padding: 0.75rem 1.5rem;
+      }
+
+      .hero__reviews {
+        margin-top: 40px;
+
+        .hero__review {
+          gap: 16px;
+        }
+      }
+    }
+    .hero__right-column {
+      .hero__food-img {
+        img {
+          max-width: 256px;
+          max-height: 259px;
+        }
+        &::after {
+          top: 28%;
+          right: -7%;
+        }
+      }
+      .hero__order-preview {
+        top: -8%;
+        right: 60%;
+
+        img {
+          width: 186px;
+          height: 52px;
+        }
+      }
+      .hero__graph {
+        bottom: -20%;
+        left: 8%;
+
+        img {
+          width: 120px;
+          height: 119px;
+        }
+
+        &::before {
+          width: 24px;
+          height: 23px;
+          bottom: -27%;
+          left: -17%;
+        }
+      }
+    }
+  }
+
+  .features {
+    .features__feature {
+      padding: 2rem 0;
+    }
+  }
+
+  .app-download__wrapper {
+    .app-download__mockup {
+      .app-download__mobile-screen {
+        max-width: 230px;
+        max-height: 460px;
+
+        &::after {
+          top: -40px;
+          right: -40px;
+          transform: rotate(200deg) scale(1);
+        }
+      }
+    }
+    .app-download__content {
+      padding-bottom: 120px;
+
+      .app-download__title {
+        margin-bottom: 40px;
+      }
+      .app-download__features {
+        gap: 20px;
+
+        .app-download__feature {
+          font-size: 18px;
+        }
+      }
+      .app-download__btn {
+        &::before {
+          width: 125px;
+          height: 45px;
+          bottom: -80%;
+          right: 80%;
+          transform: rotate(110deg);
+        }
+      }
+    }
+  }
+
+  .our-restaurants__wrapper {
+    padding-top: 50px;
+    padding-bottom: 60px;
+
+    .our-restaurants__title {
+      margin-bottom: 36px;
+    }
+    .our-restaurants__restaurant {
+      width: 250px;
+
+      .our-restaurants__restaurant-info {
+        font-size: 16px;
+      }
+    }
+  }
+  .our-dishes__wrapper {
+    .our-dishes__dish {
+      h5 {
+        font-size: 20px;
+      }
+      .card-body {
+        .our-dishes__dish-info {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .sale {
+    .sale__wrapper {
+      height: 400px;
+
+      .sale__title {
+        font-size: 42px;
+        text-align: center;
+      }
+      .sale__email-input {
+        padding-right: 12px;
+      }
+      .sale__form {
+        .subscribe__btn {
+          position: static;
+          height: max-content;
+          margin-top: 16px;
+          padding: 1rem 1.5rem;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 330px) {
+  // Очень маленькие мобильные экраны
+  .hero__wrapper {
+    .hero__left-column {
+      .hero__title {
+        font-size: 35px;
+      }
+      .hero__text {
+        font-size: 15px;
+        margin-bottom: 32px;
+      }
+
+      .hero__buttons {
+        gap: 12px;
+      }
+      .hero__btn {
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+        padding: 0.75rem 1rem;
+      }
+
+      .hero__reviews {
+        margin-top: 32px;
+
+        .hero__review {
+          gap: 8px;
+
+          .hero__review-logo {
+            width: 87px;
+            height: 22px;
+            object-fit: contain;
+          }
+          .hero__review-stars {
+            width: max-content;
+
+            img {
+              width: 14px;
+              height: 13px;
+            }
+          }
+          .hero__review-counts {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Дебаг границ элементов
+//* {
+//  outline: 2px solid green;
+//}
