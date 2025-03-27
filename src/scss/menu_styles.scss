@@ -12,9 +12,10 @@
     &::before {
       display: inline-block;
       content: "";
-      width: 39px;
+      width: 37px;
       height: 37px;
       background: url("../icons/illustration_02.svg") no-repeat;
+      background-size: contain;
       position: absolute;
       top: -12%;
       right: -6%;
@@ -163,30 +164,71 @@
         color: #d69900;
         transition: .2s transform;
 
+        // 1 Элемент, родитель, пицца
         &::after {
           display: inline-block;
           content: "";
           width: 35px;
           height: 35px;
           background: url("../icons/pizza.svg") no-repeat;
+          background-size: contain;
           position: absolute;
           top: 35%;
-          left: 0;
           right: 0;
+          left: 0;
           margin: 0 auto;
           transform: translateY(-50%);
         }
+
+        // Выбранный элемент
+        &--active {
+          position: relative;
+          outline: 2px solid currentColor;
+          box-shadow: var(--bs-box-shadow-sm);
+          transform: scale(1.1);
+        }
       }
-      .filter-panel__category-item--active {
-        position: relative;
-        border: 1px solid var(--purple);
-        box-shadow: var(--bs-box-shadow-sm);
-        transform: scale(1.1);
+      // 2 Элемент, Азиатская еда
+      div:nth-child(2) .filter-panel__category-item {
+        background: rgba(251, 71, 29, 0.35);
+        color: #fb471d;
+
+        &::after {
+          width: 38px;
+          height: 38px;
+          background: url("../icons/hotdog.svg") no-repeat;
+          background-size: contain;
+        }
+      }
+      // 3 Элемент, Пончики
+      div:nth-child(3) .filter-panel__category-item {
+        background: rgba(237, 182, 107, 0.35);
+        color: #edb66b;
+
+        &::after {
+          width: 36px;
+          height: 36px;
+          background: url("../icons/doughnut_ico.svg") no-repeat;
+          background-size: contain;
+        }
+      }
+      // 4 Элемент, Мороженное
+      div:nth-child(4) .filter-panel__category-item {
+        background: rgba(90, 133, 255, 0.35);
+        color: #5a85ff;
+
+        &::after {
+          width: 22px;
+          height: 40px;
+          background: url("../icons/icecream.svg") no-repeat;
+          background-size: contain;
+        }
       }
     }
+
     .filter-panel__sort-list {
       /* Каждый 2 элемент находится справа */
-      .filter-panel__sort-item:nth-child(2) {
+      .filter-panel__sort-item:nth-child(even) {
         display: flex;
         justify-content: right;
       }
@@ -353,6 +395,343 @@
       max-height: 200px;
       padding: .25rem .5rem 2.5rem;
       opacity: 1;
+    }
+  }
+}
+
+@media screen and (max-width: 1199.98px) {
+  // Планшеты в горизонтальной ориентации, Ipad Pro (>= 1024px)
+  .food-filter__wrapper {
+    /* Левая колонка, баннер, поиск */
+    .food-filter__promo-banner {
+      padding: 30px 42px;
+
+      &::before {
+        top: -17%;
+        transform: rotate(195deg) scale(1);
+      }
+      &::after {
+        width: 180px;
+        height: 180px;
+        right: -2%;
+      }
+      .promo-banner__title {
+        font-size: 48px;
+      }
+    }
+
+    /* Правая колонка, фильтры */
+    .food-filter__filter-panel {
+      padding: 20px;
+
+      // Стили титулов фильтров
+      .filter-panel__category-title,
+      .filter-panel__sort-title,
+      .filter-panel__price-title {
+        font-size: 20px;
+      }
+
+      .filter-panel__category-list {
+        .filter-panel__category-item {
+          padding-top: 50px;
+          padding-bottom: 8px;
+          font-size: 16px;
+        }
+      }
+
+      .filter-panel__sort-list {
+        .filter-panel__sort-btn {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .faq__wrapper {
+    padding-top: 100px;
+
+    .faq__title {
+      margin-bottom: 30px;
+      font-size: 35px;
+
+      &::after {
+        top: -30%;
+        right: 28%;
+        transform: rotate(180deg) scale(1);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991.98px) {
+  // Планшеты в вертикальной ориентации (>= 768px)
+  .food-filter__wrapper {
+    /* Левая колонка, баннер, поиск */
+    .food-filter__promo-banner {
+      padding: 20px 20px 100px;
+
+      &::before {
+        top: -12%;
+        right: -10%;
+        transform: rotate(195deg) scale(0.9);
+      }
+      &::after {
+        width: 150px;
+        height: 150px;
+        right: 50%;
+        transform: translateX(50%);
+      }
+      .promo-banner__title {
+        font-size: 42px;
+      }
+    }
+    .food-filter__search {
+      .food-filter__buttons {
+        .food-filter__btn {
+          font-size: 15px;
+        }
+      }
+    }
+
+    /* Правая колонка, фильтры */
+    .food-filter__filter-panel {
+      padding: 16px;
+
+      // Стили титулов фильтров
+      .filter-panel__category-title,
+      .filter-panel__sort-title,
+      .filter-panel__price-title {
+        font-size: 18px;
+      }
+
+      // Сортировка по ...
+      .filter-panel__sort-list {
+        .filter-panel__sort-btn {
+          font-size: 12px;
+        }
+      }
+
+      // Ползунок цен
+      .filter-panel__price {
+        .filter-panel__price-range {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+
+
+  .faq__wrapper {
+    padding-top: 80px;
+
+    .faq__title {
+      margin-bottom: 12px;
+      font-size: 32px;
+
+      &::after {
+        top: -30%;
+        right: 24%;
+        transform: rotate(180deg) scale(0.8);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  // Телефоны в горизонтальной ориентации (>= 576px)
+  .food-filter__wrapper {
+    padding-top: 130px;
+
+    /* Левая колонка, баннер, поиск */
+    .food-filter__promo-banner {
+      padding: 32px 24px;
+      margin-bottom: 50px;
+
+      &::before {
+        display: none;
+      }
+      &::after {
+        right: 18%;
+        bottom: -15%;
+      }
+      .promo-banner__title {
+        font-size: 46px;
+      }
+    }
+    .food-filter__search {
+      .food-filter__buttons {
+        margin-bottom: 30px;
+
+        .food-filter__btn {
+          font-size: 16px;
+        }
+      }
+    }
+
+    /* Правая колонка, фильтры */
+    .food-filter__filter-panel {
+      padding: 24px;
+
+      // Стили титулов фильтров
+      .filter-panel__category-title,
+      .filter-panel__sort-title,
+      .filter-panel__price-title {
+        font-size: 24px;
+      }
+
+      // Стили кнопок категорий
+      .filter-panel__category-list {
+        .filter-panel__category-item {
+          font-size: 18px;
+        }
+      }
+
+      // Сортировка по ...
+      .filter-panel__sort-list {
+        .filter-panel__sort-btn {
+          font-size: 18px;
+        }
+      }
+
+      // Ползунок цен
+      .filter-panel__price {
+        .filter-panel__price-range {
+          font-size: 1rem;
+        }
+      }
+
+      .filter-panel__apply-btn {
+        padding: 14px 0;
+      }
+    }
+  }
+
+  .faq__wrapper {
+    padding-top: 70px;
+
+    .faq__title {
+      margin-bottom: 0;
+      font-size: 36px;
+
+      &::after {
+        top: -30%;
+        right: 11%;
+        transform: rotate(180deg) scale(0.9);
+      }
+    }
+    .faq__question {
+      .faq__question-header {
+        .faq__header-btn {
+          font-size: 20px;
+
+          &::after {
+              width: 30px;
+              height: 30px;
+          }
+        }
+      }
+
+      .faq__question-body {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 566.98px) {
+  // Телефоны в вертикальной ориентации (< 567px)
+  .food-filter__wrapper {
+    padding-top: 100px;
+
+    /* Левая колонка, баннер, поиск */
+    .food-filter__promo-banner {
+      padding: 20px 16px 100px;
+      margin-bottom: 70px;
+
+      &::after {
+        right: 50%;
+        bottom: -25%;
+      }
+      .promo-banner__title {
+        font-size: 34px;
+      }
+    }
+    .food-filter__search {
+      .food-filter__buttons {
+        margin-bottom: 20px;
+
+        .food-filter__btn {
+          font-size: 14px;
+        }
+      }
+    }
+
+    /* Правая колонка, фильтры */
+    .food-filter__filter-panel {
+      padding: 16px;
+
+      // Стили титулов фильтров
+      .filter-panel__category-title,
+      .filter-panel__sort-title,
+      .filter-panel__price-title {
+        font-size: 20px;
+      }
+
+      // Стили кнопок категорий
+      .filter-panel__category-list {
+        .filter-panel__category-item {
+          font-size: 14px;
+        }
+      }
+
+      // Сортировка по ...
+      .filter-panel__sort-list {
+        .filter-panel__sort-btn {
+          font-size: 15px;
+        }
+      }
+
+      // Ползунок цен
+      .filter-panel__price {
+        .filter-panel__price-range {
+          font-size: 0.8rem;
+        }
+      }
+
+      .filter-panel__apply-btn {
+        padding: 8px 0;
+        font-size: 16px;
+      }
+    }
+  }
+  .faq__wrapper {
+    padding-top: 50px;
+
+    .faq__title {
+      margin-bottom: 0;
+      font-size: 30px;
+
+      &::after {
+        top: 65%;
+        right: 13%;
+        transform: rotate(245deg) scale(0.8);
+      }
+    }
+    .faq__question {
+      .faq__question-header {
+        .faq__header-btn {
+          font-size: 18px;
+
+          &::after {
+            width: 28px;
+            height: 28px;
+          }
+        }
+      }
+
+      .faq__question-body {
+        font-size: 16px;
+      }
     }
   }
 }

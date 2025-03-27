@@ -651,6 +651,7 @@ h2 {
     display: flex;
     gap: 30px;
     margin-top: 0;
+    padding-top: 10px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
 
@@ -693,6 +694,7 @@ h2 {
   .our-dishes__dishes-wrapper {
     display: flex;
     gap: 30px;
+    padding-top: 10px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
 

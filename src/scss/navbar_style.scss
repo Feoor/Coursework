@@ -128,7 +128,7 @@ body.lock {
         bottom: 0;
       }
       &::before {
-        top: 1px;
+        top: 2px;
       }
       span {
         top: 50%;
@@ -169,14 +169,6 @@ body.lock {
     opacity: 0;
     transition: opacity .3s ease;
 
-    &--show {
-      display: flex;
-      opacity: 1;
-
-      .sidebar__menu {
-        transform: translateX(0) !important;
-      }
-    }
     .sidebar__menu {
       position: relative;
       display: flex;
@@ -250,6 +242,14 @@ body.lock {
       &:hover {
         background-color: rgba(255, 255, 255, 0.15);
         color: #fff;
+      }
+    }
+    &--show {
+      display: flex;
+      opacity: 1;
+
+      .sidebar__menu {
+        transform: translateX(0px);
       }
     }
   }
