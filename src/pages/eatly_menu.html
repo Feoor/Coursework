@@ -30,14 +30,14 @@
                 <nav class="header__nav">
                     <ul class="header__list menu list-reset">
                         <li class="menu__item"><a href="#">Меню</a></li>
-                        <li class="menu__item"><a href="../pages/contact_page.html">Контакты</a></li>
+                        <li class="menu__item"><a href="contact_page.html">Контакты</a></li>
                     </ul>
                 </nav>
             </div>
 
             <div class="header__right-side">
-                <a href="../pages/sign_in.html" class="header__login">Войти</a>
-                <a href="../pages/sign_up.html" class="header__sign-up">Зарегистрироваться</a>
+                <a href="sign_in.html" class="header__login">Войти</a>
+                <a href="sign_up.html" class="header__sign-up">Зарегистрироваться</a>
 
                 <button id="headerMenuButton" class="header__menu">
                     <span></span>
@@ -50,18 +50,18 @@
                     <div class="sidebar__header">
                         <div class="sidebar__brand">
                             <!-- Логотип без текста -->
-                            <a href="#" class="eatly-logo"></a>
+                            <a href="../index.html" class="eatly-logo"></a>
                         </div>
                     </div>
                     <div class="sidebar__nav">
                         <ul class="sidebar__list menu list-reset">
-                            <li class="menu__item"><a href="../pages/eatly_menu.html">Меню</a></li>
-                            <li class="menu__item"><a href="../pages/contact_page.html">Контакты</a></li>
+                            <li class="menu__item"><a href="#">Меню</a></li>
+                            <li class="menu__item"><a href="contact_page.html">Контакты</a></li>
                         </ul>
                     </div>
                     <div class="sidebar__auth-buttons d-flex flex-column justify-content-between text-center">
-                        <a href="../pages/sign_in.html" class="sidebar__login w-100">Войти</a>
-                        <a href="../pages/sign_up.html" class="sidebar__sign-up w-100">Зарегистрироваться</a>
+                        <a href="sign_in.html" class="sidebar__login w-100">Войти</a>
+                        <a href="sign_up.html" class="sidebar__sign-up w-100">Зарегистрироваться</a>
                     </div>
                 </div>
             </div>
@@ -95,10 +95,15 @@
                             <label for="foodFilterSearchInput">Поиск</label>
                         </div>
 
-                        <div class="food-filter__buttons row g-0">
-                            <button class="food-filter__btn food-filter__btn--active col-4" data-filter="all">Все</button>
-                            <button class="food-filter__btn col-4" data-filter="restaurants">Рестораны</button>
-                            <button class="food-filter__btn col-4" data-filter="dishes">Блюда</button>
+                        <div class="food-filter__buttons col-12 btn-group" role="group">
+                            <input type="radio" class="btn-check food-filter__btn" name="sortShowFilterGroup" id="sortShowAll" data-filter="dishes" checked>
+                            <label class="btn btn-outline-primary" for="sortShowAll">Все</label>
+
+                            <input type="radio" class="btn-check food-filter__btn" name="sortShowFilterGroup" id="sortShowRestaurants" data-filter="restaurants">
+                            <label class="btn btn-outline-primary" for="sortShowRestaurants">Рестораны</label>
+
+                            <input type="radio" class="btn-check food-filter__btn" name="sortShowFilterGroup" id="sortShowDishes" data-filter="all">
+                            <label class="btn btn-outline-primary" for="sortShowDishes">Блюда</label>
                         </div>
                     </div>
                 </div>
@@ -110,7 +115,7 @@
                         <!-- Фильтр по категориям -->
                         <div class="filter-panel__category">
                             <h3 class="filter-panel__category-title">Категории</h3>
-                            <div class="filter-panel__category-list row g-3">
+                            <div class="filter-panel__category-list row g-3" id="categoriesFilter">
                                 <div class="col-3 col-md-6 col-xl-3">
                                     <button class="filter-panel__category-item">Pizza</button>
                                 </div>
@@ -129,15 +134,18 @@
                         <!-- Фильтр по сортировке -->
                         <div class="filter-panel__sort">
                             <h3 class="filter-panel__sort-title">Сортировать По</h3>
-                            <div class="filter-panel__sort-list row row-cols-2 gx-5 gy-1">
+                            <div class="filter-panel__sort-list row row-cols-2 gx-5 gy-1" id="sortByFilters">
                                 <div class="filter-panel__sort-item col">
-                                    <button class="filter-panel__sort-btn">Рекомендуемое</button>
+                                    <input type="radio" class="filter-panel__sort-btn" name="sortByFilter" id="sortByRecommends">
+                                    <label class="btn" for="sortByRecommends">Рекомендуемое</label>
                                 </div>
                                 <div class="filter-panel__sort-item col">
-                                    <button class="filter-panel__sort-btn filter-panel__sort-btn--active">Быстрая доставка</button>
+                                    <input type="radio" class="filter-panel__sort-btn" name="sortByFilter" id="sortByFastDelivery" checked>
+                                    <label class="btn" for="sortByFastDelivery">Быстрая доставка</label>
                                 </div>
                                 <div class="filter-panel__sort-item col">
-                                    <button class="filter-panel__sort-btn">Популярное</button>
+                                    <input type="radio" class="filter-panel__sort-btn" name="sortByFilter" id="sortByPopular">
+                                    <label class="btn" for="sortByPopular">Популярное</label>
                                 </div>
                             </div>
                         </div>
@@ -187,7 +195,7 @@
                 <!-- Карточки ресторанов -->
                 <div class="our-restaurants__restaurants-wrapper col-12 mb-2">
                     <div class="our-restaurants__restaurant card h-100">
-                        <a href="../pages/the_chicken_king_restaurant.html">
+                        <a href="the_chicken_king_restaurant.html">
                             <img src="../img/the_chicken_king.png" alt="The Chicken King Restaurant" class="card-img-top">
 
                             <div class="card-body">
@@ -206,7 +214,7 @@
                     </div>
 
                     <div class="our-restaurants__restaurant card h-100">
-                        <a href="../pages/the_burger_king_restaurant.html">
+                        <a href="the_burger_king_restaurant.html">
                             <img src="../img/the_burger_king.png" alt="The Chicken King Restaurant" class="card-img-top">
 
                             <div class="card-body">
@@ -225,7 +233,7 @@
                     </div>
 
                     <div class="our-restaurants__restaurant card h-100">
-                        <a href="../pages/the_chicken_king_restaurant.html">
+                        <a href="the_chicken_king_restaurant.html">
                             <img src="../img/the_chicken_king.png" alt="The Chicken King Restaurant" class="card-img-top">
 
                             <div class="card-body">
@@ -246,7 +254,7 @@
 
                 <!-- Переход на страницу меню -->
                 <div class="col-12 text-end">
-                    <a href="../pages/eatly_menu.html" class="view-all">Посмотреть все</a>
+                    <a href="eatly_menu.html" class="view-all">Посмотреть все</a>
                 </div>
 
             </div>
@@ -388,7 +396,7 @@
                 </div>
                 <!-- Переход на страницу меню -->
                 <div class="col-12 text-end">
-                    <a href="../pages/eatly_menu.html" class="view-all">Посмотреть все</a>
+                    <a href="eatly_menu.html" class="view-all">Посмотреть все</a>
                 </div>
 
             </div>
@@ -409,7 +417,7 @@
                 </h2>
 
                 <!-- Вопросы и ответы -->
-                <div class="faq__question col-12 faq__question--active">
+                <div class="faq__question col-12">
                     <!-- Вопрос, заголовок всегда виден -->
                     <div class="faq__question-header">
                         <button class="faq__header-btn">
@@ -502,7 +510,7 @@
                     <ul class="footer__list menu list-reset">
                         <li class="menu__item"><a href="../index.html">Главная</a></li>
                         <li class="menu__item"><a href="#">Меню</a></li>
-                        <li class="menu__item"><a href="../pages/contact_page.html">Контакты</a></li>
+                        <li class="menu__item"><a href="contact_page.html">Контакты</a></li>
                     </ul>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 body = document.body;
 
-// Открываем меню при нажатии на кнопку
+// Открываем сайдбар меню при нажатии на кнопку
 const headerButton = document.getElementById('headerMenuButton');
 const sidebar = document.getElementById('sidebar');
 
@@ -17,9 +17,30 @@ const faqBlocks = document.querySelectorAll(".faq__question")
 for (const faqBlock of faqBlocks) {
     // FAQ Блок -> div.faq__question-header -> button
     const faqBlockButton = faqBlock.children[0].children[0];
-    console.dir(faqBlockButton);
 
     faqBlockButton.addEventListener("click", () => {
         faqBlock.classList.toggle("faq__question--active");
     });
+}
+
+
+// Кнопки фильтрации
+const categoriesFilter = document.querySelector("#categoriesFilter");
+for (const categoriesFilterElement of categoriesFilter.children) {
+    // Фильтр -> div.col -> button
+    const categoryButtonFilter = categoriesFilterElement.children[0];
+
+    categoryButtonFilter.addEventListener("click", () => {
+        categoryButtonFilter.classList.toggle("filter-panel__category-item--active");
+    })
+}
+
+const sortByFilters = document.querySelector("#sortByFilters");
+for (const sortByFilterElement of sortByFilters.children) {
+    // Фильтр -> div.col -> button
+    const sortByButtonFilter = sortByFilterElement.children[0];
+
+    sortByButtonFilter.addEventListener("click", () => {
+        sortByButtonFilter.classList.toggle("filter-panel__sort-btn--active");
+    })
 }

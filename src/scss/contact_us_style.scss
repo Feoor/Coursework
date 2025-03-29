@@ -6,12 +6,12 @@
   .contact__illustrations {
     .illustrations__purple-block {
       width: calc(27.5% - 48px); /* Ширина блока на 50%(27.5% от всей ширины экрана) - отступ gx-5(48px) */
-      height: calc(100% - 278px); /* Блок высотой наравне с высотой формы */
+      height: calc(100% - 228px); /* Блок высотой наравне с высотой формы */
       padding-top: 60px;
       background: var(--purple);
       position: absolute;
-      /* Внутренний отступ контейнера(180px) + отступ gy-5(48px) = 228px */
-      top: 228px;
+      /* Внутренний отступ контейнера(180px) */
+      top: 180px;
       left: 0;
 
       .illustrations__title {
@@ -41,13 +41,13 @@
       &::after {
         display: inline-block;
         content: '';
-        width: 51%;
-        height: 85%;
+        width: 189px;
+        height: 378px;
         background-image: url('../img/mobile_screen.png');
         background-size: contain;
         background-repeat: no-repeat;
         position: absolute;
-        bottom: -20%;
+        bottom: -50px;
         right: -25%;
       }
     }
@@ -69,6 +69,7 @@
       border-radius: 16px;
     }
     .contact__form-input--textarea textarea {
+      height: 100px;
       margin-bottom: 42px;
     }
     .contact__form-btn {
@@ -94,11 +95,165 @@
         height: 122px;
         background-image: url('../icons/spiral_arrow.svg');
         background-repeat: no-repeat;
+        background-size: contain;
         transition: .2s background-color ease-in-out;
         position: absolute;
         top: 25%;
         left: -20%;
         transform: rotate(85deg);
+      }
+    }
+  }
+}
+
+/* Адаптивность страницы контактов */
+@media screen and (max-width: 1199.98px) {
+  // Планшеты в горизонтальной ориентации, Ipad Pro (>= 1024px)
+  .contact__wrapper {
+    .contact__illustrations {
+      .illustrations__purple-block {
+        width: calc(42.5% - 48px); /* Ширина блока на 85%(42.5% от всей ширины экрана) - отступ gx-5(48px) */
+
+        &::after {
+          right: 50%;
+          transform: translateX(50%);
+        }
+      }
+    }
+    .contact__support {
+      .contact__title {
+        font-size: 32px;
+        margin-bottom: 42px;
+      }
+      .contact__form-input--textarea textarea {
+        height: 100px;
+        margin-bottom: 42px;
+      }
+      .contact__form-btn {
+        padding: 1rem 0;
+
+        &::before {
+          width: 94px;
+          height: 86px;
+          top: 60%;
+          left: -15%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991.98px) {
+  // Планшеты в вертикальной ориентации (>= 768px)
+  .contact__wrapper {
+    padding-top: 140px;
+    padding-bottom: 0;
+
+    .contact__illustrations {
+      .illustrations__purple-block {
+        width: calc(50% - 48px); /* Ширина блока на 100%(50% от всей ширины экрана) - отступ gx-5(48px) */
+        height: calc(100% - 140px);
+        top: 140px;
+
+        &::after {
+          width: 148px;
+          height: 296px;
+          bottom: -20px;
+        }
+      }
+    }
+    .contact__support {
+      .contact__title {
+        font-size: 28px;
+        margin-bottom: 36px;
+      }
+      .contact__form-btn {
+        font-size: 18px;
+
+        &::before {
+          width: 74px;
+          height: 86px;
+          top: 60%;
+          left: -15%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  // Телефоны в горизонтальной ориентации (>= 576px)
+  .contact__wrapper {
+    .contact__illustrations {
+      .illustrations__purple-block {
+        width: calc(40% - 48px); /* Ширина блока на 80%(42.5% от всей ширины экрана) - отступ gx-5(48px) */
+
+        .illustrations__title {
+          &::after {
+            width: 140px;
+            height: 30px;
+            bottom: -60%;
+          }
+        }
+        &::after {
+          width: 120px;
+          height: 240px;
+        }
+      }
+    }
+    .contact__support {
+      .contact__title {
+        font-size: 28px;
+        margin-bottom: 32px;
+      }
+      .contact__form-btn {
+        &::before {
+          width: 78px;
+          height: 76px;
+          left: -9%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 566.98px) {
+  // Телефоны в вертикальной ориентации (< 567px)
+  .contact__wrapper {
+    padding-bottom: 0;
+
+    .contact__illustrations {
+      .illustrations__purple-block {
+        position: static;
+        width: 100%; /* Ширина блока на 100%(100% от всей ширины экрана) */
+        height: 100%;
+        padding: 1.5rem 0 6rem;
+
+        .illustrations__title {
+          &::after {
+            width: 110px;
+            height: 28px;
+            bottom: -50%;
+            left: 73%;
+            transform: translateY(50%) rotate(90deg);
+          }
+        }
+        &::after {
+          display: none;
+        }
+      }
+    }
+    .contact__support {
+      margin-top: 48px;
+
+      .contact__title {
+        font-size: 32px;
+        text-align: center;
+      }
+      .contact__form-btn {
+        &::before {
+          display: none;
+        }
       }
     }
   }
