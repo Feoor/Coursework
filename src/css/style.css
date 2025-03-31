@@ -1426,29 +1426,31 @@ body.lock {
   text-align: center;
   color: rgba(255, 255, 255, 0.7);
 }
-.auth__wrapper .sign-up__auth .auth__title {
+.auth__wrapper .auth__title {
   font-family: var(--font-family), sans-serif;
   font-weight: 700;
   font-size: 35px;
   color: #323142;
 }
-.auth__wrapper .sign-up__auth .auth__social-btn {
+.auth__wrapper .auth__social-btn {
   position: relative;
-  width: 47.5%;
+  width: calc(50% - 0.75rem);
   padding: 2rem 0;
   border: none;
   border-radius: 13px;
+  background: #f1f1f1;
   transition: 0.3s all;
 }
-.auth__wrapper .sign-up__auth .auth__social-btn:hover {
+.auth__wrapper .auth__social-btn:hover {
   background-color: var(--purple);
 }
-.auth__wrapper .sign-up__auth .auth__social-btn--google::after {
+.auth__wrapper .auth__social-btn--google::after {
   display: inline-block;
   content: "";
   width: 23px;
   height: 23px;
   background: url("../icons/google_icon.svg") no-repeat;
+  background-size: contain;
   position: absolute;
   top: 0;
   right: 0;
@@ -1456,12 +1458,13 @@ body.lock {
   left: 0;
   margin: auto;
 }
-.auth__wrapper .sign-up__auth .auth__social-btn--apple::after {
+.auth__wrapper .auth__social-btn--apple::after {
   display: inline-block;
   content: "";
   width: 27px;
   height: 31px;
   background: url("../icons/apple_icon.svg") no-repeat;
+  background-size: contain;
   position: absolute;
   top: 0;
   right: 0;
@@ -1469,88 +1472,267 @@ body.lock {
   left: 0;
   margin: auto;
 }
-.auth__wrapper .sign-up__auth .auth__subtitle {
+.auth__wrapper .auth__subtitle {
   font-family: var(--font-family), sans-serif;
   font-weight: 600;
   font-size: 22px;
   color: #cfcfd3;
 }
-.auth__wrapper .sign-up__auth .auth__text-divider {
+.auth__wrapper .auth__text-divider {
   font-family: var(--font-family), sans-serif;
   font-weight: 600;
   font-size: 20px;
   color: rgba(0, 90, 100, 0.35);
 }
-.auth__wrapper .sign-up__auth .auth__form-input {
+.auth__wrapper .auth__form-input {
   position: relative;
 }
-.auth__wrapper .sign-up__auth .auth__form-input input {
+.auth__wrapper .auth__form-input input {
   padding-left: 4rem;
   border: none;
   border-radius: 14px;
-  background: #f5f5f5;
+  background: #f1f1f1;
 }
-.auth__wrapper .sign-up__auth .auth__form-input input:focus ~ label {
+.auth__wrapper .auth__form-input input:focus {
+  background: #fff;
+}
+.auth__wrapper .auth__form-input input:focus ~ label {
   transform: scale(0.85) translateY(-0.5rem) translateX(0.55rem);
 }
-.auth__wrapper .sign-up__auth .auth__form-input input:focus ~ label::after {
+.auth__wrapper .auth__form-input input:focus ~ label::after {
   background-color: transparent;
 }
-.auth__wrapper .sign-up__auth .auth__form-input label {
+.auth__wrapper .auth__form-input label {
   padding-left: 4rem;
 }
-.auth__wrapper .sign-up__auth .auth__form-input--name::before {
+.auth__wrapper .auth__form-input--name::before {
   display: inline-block;
   content: "";
   width: 22px;
   height: 23px;
   background: url("../icons/user_icon.svg") no-repeat;
+  background-size: contain;
   position: absolute;
   top: 50%;
   left: 1.5rem;
   transform: translateY(-50%);
 }
-.auth__wrapper .sign-up__auth .auth__form-input--email::before {
+.auth__wrapper .auth__form-input--email::before {
   display: inline-block;
   content: "";
   width: 23px;
   height: 18px;
   background: url("../icons/email_icon.svg") no-repeat;
+  background-size: contain;
   position: absolute;
   top: 50%;
   left: 1.5rem;
   transform: translateY(-50%);
 }
-.auth__wrapper .sign-up__auth .auth__form-input--password::before {
+.auth__wrapper .auth__form-input--password::before {
   display: inline-block;
   content: "";
   width: 19px;
   height: 24px;
   background: url("../icons/password_icon.svg") no-repeat;
+  background-size: contain;
   position: absolute;
   top: 50%;
   left: 1.5rem;
   transform: translateY(-50%);
 }
-.auth__wrapper .sign-up__auth .auth__form-input--password.auth__form-input--with-hint::before {
+.auth__wrapper .auth__form-input--password.auth__form-input--with-hint::before {
   transform: translateY(-100%);
 }
-.auth__wrapper .sign-up__auth .auth__form-btn {
+.auth__wrapper .auth__form-btn {
   border-radius: 16px;
   padding: 24px 0;
   font-weight: 700;
 }
-.auth__wrapper .sign-up__auth .auth__footer {
+.auth__wrapper .auth__footer {
   font-family: var(--font-family), sans-serif;
   font-weight: 500;
   font-size: 18px;
   letter-spacing: 0.01em;
   color: #3e3e3e;
 }
-.auth__wrapper .sign-up__auth .auth__footer a {
+.auth__wrapper .auth__footer a {
   font-weight: 900;
 }
 
+@media screen and (max-width: 1199.98px) {
+  .auth-page .header .header__wrapper {
+    min-height: 104px;
+  }
+  .auth__wrapper .auth__title {
+    font-size: 28px;
+  }
+  .auth__wrapper .auth__subtitle {
+    font-size: 20px;
+  }
+  .auth__wrapper .auth__social-btn {
+    padding: 1.75rem 0;
+  }
+  .auth__wrapper .auth__social-btn--google::after {
+    width: 21px;
+    height: 21px;
+  }
+  .auth__wrapper .auth__social-btn--apple::after {
+    width: 23px;
+    height: 29px;
+  }
+  .auth__wrapper .auth__text-divider {
+    font-size: 18px;
+  }
+  .auth__wrapper .auth__form-input input {
+    padding-left: 3rem;
+  }
+  .auth__wrapper .auth__form-input label {
+    padding-left: 3rem;
+  }
+  .auth__wrapper .auth__form-input--name::before {
+    width: 20px;
+    height: 21px;
+    left: 1rem;
+  }
+  .auth__wrapper .auth__form-input--email::before {
+    width: 21px;
+    height: 16px;
+    left: 1rem;
+  }
+  .auth__wrapper .auth__form-input--password::before {
+    width: 17px;
+    height: 22px;
+    left: 1rem;
+  }
+  .auth__wrapper .auth__form-btn {
+    padding: 16px 0;
+    font-size: 16px;
+  }
+  .auth__wrapper .auth__footer {
+    font-size: 16px;
+  }
+  .auth__wrapper .forget-password__auth ~ .auth__carousel {
+    min-height: 540px;
+  }
+  .auth__wrapper .forget-password__auth ~ .auth__carousel .carousel-caption {
+    bottom: -75%;
+  }
+  .auth__wrapper .auth__carousel .carousel-caption {
+    bottom: -80%;
+  }
+  .auth__wrapper .auth__carousel .carousel-caption h5 {
+    font-size: 24px;
+  }
+  .auth__wrapper .auth__carousel .carousel-caption p {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 991.98px) {
+  .auth-page {
+    background-image: url("../img/auth_bg_md.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .auth-page .header .header__wrapper {
+    min-height: 81px;
+  }
+  .auth__wrapper .auth__title {
+    font-size: 24px;
+  }
+  .auth__wrapper .auth__subtitle {
+    font-size: 18px;
+  }
+  .auth__wrapper .auth__social-btn {
+    padding: 1.5rem 0;
+  }
+  .auth__wrapper .auth__social-btn--google::after {
+    width: 20px;
+    height: 20px;
+  }
+  .auth__wrapper .auth__social-btn--apple::after {
+    width: 21px;
+    height: 27px;
+  }
+  .auth__wrapper .auth__text-divider {
+    font-size: 18px;
+  }
+  .auth__wrapper .auth__form-btn {
+    padding: 14px 0;
+    font-size: 16px;
+  }
+  .auth__wrapper .auth__footer {
+    font-size: 16px;
+  }
+  .auth__wrapper .forget-password__auth ~ .auth__carousel {
+    min-height: 500px;
+  }
+  .auth__wrapper .forget-password__auth ~ .auth__carousel .carousel-caption {
+    bottom: -125%;
+  }
+  .auth__wrapper .auth__carousel .carousel-caption {
+    bottom: -130%;
+  }
+  .auth__wrapper .auth__carousel .carousel-caption h5 {
+    font-size: 22px;
+  }
+  .auth__wrapper .auth__carousel .carousel-caption p {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 767.98px) {
+  .auth-page {
+    background: #f9f9f9;
+  }
+  .auth-page .header {
+    position: fixed;
+    background: #f9f9f9;
+  }
+  .auth-page .header .header__wrapper {
+    border-bottom: 2px solid #cbcbcb;
+  }
+  .auth__wrapper {
+    padding-top: 120px;
+  }
+  .auth__wrapper .auth__title {
+    font-size: 32px;
+  }
+  .auth__wrapper .auth__subtitle {
+    font-size: 20px;
+  }
+  .auth__wrapper .auth__social-btn {
+    padding: 1.75rem 0;
+  }
+  .auth__wrapper .auth__social-btn--google::after {
+    width: 21px;
+    height: 21px;
+  }
+  .auth__wrapper .auth__social-btn--apple::after {
+    width: 23px;
+    height: 29px;
+  }
+  .auth__wrapper .auth__text-divider {
+    font-size: 20px;
+  }
+  .auth__wrapper .auth__form-btn {
+    padding: 16px 0;
+    font-size: 16px;
+  }
+  .auth__wrapper .auth__footer {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 566.98px) {
+  .auth__wrapper .auth__title {
+    font-size: 28px;
+  }
+  .auth__wrapper .auth__subtitle {
+    font-size: 18px;
+  }
+  .auth__wrapper .auth__form-btn {
+    font-size: 18px;
+  }
+}
 :root {
   --font-family: "Manrope";
   --second-family: "Inter";
@@ -1572,6 +1754,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background: #f9f9f9;
 }
 
 /* Главное занимает всю доступную высоту */
@@ -2183,7 +2366,7 @@ h2 {
   flex: 0 0 auto;
   scroll-snap-align: start;
   width: 396px;
-  box-shadow: 6px 71px 36px rgba(229, 229, 229, 0.7);
+  border: 2px solid #f4f4f4;
   transition: transform 0.3s ease;
   position: relative;
 }

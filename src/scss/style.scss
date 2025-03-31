@@ -28,6 +28,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background: #f9f9f9;
 }
 /* Главное занимает всю доступную высоту */
 main {
@@ -663,7 +664,7 @@ h2 {
     flex: 0 0 auto;
     scroll-snap-align: start;
     width: 396px;
-    box-shadow: 6px 71px 36px rgba(229, 229, 229, 0.7);
+    border: 2px solid #f4f4f4;
     transition: transform .3s ease;
     position: relative;
 
@@ -1344,8 +1345,6 @@ h2 {
   }
 
   .features {
-    // TODO: Сделать так чтобы блок был на всю доступную высоту обертки
-
     .features__feature {
       .features__feature-title {
         font-size: 40px;

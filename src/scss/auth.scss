@@ -40,142 +40,392 @@
     }
   }
 
-  .sign-up__auth {
-    .auth__title {
-      font-family: var(--font-family), sans-serif;
-      font-weight: 700;
-      font-size: 35px;
-      color: #323142;
+  .auth__title {
+    font-family: var(--font-family), sans-serif;
+    font-weight: 700;
+    font-size: 35px;
+    color: #323142;
+  }
+
+  // Стили для кнопок соц. сетей авторизации
+  .auth__social-btn {
+    position: relative;
+    width: calc(50% - 0.75rem); // 50% всей ширины контейнера - отступ(0.75rem)
+    padding: 2rem 0;
+    border: none;
+    border-radius: 13px;
+    background: #f1f1f1;
+    transition: .3s all;
+
+    &:hover {
+      background-color: var(--purple);
     }
 
-    // Стили для кнопок соц. сетей
-    .auth__social-btn {
-      position: relative;
-      width: 47.5%;
-      padding: 2rem 0;
+    // Иконки соц. сетей авторизации
+    &--google::after {
+      display: inline-block;
+      content: "";
+      width: 23px;
+      height: 23px;
+      background: url("../icons/google_icon.svg") no-repeat;
+      background-size: contain;
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      margin: auto;
+    }
+    &--apple::after {
+      display: inline-block;
+      content: "";
+      width: 27px;
+      height: 31px;
+      background: url("../icons/apple_icon.svg") no-repeat;
+      background-size: contain;
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      margin: auto;
+    }
+  }
+
+  .auth__subtitle {
+    font-family: var(--font-family), sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    color: #cfcfd3;
+  }
+  .auth__text-divider {
+    font-family: var(--font-family), sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: rgba(0, 90, 100, 0.35);
+  }
+
+  // Стили для input'ов
+  .auth__form-input {
+    position: relative;
+
+    input {
+      padding-left: 4rem;
       border: none;
-      border-radius: 13px;
-      transition: .3s all;
+      border-radius: 14px;
+      background: #f1f1f1;
 
-      &:hover {
-        background-color: var(--purple);
+      &:focus {
+        background: #fff;
       }
-      &--google::after {
-        display: inline-block;
-        content: "";
-        width: 23px;
-        height: 23px;
-        background: url("../icons/google_icon.svg") no-repeat;
-        position: absolute;
-        top: 0; right: 0; bottom: 0; left: 0;
-        margin: auto;
-      }
-      &--apple::after {
-        display: inline-block;
-        content: "";
-        width: 27px;
-        height: 31px;
-        background: url("../icons/apple_icon.svg") no-repeat;
-        position: absolute;
-        top: 0; right: 0; bottom: 0; left: 0;
-        margin: auto;
-      }
-    }
+      &:focus ~ label {
+        transform: scale(.85) translateY(-.5rem) translateX(0.55rem);
 
-    .auth__subtitle {
-      font-family: var(--font-family), sans-serif;
-      font-weight: 600;
-      font-size: 22px;
-      color: #cfcfd3;
-    }
-    .auth__text-divider {
-      font-family: var(--font-family), sans-serif;
-      font-weight: 600;
-      font-size: 20px;
-      color: rgba(0, 90, 100, 0.35);
-    }
-
-    // Стили для input'ов
-    .auth__form-input {
-      position: relative;
-
-      input {
-        padding-left: 4rem;
-        border: none;
-        border-radius: 14px;
-        background: #f5f5f5;
-
-        &:focus ~ label {
-          transform: scale(.85) translateY(-.5rem) translateX(0.55rem);
-
-          &::after {
-            background-color: transparent;
-          }
+        &::after {
+          background-color: transparent;
         }
       }
+    }
+    label {
+      padding-left: 4rem;
+    }
+
+    // Иконки для input'ов
+    &--name::before {
+      display: inline-block;
+      content: "";
+      width: 22px;
+      height: 23px;
+      background: url("../icons/user_icon.svg") no-repeat;
+      background-size: contain;
+      position: absolute;
+      top: 50%;
+      left: 1.5rem;
+      transform: translateY(-50%);
+    }
+    &--email::before {
+      display: inline-block;
+      content: "";
+      width: 23px;
+      height: 18px;
+      background: url("../icons/email_icon.svg") no-repeat;
+      background-size: contain;
+      position: absolute;
+      top: 50%;
+      left: 1.5rem;
+      transform: translateY(-50%);
+    }
+    &--password {
+      &::before {
+        display: inline-block;
+        content: "";
+        width: 19px;
+        height: 24px;
+        background: url("../icons/password_icon.svg") no-repeat;
+        background-size: contain;
+        position: absolute;
+        top: 50%;
+        left: 1.5rem;
+        transform: translateY(-50%);
+      }
+
+      // Поле пароля с подсказкой "Вы забыли пароль?"
+      &.auth__form-input--with-hint {
+        &::before {
+          transform: translateY(-100%);
+        }
+      }
+    }
+  }
+
+  .auth__form-btn {
+    border-radius: 16px;
+    padding: 24px 0;
+    font-weight: 700;
+  }
+
+  .auth__footer {
+    font-family: var(--font-family), sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.01em;
+    color: #3e3e3e;
+
+    a {
+      font-weight: 900;
+    }
+  }
+}
+
+
+// Адаптивность для страниц авторизации и регистрации
+@media screen and (max-width: 1199.98px) {
+  // Планшеты в горизонтальной ориентации, Ipad Pro (>= 1024px)
+  .auth-page {
+    .header {
+      .header__wrapper {
+        min-height: 104px; // Выравнивание header со всеми страницами
+      }
+    }
+  }
+
+  .auth__wrapper {
+    .auth__title {
+      font-size: 28px;
+    }
+    .auth__subtitle {
+      font-size: 20px;
+    }
+
+    .auth__social-btn {
+      padding: 1.75rem 0;
+
+      &--google::after {
+        width: 21px;
+        height: 21px;
+      }
+      &--apple::after {
+        width: 23px;
+        height: 29px;
+      }
+    }
+
+    .auth__text-divider {
+      font-size: 18px;
+    }
+
+    .auth__form-input {
+      input {
+        padding-left: 3rem;
+      }
       label {
-        padding-left: 4rem;
+        padding-left: 3rem;
       }
 
       // Иконки для input'ов
       &--name::before {
-        display: inline-block;
-        content: "";
-        width: 22px;
-        height: 23px;
-        background: url("../icons/user_icon.svg") no-repeat;
-        position: absolute;
-        top: 50%;
-        left: 1.5rem;
-        transform: translateY(-50%);
+        width: 20px;
+        height: 21px;
+        left: 1rem;
       }
       &--email::before {
-        display: inline-block;
-        content: "";
-        width: 23px;
-        height: 18px;
-        background: url("../icons/email_icon.svg") no-repeat;
-        position: absolute;
-        top: 50%;
-        left: 1.5rem;
-        transform: translateY(-50%);
+        width: 21px;
+        height: 16px;
+        left: 1rem;
       }
       &--password {
         &::before {
-          display: inline-block;
-          content: "";
-          width: 19px;
-          height: 24px;
-          background: url("../icons/password_icon.svg") no-repeat;
-          position: absolute;
-          top: 50%;
-          left: 1.5rem;
-          transform: translateY(-50%);
-        }
-        &.auth__form-input--with-hint {
-          &::before {
-            transform: translateY(-100%);
-          }
+          width: 17px;
+          height: 22px;
+          left: 1rem;
         }
       }
     }
 
     .auth__form-btn {
-      border-radius: 16px;
-      padding: 24px 0;
-      font-weight: 700;
+      padding: 16px 0;
+      font-size: 16px;
     }
 
     .auth__footer {
-      font-family: var(--font-family), sans-serif;
-      font-weight: 500;
-      font-size: 18px;
-      letter-spacing: 0.01em;
-      color: #3e3e3e;
+      font-size: 16px;
+    }
 
-      a {
-        font-weight: 900;
+    // Карусель справа
+    .forget-password__auth ~ .auth__carousel {
+      min-height: 540px;
+
+      .carousel-caption {
+        bottom: -75%;
+
       }
+    }
+    .auth__carousel {
+      .carousel-caption {
+        bottom: -80%;
+
+        h5 {
+          font-size: 24px;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991.98px) {
+  // Планшеты в вертикальной ориентации (>= 768px)
+  .auth-page {
+    background-image: url("../img/auth_bg_md.png"); // Уменьшенный фон для планшетов
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .header {
+      .header__wrapper {
+        min-height: 81px; // Выравнивание header со всеми страницами
+      }
+    }
+  }
+
+  .auth__wrapper {
+    .auth__title {
+      font-size: 24px;
+    }
+    .auth__subtitle {
+      font-size: 18px;
+    }
+
+    .auth__social-btn {
+      padding: 1.5rem 0;
+
+      &--google::after {
+        width: 20px;
+        height: 20px;
+      }
+      &--apple::after {
+        width: 21px;
+        height: 27px;
+      }
+    }
+
+    .auth__text-divider {
+      font-size: 18px;
+    }
+
+    .auth__form-btn {
+      padding: 14px 0;
+      font-size: 16px;
+    }
+
+    .auth__footer {
+      font-size: 16px;
+    }
+
+    // Карусель справа
+    .forget-password__auth ~ .auth__carousel {
+      min-height: 500px;
+
+      .carousel-caption {
+        bottom: -125%;
+
+      }
+    }
+    .auth__carousel {
+      .carousel-caption {
+        bottom: -130%;
+
+        h5 {
+          font-size: 22px;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  // Телефоны в горизонтальной ориентации (>= 576px)
+  .auth-page {
+    background: #f9f9f9;
+
+    .header {
+      position: fixed;
+      background: #f9f9f9;
+
+      .header__wrapper {
+        border-bottom: 2px solid #cbcbcb;
+      }
+    }
+  }
+
+  .auth__wrapper {
+    padding-top: 120px;
+
+    .auth__title {
+      font-size: 32px;
+    }
+    .auth__subtitle {
+      font-size: 20px;
+    }
+
+    .auth__social-btn {
+      padding: 1.75rem 0;
+
+      &--google::after {
+        width: 21px;
+        height: 21px;
+      }
+      &--apple::after {
+        width: 23px;
+        height: 29px;
+      }
+    }
+
+    .auth__text-divider {
+      font-size: 20px;
+    }
+
+    .auth__form-btn {
+      padding: 16px 0;
+      font-size: 16px;
+    }
+
+    .auth__footer {
+      font-size: 18px;
+    }
+  }
+}
+
+@media screen and (max-width: 566.98px) {
+  // Телефоны в вертикальной ориентации (< 567px)
+  .auth__wrapper {
+    .auth__title {
+      font-size: 28px;
+    }
+    .auth__subtitle {
+      font-size: 18px;
+    }
+
+    .auth__form-btn {
+      font-size: 18px;
     }
   }
 }
