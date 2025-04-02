@@ -216,61 +216,6 @@ h2 {
     }
   }
 }
-/* Добавить блюдо в любимое */
-.dish-favorite {
-  position: absolute;
-  top: 14px;
-  right: 12px;
-  border: none;
-  border-radius: 50%;
-  background: inherit;
-  width: 40px;
-  height: 40px;
-  transition: background-color .2s;
-
-  &::after {
-    display: inline-block;
-    content: "";
-    max-width: 22px;
-    max-height: 19px;
-    background: url("../icons/heart.svg") no-repeat;
-    background-size: contain;
-    position: absolute;
-    margin: auto;
-    top: 0; left: 0; bottom: 0; right: 0;
-  }
-  &:hover {
-    background-color: #f7c5ba;
-  }
-}
-
-/* Добавить блюдо в корзину */
-.add-to-cart {
-  position: absolute;
-  bottom: 26px;
-  right: 24px;
-  border: none;
-  border-radius: 9px;
-  background-color: #323142;
-  width: 44px;
-  height: 40px;
-  transition: background-color .2s;
-
-  &::after {
-    display: inline-block;
-    content: "";
-    max-width: 16px;
-    max-height: 16px;
-    background: url("../icons/plus.svg") no-repeat;
-    background-size: contain;
-    position: absolute;
-    margin: auto;
-    top: 0; left: 0; bottom: 0; right: 0;
-  }
-  &:hover {
-    background-color: var(--purple);
-  }
-}
 
 .view-all {
   position: relative;
@@ -945,27 +890,6 @@ h2 {
   .price--cents {
     font-size: 18px;
   }
-  .dish-favorite {
-    top: 12px;
-    width: 24px;
-    height: 24px;
-
-    &::after {
-      width: 16px;
-      height: 13px;
-    }
-  }
-  .add-to-cart {
-    width: 36px;
-    height: 32px;
-    bottom: 20px;
-    right: 16px;
-
-    &::after {
-      width: 14px;
-      height: 14px;
-    }
-  }
 
   .hero__wrapper {
     padding-top: 200px;
@@ -1263,16 +1187,6 @@ h2 {
   // Планшеты в вертикальной ориентации (>= 768px)
   h2 {
     font-size: 40px;
-  }
-  .dish-favorite {
-    top: 12px;
-    width: 35px;
-    height: 35px;
-
-    &::after {
-      width: 23px;
-      height: 19px;
-    }
   }
 
   .hero__wrapper {

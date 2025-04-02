@@ -17,6 +17,8 @@
   padding-top: 40px;
 
   .auth__carousel {
+    min-height: 630px;
+
     .carousel-caption {
       z-index: 10;
       bottom: -45%;
@@ -122,6 +124,10 @@
     }
     label {
       padding-left: 4rem;
+
+      &::after {
+        background: transparent !important;
+      }
     }
 
     // Иконки для input'ов

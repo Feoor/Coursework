@@ -221,7 +221,8 @@ body.lock {
 .header__wrapper .sidebar .sidebar__nav::-webkit-scrollbar {
   display: none;
 }
-.header__wrapper .sidebar .sidebar__nav .menu__item {
+.header__wrapper .sidebar .sidebar__nav .menu__item > a {
+  display: inline-block;
   padding: 1.5rem 0;
   border-bottom: 1px solid var(--translucent-white);
 }
@@ -1091,11 +1092,72 @@ body.lock {
     font-size: 16px;
   }
 }
+/* Добавить блюдо в любимое */
+.dish-favorite {
+  position: absolute;
+  top: 14px;
+  right: 12px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  width: 40px;
+  height: 40px;
+  transition: background-color 0.2s;
+}
+.dish-favorite::after {
+  display: inline-block;
+  content: "";
+  max-width: 22px;
+  max-height: 19px;
+  background: url("../icons/heart.svg") no-repeat;
+  background-size: contain;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.dish-favorite:hover {
+  background-color: #f7c5ba;
+}
+
+/* Добавить блюдо в корзину */
+.add-to-cart {
+  position: absolute;
+  bottom: 26px;
+  right: 24px;
+  border: none;
+  border-radius: 9px;
+  background-color: #323142;
+  width: 44px;
+  height: 40px;
+  transition: background-color 0.2s;
+}
+.add-to-cart::after {
+  display: inline-block;
+  content: "";
+  max-width: 16px;
+  max-height: 16px;
+  background: url("../icons/plus.svg") no-repeat;
+  background-size: contain;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.add-to-cart:hover {
+  background-color: var(--purple);
+}
+
 .restaurant-hero__wrapper {
   padding-top: 180px;
   padding-bottom: 48px;
 }
 .restaurant-hero__wrapper .card {
+  border: 1px solid #cdcdcd;
   box-shadow: 8px 91px 45px 0 rgba(229, 229, 229, 0.7);
   position: relative;
 }
@@ -1123,17 +1185,15 @@ body.lock {
   width: 62px;
   height: 62px;
   position: relative;
-  top: 0;
   right: 0;
   bottom: 0;
-  left: 0;
 }
 .restaurant-hero__wrapper .card .card-body .restaurant-bookmark::after {
   max-width: 24px;
   max-height: 32px;
 }
 
-/* Наши лучшие блюда */
+/* Блюда ресторана */
 .menu-section__wrapper {
   padding-top: 70px;
   padding-bottom: 70px;
@@ -1143,30 +1203,37 @@ body.lock {
   margin-top: 0;
   margin-bottom: 24px;
 }
-.menu-section__wrapper .menu-section__dish {
+.menu-section__wrapper .menu-section__dishes-wrapper {
   display: flex;
   gap: 30px;
+  padding-top: 10px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
 }
-.menu-section__wrapper .menu-section__dish .card {
-  max-width: 225px;
+.menu-section__wrapper .menu-section__dishes-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.menu-section__wrapper .menu-section__dish {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: 225px;
   padding: 37px 20px 26px;
   border: 2px solid #f4f4f4;
   border-radius: 30px;
-  box-shadow: 7px 82px 41px 0 rgba(229, 229, 229, 0.7);
   position: relative;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
-.menu-section__wrapper .menu-section__dish .card:hover {
+.menu-section__wrapper .menu-section__dish:hover {
   transform: translateY(-10px);
 }
-.menu-section__wrapper .menu-section__dish .card .card-img-top {
+.menu-section__wrapper .menu-section__dish .card-img-top {
   border-radius: 30px 30px 0 0;
 }
-.menu-section__wrapper .menu-section__dish .card .card-body {
+.menu-section__wrapper .menu-section__dish .card-body {
   padding: 0;
 }
-.menu-section__wrapper .menu-section__dish .card .card-body h5 {
+.menu-section__wrapper .menu-section__dish .card-body h5 {
   font-family: var(--font-family), sans-serif;
   font-weight: 800;
   font-size: 25px;
@@ -1174,7 +1241,7 @@ body.lock {
   color: #323142;
   margin-bottom: 0;
 }
-.menu-section__wrapper .menu-section__dish .card .card-body .menu-section__dish-info {
+.menu-section__wrapper .menu-section__dish .card-body .menu-section__dish-info {
   font-family: var(--font-family), sans-serif;
   font-weight: 400;
   font-size: 19px;
@@ -1182,6 +1249,203 @@ body.lock {
   color: #8e97a6;
 }
 
+/* Адаптивность страниц ресторанов */
+@media screen and (max-width: 1199.98px) {
+  .dish-favorite {
+    top: 8px;
+    right: 8px;
+  }
+  .add-to-cart {
+    width: 40px;
+    height: 36px;
+    right: 16px;
+    bottom: 20px;
+  }
+  .restaurant-hero__wrapper {
+    padding-top: 160px;
+    padding-bottom: 24px;
+  }
+  .restaurant-hero__wrapper .card {
+    box-shadow: 5px 65px 32px 0 rgba(229, 229, 229, 0.7);
+  }
+  .restaurant-hero__wrapper .card .card-img-top {
+    max-height: 268px;
+  }
+  .restaurant-hero__wrapper .card .card-body {
+    padding: 1.25rem 2rem;
+  }
+  .restaurant-hero__wrapper .card .card-body h1 {
+    font-size: 36px;
+  }
+  .restaurant-hero__wrapper .card .card-body .our-restaurants__restaurant-info {
+    font-size: 28px;
+  }
+  .restaurant-hero__wrapper .card .card-body .restaurant-bookmark::after {
+    width: 24px;
+    height: 32px;
+  }
+  /* Блюда ресторана */
+  .menu-section__wrapper {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+  .menu-section__wrapper .our-dishes__dishes-wrapper {
+    gap: 22px;
+  }
+  .menu-section__wrapper .menu-section__dish {
+    width: 200px;
+    padding: 1rem;
+  }
+  .menu-section__wrapper .menu-section__dish .card-body h5 {
+    font-size: 24px;
+  }
+  .menu-section__wrapper .menu-section__dish .card-body .menu-section__dish-info {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 991.98px) {
+  .dish-favorite {
+    top: 12px;
+    width: 35px;
+    height: 35px;
+  }
+  .dish-favorite::after {
+    width: 23px;
+    height: 19px;
+  }
+  .restaurant-hero__wrapper {
+    padding-top: 140px;
+  }
+  .restaurant-hero__wrapper .card .card-img-top {
+    max-height: 240px;
+  }
+  .restaurant-hero__wrapper .card h1 {
+    font-size: 32px;
+  }
+  .restaurant-hero__wrapper .card .our-restaurants__restaurant-info {
+    font-size: 24px;
+  }
+  .restaurant-hero__wrapper .card .card-body .restaurant-bookmark {
+    width: 56px;
+    height: 56px;
+  }
+  .restaurant-hero__wrapper .card .card-body .restaurant-bookmark::after {
+    width: 20px;
+    height: 28px;
+  }
+  /* Блюда ресторана */
+  .menu-section__wrapper {
+    padding-bottom: 30px;
+  }
+  .menu-section__wrapper .menu-section__dish .menu-section__dish-info img {
+    width: 24px;
+    height: 24px;
+  }
+}
+@media screen and (max-width: 767.98px) {
+  .add-to-cart {
+    width: 36px;
+    height: 32px;
+    right: 16px;
+    bottom: 16px;
+  }
+  .restaurant-hero__wrapper {
+    padding-top: 120px;
+    padding-bottom: 16px;
+  }
+  .restaurant-hero__wrapper .card {
+    box-shadow: 5px 57px 28px 0 rgba(229, 229, 229, 0.7);
+  }
+  .restaurant-hero__wrapper .card .card-img-top {
+    max-height: 200px;
+  }
+  .restaurant-hero__wrapper .card .card-body {
+    padding: 0.75rem 1.5rem;
+  }
+  .restaurant-hero__wrapper .card .card-body h1 {
+    font-size: 28px;
+  }
+  .restaurant-hero__wrapper .card .card-body .our-restaurants__restaurant-info {
+    font-size: 20px;
+  }
+  .restaurant-hero__wrapper .card .card-body .restaurant-bookmark {
+    width: 48px;
+    height: 48px;
+  }
+  .restaurant-hero__wrapper .card .card-body .restaurant-bookmark::after {
+    width: 16px;
+    height: 24px;
+    background-size: contain;
+  }
+  /* Блюда ресторана */
+  .menu-section__wrapper {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+  .menu-section__wrapper .menu-section__dish {
+    width: 175px;
+  }
+  .menu-section__wrapper .menu-section__dish .card-body h5 {
+    font-size: 20px;
+  }
+  .menu-section__wrapper .menu-section__dish .card-body .menu-section__dish-info {
+    font-size: 16px;
+  }
+  .menu-section__wrapper .menu-section__dish .card-body .menu-section__dish-info img {
+    width: 22px;
+    height: 22px;
+  }
+}
+@media screen and (max-width: 566.98px) {
+  .add-to-cart {
+    width: 36px;
+    height: 32px;
+    right: 16px;
+    bottom: 16px;
+  }
+  .restaurant-hero__wrapper {
+    padding-top: 100px;
+    padding-bottom: 0;
+  }
+  .restaurant-hero__wrapper .card .card-body {
+    padding: 0.5rem 1.5rem;
+  }
+  .restaurant-hero__wrapper .card .card-body h1 {
+    font-size: 24px;
+  }
+  .restaurant-hero__wrapper .card .card-body .our-restaurants__restaurant-info {
+    font-size: 18px;
+  }
+  .restaurant-hero__wrapper .card .card-body .restaurant-bookmark {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    right: 18px;
+    bottom: 14px;
+  }
+  .restaurant-hero__wrapper .card .card-body .restaurant-bookmark::after {
+    width: 18px;
+    height: 26px;
+  }
+  /* Блюда ресторана */
+  .menu-section__wrapper {
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
+  .menu-section__wrapper .menu-section__dish {
+    width: 175px;
+  }
+  .menu-section__wrapper .menu-section__dish .card-body h5 {
+    font-size: 20px;
+  }
+  .menu-section__wrapper .menu-section__dish .card-body .menu-section__dish-info {
+    font-size: 16px;
+  }
+  .menu-section__wrapper .menu-section__dish .card-body .menu-section__dish-info img {
+    width: 22px;
+    height: 22px;
+  }
+}
 .contact__wrapper {
   padding-top: 180px;
   padding-bottom: 50px;
@@ -1406,6 +1670,9 @@ body.lock {
 .auth__wrapper {
   padding-top: 40px;
 }
+.auth__wrapper .auth__carousel {
+  min-height: 630px;
+}
 .auth__wrapper .auth__carousel .carousel-caption {
   z-index: 10;
   bottom: -45%;
@@ -1504,6 +1771,9 @@ body.lock {
 }
 .auth__wrapper .auth__form-input label {
   padding-left: 4rem;
+}
+.auth__wrapper .auth__form-input label::after {
+  background: transparent !important;
 }
 .auth__wrapper .auth__form-input--name::before {
   display: inline-block;
@@ -1944,66 +2214,6 @@ h2 {
 .restaurant-bookmark:hover::after {
   background: url("../icons/bookmark_white.svg") no-repeat;
   background-size: cover;
-}
-
-/* Добавить блюдо в любимое */
-.dish-favorite {
-  position: absolute;
-  top: 14px;
-  right: 12px;
-  border: none;
-  border-radius: 50%;
-  background: inherit;
-  width: 40px;
-  height: 40px;
-  transition: background-color 0.2s;
-}
-.dish-favorite::after {
-  display: inline-block;
-  content: "";
-  max-width: 22px;
-  max-height: 19px;
-  background: url("../icons/heart.svg") no-repeat;
-  background-size: contain;
-  position: absolute;
-  margin: auto;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-.dish-favorite:hover {
-  background-color: #f7c5ba;
-}
-
-/* Добавить блюдо в корзину */
-.add-to-cart {
-  position: absolute;
-  bottom: 26px;
-  right: 24px;
-  border: none;
-  border-radius: 9px;
-  background-color: #323142;
-  width: 44px;
-  height: 40px;
-  transition: background-color 0.2s;
-}
-.add-to-cart::after {
-  display: inline-block;
-  content: "";
-  max-width: 16px;
-  max-height: 16px;
-  background: url("../icons/plus.svg") no-repeat;
-  background-size: contain;
-  position: absolute;
-  margin: auto;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-.add-to-cart:hover {
-  background-color: var(--purple);
 }
 
 .view-all {
@@ -2625,25 +2835,6 @@ h2 {
   .price--cents {
     font-size: 18px;
   }
-  .dish-favorite {
-    top: 12px;
-    width: 24px;
-    height: 24px;
-  }
-  .dish-favorite::after {
-    width: 16px;
-    height: 13px;
-  }
-  .add-to-cart {
-    width: 36px;
-    height: 32px;
-    bottom: 20px;
-    right: 16px;
-  }
-  .add-to-cart::after {
-    width: 14px;
-    height: 14px;
-  }
   .hero__wrapper {
     padding-top: 200px;
     padding-bottom: 100px;
@@ -2881,15 +3072,6 @@ h2 {
 @media screen and (max-width: 991.98px) {
   h2 {
     font-size: 40px;
-  }
-  .dish-favorite {
-    top: 12px;
-    width: 35px;
-    height: 35px;
-  }
-  .dish-favorite::after {
-    width: 23px;
-    height: 19px;
   }
   .hero__wrapper {
     padding-top: 180px;

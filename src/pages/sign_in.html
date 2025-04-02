@@ -73,22 +73,22 @@
           <!--  Титул + быстрый вход  -->
           <h2 class="auth__title text-center mb-4 mb-lg-5">Вход в eatly</h2>
           <div class="auth__social-login d-flex justify-content-between mb-4">
-            <button class="auth__social-btn auth__social-btn--google"></button>
-            <button class="auth__social-btn auth__social-btn--apple"></button>
+            <button id="googleAuthButton" class="auth__social-btn auth__social-btn--google"></button>
+            <button id="appleAuthButton" class="auth__social-btn auth__social-btn--apple"></button>
           </div>
 
           <h3 class="auth__text-divider text-center mb-4">ИЛИ</h3>
 
           <!--  Форма  -->
-          <form class="auth__form">
+          <form id="signInForm" class="auth__form">
             <div class="auth__form-input auth__form-input--email form-floating mb-4">
-              <input type="email" class="form-control" id="signUpEmailInput" placeholder="Адрес электронной почты" required>
-              <label for="signUpEmailInput">Адрес электронной почты</label>
+              <input type="email" class="form-control" id="signInEmailInput" placeholder="Адрес электронной почты" required>
+              <label for="signInEmailInput">Адрес электронной почты</label>
             </div>
 
             <div class="auth__form-input auth__form-input--password auth__form-input--with-hint form-floating mb-4">
-              <input type="password" class="form-control" id="signUpPasswordInput" placeholder="Пароль" required>
-              <label for="signUpPasswordInput">Пароль</label>
+              <input type="password" class="form-control" id="signInPasswordInput" placeholder="Пароль" required>
+              <label for="signInPasswordInput">Пароль</label>
 
               <!-- auth__form-input--with-hint для подсказки "Вы забыли пароль?" -->
               <div class="input-hint form-text text-end"><a href="forget_password.html" class="highlight--purple">Забыли пароль?</a></div>
@@ -169,7 +169,7 @@
 
       <div class="footer__top col-12 d-flex justify-content-between align-items-sm-center">
         <div class="footer__logo">
-          <a href="#" class="eatly-logo">eatly</a>
+          <a href="../index.html" class="eatly-logo">eatly</a>
         </div>
 
         <div class="footer__nav">
@@ -225,5 +225,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="../js/app.js"></script>
+<script src="../js/authentication.js"></script>
 </body>
 </html>

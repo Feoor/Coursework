@@ -11,6 +11,19 @@ headerButton.addEventListener('click', () => {
 });
 
 
+// Промо акция для новых пользователей
+const promoForm = document.querySelector("#promoForm");
+
+if (promoForm) {
+    promoForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const promoInput = document.querySelector("#promoEmailInput");
+
+        alert(`Промо-код отправлен на почту: ${promoInput.value}`);
+    })
+}
+
 // FAQ кнопки
 const faqBlocks = document.querySelectorAll(".faq__question")
 
