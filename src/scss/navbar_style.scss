@@ -67,6 +67,7 @@ body.lock {
     align-items: center;
     gap: 12px;
 
+    // Кнопки авторизации
     .header__login {
       font-family: var(--second-family), sans-serif;
       font-weight: 700;
@@ -169,19 +170,28 @@ body.lock {
     opacity: 0;
     transition: opacity .3s ease;
 
-    .sidebar__menu {
+    // Меню навигации
+    .sidebar__menu-nav {
       position: relative;
-      display: flex;
+      display: none;
       flex-direction: column;
       width: 90%;
       height: 100%;
       border-top-left-radius: 40px;
       border-bottom-left-radius: 40px;
       padding: 0.75rem 1.5rem 0;
-      background-color: var(--purple-hover);
+      background-color: var(--sidebar-bg);
       color: #fff;
       transform: translateX(100%);
+      opacity: 0;
       transition: transform .3s ease;
+      z-index: 200;
+
+      &--show {
+        display: flex;
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
     .sidebar__header {
       display: flex;
@@ -193,6 +203,32 @@ body.lock {
 
       .eatly-logo::before {
         right: 6px;
+      }
+
+      .sidebar__close-btn {
+        position: absolute;
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        margin: 1.5rem 1.5rem 0 0;
+        border: none;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+        top: 0;
+        right: 0;
+
+        &::after {
+          display: inline-block;
+          content: "";
+          width: 23px;
+          height: 23px;
+          background: url("../icons/close_icon.svg") no-repeat;
+          background-size: contain;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
       }
     }
     .sidebar__nav {
@@ -210,7 +246,7 @@ body.lock {
         border-bottom: 1px solid var(--translucent-white);
       }
     }
-    .sidebar__auth-buttons {
+    .sidebar__buttons {
       display: flex;
       gap: 12px;
       padding: 0 1.5rem 2rem;
@@ -219,7 +255,8 @@ body.lock {
       bottom: 40px; // По какой-то причине 0 недостаточно и элемент уходи за экран
       left: 0;
 
-      a {
+      a,
+      button {
         padding: 0.75rem 1rem;
         border-radius: 16px;
         font-family: var(--second-family), sans-serif;
@@ -238,21 +275,65 @@ body.lock {
     }
     .sidebar__sign-up {
       border: 1px solid #fff;
-      background-color: #fff;
-      color: #212529;
+      background-color: var(--sidebar-bg);
+      color: #fff;
 
       &:hover {
         background-color: rgba(255, 255, 255, 0.15);
-        color: #fff;
       }
     }
+
+    // Боковая корзина
+    .sidebar__menu-cart {
+      position: relative;
+      display: none;
+      flex-direction: column;
+      width: 90%;
+      max-width: 550px;
+      height: 100%;
+      border-top-left-radius: 40px;
+      border-bottom-left-radius: 40px;
+      padding: 0.75rem 1.5rem 0;
+      background-color: var(--sidebar-bg);
+      color: #fff;
+      transform: translateX(100%);
+      opacity: 0;
+      transition: transform .3s ease;
+
+      &--show {
+        display: flex;
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    .menu-cart__content {
+      flex-grow: 1;
+      color: #fff;
+
+      .menu-cart__title {
+        font-weight: 800;
+        color: #fff
+      }
+    }
+    .sidebar__checkout-btn {
+      border: 1px solid #fff;
+      background-color: var(--sidebar-bg);
+      color: #fff;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+      }
+    }
+
     &--show {
       display: flex;
       opacity: 1;
-
-      .sidebar__menu {
-        transform: translateX(0px);
-      }
+    }
+    // Чтобы родительский элемент был над кнопкой меню
+    &--with-close-btn-show {
+      z-index: 300;
+      display: flex;
+      opacity: 1;
     }
   }
 }
@@ -366,7 +447,7 @@ body.lock {
 
     // Боковое меню
     .sidebar {
-      .sidebar__menu {
+      .sidebar__menu-nav {
         border-radius: 0;
         padding: 1.5rem 1.5rem 0;
         width: 100%;

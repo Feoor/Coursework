@@ -190,19 +190,26 @@ body.lock {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
-.header__wrapper .sidebar .sidebar__menu {
+.header__wrapper .sidebar .sidebar__menu-nav {
   position: relative;
-  display: flex;
+  display: none;
   flex-direction: column;
   width: 90%;
   height: 100%;
   border-top-left-radius: 40px;
   border-bottom-left-radius: 40px;
   padding: 0.75rem 1.5rem 0;
-  background-color: var(--purple-hover);
+  background-color: var(--sidebar-bg);
   color: #fff;
   transform: translateX(100%);
+  opacity: 0;
   transition: transform 0.3s ease;
+  z-index: 200;
+}
+.header__wrapper .sidebar .sidebar__menu-nav--show {
+  display: flex;
+  opacity: 1;
+  transform: translateX(0);
 }
 .header__wrapper .sidebar .sidebar__header {
   display: flex;
@@ -213,6 +220,30 @@ body.lock {
 }
 .header__wrapper .sidebar .sidebar__header .eatly-logo::before {
   right: 6px;
+}
+.header__wrapper .sidebar .sidebar__header .sidebar__close-btn {
+  position: absolute;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin: 1.5rem 1.5rem 0 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  top: 0;
+  right: 0;
+}
+.header__wrapper .sidebar .sidebar__header .sidebar__close-btn::after {
+  display: inline-block;
+  content: "";
+  width: 23px;
+  height: 23px;
+  background: url("../icons/close_icon.svg") no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .header__wrapper .sidebar .sidebar__nav {
   overflow-y: auto;
@@ -227,7 +258,7 @@ body.lock {
   padding: 1.5rem 0;
   border-bottom: 1px solid var(--translucent-white);
 }
-.header__wrapper .sidebar .sidebar__auth-buttons {
+.header__wrapper .sidebar .sidebar__buttons {
   display: flex;
   gap: 12px;
   padding: 0 1.5rem 2rem;
@@ -236,7 +267,8 @@ body.lock {
   bottom: 40px;
   left: 0;
 }
-.header__wrapper .sidebar .sidebar__auth-buttons a {
+.header__wrapper .sidebar .sidebar__buttons a,
+.header__wrapper .sidebar .sidebar__buttons button {
   padding: 0.75rem 1rem;
   border-radius: 16px;
   font-family: var(--second-family), sans-serif;
@@ -253,19 +285,57 @@ body.lock {
 }
 .header__wrapper .sidebar .sidebar__sign-up {
   border: 1px solid #fff;
-  background-color: #fff;
-  color: #212529;
+  background-color: var(--sidebar-bg);
+  color: #fff;
 }
 .header__wrapper .sidebar .sidebar__sign-up:hover {
   background-color: rgba(255, 255, 255, 0.15);
+}
+.header__wrapper .sidebar .sidebar__menu-cart {
+  position: relative;
+  display: none;
+  flex-direction: column;
+  width: 90%;
+  max-width: 550px;
+  height: 100%;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  padding: 0.75rem 1.5rem 0;
+  background-color: var(--sidebar-bg);
   color: #fff;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.3s ease;
+}
+.header__wrapper .sidebar .sidebar__menu-cart--show {
+  display: flex;
+  opacity: 1;
+  transform: translateX(0);
+}
+.header__wrapper .sidebar .menu-cart__content {
+  flex-grow: 1;
+  color: #fff;
+}
+.header__wrapper .sidebar .menu-cart__content .menu-cart__title {
+  font-weight: 800;
+  color: #fff;
+}
+.header__wrapper .sidebar .sidebar__checkout-btn {
+  border: 1px solid #fff;
+  background-color: var(--sidebar-bg);
+  color: #fff;
+}
+.header__wrapper .sidebar .sidebar__checkout-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
 }
 .header__wrapper .sidebar--show {
   display: flex;
   opacity: 1;
 }
-.header__wrapper .sidebar--show .sidebar__menu {
-  transform: translateX(0px);
+.header__wrapper .sidebar--with-close-btn-show {
+  z-index: 300;
+  display: flex;
+  opacity: 1;
 }
 
 /* Адаптивность навбара */
@@ -348,7 +418,7 @@ body.lock {
   .header__wrapper .header__right-side .header__sign-up {
     display: none;
   }
-  .header__wrapper .sidebar .sidebar__menu {
+  .header__wrapper .sidebar .sidebar__menu-nav {
     border-radius: 0;
     padding: 1.5rem 1.5rem 0;
     width: 100%;
@@ -1151,6 +1221,23 @@ body.lock {
 }
 .add-to-cart:hover {
   background-color: var(--purple);
+}
+
+#cartButton {
+  padding: 17px 16px;
+  border-radius: 17px;
+  background-color: var(--purple);
+  color: #fff;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+#cartButton:hover {
+  background-color: var(--purple-hover);
+}
+#cartButton .cart__count {
+  font-size: 16px;
 }
 
 .restaurant-hero__wrapper {
@@ -2013,6 +2100,7 @@ body.lock {
   --purple: #6c5fbc;
   --purple-hover: #5a4aa3;
   --translucent-white: rgba(197, 197, 197, 0.15);
+  --sidebar-bg: #242424;
 }
 
 /* Базовые стили */

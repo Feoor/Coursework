@@ -39,17 +39,22 @@
 
       <!--  Правая часть  -->
       <div class="header__right-side">
-        <a href="sign_in.html" class="header__login">Войти</a>
-        <a href="sign_up.html" class="header__sign-up">Зарегистрироваться</a>
+        <button id="cartButton" class="btn btn-primary d-flex align-items-center">
+          <span class="cart__count me-3 badge rounded-pill bg-danger">0</span>
+          Открыть заказ
+          <span class="cart__price ms-4">0 ₸</span>
+        </button>
 
         <button id="headerMenuButton" class="header__menu">
           <span></span>
         </button>
       </div>
 
-      <!-- Боковое меню -->
-      <div id="sidebar" class="sidebar">
-        <div class="sidebar__menu">
+      <!-- Боковое меню  -->
+      <div id="sidebar" class="sidebar sidebar--with-close-btn-show">
+
+        <!-- Меню навигации -->
+        <div class="sidebar__menu-nav sidebar__menu">
           <div class="sidebar__header">
             <div class="sidebar__brand">
               <!-- Логотип без текста -->
@@ -62,9 +67,24 @@
               <li class="menu__item"><a href="contact_page.html">Контакты</a></li>
             </ul>
           </div>
-          <div class="sidebar__auth-buttons d-flex flex-column justify-content-between text-center">
+          <div class="sidebar__buttons d-flex flex-column justify-content-between text-center">
             <a href="sign_in.html" class="sidebar__login w-100">Войти</a>
             <a href="sign_up.html" class="sidebar__sign-up w-100">Зарегистрироваться</a>
+          </div>
+        </div>
+
+        <!-- Меню корзины -->
+        <div class="sidebar__menu-cart sidebar__menu-cart--show sidebar__menu">
+          <div class="sidebar__header">
+            <button id="closeCartButton" class="sidebar__close-btn"></button>
+          </div>
+
+          <div class="menu-cart__content">
+            <h2 class="menu-cart__title">Корзина пуста</h2>
+          </div>
+
+          <div class="sidebar__buttons">
+            <button id="clearCartButton" class="sidebar__checkout-btn w-100">Перейти к оплате</button>
           </div>
         </div>
       </div>
@@ -80,7 +100,7 @@
           <img src="../img/the_fishman.png" alt="The Fishman Restaurant Image" class="card-img-top">
 
           <div class="card-body d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between">
-            <span class="badge badge-trending mb-1 d-xs-block d-md-none">Популярно</span>
+            <span class="badge badge-trending mb-1 d-xs-block d-sm-none">Популярно</span>
             <h1 class="card-title mt-0">The Fishman</h1>
 
             <div class="our-restaurants__restaurant-info d-flex align-items-center">

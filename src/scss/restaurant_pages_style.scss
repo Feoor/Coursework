@@ -54,6 +54,25 @@
   }
 }
 
+// Корзина
+#cartButton {
+  padding: 17px 16px;
+  border-radius: 17px;
+  background-color: var(--purple);
+  color: #fff;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  cursor: pointer;
+  transition: background-color .2s;
+
+  &:hover {
+    background-color: var(--purple-hover);
+  }
+  .cart__count {
+    font-size: 16px;
+  }
+}
+
 .restaurant-hero__wrapper {
   padding-top: 180px;
   padding-bottom: 48px;

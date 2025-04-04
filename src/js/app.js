@@ -3,11 +3,13 @@ body = document.body;
 // Открываем сайдбар меню при нажатии на кнопку
 const headerButton = document.getElementById('headerMenuButton');
 const sidebar = document.getElementById('sidebar');
+const sidebarMenuNav = sidebar.querySelector(".sidebar__menu-nav")
 
 headerButton.addEventListener('click', () => {
     body.classList.toggle('lock')
     headerButton.classList.toggle('header__menu--toggle');
     sidebar.classList.toggle('sidebar--show')
+    sidebarMenuNav.classList.toggle('sidebar__menu-nav--show');
 });
 
 
