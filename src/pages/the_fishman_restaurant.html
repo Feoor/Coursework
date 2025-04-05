@@ -39,7 +39,7 @@
 
       <!--  Правая часть  -->
       <div class="header__right-side">
-        <button id="cartButton" class="btn btn-primary d-flex align-items-center">
+        <button class="cart-btn btn btn-primary d-none d-lg-flex align-items-center">
           <span class="cart__count me-3 badge rounded-pill bg-danger">0</span>
           Открыть заказ
           <span class="cart__price ms-4">0 ₸</span>
@@ -51,7 +51,7 @@
       </div>
 
       <!-- Боковое меню  -->
-      <div id="sidebar" class="sidebar sidebar--with-close-btn-show">
+      <div id="sidebar" class="sidebar">
 
         <!-- Меню навигации -->
         <div class="sidebar__menu-nav sidebar__menu">
@@ -74,17 +74,49 @@
         </div>
 
         <!-- Меню корзины -->
-        <div class="sidebar__menu-cart sidebar__menu-cart--show sidebar__menu">
+        <div class="sidebar__menu-cart sidebar__menu">
           <div class="sidebar__header">
             <button id="closeCartButton" class="sidebar__close-btn"></button>
           </div>
 
-          <div class="menu-cart__content">
-            <h2 class="menu-cart__title">Корзина пуста</h2>
+          <div id="cartMenuContent" class="menu-cart__content">
+            <h3 class="menu-cart__title mb-3">Корзина пуста</h3>
+            <div class="menu-cart__dishes-wrapper">
+
+              <!-- Шаблон карточек блюд -->
+<!--              <div class="menu-cart__dish d-flex justify-content-between align-items-center">-->
+<!--                &lt;!&ndash; Краткая информация об блюде &ndash;&gt;-->
+<!--                <div class="cart-dish__info d-flex align-items-center">-->
+<!--                  <img src="../img/fish_hell_dish.png" alt="Fish Hell Dish" class="cart-dish__image">-->
+<!--                  <div class="cart-dish__details">-->
+<!--                    <h5 class="cart-dish__name">Fish Hell</h5>-->
+<!--                    <span class="cart-dish__price">₸2499</span>-->
+<!--                  </div>-->
+<!--                </div>-->
+
+<!--                &lt;!&ndash; Кнопки управления количеством &ndash;&gt;-->
+<!--                <div class="cart-dish__controls d-flex flex-column align-items-center">-->
+<!--                  <div class="cart-dish__qty d-flex align-items-center">-->
+<!--                    <button class="cart-dish__minus-btn"></button>-->
+<!--                    <span class="cart-dish__count">1</span>-->
+<!--                    <button class="cart-dish__plus-btn"></button>-->
+<!--                  </div>-->
+<!--                  <div class="cart-dish__total-price">-->
+<!--                    <span class="cart-dish__total">₸2499</span>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+
+            </div>
           </div>
 
-          <div class="sidebar__buttons">
-            <button id="clearCartButton" class="sidebar__checkout-btn w-100">Перейти к оплате</button>
+          <div id="sidebarCartButtons" class="sidebar__buttons">
+            <!-- Шаблон кнопки перехода к оплате -->
+<!--            <a href="#" class="sidebar__checkout-btn w-100 d-flex align-items-center">-->
+<!--              <span class="cart__count me-3 badge rounded-pill bg-danger">0</span>-->
+<!--              Перейти к оплате-->
+<!--              <span class="cart__price ms-auto">0 ₸</span>-->
+<!--            </a>-->
           </div>
         </div>
       </div>
@@ -335,6 +367,16 @@
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <section class="cart-btn-section--md-position d-flex d-lg-none position-sticky">
+    <div class="container-sm">
+      <button class="cart-btn btn btn-primary d-flex align-items-center mx-auto">
+        <span class="cart__count me-3 badge rounded-pill bg-danger">0</span>
+        Открыть заказ
+        <span class="cart__price ms-auto">0 ₸</span>
+      </button>
     </div>
   </section>
 </main>

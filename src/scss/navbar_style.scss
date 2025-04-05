@@ -175,7 +175,7 @@ body.lock {
       position: relative;
       display: none;
       flex-direction: column;
-      width: 90%;
+      width: 95%;
       height: 100%;
       border-top-left-radius: 40px;
       border-bottom-left-radius: 40px;
@@ -210,7 +210,7 @@ body.lock {
         display: inline-block;
         width: 40px;
         height: 40px;
-        margin: 1.5rem 1.5rem 0 0;
+        margin: 1.5rem 0.75rem 0 0;
         border: none;
         border-radius: 50%;
         background: rgba(255, 255, 255, 0.05);
@@ -288,12 +288,12 @@ body.lock {
       position: relative;
       display: none;
       flex-direction: column;
-      width: 90%;
+      width: 95%;
       max-width: 550px;
       height: 100%;
       border-top-left-radius: 40px;
       border-bottom-left-radius: 40px;
-      padding: 0.75rem 1.5rem 0;
+      padding: 0.75rem 0 0;
       background-color: var(--sidebar-bg);
       color: #fff;
       transform: translateX(100%);
@@ -309,16 +309,118 @@ body.lock {
     .menu-cart__content {
       flex-grow: 1;
       color: #fff;
+      margin-bottom: 8rem;
 
       .menu-cart__title {
+        padding: 0 1.5rem;
+        font-family: var(--font-family), sans-serif;
+        font-size: 28px;
         font-weight: 800;
         color: #fff
+      }
+
+      .menu-cart__dishes-wrapper {
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+    }
+    .menu-cart__dish {
+      font-family: var(--font-family), sans-serif;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+
+      &:hover {
+        background-color: #353535;
+      }
+
+      // Информация о блюде
+      .cart-dish__image {
+        width: 100px;
+        height: 100px;
+        border-radius: 30px;
+      }
+      .cart-dish__details {
+        margin-left: 16px;
+      }
+      .cart-dish__name {
+        font-size: 20px;
+      }
+      .cart-dish__price {
+        font-size: 18px;
+      }
+
+      // Кнопки управлением кол-вом блюд
+      .cart-dish__qty {
+        font-size: 20px;
+        gap: 16px;
+
+        button {
+          position: relative;
+          width: 40px;
+          height: 40px;
+          font-family: var(--font-family), sans-serif;
+          font-size: 32px;
+          border-radius: 10px;
+          transition: background-color .2s ease;
+
+          &::after {
+            display: inline-block;
+            content: "";
+            width: 28px;
+            height: 28px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+      .cart-dish__minus-btn {
+        background-color: var(--sidebar-bg);
+        color: #fff;
+        border: 1px solid #fff;
+
+        &::after {
+          background: url("../icons/minus.svg") no-repeat;
+          background-size: contain;
+        }
+        &:hover {
+          background-color: var(--translucent-white);
+        }
+      }
+      .cart-dish__plus-btn {
+        background-color: #fff;
+        color: var(--sidebar-bg);
+        border: 1px solid #fff;
+
+        &::after {
+          background: url("../icons/plus-black.svg") no-repeat;
+          background-size: contain;
+        }
+        &:hover {
+          background-color: var(--translucent-white);
+
+          &::after {
+            background: url("../icons/plus.svg") no-repeat;
+            background-size: contain;
+          }
+        }
+      }
+      .cart-dish__total-price {
+        margin-top: 4px;
+        font-size: 20px;
+        font-weight: 700;
+        color: #fff;
       }
     }
     .sidebar__checkout-btn {
       border: 1px solid #fff;
       background-color: var(--sidebar-bg);
       color: #fff;
+      text-align: center;
 
       &:hover {
         background-color: rgba(255, 255, 255, 0.15);
@@ -350,6 +452,8 @@ body.lock {
   }
 
   .header__wrapper {
+    height: 82px;
+
     .header__left-side {
       gap: 48px;
 
@@ -380,7 +484,7 @@ body.lock {
 }
 
 @media screen and (max-width: 991.98px) {
-  // Планшеты в вертикальной ориентации
+  // Планшеты в вертикальной ориентации (>= 768px)
   .header__wrapper {
     padding: 0.75rem 0;
 
@@ -436,6 +540,7 @@ body.lock {
 @media screen and (max-width: 566.98px) {
   // Телефоны в вертикальной ориентации (< 567px)
   .header__wrapper {
+    height: 77px;
     padding: 1.5rem 0;
 
     .header__right-side {
@@ -443,6 +548,10 @@ body.lock {
       .header__sign-up {
         display: none;
       }
+    }
+
+    .cart-btn {
+      width: 400px;
     }
 
     // Боковое меню
@@ -454,6 +563,64 @@ body.lock {
       }
       .sidebar__header {
         height: 27px;
+      }
+
+      // Боковая корзина
+      .sidebar__menu-cart {
+        border-radius: 0;
+        padding: 1.5rem 0 0;
+        width: 100%;
+      }
+      .menu-cart__dish {
+        // Информация о блюде
+        .cart-dish__image {
+          width: 56px;
+          height: 56px;
+          border-radius: 30px;
+        }
+        .cart-dish__details {
+          margin-left: 16px;
+          margin-right: 16px;
+        }
+        .cart-dish__name {
+          font-size: 18px;
+        }
+        .cart-dish__price {
+          font-size: 16px;
+        }
+
+        // Кнопки управлением кол-вом блюд
+        .cart-dish__qty {
+          font-size: 16px;
+          gap: 12px;
+
+          button {
+            width: 32px;
+            height: 32px;
+
+            &::after {
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+
+        .cart-dish__total-price {
+          margin-top: 4px;
+          font-size: 18px;
+          font-weight: 700;
+          color: #fff;
+        }
+      }
+      .sidebar__checkout-btn {
+        border: 1px solid #fff;
+        background-color: var(--sidebar-bg);
+        color: #fff;
+        text-align: center;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.15);
+        }
       }
     }
   }

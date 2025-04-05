@@ -194,7 +194,7 @@ body.lock {
   position: relative;
   display: none;
   flex-direction: column;
-  width: 90%;
+  width: 95%;
   height: 100%;
   border-top-left-radius: 40px;
   border-bottom-left-radius: 40px;
@@ -226,7 +226,7 @@ body.lock {
   display: inline-block;
   width: 40px;
   height: 40px;
-  margin: 1.5rem 1.5rem 0 0;
+  margin: 1.5rem 0.75rem 0 0;
   border: none;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.05);
@@ -295,12 +295,12 @@ body.lock {
   position: relative;
   display: none;
   flex-direction: column;
-  width: 90%;
+  width: 95%;
   max-width: 550px;
   height: 100%;
   border-top-left-radius: 40px;
   border-bottom-left-radius: 40px;
-  padding: 0.75rem 1.5rem 0;
+  padding: 0.75rem 0 0;
   background-color: var(--sidebar-bg);
   color: #fff;
   transform: translateX(100%);
@@ -315,15 +315,105 @@ body.lock {
 .header__wrapper .sidebar .menu-cart__content {
   flex-grow: 1;
   color: #fff;
+  margin-bottom: 8rem;
 }
 .header__wrapper .sidebar .menu-cart__content .menu-cart__title {
+  padding: 0 1.5rem;
+  font-family: var(--font-family), sans-serif;
+  font-size: 28px;
   font-weight: 800;
+  color: #fff;
+}
+.header__wrapper .sidebar .menu-cart__content .menu-cart__dishes-wrapper {
+  overflow-y: auto;
+}
+.header__wrapper .sidebar .menu-cart__content .menu-cart__dishes-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.header__wrapper .sidebar .menu-cart__dish {
+  font-family: var(--font-family), sans-serif;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+}
+.header__wrapper .sidebar .menu-cart__dish:hover {
+  background-color: #353535;
+}
+.header__wrapper .sidebar .menu-cart__dish .cart-dish__image {
+  width: 100px;
+  height: 100px;
+  border-radius: 30px;
+}
+.header__wrapper .sidebar .menu-cart__dish .cart-dish__details {
+  margin-left: 16px;
+}
+.header__wrapper .sidebar .menu-cart__dish .cart-dish__name {
+  font-size: 20px;
+}
+.header__wrapper .sidebar .menu-cart__dish .cart-dish__price {
+  font-size: 18px;
+}
+.header__wrapper .sidebar .menu-cart__dish .cart-dish__qty {
+  font-size: 20px;
+  gap: 16px;
+}
+.header__wrapper .sidebar .menu-cart__dish .cart-dish__qty button {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  font-family: var(--font-family), sans-serif;
+  font-size: 32px;
+  border-radius: 10px;
+  transition: background-color 0.2s ease;
+}
+.header__wrapper .sidebar .menu-cart__dish .cart-dish__qty button::after {
+  display: inline-block;
+  content: "";
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.header__wrapper .sidebar .menu-cart__dish .cart-dish__minus-btn {
+  background-color: var(--sidebar-bg);
+  color: #fff;
+  border: 1px solid #fff;
+}
+.header__wrapper .sidebar .menu-cart__dish .cart-dish__minus-btn::after {
+  background: url("../icons/minus.svg") no-repeat;
+  background-size: contain;
+}
+.header__wrapper .sidebar .menu-cart__dish .cart-dish__minus-btn:hover {
+  background-color: var(--translucent-white);
+}
+.header__wrapper .sidebar .menu-cart__dish .cart-dish__plus-btn {
+  background-color: #fff;
+  color: var(--sidebar-bg);
+  border: 1px solid #fff;
+}
+.header__wrapper .sidebar .menu-cart__dish .cart-dish__plus-btn::after {
+  background: url("../icons/plus-black.svg") no-repeat;
+  background-size: contain;
+}
+.header__wrapper .sidebar .menu-cart__dish .cart-dish__plus-btn:hover {
+  background-color: var(--translucent-white);
+}
+.header__wrapper .sidebar .menu-cart__dish .cart-dish__plus-btn:hover::after {
+  background: url("../icons/plus.svg") no-repeat;
+  background-size: contain;
+}
+.header__wrapper .sidebar .menu-cart__dish .cart-dish__total-price {
+  margin-top: 4px;
+  font-size: 20px;
+  font-weight: 700;
   color: #fff;
 }
 .header__wrapper .sidebar .sidebar__checkout-btn {
   border: 1px solid #fff;
   background-color: var(--sidebar-bg);
   color: #fff;
+  text-align: center;
 }
 .header__wrapper .sidebar .sidebar__checkout-btn:hover {
   background-color: rgba(255, 255, 255, 0.15);
@@ -344,6 +434,9 @@ body.lock {
     width: 46px;
     height: 46px;
     right: 60px;
+  }
+  .header__wrapper {
+    height: 82px;
   }
   .header__wrapper .header__left-side {
     gap: 48px;
@@ -412,11 +505,15 @@ body.lock {
 }
 @media screen and (max-width: 566.98px) {
   .header__wrapper {
+    height: 77px;
     padding: 1.5rem 0;
   }
   .header__wrapper .header__right-side .header__login,
   .header__wrapper .header__right-side .header__sign-up {
     display: none;
+  }
+  .header__wrapper .cart-btn {
+    width: 400px;
   }
   .header__wrapper .sidebar .sidebar__menu-nav {
     border-radius: 0;
@@ -425,6 +522,53 @@ body.lock {
   }
   .header__wrapper .sidebar .sidebar__header {
     height: 27px;
+  }
+  .header__wrapper .sidebar .sidebar__menu-cart {
+    border-radius: 0;
+    padding: 1.5rem 0 0;
+    width: 100%;
+  }
+  .header__wrapper .sidebar .menu-cart__dish .cart-dish__image {
+    width: 56px;
+    height: 56px;
+    border-radius: 30px;
+  }
+  .header__wrapper .sidebar .menu-cart__dish .cart-dish__details {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  .header__wrapper .sidebar .menu-cart__dish .cart-dish__name {
+    font-size: 18px;
+  }
+  .header__wrapper .sidebar .menu-cart__dish .cart-dish__price {
+    font-size: 16px;
+  }
+  .header__wrapper .sidebar .menu-cart__dish .cart-dish__qty {
+    font-size: 16px;
+    gap: 12px;
+  }
+  .header__wrapper .sidebar .menu-cart__dish .cart-dish__qty button {
+    width: 32px;
+    height: 32px;
+  }
+  .header__wrapper .sidebar .menu-cart__dish .cart-dish__qty button::after {
+    width: 20px;
+    height: 20px;
+  }
+  .header__wrapper .sidebar .menu-cart__dish .cart-dish__total-price {
+    margin-top: 4px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .header__wrapper .sidebar .sidebar__checkout-btn {
+    border: 1px solid #fff;
+    background-color: var(--sidebar-bg);
+    color: #fff;
+    text-align: center;
+  }
+  .header__wrapper .sidebar .sidebar__checkout-btn:hover {
+    background-color: rgba(255, 255, 255, 0.15);
   }
 }
 /* Подвал */
@@ -1208,8 +1352,8 @@ body.lock {
 .add-to-cart::after {
   display: inline-block;
   content: "";
-  max-width: 16px;
-  max-height: 16px;
+  width: 24px;
+  height: 24px;
   background: url("../icons/plus.svg") no-repeat;
   background-size: contain;
   position: absolute;
@@ -1223,7 +1367,7 @@ body.lock {
   background-color: var(--purple);
 }
 
-#cartButton {
+.cart-btn {
   padding: 17px 16px;
   border-radius: 17px;
   background-color: var(--purple);
@@ -1233,10 +1377,10 @@ body.lock {
   cursor: pointer;
   transition: background-color 0.2s;
 }
-#cartButton:hover {
+.cart-btn:hover {
   background-color: var(--purple-hover);
 }
-#cartButton .cart__count {
+.cart-btn .cart__count {
   font-size: 16px;
 }
 
@@ -1401,6 +1545,12 @@ body.lock {
     width: 23px;
     height: 19px;
   }
+  .cart-btn-section--md-position {
+    bottom: 20px;
+  }
+  .cart-btn {
+    width: 400px;
+  }
   .restaurant-hero__wrapper {
     padding-top: 140px;
   }
@@ -1436,6 +1586,9 @@ body.lock {
     height: 32px;
     right: 16px;
     bottom: 16px;
+  }
+  .cart-btn {
+    width: 100%;
   }
   .restaurant-hero__wrapper {
     padding-top: 120px;

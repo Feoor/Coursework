@@ -41,8 +41,8 @@
   &::after {
     display: inline-block;
     content: "";
-    max-width: 16px;
-    max-height: 16px;
+    width: 24px;
+    height: 24px;
     background: url("../icons/plus.svg") no-repeat;
     background-size: contain;
     position: absolute;
@@ -55,7 +55,7 @@
 }
 
 // Корзина
-#cartButton {
+.cart-btn {
   padding: 17px 16px;
   border-radius: 17px;
   background-color: var(--purple);
@@ -260,6 +260,13 @@
     }
   }
 
+  .cart-btn-section--md-position {
+    bottom: 20px;
+  }
+  .cart-btn {
+    width: 400px;
+  }
+
   .restaurant-hero__wrapper {
     padding-top: 140px;
 
@@ -311,6 +318,10 @@
     height: 32px;
     right: 16px;
     bottom: 16px;
+  }
+
+  .cart-btn {
+    width: 100%;
   }
 
   .restaurant-hero__wrapper {
