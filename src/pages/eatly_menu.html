@@ -117,16 +117,16 @@
                             <h3 class="filter-panel__category-title">Категории</h3>
                             <div class="filter-panel__category-list row g-3" id="categoriesFilter">
                                 <div class="col-3 col-md-6 col-xl-3">
-                                    <button class="filter-panel__category-item">Pizza</button>
+                                    <button class="filter-panel__category-item" data-category="pizza">Pizza</button>
                                 </div>
                                 <div class="col-3 col-md-6 col-xl-3">
-                                    <button class="filter-panel__category-item">Asian</button>
+                                    <button class="filter-panel__category-item" data-category="asian">Asian</button>
                                 </div>
                                 <div class="col-3 col-md-6 col-xl-3">
-                                    <button class="filter-panel__category-item">Donat</button>
+                                    <button class="filter-panel__category-item" data-category="donat">Donat</button>
                                 </div>
                                 <div class="col-3 col-md-6 col-xl-3">
-                                    <button class="filter-panel__category-item">Ice</button>
+                                    <button class="filter-panel__category-item" data-category="ice">Ice</button>
                                 </div>
                             </div>
                         </div>
@@ -136,15 +136,15 @@
                             <h3 class="filter-panel__sort-title">Сортировать По</h3>
                             <div class="filter-panel__sort-list row row-cols-2 gx-5 gy-1" id="sortByFilters">
                                 <div class="filter-panel__sort-item col">
-                                    <input type="radio" class="filter-panel__sort-btn" name="sortByFilter" id="sortByRecommends">
+                                    <input type="radio" class="filter-panel__sort-btn" name="sortByFilter" id="sortByRecommends" data-sort="recommends">
                                     <label class="btn" for="sortByRecommends">Рекомендуемое</label>
                                 </div>
                                 <div class="filter-panel__sort-item col">
-                                    <input type="radio" class="filter-panel__sort-btn" name="sortByFilter" id="sortByFastDelivery" checked>
+                                    <input type="radio" class="filter-panel__sort-btn" name="sortByFilter" id="sortByFastDelivery" data-sort="fast delivery" checked>
                                     <label class="btn" for="sortByFastDelivery">Быстрая доставка</label>
                                 </div>
                                 <div class="filter-panel__sort-item col">
-                                    <input type="radio" class="filter-panel__sort-btn" name="sortByFilter" id="sortByPopular">
+                                    <input type="radio" class="filter-panel__sort-btn" name="sortByFilter" id="sortByPopular" data-sort="popular">
                                     <label class="btn" for="sortByPopular">Популярное</label>
                                 </div>
                             </div>
@@ -174,7 +174,7 @@
                             </div>
                         </div>
 
-                        <button class="filter-panel__apply-btn">Применить</button>
+                        <button id="applyFiltersButton" class="filter-panel__apply-btn">Применить</button>
                     </div>
                 </div>
 
@@ -194,7 +194,7 @@
 
                 <!-- Карточки ресторанов -->
                 <div class="our-restaurants__restaurants-wrapper col-12 mb-2">
-                    <div class="our-restaurants__restaurant card h-100">
+                    <div class="our-restaurants__restaurant card h-100" data-restaurant-id="rest-1" data-categories="asian|pizza">
                         <a href="the_chicken_king_restaurant.html">
                             <img src="../img/the_chicken_king.png" alt="The Chicken King Restaurant" class="card-img-top">
 
@@ -211,7 +211,7 @@
                         </a>
                     </div>
 
-                    <div class="our-restaurants__restaurant card h-100">
+                    <div class="our-restaurants__restaurant card h-100" data-restaurant-id="rest-2" data-categories="asian">
                         <a href="the_fishman_restaurant.html">
                             <img src="../img/the_fishman.png" alt="The Chicken King Restaurant" class="card-img-top">
 
@@ -228,7 +228,7 @@
                         </a>
                     </div>
 
-                    <div class="our-restaurants__restaurant card h-100">
+                    <div class="our-restaurants__restaurant card h-100" data-restaurant-id="rest-3" data-categories="asian|pizza">
                         <a href="the_chicken_king_restaurant.html">
                             <img src="../img/the_chicken_king.png" alt="The Chicken King Restaurant" class="card-img-top">
 
@@ -267,7 +267,7 @@
 
                 <!-- Карточки блюд -->
                 <div class="our-dishes__dishes-wrapper col-12 mb-2">
-                    <div class="our-dishes__dish card h-100">
+                    <div class="our-dishes__dish card h-100" data-categories="asian">
                         <a href="the_chicken_king_restaurant.html">
                             
                             <img src="../img/chicken_hell_dish.png" alt="Chicken Hell Dish" class="card-img-top rounded-circle">
@@ -286,7 +286,7 @@
                         </a>
                     </div>
 
-                    <div class="our-dishes__dish card h-100">
+                    <div class="our-dishes__dish card h-100" data-categories="asian">
                         <a href="the_chicken_king_restaurant.html">
                             
                             <img src="../img/swe_dish.png" alt="Swe Dish" class="card-img-top rounded-circle">
@@ -305,7 +305,7 @@
                         </a>
                     </div>
 
-                    <div class="our-dishes__dish card h-100">
+                    <div class="our-dishes__dish card h-100" data-categories="asian">
                         <a href="the_fishman_restaurant.html">
                             
                             <img src="../img/fish_hell_dish.png" alt="Fish Hell Dish" class="card-img-top rounded-circle">
@@ -324,7 +324,7 @@
                         </a>
                     </div>
 
-                    <div class="our-dishes__dish card h-100">
+                    <div class="our-dishes__dish card h-100" data-categories="asian">
                         <a href="the_chicken_king_restaurant.html">
                             
                             <img src="../img/chicken_hell_dish.png" alt="Chicken Hell Dish" class="card-img-top rounded-circle">
@@ -343,7 +343,7 @@
                         </a>
                     </div>
 
-                    <div class="our-dishes__dish card h-100">
+                    <div class="our-dishes__dish card h-100" data-categories="asian">
                         <a href="the_chicken_king_restaurant.html">
                             
                             <img src="../img/swe_dish.png" alt="Swe Dish" class="card-img-top rounded-circle">
@@ -523,6 +523,8 @@
     </div>
 </footer>
 
+<!-- Скрипты -->
 <script src="../js/app.js"></script>
+<script src="../js/search_filter.js"></script>
 </body>
 </html>

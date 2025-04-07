@@ -39,17 +39,22 @@
 
       <!--  Правая часть  -->
       <div class="header__right-side">
-        <a href="sign_in.html" class="header__login">Войти</a>
-        <a href="sign_up.html" class="header__sign-up">Зарегистрироваться</a>
+        <button class="cart-btn btn btn-primary d-none d-lg-flex align-items-center">
+          <span class="cart__count me-3 badge rounded-pill bg-danger">0</span>
+          Открыть заказ
+          <span class="cart__price ms-4">0 ₸</span>
+        </button>
 
         <button id="headerMenuButton" class="header__menu">
           <span></span>
         </button>
       </div>
 
-      <!-- Боковое меню -->
+      <!-- Боковое меню  -->
       <div id="sidebar" class="sidebar">
-        <div class="sidebar__menu-nav">
+
+        <!-- Меню навигации -->
+        <div class="sidebar__menu-nav sidebar__menu">
           <div class="sidebar__header">
             <div class="sidebar__brand">
               <!-- Логотип без текста -->
@@ -65,6 +70,53 @@
           <div class="sidebar__buttons d-flex flex-column justify-content-between text-center">
             <a href="sign_in.html" class="sidebar__login w-100">Войти</a>
             <a href="sign_up.html" class="sidebar__sign-up w-100">Зарегистрироваться</a>
+          </div>
+        </div>
+
+        <!-- Меню корзины -->
+        <div class="sidebar__menu-cart sidebar__menu">
+          <div class="sidebar__header">
+            <button id="closeCartButton" class="sidebar__close-btn"></button>
+          </div>
+
+          <div id="cartMenuContent" class="menu-cart__content">
+            <h3 class="menu-cart__title mb-3">Корзина пуста</h3>
+            <div class="menu-cart__dishes-wrapper">
+
+              <!-- Шаблон карточек блюд -->
+              <!--              <div class="menu-cart__dish d-flex justify-content-between align-items-center">-->
+              <!--                &lt;!&ndash; Краткая информация об блюде &ndash;&gt;-->
+              <!--                <div class="cart-dish__info d-flex align-items-center">-->
+              <!--                  <img src="../img/fish_hell_dish.png" alt="Fish Hell Dish" class="cart-dish__image">-->
+              <!--                  <div class="cart-dish__details">-->
+              <!--                    <h5 class="cart-dish__name">Fish Hell</h5>-->
+              <!--                    <span class="cart-dish__price">₸2499</span>-->
+              <!--                  </div>-->
+              <!--                </div>-->
+
+              <!--                &lt;!&ndash; Кнопки управления количеством &ndash;&gt;-->
+              <!--                <div class="cart-dish__controls d-flex flex-column align-items-center">-->
+              <!--                  <div class="cart-dish__qty d-flex align-items-center">-->
+              <!--                    <button class="cart-dish__minus-btn"></button>-->
+              <!--                    <span class="cart-dish__count">1</span>-->
+              <!--                    <button class="cart-dish__plus-btn"></button>-->
+              <!--                  </div>-->
+              <!--                  <div class="cart-dish__total-price">-->
+              <!--                    <span class="cart-dish__total">₸2499</span>-->
+              <!--                  </div>-->
+              <!--                </div>-->
+              <!--              </div>-->
+
+            </div>
+          </div>
+
+          <div id="sidebarCartButtons" class="sidebar__buttons">
+            <!-- Шаблон кнопки перехода к оплате -->
+            <!--            <a href="#" class="sidebar__checkout-btn w-100 d-flex align-items-center">-->
+            <!--              <span class="cart__count me-3 badge rounded-pill bg-danger">0</span>-->
+            <!--              Перейти к оплате-->
+            <!--              <span class="cart__price ms-auto">0 ₸</span>-->
+            <!--            </a>-->
           </div>
         </div>
       </div>
@@ -258,6 +310,16 @@
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <section class="cart-btn-section--md-position d-flex d-lg-none position-sticky">
+    <div class="container-sm">
+      <button class="cart-btn btn btn-primary d-flex align-items-center mx-auto">
+        <span class="cart__count me-3 badge rounded-pill bg-danger">0</span>
+        Открыть заказ
+        <span class="cart__price ms-auto">0 ₸</span>
+      </button>
     </div>
   </section>
 </main>
