@@ -1,20 +1,52 @@
 class Restaurant {
-    constructor(id, name, categories, rating, popularity, avarageDeliveryTime) {
+    constructor(id, name, categories, rating, popularity, avarageDeliveryTime, image, href, badge) {
         this.id = id;
         this.name = name;
         this.categories = new Set(categories);
         this.rating = rating;
         this.popularity = popularity;
         this.avarageDeliveryTime = avarageDeliveryTime; // Время в секундах
+        this.image = image;
+        this.href = href;
+        this.badge = { // Тег ресторана
+            type: badge.type,
+            text: badge.text
+        }
     }
 
-    // matchesCategories(categories) {
-    //     return this.categories.includes(categories);
-    // }
+    createCard() {
+        // Создаем карточку ресторана
+        const restaurantCard = document.createElement('div');
+
+        // Свойства карточки ресторана
+        restaurantCard.classList.add('our-restaurants__restaurant', 'card', 'h-100');
+        restaurantCard.setAttribute('data-restaurant-id', this.id);
+        restaurantCard.setAttribute('data-categories', Array.from(this.categories).join("|")); // Массив в строку с разделителем "|"
+        restaurantCard.setAttribute('data-restaurant-popularity', this.popularity);
+        console.log(Array.from(this.categories).join("|"));
+        restaurantCard.innerHTML = `
+            <a href="${this.href}">
+                <img src="${this.image}" alt="${this.name} Restaurant" class="card-img-top">
+    
+                <div class="card-body">
+                    <span class="badge ${this.badge.type} mb-1">${this.badge.text}</span>
+                    <h5 class="card-title mb-2">${this.name}</h5>
+    
+                    <div class="our-restaurants__restaurant-info d-flex align-items-center">
+                        <span class="me-1 me-xl-2">${this.avarageDeliveryTime / 60}min •</span>
+                        <img src="../icons/purple_star.svg" alt="Purple star">
+                        <span class="ms-1">${this.rating}</span>
+                    </div>
+                </div>
+            </a>
+        `
+
+        return restaurantCard;
+    }
 }
 
 class Dish {
-    constructor(id, name, categories, rating, popularity, price, averageDeliveryTime) {
+    constructor(id, name, categories, rating, popularity, price, averageDeliveryTime, restaurantHref, image, badge) {
         this.id = id;
         this.name = name;
         this.categories = new Set(categories);
@@ -22,11 +54,44 @@ class Dish {
         this.popularity = popularity;
         this.price = price;
         this.averageDeliveryTime = averageDeliveryTime; // Время в секундах
+        this.restaurantHref = restaurantHref;
+        this.image = image;
+        this.badge = { // Тег ресторана
+            type: badge.type,
+            text: badge.text
+        }
     }
 
-    // matchesCategories(categories) {
-    //     return this.categories.includes(categories);
-    // }
+    createCard() {
+        // Создаем карточку ресторана
+        const dishCard = document.createElement('div');
+
+        // Свойства карточки ресторана
+        dishCard.classList.add('our-dishes__dish', 'card', 'h-100');
+        dishCard.setAttribute('data-dish-id', this.id);
+        dishCard.setAttribute('data-categories', Array.from(this.categories).join("|")); // Массив в строку с разделителем "|"
+        dishCard.setAttribute('data-restaurant-popularity', this.popularity);
+        dishCard.innerHTML = `
+            <a href="${this.restaurantHref}">
+                
+                <img src="${this.image}" alt="${this.name} Dish" class="card-img-top rounded-circle">
+    
+                <div class="card-body">
+                    <span class="badge ${this.badge.type} mb-1">${this.badge.text}</span>
+                    <h5 class="card-title mb-1">${this.name}</h5>
+    
+                    <div class="our-dishes__dish-info d-flex align-items-center mb-2">
+                        <span class="me-1 me-xl-2">${this.averageDeliveryTime / 60}min •</span>
+                        <img src="../icons/purple_star.svg" alt="Purple star">
+                        <span class="ms-1">${this.rating}</span>
+                    </div>
+                    <h5 class="menu-section__dish-price">₸${this.price}</h5>
+                </div>
+            </a>
+        `
+
+        return dishCard;
+    }
 }
 
 class FilterManager {
@@ -34,6 +99,8 @@ class FilterManager {
         this.restaurantsCollection = [];
         this.dishesCollection = [];
         this.activeCategoriesFilters = new Set();
+        this.sortByFilter = null; // 'rating' | 'delivery' | 'popularity'
+        this.maxPriceFilter = 15000; // 0 - 30$
     }
 
     toggleCategoryFilter(category) {
@@ -44,45 +111,85 @@ class FilterManager {
         }
     }
 
+    sortBy(collection) {
+        switch (this.sortByFilter) {
+            case null:
+                break;
+            case 'rating':
+                this.restaurantsCollection.sort()((a, b) => b.rating - a.rating);
+                this.dishesCollection.sort()((a, b) => b.rating - a.rating);
+                break;
+            case 'popularity':
+                this.restaurantsCollection.sort((a, b) => b.popularity - a.popularity);
+                this.dishesCollection.sort((a, b) => b.popularity - a.popularity);
+                break;
+            case 'delivery':
+                this.restaurantsCollection.sort((a, b) => a.avarageDeliveryTime - b.avarageDeliveryTime);
+                this.dishesCollection.sort((a, b) => a.averageDeliveryTime - b.averageDeliveryTime);
+                break;
+        }
+    }
+
+    displayFilteredCards(filteredRestaurants, filteredDishes) {
+        // FIXME: При сортировке отображаются только 1 элементы списка, найти и решить проблема
+        // Отображаем карточки ресторанов
+        for (const restaurant of this.restaurantsCollection) {
+            // Очищаем предыдущие карточки
+            restaurantsWrapper.innerHTML = '';
+
+            // Создаем карточку ресторана и добавляем ее в контейнер
+            restaurantsWrapper.appendChild(restaurant.createCard());
+        }
+
+        // Отображаем карточки блюд
+        for (const dish of this.dishesCollection) {
+            // Очищаем предыдущие карточки
+            dishesWrapper.innerHTML = '';
+
+            // Создаем карточку блюда и добавляем ее в контейнер
+            dishesWrapper.appendChild(dish.createCard());
+        }
+    }
+
     applyFilters() {
         // Фильтруем рестораны по категориям
-        const filteredRestaurants = [];
+        let filteredRestaurants = [];
 
         for (const restaurant of this.restaurantsCollection) {
+            // Фильтруем по категориям
             if (this.activeCategoriesFilters.size === 0 || this.activeCategoriesFilters.intersection(restaurant.categories).size > 0) {
                 filteredRestaurants.push(restaurant);
             }
         }
 
         // Фильтруем блюда по категориям
-        const filteredDishes = [];
+        let filteredDishes = [];
 
         for (const dish of this.dishesCollection) {
+            // Фильтруем по категориям
             if (this.activeCategoriesFilters.size === 0 || this.activeCategoriesFilters.intersection(dish.categories).size > 0) {
-                filteredDishes.push(dish);
+                // Фильтруем по цене
+                if (this.maxPriceFilter === null || dish.price <= this.maxPriceFilter) {
+                    filteredDishes.push(dish);
+                }
             }
         }
-
-        // ...
 
         // Обновляем отображение карточек ресторанов и блюд
-        for (const restaurant of restaurants) {
-            const restaurantId = restaurant.getAttribute('data-restaurant-id');
-
-            if (filteredRestaurants.some((r) => r.id === restaurantId)) {
-                restaurant.style.display = 'flex';
-            } else {
-                restaurant.style.display = 'none';
-            }
-        }
+        this.displayFilteredCards(filteredRestaurants, filteredDishes)
     }
 }
 
 // Карточки ресторанов
 const restaurants = document.querySelectorAll('.our-restaurants__restaurant.card');
+// Контейнер для карточек ресторанов
+const restaurantsWrapper = document.querySelector('.our-restaurants__restaurants-wrapper');
 
 // Карточки блюд
 const dishes = document.querySelectorAll('.our-dishes__dish.card');
+// Контейнер для карточек блюд
+const dishesWrapper = document.querySelector('.our-dishes__dishes-wrapper');
+
 
 // Кнопки фильтров
 const categoryButtons = document.querySelectorAll('button.filter-panel__category-item');
@@ -99,19 +206,34 @@ for (const restaurant of restaurants) {
     // const restaurantRating = parseFloat(restaurant.querySelector('.card__rating').textContent);
     // const restaurantPopularity = parseInt(restaurant.querySelector('.card__popularity').textContent);
     // const restaurantAvarageDeliveryTime = parseInt(restaurant.querySelector('.card__delivery-time').textContent);
+    const restaurantImage = restaurant.querySelector('img.card-img-top').getAttribute('src');
+    const restaurantHref = restaurant.querySelector('a').getAttribute('href');
+    const restaurantBadgeSpan = restaurant.querySelector('span.badge');
+    const restaurantBadge = {
+        type: restaurantBadgeSpan.classList[1],
+        text: restaurantBadgeSpan.textContent
+    };
 
-    filterManager.restaurantsCollection.push(new Restaurant(restaurantId, restaurantName, restaurantCategories, 4.8, 2, 1440));
+    filterManager.restaurantsCollection.push(new Restaurant(restaurantId, restaurantName, restaurantCategories, 4.8, 2, 1440, restaurantImage, restaurantHref, restaurantBadge));
 }
 
 for (const dish of dishes) {
-    const dishId = dish.getAttribute('data-restaurant-id');
+    const dishId = dish.getAttribute('data-dish-id');
     const dishName = dish.querySelector('h5.card-title').textContent;
     const dishCategories = dish.getAttribute('data-categories').split('|'); // Получаем атрибут data-categories и разбиваем его на массив
     // const dishRating = parseFloat(dish.querySelector('.card__rating').textContent);
     // const dishPopularity = parseInt(dish.querySelector('.card__popularity').textContent);
-    // const dishPrice = parseInt(dish.querySelector('.card__price').textContent);
+    // const dishAvarageDeliveryTime = parseInt(dish.querySelector('.card__delivery-time').textContent);
+    const dishPrice = parseFloat(dish.querySelector('h5.menu-section__dish-price').textContent.slice(1)); // Удаляем знак тенге в начале строки
+    const dishImage = dish.querySelector('img.card-img-top').getAttribute('src');
+    const dishRestaurantHref = dish.querySelector('a').getAttribute('href');
+    const restaurantBadgeSpan = dish.querySelector('span.badge');
+    const restaurantBadge = {
+        type: restaurantBadgeSpan.classList[1],
+        text: restaurantBadgeSpan.textContent
+    };
 
-    filterManager.dishesCollection.push(new Dish(dishId, dishName, dishCategories, 4.8, 2, 1799, 1440));
+    filterManager.dishesCollection.push(new Dish(dishId, dishName, dishCategories, 4.8, 2, dishPrice, 1440, dishRestaurantHref, dishImage, restaurantBadge));
 }
 
 
@@ -121,6 +243,25 @@ for (const categoryButton of categoryButtons) {
     categoryButton.addEventListener('click', () => {
         const category = categoryButton.getAttribute('data-category');
         filterManager.toggleCategoryFilter(category);
-        filterManager.applyFilters(); // TODO: Можно добавить автоматическую фильтрацию при нажатии на кнопку, а можно убрать будет
+        filterManager.applyFilters();
     });
 }
+
+// Кнопки сортировки по
+for (const sortByButton of sortByButtons) {
+    sortByButton.addEventListener('click', () => {
+        filterManager.sortByFilter = sortByButton.getAttribute('data-sort');
+        filterManager.applyFilters();
+    });
+}
+
+// Ползунок максимальной цены
+priceRange.addEventListener('change', () => {
+    filterManager.maxPriceFilter = parseInt(priceRange.value);
+    filterManager.applyFilters();
+})
+
+// Кнопка "Применить фильтры", на случай если не все фильтры применяются автоматически
+applyButton.addEventListener('click', () => {
+    filterManager.applyFilters();
+});
