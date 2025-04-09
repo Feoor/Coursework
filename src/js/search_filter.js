@@ -21,9 +21,9 @@ class Restaurant {
         // Свойства карточки ресторана
         restaurantCard.classList.add('our-restaurants__restaurant', 'card', 'h-100');
         restaurantCard.setAttribute('data-restaurant-id', this.id);
+        restaurantCard.setAttribute('data-delivery-time', this.avarageDeliveryTime);
+        restaurantCard.setAttribute('data-popularity', this.popularity);
         restaurantCard.setAttribute('data-categories', Array.from(this.categories).join("|")); // Массив в строку с разделителем "|"
-        restaurantCard.setAttribute('data-restaurant-popularity', this.popularity);
-        console.log(Array.from(this.categories).join("|"));
         restaurantCard.innerHTML = `
             <a href="${this.href}">
                 <img src="${this.image}" alt="${this.name} Restaurant" class="card-img-top">
@@ -69,8 +69,9 @@ class Dish {
         // Свойства карточки ресторана
         dishCard.classList.add('our-dishes__dish', 'card', 'h-100');
         dishCard.setAttribute('data-dish-id', this.id);
+        dishCard.setAttribute('data-delivery-time', this.averageDeliveryTime);
+        dishCard.setAttribute('data-popularity', this.popularity);
         dishCard.setAttribute('data-categories', Array.from(this.categories).join("|")); // Массив в строку с разделителем "|"
-        dishCard.setAttribute('data-restaurant-popularity', this.popularity);
         dishCard.innerHTML = `
             <a href="${this.restaurantHref}">
                 
@@ -111,13 +112,13 @@ class FilterManager {
         }
     }
 
-    sortBy(collection) {
+    sortBy() {
         switch (this.sortByFilter) {
             case null:
                 break;
             case 'rating':
-                this.restaurantsCollection.sort()((a, b) => b.rating - a.rating);
-                this.dishesCollection.sort()((a, b) => b.rating - a.rating);
+                this.restaurantsCollection.sort((a, b) => b.rating - a.rating);
+                this.dishesCollection.sort((a, b) => b.rating - a.rating);
                 break;
             case 'popularity':
                 this.restaurantsCollection.sort((a, b) => b.popularity - a.popularity);
@@ -133,18 +134,18 @@ class FilterManager {
     displayFilteredCards(filteredRestaurants, filteredDishes) {
         // FIXME: При сортировке отображаются только 1 элементы списка, найти и решить проблема
         // Отображаем карточки ресторанов
+        restaurantsWrapper.innerHTML = '';
         for (const restaurant of this.restaurantsCollection) {
             // Очищаем предыдущие карточки
-            restaurantsWrapper.innerHTML = '';
 
             // Создаем карточку ресторана и добавляем ее в контейнер
             restaurantsWrapper.appendChild(restaurant.createCard());
         }
 
         // Отображаем карточки блюд
+        dishesWrapper.innerHTML = '';
         for (const dish of this.dishesCollection) {
             // Очищаем предыдущие карточки
-            dishesWrapper.innerHTML = '';
 
             // Создаем карточку блюда и добавляем ее в контейнер
             dishesWrapper.appendChild(dish.createCard());
@@ -175,6 +176,9 @@ class FilterManager {
             }
         }
 
+        // Сортировка
+        this.sortBy();
+
         // Обновляем отображение карточек ресторанов и блюд
         this.displayFilteredCards(filteredRestaurants, filteredDishes)
     }
@@ -203,9 +207,9 @@ for (const restaurant of restaurants) {
     const restaurantId = restaurant.getAttribute('data-restaurant-id');
     const restaurantName = restaurant.querySelector('h5.card-title').textContent;
     const restaurantCategories = restaurant.getAttribute('data-categories').split('|'); // Получаем атрибут data-categories и разбиваем его на массив
-    // const restaurantRating = parseFloat(restaurant.querySelector('.card__rating').textContent);
-    // const restaurantPopularity = parseInt(restaurant.querySelector('.card__popularity').textContent);
-    // const restaurantAvarageDeliveryTime = parseInt(restaurant.querySelector('.card__delivery-time').textContent);
+    const restaurantRating = parseFloat(restaurant.querySelector('.restaurant__rating').textContent);
+    const restaurantPopularity = parseInt(restaurant.getAttribute('data-popularity'));
+    const restaurantAvarageDeliveryTime = parseInt(restaurant.getAttribute('data-delivery-time'));
     const restaurantImage = restaurant.querySelector('img.card-img-top').getAttribute('src');
     const restaurantHref = restaurant.querySelector('a').getAttribute('href');
     const restaurantBadgeSpan = restaurant.querySelector('span.badge');
@@ -214,16 +218,16 @@ for (const restaurant of restaurants) {
         text: restaurantBadgeSpan.textContent
     };
 
-    filterManager.restaurantsCollection.push(new Restaurant(restaurantId, restaurantName, restaurantCategories, 4.8, 2, 1440, restaurantImage, restaurantHref, restaurantBadge));
+    filterManager.restaurantsCollection.push(new Restaurant(restaurantId, restaurantName, restaurantCategories, restaurantRating, restaurantPopularity, restaurantAvarageDeliveryTime, restaurantImage, restaurantHref, restaurantBadge));
 }
 
 for (const dish of dishes) {
     const dishId = dish.getAttribute('data-dish-id');
     const dishName = dish.querySelector('h5.card-title').textContent;
     const dishCategories = dish.getAttribute('data-categories').split('|'); // Получаем атрибут data-categories и разбиваем его на массив
-    // const dishRating = parseFloat(dish.querySelector('.card__rating').textContent);
-    // const dishPopularity = parseInt(dish.querySelector('.card__popularity').textContent);
-    // const dishAvarageDeliveryTime = parseInt(dish.querySelector('.card__delivery-time').textContent);
+    const dishRating = parseFloat(dish.querySelector('.dish__rating').textContent);
+    const dishPopularity = parseInt(dish.getAttribute('data-popularity'));
+    const dishAvarageDeliveryTime = parseInt(dish.getAttribute('data-delivery-time'));
     const dishPrice = parseFloat(dish.querySelector('h5.menu-section__dish-price').textContent.slice(1)); // Удаляем знак тенге в начале строки
     const dishImage = dish.querySelector('img.card-img-top').getAttribute('src');
     const dishRestaurantHref = dish.querySelector('a').getAttribute('href');
@@ -233,7 +237,7 @@ for (const dish of dishes) {
         text: restaurantBadgeSpan.textContent
     };
 
-    filterManager.dishesCollection.push(new Dish(dishId, dishName, dishCategories, 4.8, 2, dishPrice, 1440, dishRestaurantHref, dishImage, restaurantBadge));
+    filterManager.dishesCollection.push(new Dish(dishId, dishName, dishCategories, dishRating, dishPopularity, dishPrice, dishAvarageDeliveryTime, dishRestaurantHref, dishImage, restaurantBadge));
 }
 
 
