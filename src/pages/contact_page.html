@@ -89,18 +89,19 @@
                         Поддержка
                         <span class="highlight--purple">клиентов</span>
                     </h2>
-                    <form class="contact__form needs-validation" novalidate>
+                    <form id="feedbackForm" class="contact__form needs-validation" novalidate>
                         <div class="contact__form-input contact__form-input--text form-floating mb-4">
-                            <input type="text" class="form-control" id="contactSupportFullNameInput" placeholder="Имя Фамилия" required>
-                            <label for="contactSupportFullNameInput">Имя Фамилия</label>
+                            <input type="text" class="form-control" id="feedbackFullNameInput" placeholder="Имя Фамилия" required>
+                            <label for="feedbackFullNameInput">Имя Фамилия</label>
                         </div>
                         <div class="contact__form-input contact__form-input--email form-floating mb-5 mb-sm-4 mb-xl-5">
-                            <input type="email" class="form-control" id="contactSupportEmailInput" placeholder="Адрес электронной почты" required>
-                            <label for="contactSupportEmailInput">Адрес электронной почты</label>
+                            <input type="email" class="form-control" id="feedbackEmailInput" placeholder="Адрес электронной почты" required>
+                            <label for="feedbackEmailInput">Адрес электронной почты</label>
                         </div>
                         <div class="contact__form-input contact__form-input--textarea form-floating">
-                            <textarea class="form-control" placeholder="Leave a comment here" id="contactSupportComment" required></textarea>
-                            <label for="contactSupportComment">Введите проблему или запрос</label>
+                            <textarea class="form-control" placeholder="Leave a comment here" id="feedbackComment"
+                                      required></textarea>
+                            <label for="feedbackComment">Введите проблему или запрос</label>
                         </div>
                         <button type="submit" class="contact__form-btn btn btn-primary w-100">Отправить</button>
                     </form>
@@ -169,6 +170,8 @@
     </div>
 </footer>
 
+<!-- Скрипты -->
 <script src="../js/app.js"></script>
+<script src="../js/authentication.js"></script>
 </body>
 </html>

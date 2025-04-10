@@ -1,3 +1,30 @@
+function validateName(name) {
+    // Проверяем, что имя не пустое
+    if (!name.trim()) {
+        return { valid: false, message: "Введите имя и фамилию" };
+    }
+
+    // Проверяем минимальную длину имени
+    if (name.trim().length < 3) {
+        return { valid: false, message: "Имя и фамилия должны содержать не менее 3 символов" }
+    }
+
+    // Проверяем, что имя не содержит цифр
+    const nameRegex = /^[а-яА-Яa-zA-Z\s]+$/;
+    if (!nameRegex.test(name)) {
+        return { valid: false, message: "Имя и фамилия могут содержать только буквы" }
+    }
+
+    // Проверяем наличие как минимум двух слов(Имя и Фамилия)
+    const words = name.trim().split(/\s+/);
+    if (words.length < 2) {
+        return { valid: false, message: "Введите и имя и фамилию" }
+    }
+
+    // Проверка пройдена
+    return { valid: true, message: "" };
+}
+
 // Вход через социальные сети
 const googleButton = document.getElementById("googleAuthButton");
 const appleButton = document.getElementById("appleAuthButton");
@@ -44,33 +71,6 @@ if (signUpForm) {
     const emailInput = document.getElementById("signUpEmailInput");
     const passwordInput = document.getElementById("signUpPasswordInput");
 
-    function validateName(name) {
-        // Проверяем, что имя не пустое
-        if (!name.trim()) {
-            return { valid: false, message: "Введите имя и фамилию" };
-        }
-
-        // Проверяем минимальную длину имени
-        if (name.trim().length < 3) {
-            return { valid: false, message: "Имя и фамилия должны содержать не менее 3 символов" }
-        }
-
-        // Проверяем, что имя не содержит цифр
-        const nameRegex = /^[а-яА-Яa-zA-Z\s]+$/;
-        if (!nameRegex.test(name)) {
-            return { valid: false, message: "Имя и фамилия могут содержать только буквы" }
-        }
-
-        // Проверяем наличие как минимум двух слов(Имя и Фамилия)
-        const words = name.trim().split(/\s+/);
-        if (words.length < 2) {
-            return { valid: false, message: "Введите и имя и фамилию" }
-        }
-
-        // Проверка пройдена
-        return { valid: true, message: "" };
-    }
-
     signUpForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
@@ -110,5 +110,49 @@ if (forgetPasswordForm) {
 
         alert(`Ссылка для сброса пароля была отправлена на ${emailInput.value}`);
         emailInput.value = "";
+    })
+}
+
+// Для страницы обратной связи
+const feedbackForm = document.getElementById("feedbackForm");
+
+if (feedbackForm) {
+    const nameInput = document.getElementById("feedbackFullNameInput");
+    const emailInput = document.getElementById("feedbackEmailInput");
+    const messageInput = document.getElementById("feedbackComment");
+
+    feedbackForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const nameValidation = validateName(nameInput.value);
+
+        if (!nameValidation.valid) {
+            nameInput.setCustomValidity(nameValidation.message);
+            nameInput.reportValidity();
+            return;
+        } else {
+            nameInput.setCustomValidity("");
+        }
+
+        if (messageInput.value === "") {
+            messageInput.setCustomValidity("Введите текст сообщения");
+            messageInput.reportValidity();
+            return;
+        } else {
+            messageInput.setCustomValidity("");
+        }
+
+        alert("Ваше сообщение отправлено");
+
+        console.log("Форма обратной связи отправлена", {
+            name: nameInput.value,
+            email: emailInput.value,
+            message: messageInput.value
+        });
+
+        // Очистка полей
+        nameInput.value = "";
+        emailInput.value = "";
+        messageInput.value = ""
     })
 }
