@@ -79,12 +79,12 @@
         }
       }
     }
-    .food-filter__buttons {
+    .food-filter__display-filters {
       & input:first-of-type + label {
         border-radius: 15px 0 0 15px;
         border-right: 1px;
       }
-      .food-filter__btn + label {
+      .food-filter__display-filter + label {
         border: 2px solid var(--purple);
         margin: 0;
         padding: 20px 0;
@@ -100,11 +100,11 @@
         background: var(--purple);
         color: #f7f8fa;
       }
-      .food-filter__btn:checked + label {
+      .food-filter__display-filter:checked + label {
         background: var(--purple);
         color: #f5f5f5;
       }
-      .food-filter__btn:checked:hover + label {
+      .food-filter__display-filter:checked:hover + label {
         background: var(--purple-hover);
         color: #f7f8fa;
       }
@@ -494,8 +494,8 @@
       }
     }
     .food-filter__search {
-      .food-filter__buttons {
-        .food-filter__btn {
+      .food-filter__display-filters {
+        .food-filter__display-filter {
           font-size: 15px;
         }
       }
@@ -567,10 +567,10 @@
       }
     }
     .food-filter__search {
-      .food-filter__buttons {
+      .food-filter__display-filters {
         margin-bottom: 30px;
 
-        .food-filter__btn {
+        .food-filter__display-filter {
           font-size: 16px;
         }
       }
@@ -665,10 +665,10 @@
       }
     }
     .food-filter__search {
-      .food-filter__buttons {
+      .food-filter__display-filters {
         margin-bottom: 20px;
 
-        .food-filter__btn {
+        .food-filter__display-filter {
           font-size: 14px;
         }
       }

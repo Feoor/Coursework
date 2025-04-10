@@ -99,9 +99,10 @@ class FilterManager {
     constructor() {
         this.restaurantsCollection = [];
         this.dishesCollection = [];
+        this.displayFilter = 'all' // 'all' | 'restaurants' | 'dishes'
         this.activeCategoriesFilters = new Set();
-        this.sortByFilter = null; // 'rating' | 'delivery' | 'popularity'
-        this.maxPriceFilter = 15000; // 0 - 30$
+        this.sortByFilter = 'delivery'; // 'rating' | 'delivery' | 'popularity'
+        this.maxPriceFilter = 15000; // 0 - 30000
     }
 
     toggleCategoryFilter(category) {
@@ -132,23 +133,43 @@ class FilterManager {
     }
 
     displayFilteredCards(filteredRestaurants, filteredDishes) {
-        // FIXME: При сортировке отображаются только 1 элементы списка, найти и решить проблема
         // Отображаем карточки ресторанов
+        // очищаем предыдущие карточки
         restaurantsWrapper.innerHTML = '';
-        for (const restaurant of this.restaurantsCollection) {
-            // Очищаем предыдущие карточки
 
-            // Создаем карточку ресторана и добавляем ее в контейнер
-            restaurantsWrapper.appendChild(restaurant.createCard());
+        // Скрываем секцию "Наши рестораны", если нет активных категорий
+        if (filteredRestaurants.length === 0 || this.displayFilter === 'dishes') {
+            document.querySelector('.our-restaurants').style.display = 'none';
+        } else {
+            document.querySelector('.our-restaurants').style.display = 'block';
+
+            for (const restaurant of this.restaurantsCollection) {
+                // Проверяем, что ресторан относится к активным категориям
+                if (filteredRestaurants.some(rest => rest.id === restaurant.id)) {
+                    // Создаем карточку ресторана и добавляем ее в контейнер
+                    restaurantsWrapper.appendChild(restaurant.createCard());
+                }
+            }
         }
 
         // Отображаем карточки блюд
+        // очищаем предыдущие карточки
         dishesWrapper.innerHTML = '';
-        for (const dish of this.dishesCollection) {
-            // Очищаем предыдущие карточки
 
-            // Создаем карточку блюда и добавляем ее в контейнер
-            dishesWrapper.appendChild(dish.createCard());
+        // Скрываем секцию "Наши блюда", если нет активных категорий
+        if (filteredDishes.length === 0 || this.displayFilter === 'restaurants') {
+            document.querySelector('.our-dishes').style.display = 'none';
+        } else if (this.displayFilter === 'all' || this.displayFilter === 'dishes') {
+            document.querySelector('.our-dishes').style.display = 'block';
+
+            for (const dish of this.dishesCollection) {
+                // Проверяем, что блюдо относится к активным категориям
+                if (filteredDishes.some(d => d.id === dish.id)) {
+                    console.log('dish', dish);
+                    // Создаем карточку блюда и добавляем ее в контейнер
+                    dishesWrapper.appendChild(dish.createCard());
+                }
+            }
         }
     }
 
@@ -176,6 +197,9 @@ class FilterManager {
             }
         }
 
+        console.log(filteredRestaurants)
+        console.log(filteredDishes);
+
         // Сортировка
         this.sortBy();
 
@@ -196,6 +220,7 @@ const dishesWrapper = document.querySelector('.our-dishes__dishes-wrapper');
 
 
 // Кнопки фильтров
+const displayFiltersButtons = document.querySelectorAll('.food-filter__display-filter');
 const categoryButtons = document.querySelectorAll('button.filter-panel__category-item');
 const sortByButtons = document.querySelectorAll('input.filter-panel__sort-btn');
 const priceRange = document.querySelector('input.filter-panel__price-slider');
@@ -241,7 +266,15 @@ for (const dish of dishes) {
 }
 
 
-// Обработчик событий для кнопок фильтров
+// Обработчик событий для кнопок фильтров.
+// Кнопки отображения ресторанов и блюд
+for (const displayFilter of displayFiltersButtons) {
+    displayFilter.addEventListener('click', () => {
+        filterManager.displayFilter = displayFilter.getAttribute('data-filter');
+        filterManager.applyFilters();
+    })
+}
+
 // Кнопки категорий
 for (const categoryButton of categoryButtons) {
     categoryButton.addEventListener('click', () => {

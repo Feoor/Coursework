@@ -95,14 +95,14 @@
                             <label for="foodFilterSearchInput">Поиск</label>
                         </div>
 
-                        <div class="food-filter__buttons col-12 btn-group" role="group">
-                            <input type="radio" class="btn-check food-filter__btn" name="sortShowFilterGroup" id="sortShowAll" data-filter="dishes" checked>
+                        <div class="food-filter__display-filters col-12 btn-group" role="group">
+                            <input type="radio" class="btn-check food-filter__display-filter" name="sortShowFilterGroup" id="sortShowAll" data-filter="all" checked>
                             <label class="btn btn-outline-primary" for="sortShowAll">Все</label>
 
-                            <input type="radio" class="btn-check food-filter__btn" name="sortShowFilterGroup" id="sortShowRestaurants" data-filter="restaurants">
+                            <input type="radio" class="btn-check food-filter__display-filter" name="sortShowFilterGroup" id="sortShowRestaurants" data-filter="restaurants">
                             <label class="btn btn-outline-primary" for="sortShowRestaurants">Рестораны</label>
 
-                            <input type="radio" class="btn-check food-filter__btn" name="sortShowFilterGroup" id="sortShowDishes" data-filter="all">
+                            <input type="radio" class="btn-check food-filter__display-filter" name="sortShowFilterGroup" id="sortShowDishes" data-filter="dishes">
                             <label class="btn btn-outline-primary" for="sortShowDishes">Блюда</label>
                         </div>
                     </div>
@@ -154,24 +154,18 @@
                         <div class="filter-panel__price">
                             <h3 class="filter-panel__price-title">Цена</h3>
                             <label for="priceSlider" class="visually-hidden">Цена до</label>
-                            <!-- TODO: Вместо контрольных точек, сделать точку от 0 до текущего значения ползунка -->
                             <input
                                 type="range"
                                 class="filter-panel__price-slider"
                                 id="priceSlider"
                                 min="0"
                                 max="15000"
-                                step="2500"
+                                step="1000"
                                 value="15000"
                             />
                             <div class="filter-panel__price-range">
-                                <span>$0</span>
-                                <span>$5</span>
-                                <span>$10</span>
-                                <span>$15</span>
-                                <span>$20</span>
-                                <span>$25</span>
-                                <span>$30</span>
+                                <span>0 ₸</span>
+                                <span>15000 ₸</span>
                             </div>
                         </div>
 
@@ -344,7 +338,7 @@
                         </a>
                     </div>
 
-                    <div class="our-dishes__dish card h-100" data-dish-id="dish-5" data-delivery-time="2040" data-popularity="3" data-categories="asian">
+                    <div class="our-dishes__dish card h-100" data-dish-id="dish-5" data-delivery-time="2040" data-popularity="6" data-categories="asian">
                         <a href="the_chicken_king_restaurant.html">
                             
                             <img src="../img/swe_dish.png" alt="Swe Dish" class="card-img-top rounded-circle">
