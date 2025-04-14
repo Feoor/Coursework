@@ -199,7 +199,7 @@ body.lock {
   border-top-left-radius: 40px;
   border-bottom-left-radius: 40px;
   padding: 0.75rem 1.5rem 0;
-  background-color: var(--sidebar-bg);
+  background-color: var(--main-black);
   color: #fff;
   transform: translateX(100%);
   opacity: 0;
@@ -285,7 +285,7 @@ body.lock {
 }
 .header__wrapper .sidebar .sidebar__sign-up {
   border: 1px solid #fff;
-  background-color: var(--sidebar-bg);
+  background-color: var(--main-black);
   color: #fff;
 }
 .header__wrapper .sidebar .sidebar__sign-up:hover {
@@ -301,7 +301,7 @@ body.lock {
   border-top-left-radius: 40px;
   border-bottom-left-radius: 40px;
   padding: 0.75rem 0 0;
-  background-color: var(--sidebar-bg);
+  background-color: var(--main-black);
   color: #fff;
   transform: translateX(100%);
   opacity: 0;
@@ -376,7 +376,7 @@ body.lock {
   transform: translate(-50%, -50%);
 }
 .header__wrapper .sidebar .menu-cart__dish .cart-dish__minus-btn {
-  background-color: var(--sidebar-bg);
+  background-color: var(--main-black);
   color: #fff;
   border: 1px solid #fff;
 }
@@ -389,7 +389,7 @@ body.lock {
 }
 .header__wrapper .sidebar .menu-cart__dish .cart-dish__plus-btn {
   background-color: #fff;
-  color: var(--sidebar-bg);
+  color: var(--main-black);
   border: 1px solid #fff;
 }
 .header__wrapper .sidebar .menu-cart__dish .cart-dish__plus-btn::after {
@@ -411,7 +411,7 @@ body.lock {
 }
 .header__wrapper .sidebar .sidebar__checkout-btn {
   border: 1px solid #fff;
-  background-color: var(--sidebar-bg);
+  background-color: var(--main-black);
   color: #fff;
   text-align: center;
 }
@@ -563,7 +563,7 @@ body.lock {
   }
   .header__wrapper .sidebar .sidebar__checkout-btn {
     border: 1px solid #fff;
-    background-color: var(--sidebar-bg);
+    background-color: var(--main-black);
     color: #fff;
     text-align: center;
   }
@@ -1307,6 +1307,40 @@ body.lock {
     font-size: 16px;
   }
 }
+/* Добавить ресторан в избранное */
+.restaurant-bookmark {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom: 16px;
+  right: 24px;
+  border: none;
+  border-radius: 50%;
+  background-color: #dbd9ee;
+  transition: background-color 0.2s;
+}
+.restaurant-bookmark::after {
+  display: inline-block;
+  content: "";
+  max-width: 16px;
+  max-height: 21px;
+  background: url("../icons/bookmark.svg") no-repeat;
+  background-size: cover;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.restaurant-bookmark:hover {
+  background-color: var(--purple);
+}
+.restaurant-bookmark:hover::after {
+  background: url("../icons/bookmark_white.svg") no-repeat;
+  background-size: cover;
+}
+
 /* Добавить блюдо в любимое */
 .dish-favorite {
   position: absolute;
@@ -2247,18 +2281,19 @@ body.lock {
 :root {
   --font-family: "Manrope";
   --second-family: "Inter";
-  --font4: "Public Sans", sans-serif;
-  --font5: "Quicksand", sans-serif;
-  --font6: "Plus Jakarta Sans", sans-serif;
+  --font3: "Public Sans", sans-serif;
+  --font4: "Quicksand", sans-serif;
+  --font5: "Plus Jakarta Sans", sans-serif;
   --purple: #6c5fbc;
   --purple-hover: #5a4aa3;
   --translucent-white: rgba(197, 197, 197, 0.15);
-  --sidebar-bg: #242424;
+  --main-black: #242424;
 }
 
 /* Базовые стили */
 html {
   font-family: var(--second-family), sans-serif;
+  color: var(--main-black);
 }
 
 /* Прикрепляем футер снизу */
@@ -2424,40 +2459,6 @@ h2 {
   color: #6c5fbc;
 }
 
-/* Добавить ресторан в избранное */
-.restaurant-bookmark {
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  bottom: 16px;
-  right: 24px;
-  border: none;
-  border-radius: 50%;
-  background-color: #dbd9ee;
-  transition: background-color 0.2s;
-}
-.restaurant-bookmark::after {
-  display: inline-block;
-  content: "";
-  max-width: 16px;
-  max-height: 21px;
-  background: url("../icons/bookmark.svg") no-repeat;
-  background-size: cover;
-  position: absolute;
-  margin: auto;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-.restaurant-bookmark:hover {
-  background-color: var(--purple);
-}
-.restaurant-bookmark:hover::after {
-  background: url("../icons/bookmark_white.svg") no-repeat;
-  background-size: cover;
-}
-
 .view-all {
   position: relative;
   z-index: 1; /* Чтобы тень не перекрывала текст */
@@ -2510,11 +2511,6 @@ h2 {
   border-radius: 50px;
 }
 
-@supports not selector(::-webkit-scrollbar) {
-  .purple-scrollbar {
-    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
-  }
-}
 .hero__wrapper {
   padding-top: 250px;
   padding-bottom: 130px;
@@ -2586,7 +2582,7 @@ h2 {
   width: 96px;
 }
 .hero__wrapper .hero__left-column .hero__reviews .hero__review .hero__review-counts {
-  font-family: var(--font6), sans-serif;
+  font-family: var(--font5), sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
@@ -2682,7 +2678,7 @@ h2 {
   border-right: 1px solid var(--translucent-white);
 }
 .features .features__feature .features__feature-title {
-  font-family: var(--font4), sans-serif;
+  font-family: var(--font3), sans-serif;
   font-weight: 700;
   font-size: 43px;
   line-height: 125%;
@@ -2949,7 +2945,7 @@ h2 {
   color: #030314;
 }
 .reviews__wrapper .reviews__item .reviews__header .review__slogan {
-  font-family: var(--font5), sans-serif;
+  font-family: var(--font4), sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 156%;

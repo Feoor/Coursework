@@ -1,13 +1,24 @@
-class Restaurant {
-    constructor(id, name, categories, rating, popularity, avarageDeliveryTime, image, href, badge) {
+class Product {
+    constructor(id, name, categories, rating, popularity, averageDeliveryTime, image, href) {
         this.id = id;
         this.name = name;
         this.categories = new Set(categories);
         this.rating = rating;
         this.popularity = popularity;
-        this.avarageDeliveryTime = avarageDeliveryTime; // Время в секундах
+        this.averageDeliveryTime = averageDeliveryTime; // Время в секундах
         this.image = image;
         this.href = href;
+    }
+
+    createCard() {
+        console.warn("Необходимо переопределить метод createCard в дочернем классе");
+        return null;
+    }
+}
+
+class Restaurant extends Product {
+    constructor(id, name, categories, rating, popularity, avarageDeliveryTime, image, href, badge) {
+        super(id, name, categories, rating, popularity, avarageDeliveryTime, image, href);
         this.badge = { // Тег ресторана
             type: badge.type,
             text: badge.text
@@ -21,7 +32,7 @@ class Restaurant {
         // Свойства карточки ресторана
         restaurantCard.classList.add('our-restaurants__restaurant', 'card', 'h-100');
         restaurantCard.setAttribute('data-restaurant-id', this.id);
-        restaurantCard.setAttribute('data-delivery-time', this.avarageDeliveryTime);
+        restaurantCard.setAttribute('data-delivery-time', this.averageDeliveryTime);
         restaurantCard.setAttribute('data-popularity', this.popularity);
         restaurantCard.setAttribute('data-categories', Array.from(this.categories).join("|")); // Массив в строку с разделителем "|"
         restaurantCard.innerHTML = `
@@ -33,7 +44,7 @@ class Restaurant {
                     <h5 class="card-title mb-2">${this.name}</h5>
     
                     <div class="our-restaurants__restaurant-info d-flex align-items-center">
-                        <span class="me-1 me-xl-2">${this.avarageDeliveryTime / 60}min •</span>
+                        <span class="me-1 me-xl-2">${this.averageDeliveryTime / 60}min •</span>
                         <img src="../icons/purple_star.svg" alt="Purple star">
                         <span class="ms-1">${this.rating}</span>
                     </div>
@@ -45,17 +56,10 @@ class Restaurant {
     }
 }
 
-class Dish {
+class Dish extends Product {
     constructor(id, name, categories, rating, popularity, price, averageDeliveryTime, restaurantHref, image, badge) {
-        this.id = id;
-        this.name = name;
-        this.categories = new Set(categories);
-        this.rating = rating;
-        this.popularity = popularity;
+        super(id, name, categories, rating, popularity, averageDeliveryTime, image, restaurantHref);
         this.price = price;
-        this.averageDeliveryTime = averageDeliveryTime; // Время в секундах
-        this.restaurantHref = restaurantHref;
-        this.image = image;
         this.badge = { // Тег ресторана
             type: badge.type,
             text: badge.text
@@ -73,7 +77,7 @@ class Dish {
         dishCard.setAttribute('data-popularity', this.popularity);
         dishCard.setAttribute('data-categories', Array.from(this.categories).join("|")); // Массив в строку с разделителем "|"
         dishCard.innerHTML = `
-            <a href="${this.restaurantHref}">
+            <a href="${this.href}">
                 
                 <img src="${this.image}" alt="${this.name} Dish" class="card-img-top rounded-circle">
     
@@ -126,10 +130,22 @@ class FilterManager {
                 this.dishesCollection.sort((a, b) => b.popularity - a.popularity);
                 break;
             case 'delivery':
-                this.restaurantsCollection.sort((a, b) => a.avarageDeliveryTime - b.avarageDeliveryTime);
+                this.restaurantsCollection.sort((a, b) => a.averageDeliveryTime - b.averageDeliveryTime);
                 this.dishesCollection.sort((a, b) => a.averageDeliveryTime - b.averageDeliveryTime);
                 break;
         }
+    }
+
+    filterBySearch(searchValue, collection) {
+        // Фильтруем коллекцию по названию
+        let filteredCollection = [];
+        for (const element of collection) {
+            if (element.name.toLowerCase().includes(searchValue)) {
+                filteredCollection.push(element);
+            }
+        }
+
+        return filteredCollection;
     }
 
     displayFilteredCards(filteredRestaurants, filteredDishes) {
@@ -165,7 +181,6 @@ class FilterManager {
             for (const dish of this.dishesCollection) {
                 // Проверяем, что блюдо относится к активным категориям
                 if (filteredDishes.some(d => d.id === dish.id)) {
-                    console.log('dish', dish);
                     // Создаем карточку блюда и добавляем ее в контейнер
                     dishesWrapper.appendChild(dish.createCard());
                 }
@@ -197,8 +212,13 @@ class FilterManager {
             }
         }
 
-        console.log(filteredRestaurants)
-        console.log(filteredDishes);
+        const searchValue = searchInput.value.toLowerCase();
+
+        // Фильтруем рестораны по названию
+        filteredRestaurants = this.filterBySearch(searchValue, filteredRestaurants);
+
+        // Фильтруем блюда по названию
+        filteredDishes = this.filterBySearch(searchValue, filteredDishes);
 
         // Сортировка
         this.sortBy();
@@ -219,7 +239,8 @@ const dishes = document.querySelectorAll('.our-dishes__dish.card');
 const dishesWrapper = document.querySelector('.our-dishes__dishes-wrapper');
 
 
-// Кнопки фильтров
+// Кнопки фильтров и поисковое поле
+const searchInput = document.querySelector('#foodFilterSearchInput');
 const displayFiltersButtons = document.querySelectorAll('.food-filter__display-filter');
 const categoryButtons = document.querySelectorAll('button.filter-panel__category-item');
 const sortByButtons = document.querySelectorAll('input.filter-panel__sort-btn');
@@ -266,7 +287,12 @@ for (const dish of dishes) {
 }
 
 
-// Обработчик событий для кнопок фильтров.
+// Обработчик событий для кнопок фильтров и поля поиска.
+// Поиск по названию ресторана и блюда
+searchInput.addEventListener('keyup', () => {
+    filterManager.applyFilters()
+})
+
 // Кнопки отображения ресторанов и блюд
 for (const displayFilter of displayFiltersButtons) {
     displayFilter.addEventListener('click', () => {

@@ -180,7 +180,7 @@ body.lock {
       border-top-left-radius: 40px;
       border-bottom-left-radius: 40px;
       padding: 0.75rem 1.5rem 0;
-      background-color: var(--sidebar-bg);
+      background-color: var(--main-black);
       color: #fff;
       transform: translateX(100%);
       opacity: 0;
@@ -275,7 +275,7 @@ body.lock {
     }
     .sidebar__sign-up {
       border: 1px solid #fff;
-      background-color: var(--sidebar-bg);
+      background-color: var(--main-black);
       color: #fff;
 
       &:hover {
@@ -294,7 +294,7 @@ body.lock {
       border-top-left-radius: 40px;
       border-bottom-left-radius: 40px;
       padding: 0.75rem 0 0;
-      background-color: var(--sidebar-bg);
+      background-color: var(--main-black);
       color: #fff;
       transform: translateX(100%);
       opacity: 0;
@@ -379,7 +379,7 @@ body.lock {
         }
       }
       .cart-dish__minus-btn {
-        background-color: var(--sidebar-bg);
+        background-color: var(--main-black);
         color: #fff;
         border: 1px solid #fff;
 
@@ -393,7 +393,7 @@ body.lock {
       }
       .cart-dish__plus-btn {
         background-color: #fff;
-        color: var(--sidebar-bg);
+        color: var(--main-black);
         border: 1px solid #fff;
 
         &::after {
@@ -418,7 +418,7 @@ body.lock {
     }
     .sidebar__checkout-btn {
       border: 1px solid #fff;
-      background-color: var(--sidebar-bg);
+      background-color: var(--main-black);
       color: #fff;
       text-align: center;
 
@@ -614,7 +614,7 @@ body.lock {
       }
       .sidebar__checkout-btn {
         border: 1px solid #fff;
-        background-color: var(--sidebar-bg);
+        background-color: var(--main-black);
         color: #fff;
         text-align: center;
 

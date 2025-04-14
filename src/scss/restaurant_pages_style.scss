@@ -1,3 +1,35 @@
+/* Добавить ресторан в избранное */
+.restaurant-bookmark {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom: 16px;
+  right: 24px;
+  border: none;
+  border-radius: 50%;
+  background-color: #dbd9ee;
+  transition: background-color .2s;
+
+  &::after {
+    display: inline-block;
+    content: "";
+    max-width: 16px;
+    max-height: 21px;
+    background: url("../icons/bookmark.svg") no-repeat;
+    background-size: cover;
+    position: absolute;
+    margin: auto;
+    top: 0; left: 0; bottom: 0; right: 0;
+  }
+  &:hover {
+    background-color: var(--purple);
+    &::after {
+      background: url("../icons/bookmark_white.svg") no-repeat;
+      background-size: cover;
+    }
+  }
+}
+
 /* Добавить блюдо в любимое */
 .dish-favorite {
   position: absolute;
