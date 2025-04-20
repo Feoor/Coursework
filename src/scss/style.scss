@@ -121,6 +121,9 @@ h2 {
   color: var(--purple);
 }
 .text-muted {
+  color: #6c757d !important;
+}
+.text-muted--purple {
   color: #7c6fcd !important;
 }
 .price--cents {
@@ -744,7 +747,7 @@ h2 {
   height: 280px;
   padding: 40px 65px;
   border-radius: 30px;
-  background: var(--purple) url("../img/sale_bg.jpg");
+  background: var(--purple) url("../img/sale_bg.webp");
   background-size: cover;
   position: relative;
 

@@ -152,6 +152,19 @@ class FilterManager {
         // Отображаем карточки ресторанов
         // очищаем предыдущие карточки
         restaurantsWrapper.innerHTML = '';
+        dishesWrapper.innerHTML = '';
+
+        // Проверяем, есть ли результаты
+        if (filteredRestaurants.length === 0 && filteredDishes.length === 0 && this.displayFilter === 'all'
+            || filteredRestaurants.length === 0 && this.displayFilter === 'restaurants'
+            || filteredDishes.length === 0 && this.displayFilter === 'dishes'
+        ) {
+            noResultsSection.style.display = 'block';
+        } else {
+            noResultsSection.style.display = 'none';
+        }
+
+
 
         // Скрываем секцию "Наши рестораны", если нет активных категорий
         if (filteredRestaurants.length === 0 || this.displayFilter === 'dishes') {
@@ -169,9 +182,6 @@ class FilterManager {
         }
 
         // Отображаем карточки блюд
-        // очищаем предыдущие карточки
-        dishesWrapper.innerHTML = '';
-
         // Скрываем секцию "Наши блюда", если нет активных категорий
         if (filteredDishes.length === 0 || this.displayFilter === 'restaurants') {
             document.querySelector('.our-dishes').style.display = 'none';
@@ -227,6 +237,9 @@ class FilterManager {
         this.displayFilteredCards(filteredRestaurants, filteredDishes)
     }
 }
+
+// Секция на случай если ничего не найдено
+const noResultsSection = document.querySelector('section.no-results');
 
 // Карточки ресторанов
 const restaurants = document.querySelectorAll('.our-restaurants__restaurant.card');

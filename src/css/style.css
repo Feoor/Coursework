@@ -264,7 +264,7 @@ body.lock {
   padding: 0 1.5rem 2rem;
   position: absolute;
   right: 0;
-  bottom: 40px;
+  bottom: 48px;
   left: 0;
 }
 .header__wrapper .sidebar .sidebar__buttons a,
@@ -313,9 +313,15 @@ body.lock {
   transform: translateX(0);
 }
 .header__wrapper .sidebar .menu-cart__content {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  margin-bottom: 9rem;
   flex-grow: 1;
   color: #fff;
-  margin-bottom: 8rem;
+}
+.header__wrapper .sidebar .menu-cart__content::-webkit-scrollbar {
+  display: none;
 }
 .header__wrapper .sidebar .menu-cart__content .menu-cart__title {
   padding: 0 1.5rem;
@@ -324,11 +330,18 @@ body.lock {
   font-weight: 800;
   color: #fff;
 }
-.header__wrapper .sidebar .menu-cart__content .menu-cart__dishes-wrapper {
-  overflow-y: auto;
+.header__wrapper .sidebar .menu-cart__content .menu-cart__separator {
+  width: 100%;
+  height: 1px;
+  background-color: var(--translucent-white);
+  margin: 0.75rem 0;
 }
-.header__wrapper .sidebar .menu-cart__content .menu-cart__dishes-wrapper::-webkit-scrollbar {
-  display: none;
+.header__wrapper .sidebar .menu-cart__content .menu-cart__restaurant-name {
+  padding: 0 1.5rem;
+  font-family: var(--font-family), sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
 }
 .header__wrapper .sidebar .menu-cart__dish {
   font-family: var(--font-family), sans-serif;
@@ -727,7 +740,7 @@ body.lock {
   position: relative;
   padding: 40px 52px;
   border-radius: 19px;
-  background: var(--purple) url("../img/sale_bg.jpg");
+  background: var(--purple) url("../img/sale_bg.webp");
 }
 .food-filter__wrapper .food-filter__promo-banner::before {
   display: inline-block;
@@ -997,6 +1010,20 @@ body.lock {
 .food-filter__wrapper .food-filter__filter-panel .filter-panel__apply-btn:hover {
   background: var(--purple-hover);
   color: #f7f8fa;
+}
+
+.no-results .no-results__title {
+  font-family: var(--font-family), sans-serif;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 135%;
+  color: #323142;
+}
+.no-results .no-results__text {
+  font-family: var(--font-family), sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 135%;
 }
 
 .faq__wrapper {
@@ -1765,7 +1792,7 @@ body.lock {
   content: "";
   width: 189px;
   height: 378px;
-  background-image: url("../img/mobile_screen.png");
+  background-image: url("../img/mobile_screen.webp");
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
@@ -2390,6 +2417,10 @@ h2 {
 }
 
 .text-muted {
+  color: #6c757d !important;
+}
+
+.text-muted--purple {
   color: #7c6fcd !important;
 }
 
@@ -2971,7 +3002,7 @@ h2 {
   height: 280px;
   padding: 40px 65px;
   border-radius: 30px;
-  background: var(--purple) url("../img/sale_bg.jpg");
+  background: var(--purple) url("../img/sale_bg.webp");
   background-size: cover;
   position: relative;
   /* Стили текста для формы */

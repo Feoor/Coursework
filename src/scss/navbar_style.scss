@@ -252,7 +252,7 @@ body.lock {
       padding: 0 1.5rem 2rem;
       position: absolute;
       right: 0;
-      bottom: 40px; // По какой-то причине 0 недостаточно и элемент уходи за экран
+      bottom: 48px; // По какой-то причине 0 недостаточно и элемент уходи за экран
       left: 0;
 
       a,
@@ -307,9 +307,16 @@ body.lock {
       }
     }
     .menu-cart__content {
+      display: flex;
+      flex-direction: column;
+      overflow: auto;
+      margin-bottom: 9rem;
       flex-grow: 1;
       color: #fff;
-      margin-bottom: 8rem;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
 
       .menu-cart__title {
         padding: 0 1.5rem;
@@ -319,12 +326,19 @@ body.lock {
         color: #fff
       }
 
-      .menu-cart__dishes-wrapper {
-        overflow-y: auto;
+      .menu-cart__separator {
+        width: 100%;
+        height: 1px;
+        background-color: var(--translucent-white);
+        margin: 0.75rem 0;
+      }
 
-        &::-webkit-scrollbar {
-          display: none;
-        }
+      .menu-cart__restaurant-name {
+        padding: 0 1.5rem;
+        font-family: var(--font-family), sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        color: #fff;
       }
     }
     .menu-cart__dish {
