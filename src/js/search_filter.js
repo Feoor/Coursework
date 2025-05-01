@@ -258,6 +258,9 @@ const displayFiltersButtons = document.querySelectorAll('.food-filter__display-f
 const categoryButtons = document.querySelectorAll('button.filter-panel__category-item');
 const sortByButtons = document.querySelectorAll('input.filter-panel__sort-btn');
 const priceRange = document.querySelector('input.filter-panel__price-slider');
+const currentPriceRange = document.querySelector('span.price-range__current-price');
+
+// Кнопка "Применить фильтры"
 const applyButton = document.querySelector('#applyFiltersButton');
 
 const filterManager = new FilterManager();
@@ -334,6 +337,7 @@ for (const sortByButton of sortByButtons) {
 // Ползунок максимальной цены
 priceRange.addEventListener('change', () => {
     filterManager.maxPriceFilter = parseInt(priceRange.value);
+    currentPriceRange.textContent = `${filterManager.maxPriceFilter} ₸`;
     filterManager.applyFilters();
 })
 
